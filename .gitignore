@@ -1,0 +1,23 @@
+# vertx
+vert.x-2.1.1/
+mods/
+
+target/
+test-output/
+*.iml
+.classpath_nb
+
+# sbt specific
+/project/boot/
+/project/plugins/project
+lib_managed/
+src_managed/
+
+# Eclipse specific
+.project
+.classpath
+.cache
+
+# idea specific
+/.idea/
+/bin
