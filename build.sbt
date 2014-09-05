@@ -31,7 +31,7 @@ Revolver.settings
 
 mainClass in Revolver.reStart := Some("org.vertx.java.platform.impl.cli.Starter")
 
-Revolver.reStartArgs := Seq("run", "scala:com.articlio.deployer")
+Revolver.reStartArgs := Seq("run", "scala:com.articlio.ldb.deployer")
 
 //
 // Vertx
@@ -51,3 +51,5 @@ libraryDependencies ++= Seq(
 
 // spray-json
 libraryDependencies += "io.spray" %%  "spray-json" % "1.2.6"
+
+libraryDependencies += "org.ahocorasick" % "ahocorasick" % "0.2.3"
