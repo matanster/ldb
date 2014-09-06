@@ -12,24 +12,35 @@ import scala.io.Source
 import org.ahocorasick.trie._
 import scala.collection.JavaConversions._
 
-class debugger {
-  import scala.tools.nsc.interpreter.ILoop
-  import scala.tools.nsc.interpreter.SimpleReader
-  import scala.tools.nsc.Settings  
+/*
 
-  val repl = new ILoop
-  repl.settings = new Settings
+import scala.reflect.ClassTag
+import scala.tools.nsc.Settings
+import scala.tools.nsc.interpreter.{ILoop, NamedParam}
+
+class ClassLoaderHint {
+}
+
+def break(args: NamedParam*) = {
+  val repl = new ILoop()
+
+  repl.settings = new Settings()
+  repl.settings.embeddedDefaults[ClassLoaderHint]
   repl.settings.Yreplsync.value = true
-  repl.in = SimpleReader()
+  repl.in = repl.chooseReader(repl.settings)
+
   repl.createInterpreter()
 
-  // start the interpreter and then close it after you :quit
+  args.foreach(p => repl.bind(p.name, p.tpe, p.value))
+
   repl.loop()
   repl.closeInterpreter()
 }
+*/
 
-class deployer extends Verticle {
+object Deployer extends Verticle {
   override def start() {
+    println("starting deployer verticle")
     container.logger.info("starting deployer verticle")
     container.deployVerticle("scala:com.articlio.ldb.ldb")
     container.deployVerticle("scala:com.articlio.selfMonitor")

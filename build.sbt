@@ -53,3 +53,7 @@ libraryDependencies ++= Seq(
 libraryDependencies += "io.spray" %%  "spray-json" % "1.2.6"
 
 libraryDependencies += "org.ahocorasick" % "ahocorasick" % "0.2.3"
+
+libraryDependencies += "org.scala-lang" % "scala-compiler" % "2.10"
+
+libraryDependencies += "com.github.tototoshi" %% "scala-csv" % "1.0.0"
