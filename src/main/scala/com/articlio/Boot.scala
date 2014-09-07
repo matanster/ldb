@@ -14,23 +14,31 @@ object Boot extends App {
 
   val wildCards = List("…", "...")
 
-  def getDb() {
+  //
+  // Extract raw values from database CSV (skipping the first headers done really not scala-idiomatically for now..)
+  //
+  def getCSV : List[Map[String, String]] = {
 
-    val reader = CSVReader.open("/home/matan/Downloads/July 24 2014 database - Markers.csv")
     val t0 = System.nanoTime()
-    reader.foreach(fields => 
-      { 
-        //println(fields); println(fields.getClass) 
-        val asArray: Array[String] = fields.toArray // convert to Array for easy column access
-        val pattern = asArray(2)
-        val indication = asArray(3)
-      }
-    )
+    val reader = CSVReader.open("/home/matan/Downloads/July 24 2014 database - Markers.csv")
+    val iterator = reader.iterator
+    iterator.next // skip first row assumed to be headers
+
+    var rawInput = List[Map[String, String]]()
+
+    while (iterator.hasNext)
+    { 
+      val asArray: Array[String] = iterator.next.toArray // convert to Array for easy column access
+      val pattern = asArray(2)
+      val indication = asArray(3)
+      rawInput ::= Map("pattern" -> pattern, "indication" -> indication)
+    }
+
     val t1 = System.nanoTime()
     println(s"initializing from csv took ${(t1-t0)/1000/1000} milliseconds")
 
     reader.close
-    //println(reader.all)
+    return rawInput
   }
 
   //
@@ -58,6 +66,8 @@ object Boot extends App {
     */
   }
 
-  getDb
+
+  val rawInput = getCSV
+  println(rawInput)
 
 }
