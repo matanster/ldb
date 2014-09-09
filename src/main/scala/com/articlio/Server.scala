@@ -1,5 +1,3 @@
-package com.articlio.ldb
-
 import org.vertx.scala.core._
 import org.vertx.scala.core.http.HttpServerRequest
 import org.vertx.scala.core.http.HttpClientResponse
