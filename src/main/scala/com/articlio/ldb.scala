@@ -70,14 +70,23 @@ object go {
 
   def contriveSearchStrings(rawInputs: List[Map[String, String]]) =
   {
-    val wildcards = List("...", "…") 
+
+    val wildcards = List("..", "…") // wildcard symbols allowed to the human who codes the CSV database
+    val wildchars = List('.', '…', ' ')  // characters indication whether we are inside a wildcard sequence.. hence - "wildchars"
 
     def breakDown(pattern: String) {
-      val pos = (wildcards map pattern.indexOf).max
-      if (pos > 0) {
-        val fragment = pattern.dropRight(pos)
-        println(fragment)
-        breakDown(fragment)
+      val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } 
+      if (!indexes.isEmpty) {
+        val pos = indexes.min
+        println
+        println(s"$pattern")
+        val (leftSide, rest) = pattern.splitAt(pos)
+        //val rightSide = rest.dropWhile((char) => (char == '.'))
+        val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => wildchar == char))
+        println(s"$leftSide|")
+        println(s"$rightSide|")
+
+        breakDown(rightSide)
       }
     }
 
