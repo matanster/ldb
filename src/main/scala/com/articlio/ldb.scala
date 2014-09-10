@@ -66,33 +66,41 @@ object go {
     return rawInputs
   }
 
-  val searchStrings = scala.collection.mutable.ListBuffer.empty[String]
 
   def contriveSearchStrings(rawInputs: List[Map[String, String]]) =
   {
+    //val searchStrings = scala.collection.mutable.ListBuffer.empty[String]
+    val fragments = scala.collection.mutable.ListBuffer.empty[String]
+    val patterns = scala.collection.mutable.Map
 
     val wildcards = List("..", "…") // wildcard symbols allowed to the human who codes the CSV database
     val wildchars = List('.', '…', ' ')  // characters indication whether we are inside a wildcard sequence.. hence - "wildchars"
 
     def breakDown(pattern: String) {
-      val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } 
+      val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } // discard non-founds
       if (!indexes.isEmpty) {
         val pos = indexes.min
         println
         println(s"$pattern")
+
         val (leftSide, rest) = pattern.splitAt(pos)
-        //val rightSide = rest.dropWhile((char) => (char == '.'))
-        val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => wildchar == char))
+        val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
+
+        fragments += leftSide
+
         println(s"$leftSide|")
         println(s"$rightSide|")
 
         breakDown(rightSide)
       }
+      else {
+        fragments += pattern
+      }
     }
 
     rawInputs.foreach(rawInput => {
-      val pattern = rawInput("pattern")
-      breakDown(pattern)
+      val raw = rawInput("pattern")
+      breakDown(raw)
     })
 
 
