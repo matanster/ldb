@@ -9,6 +9,7 @@ import org.ahocorasick.trie._
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
 import com.github.tototoshi.csv._           // only good for "small" csv files; https://github.com/tototoshi/scala-csv/issues/11
 //import scala.collection.mutable.MutableList
+import org.apache.commons.math3
 
 object go {
   //
@@ -69,40 +70,42 @@ object go {
 
   def contriveSearchStrings(rawInputs: List[Map[String, String]]) =
   {
-    //val searchStrings = scala.collection.mutable.ListBuffer.empty[String]
-    val fragments = scala.collection.mutable.ListBuffer.empty[String]
-    val patterns = scala.collection.mutable.Map
-
     val wildcards = List("..", "…") // wildcard symbols allowed to the human who codes the CSV database
     val wildchars = List('.', '…', ' ')  // characters indication whether we are inside a wildcard sequence.. hence - "wildchars"
 
-    def breakDown(pattern: String) {
-      val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } // discard non-founds
-      if (!indexes.isEmpty) {
-        val pos = indexes.min
-        println
-        println(s"$pattern")
+    type matchSequence = (String, scala.collection.mutable.ListBuffer[String])
 
-        val (leftSide, rest) = pattern.splitAt(pos)
-        val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
+    object all {
+      val fragments = scala.collection.mutable.ListBuffer.empty[String]
+      val matchSequences = scala.collection.mutable.ListBuffer.empty[matchSequence]
+    }
 
-        fragments += leftSide
+    def breakDown(rawPattern: String): List[String] = {
 
-        println(s"$leftSide|")
-        println(s"$rightSide|")
-
-        breakDown(rightSide)
+      val indexes = wildcards map rawPattern.indexOf filter { i: Int => i > -1 } // discard non-founds
+      if (indexes.isEmpty) {
+        return(List(rawPattern))
       }
       else {
-        fragments += pattern
+        val pos = indexes.min
+        val (leftSide, rest) = rawPattern.splitAt(pos)
+        val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
+        return List(leftSide) ::: breakDown(rightSide)
       }
     }
 
+    var i = 1
     rawInputs.foreach(rawInput => {
       val raw = rawInput("pattern")
-      breakDown(raw)
+      val rowFragments = breakDown(raw)
+      if (rowFragments.length > 1) 
+      {
+        i += 1
+        println(rowFragments)
+      }
     })
 
+    println(i)
 
   }
   
