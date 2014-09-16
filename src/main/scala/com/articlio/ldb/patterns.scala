@@ -31,43 +31,51 @@ object go {
   def trieInit(patterns: List[(String, List[String], String)]) {
     trie.onlyWholeWords();
     for (pattern <- patterns)
-      trie.addKeyword(pattern._1)
+      pattern._2 map trie.addKeyword
   }
 
-  def patternTest(sentence : String, patterns: List[(String, List[String], String)]) : List[Map[String, String]] = 
+  def fragmentTest(sentence : String, patterns: List[(String, List[String], String)]) : List[Map[String, Any]] = 
   {
     val emitsJ = trie.parseText(sentence)
     //println(s"java type: ${emitsJ.getClass}")
     
     if (emitsJ.size > 0) {
-      val emits = emitsJ.asScala map (i => Map("start" -> i.getStart, "end" -> i.getEnd, "match" -> i.getKeyword))
+      val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart, "end" -> i.getEnd, "match" -> i.getKeyword))).toList
       //println(emitsJ.getClass)
       //println(emits.getClass)
       println(sentence)
       println(emitsJ.size)
       println(emits.mkString("\n"))
 
-      val found = emits map (m => Map("match" -> m("match"), "indication" -> patterns.find(pattern => pattern._1 == m("match")).get._3))
-      val foundStr = found.mkString("\n")
-      println(foundStr)
-      println()
+      // re-integrate to caller function, after return value type issue has solved
+      //val found = emits map (m => Map("match" -> m("match"), 
+      //                                "indication" -> patterns.find(pattern => pattern == m("match")).getOrElse(("", List.empty, "none"))._3))
 
+      //val matched = emits map (m => Map("match" -> m("match"), 
+      //                                  "indication" -> patterns.find(pattern => pattern._2.exists(fragment => fragment == m("match"))).getOrElse("no information category assigned")._3))
+
+      //println(matched.mkString("\n"))
+      //println(found.mkString("\n"))
+      //println()
+      return(emits)
 
     }
     
-    return (List.empty[Map[String, String]])
+    return (List.empty[Map[String, Any]])
 
     //return(emits)
     //println(s"scala converted type: ${emits.getClass}")
     //println(s"scala converted value: $emits")
   }
 
-  def contriveSearchStrings(rawInputs: List[Map[String, String]]): List[(String, List[String], String)] =
+  //
+  // 
+  //
+  def contriveSearchFragments(rawInputs: List[Map[String, String]]): List[(String, List[String], String)] =
   {
-    val wildcards = List("..", "…") // wildcard symbols allowed to the human who codes the CSV database
+    val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
     val wildchars = List('.', '…', ' ')  // characters indication whether we are inside a wildcard sequence.. hence - "wildchars"
 
-    
     def breakDown(rawPattern: String): List[String] = {
 
       val indexes = wildcards map rawPattern.indexOf filter { i: Int => i > -1 } // discard non-founds
@@ -98,11 +106,12 @@ object go {
   }
   
   val rawInput = csv.getCSV
-  val patterns = contriveSearchStrings(rawInput)
+  val patterns = contriveSearchFragments(rawInput)
   trieInit(patterns)
   for (sentence <- sentences) {
     //println(sentence)
-    patternTest(sentence, patterns)
+    val foundFragments = fragmentTest(sentence, patterns)
+
   }
 }
 
