@@ -1,5 +1,6 @@
 package com.articlio.ldb
 
+import com.articlio.util
 import scala.io.Source
 //import java.net.URLEncoder
 //import spray.json._
@@ -14,38 +15,84 @@ import com.github.tototoshi.csv._           // only good for "small" csv files; 
 object go {
 
   //
-  // get mock data
+  // gets mock data
   //
   println("loading sentences")
+  util.Logger.write("loading sentences")
   //val SentencesInputFile = "/home/matan/ingi/repos/back-end-js/docData/w4aXHuIDR8KGrQ688XEi/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
   val SentencesInputFile = "mock-data/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
   val sentences = Source.fromFile(SentencesInputFile).getLines
-  println(sentences.getClass)
     
   //
-  // Search all strings within one sentence
+  // initalizes an aho-corasick tree for searching all pattern fragments implied in the linguistic database
   //
-
   val trie = new Trie
-
   def trieInit(patterns: List[(String, List[String], String)]) {
     trie.onlyWholeWords();
     for (pattern <- patterns)
       pattern._2 map trie.addKeyword
   }
 
-  def fragmentTest(sentence : String, patterns: List[(String, List[String], String)]) : List[Map[String, Any]] = 
+
+  //
+  // breaks down wildcard-containing patterns into fragments,
+  // creating a record mapping each fragment to its fragments
+  //
+  def fragmentizePatterns(basicPatterns: List[Map[String, String]]): List[(String, List[String], String)] =
+  {
+    val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
+    val wildchars = List('.', '…', ' ')  // characters indicating whether we are inside a wildcard sequence.. hence - "wildchars"
+
+    def breakDown(pattern: String): List[String] = {
+
+      val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } // discard non-founds
+      if (indexes.isEmpty) {
+        println(pattern)
+        util.Logger.write(pattern)
+        return(List(pattern))
+      }
+      else {
+        val pos = indexes.min
+        val (leftSide, rest) = pattern.splitAt(pos)
+        val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
+        return List(leftSide) ::: breakDown(rightSide)
+      }
+    }
+    
+    val patterns = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
+    basicPatterns.foreach(rawInput => {
+      val pattern = (rawInput("pattern"), breakDown(rawInput("pattern")), rawInput("indication"))
+      patterns += pattern
+      //println(s"${fragments.length} $pattern")
+    })
+
+    return patterns.toList
+  }
+  
+  //
+  // invoke aho-corasick to find all fragments in given sentence
+  //
+  def fragmentMatch(sentence : String, patterns: List[(String, List[String], String)]) : List[Map[String, Any]] = 
   {
     val emitsJ = trie.parseText(sentence)
-    //println(s"java type: ${emitsJ.getClass}")
     
     if (emitsJ.size > 0) {
       val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart, "end" -> i.getEnd, "match" -> i.getKeyword))).toList
-      //println(emitsJ.getClass)
-      //println(emits.getClass)
-      println(sentence)
-      println(emitsJ.size)
-      println(emits.mkString("\n"))
+      //println(sentence)
+      //println(emitsJ.size)
+      //println(emits.mkString("\n"))
+      return(emits)
+    }
+    else return (List.empty[Map[String, Any]])
+  }
+  
+  val rules = csv.getCSV
+  val fragmentizedPatterns = fragmentizePatterns(rules)
+  trieInit(fragmentizedPatterns)
+  for (sentence <- sentences) {
+    val foundFragments = fragmentMatch(sentence, fragmentizedPatterns)
+  }
+}
 
       // re-integrate to caller function, after return value type issue has solved
       //val found = emits map (m => Map("match" -> m("match"), 
@@ -57,64 +104,6 @@ object go {
       //println(matched.mkString("\n"))
       //println(found.mkString("\n"))
       //println()
-      return(emits)
-
-    }
-    
-    return (List.empty[Map[String, Any]])
-
-    //return(emits)
-    //println(s"scala converted type: ${emits.getClass}")
-    //println(s"scala converted value: $emits")
-  }
-
-  //
-  // 
-  //
-  def contriveSearchFragments(rawInputs: List[Map[String, String]]): List[(String, List[String], String)] =
-  {
-    val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
-    val wildchars = List('.', '…', ' ')  // characters indication whether we are inside a wildcard sequence.. hence - "wildchars"
-
-    def breakDown(rawPattern: String): List[String] = {
-
-      val indexes = wildcards map rawPattern.indexOf filter { i: Int => i > -1 } // discard non-founds
-      if (indexes.isEmpty) {
-        return(List(rawPattern))
-      }
-      else {
-        val pos = indexes.min
-        val (leftSide, rest) = rawPattern.splitAt(pos)
-        val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
-        return List(leftSide) ::: breakDown(rightSide)
-      }
-    }
-    
-    val patterns = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
-    rawInputs.foreach(rawInput => {
-      val fragments = breakDown(rawInput("pattern"))
-      val pattern = (rawInput("pattern"), fragments, rawInput("indication"))
-
-      patterns += pattern
-
-      //println(s"${fragments.length} $pattern")
-
-    })
-
-    return patterns.toList
-
-  }
-  
-  val rawInput = csv.getCSV
-  val patterns = contriveSearchFragments(rawInput)
-  trieInit(patterns)
-  for (sentence <- sentences) {
-    //println(sentence)
-    val foundFragments = fragmentTest(sentence, patterns)
-
-  }
-}
-
 
 /*
 type matchSequence = (String, scala.collection.mutable.ListBuffer[String])
@@ -124,3 +113,4 @@ type matchSequence = (String, scala.collection.mutable.ListBuffer[String])
       val matchSequences = scala.collection.mutable.ListBuffer.empty[matchSequence]
     }
 */
+
