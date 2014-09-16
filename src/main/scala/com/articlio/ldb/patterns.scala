@@ -17,7 +17,8 @@ object go {
   // get mock data
   //
   println("loading sentences")
-  val SentencesInputFile = "/home/matan/ingi/repos/back-end-js/docData/w4aXHuIDR8KGrQ688XEi/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
+  //val SentencesInputFile = "/home/matan/ingi/repos/back-end-js/docData/w4aXHuIDR8KGrQ688XEi/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
+  val SentencesInputFile = "mock-data/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
   val sentences = Source.fromFile(SentencesInputFile).getLines
   println(sentences.getClass)
     
@@ -27,29 +28,41 @@ object go {
 
   val trie = new Trie
 
-  def trieInit(patterns: List[(String, List[String])]) {
+  def trieInit(patterns: List[(String, List[String], String)]) {
     trie.onlyWholeWords();
     for (pattern <- patterns)
       trie.addKeyword(pattern._1)
   }
 
-  def patternTest(sentence:String) {
+  def patternTest(sentence : String, patterns: List[(String, List[String], String)]) : List[Map[String, String]] = 
+  {
     val emitsJ = trie.parseText(sentence)
     //println(s"java type: ${emitsJ.getClass}")
     
-    if (emitsJ.size > 0){
+    if (emitsJ.size > 0) {
       val emits = emitsJ.asScala map (i => Map("start" -> i.getStart, "end" -> i.getEnd, "match" -> i.getKeyword))
       //println(emitsJ.getClass)
       //println(emits.getClass)
+      println(sentence)
       println(emitsJ.size)
-      println(emits)
+      println(emits.mkString("\n"))
+
+      val found = emits map (m => Map("match" -> m("match"), "indication" -> patterns.find(pattern => pattern._1 == m("match")).get._3))
+      val foundStr = found.mkString("\n")
+      println(foundStr)
       println()
+
+
     }
+    
+    return (List.empty[Map[String, String]])
+
+    //return(emits)
     //println(s"scala converted type: ${emits.getClass}")
     //println(s"scala converted value: $emits")
   }
 
-  def contriveSearchStrings(rawInputs: List[Map[String, String]]): List[(String, List[String])] =
+  def contriveSearchStrings(rawInputs: List[Map[String, String]]): List[(String, List[String], String)] =
   {
     val wildcards = List("..", "…") // wildcard symbols allowed to the human who codes the CSV database
     val wildchars = List('.', '…', ' ')  // characters indication whether we are inside a wildcard sequence.. hence - "wildchars"
@@ -69,11 +82,10 @@ object go {
       }
     }
     
-    val patterns = scala.collection.mutable.ListBuffer.empty[(String, List[String])]
+    val patterns = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
     rawInputs.foreach(rawInput => {
-      val raw = rawInput("pattern")
-      val fragments = breakDown(raw)
-      val pattern = (raw, fragments)
+      val fragments = breakDown(rawInput("pattern"))
+      val pattern = (rawInput("pattern"), fragments, rawInput("indication"))
 
       patterns += pattern
 
@@ -90,7 +102,7 @@ object go {
   trieInit(patterns)
   for (sentence <- sentences) {
     //println(sentence)
-    patternTest(sentence)
+    patternTest(sentence, patterns)
   }
 }
 
