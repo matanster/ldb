@@ -1,4 +1,3 @@
-loading sentences
 work in concert to 
 work in concert 
 widespread implementation 
@@ -26,6 +25,8 @@ predicted
 participants were more likely to
 only
 Of particular interest are
+composite pattern for: number of … is increasing:
+number of 
 is increasing
 negative long term effects on 
 mitigating the negative effects
@@ -76,7 +77,11 @@ needs to be used with a wide variety of
 extended research is necessary
 extended research is necessary 
 will be revealed by future research
+composite pattern for: explained above, this ... was not able to:
+explained above, this 
 was not able to
+composite pattern for: this ... should prove useful for:
+this 
 should prove useful for
 However, there are still limitations to this questionnaire
 likely to be a major factor in 
@@ -84,6 +89,8 @@ a clear need for research in this area since
  theory has seldom been applied
 the results of this study are open to the criticism that
 a possibility we leave open for exploration in future research
+composite pattern for: research … has been limited by its overwhelming reliance on :
+research 
 has been limited by its overwhelming reliance on 
 has produced mixed results 
 the empirical literature has produced mixed results regarding
@@ -98,15 +105,25 @@ it is also important to note that
  the sample tends to skew towards
 results of the study may be limited in their generalizability
 The third limitation of the study results from the data collection method
+composite pattern for: The ... limitation is the fact that :
+The 
 limitation is the fact that 
 The second limitation is the fact that the questionnaire design can also  
 there is a need for a
 there is a need for a 
+composite pattern for: there is a need for ... longitudinal:
+there is a need for 
 longitudinal
 there is a need for a well-designed longitudinal
 The first limitation deals with the nature of a
+composite pattern for: There are at least ... limitations:
+There are at least 
 limitations
+composite pattern for: It is important to understand ...limitations of the study:
+It is important to understand 
 limitations of the study
+composite pattern for: The second contribution of this study … is the finding of:
+The second contribution of this study 
 is the finding of
 This study adds to the theoretical framework
 This study is an attempt to
@@ -122,8 +139,20 @@ these results should be interpreted with caution
 convenience sampling framework
 There are a number of limitations to this study.
 very few studies have examined
+composite pattern for: There are several limitations to our ... :
+There are several limitations to our 
 
+composite pattern for: There are several limitations to our ... that should be considered:
+There are several limitations to our 
 that should be considered
+composite pattern for: Although potential benefits … could be …, … face … challenge:
+Although potential benefits 
+composite pattern for: could be …, … face … challenge:
+could be 
+composite pattern for: , … face … challenge:
+, 
+composite pattern for: face … challenge:
+face 
 challenge
 This study extends previous research
 future research could expand
@@ -131,6 +160,8 @@ additional research is also needed to investigate
 additional research is also needed to investigate
 Future research should focus on
 some selection bias
+composite pattern for: even though the sample size in this … was:
+even though the sample size in this 
 was
 must be exercised when generalizing the results
 caution must be exercised when 
@@ -138,7 +169,11 @@ a number of limitations do exist
 a number of limitations 
 a need to identify factors that impact
 suggests a need to identify factors that impact
+composite pattern for: our … laid the groundwork for:
+our 
 laid the groundwork for
+composite pattern for: our ... laid the foundations for:
+our 
 laid the foundations for
 our research highlights the importance of
 Another important area of future inquiry concerns
@@ -149,14 +184,28 @@ A first limitation is
 A first limitation is our methodological
 several limitations of our research
 These contributions must be qualified in light of
+composite pattern for: implications for … are discussed :
+implications for 
 are discussed 
 spills over to affect
 Although this limitation is partially offset by
 Future work is also necessary to
 sample size for this study was relatively small
+composite pattern for: necessary to ... understand:
+necessary to 
 understand
+composite pattern for: necessary to ... understand:
+necessary to 
 understand
+composite pattern for: A finer-grained … is necessary to … understand :
+A finer-grained 
+composite pattern for: is necessary to … understand :
+is necessary to 
 understand 
+composite pattern for: A finer-grained … is necessary to … understand :
+A finer-grained 
+composite pattern for: is necessary to … understand :
+is necessary to 
 understand 
 should endeavor to
 Future work
@@ -167,11 +216,17 @@ The results of this study should be considered in light of
 its limitations
 remain at the heart of 
 this study will spark continued interest
+composite pattern for: Our hope is that this study will spark... :
+Our hope is that this study will spark
 
+composite pattern for: exists the possibility that the differences between ... groups:
+exists the possibility that the differences between 
 groups
 exists the possibility that the differences between the experimental and control groups
 we were unable to address the long-term effects of
 Future research might examine
+composite pattern for: how our results generalize to other …:
+how our results generalize to other 
 
 This limits our ability to rule out the possibility that
 This limits our ability to 
@@ -179,7 +234,11 @@ were not randomly assigned to
 could be influencing our results
 However, extraneous factors
 We acknowledge several limitations to this study
+composite pattern for: we call for … to cross-validate our findings:
+we call for 
 to cross-validate our findings
+composite pattern for: we call for …:
+we call for 
 
 it would be helpful for future research to
 future research should attempt to
@@ -191,6 +250,8 @@ Another possible limitation relates to
 future researchers should examine
 far less is known about
 far less is known about
+composite pattern for: While a great deal of research has …:
+While a great deal of research has 
 
 a potential limitation of this research
 It may also be fruitful to explore
@@ -199,15 +260,27 @@ Future research could
 Future research should
 Future research should
 Another potential limitation is
+composite pattern for: future research might use a ... to explore:
+future research might use a 
 to explore
 Future research might 
+composite pattern for: the possibility of … cannot be completely …:
+the possibility of 
+composite pattern for: cannot be completely …:
+cannot be completely 
 
 and raise questions about causal direction
 which can inflate correlations
+composite pattern for: the possibility of … cannot be completely ruled out:
+the possibility of 
 cannot be completely ruled out
 One limitation is the potential for
 some limitations that should be noted
 these studies are subject to
+composite pattern for: results of this … a number of ... implications:
+results of this 
+composite pattern for: a number of ... implications:
+a number of 
 implications
 A limitation specific to
 it remains unclear whether
@@ -216,7 +289,11 @@ future research should be conducted
 future research should be conducted 
 future research, therefore, should be conducted
 future research, therefore, should be conducted
+composite pattern for: the question of … remains open:
+the question of 
 remains open
+composite pattern for: the question of … remains open:
+the question of 
 remains open
 was conducted in only one
 was conducted in only one
@@ -240,13 +317,25 @@ yet
 however
 threaten
 is fragmented
+composite pattern for: Our knowledge of ... is still fragmentary.:
+Our knowledge of 
 is still fragmentary.
+composite pattern for: However, most research has … solely:
+However, most research has 
 solely
+composite pattern for: However, most research has … only:
+However, most research has 
 only
 presents a serious problem
 results of the current study highlight
+composite pattern for: constitute a potential … hazard to:
+constitute a potential 
 hazard to
+composite pattern for: indicating significant … hazard:
+indicating significant 
 hazard
+composite pattern for: are much higher … than:
+are much higher 
 than
 Future research should attempt to establish statistically significant evidence
 implication of the theoretical discussion above is that
@@ -264,13 +353,19 @@ further longitudinal research is
 further longitudinal research is
 mask differences across
 mask differences across
+composite pattern for: has focused on ... while overlooking :
+has focused on 
 while overlooking 
+composite pattern for: Much previous research has focused on ... while :
+Much previous research has focused on 
 while 
 are a precious resource and it important that
 Further studies are suggested
 Further studies are suggested
 study also contributes to a better understanding of
 provides several insights
+composite pattern for: have not reached … consensus:
+have not reached 
 consensus
 have not reached consensus
 is a useful tool to
@@ -285,6 +380,8 @@ in order to address this gap
 research is needed 
 research is needed 
 highlights a potential way forward
+composite pattern for: there is little ... literature available :
+there is little 
 literature available 
 there is little research available 
 Further research is needed to clarify whether
@@ -292,6 +389,8 @@ Further research is needed to clarify whether
 Further research is needed to elucidate whether
 Further research is needed to elucidate whether
 which remains underrecognised
+composite pattern for: Issues related to ... have become a crucial component of:
+Issues related to 
 have become a crucial component of
 has developed a better understanding of
 This study looked at the effects that
@@ -302,8 +401,12 @@ needs to be examined to
 needs to be examined to 
 needs to be examined to identify
 needs to be examined to identify
+composite pattern for: Longitudinal ... is clearly warranted:
+Longitudinal 
 is clearly warranted
 threat to the validity of the findings 
+composite pattern for: It is feasible that … are also contributing:
+It is feasible that 
 are also contributing
 This study provides further evidence that
 A major limitation of the current study was 
@@ -315,6 +418,8 @@ would provide a means of validating
 Future research 
 Future research should include 
 Future research should include 
+composite pattern for: There are ... caveats :
+There are 
 caveats 
 Future studies might include
 should be explored further 
@@ -322,8 +427,12 @@ should be explored further
 More research should be done to
 More research should be done to
 limited the ability of the study to
+composite pattern for: may reflect … rather than:
+may reflect 
 rather than
 test-retest reliability would be best measured
+composite pattern for: these findings should not be … without further empirical examination.:
+these findings should not be 
 without further empirical examination.
 these findings should not be extrapolated to 
 extrapolated
@@ -352,6 +461,8 @@ This study also makes contributions to our understanding of
 researchers in the future could use
 we recommend
 model was verified
+composite pattern for: contributes to the research on … by examining:
+contributes to the research on 
 by examining
 an important practical implication from this study is that
 Despite the importance of the findings, there were a number of limitations to the 
@@ -376,6 +487,8 @@ should be conducted in order to
 should be carried out in order to better understand 
 to further improve 
 potential negative effect
+composite pattern for: we hope our … will :
+we hope our 
 will 
 will help guide the research
 the paper highlighted
@@ -393,6 +506,8 @@ our results should be interpreted in the context of the following limitations
 our results should be interpreted 
 we recommend that 
 This is a complicated problem that 
+composite pattern for: although it leads to  ... problems :
+although it leads to  
 problems 
 An interesting line of future research could be 
 to better represent 
@@ -540,6 +655,8 @@ as one of the
 as long as the 
 as a way of 
 as a result of 
+composite pattern for: as ... part of :
+as 
 part of 
 as a function of 
 are shown in fig 
@@ -567,6 +684,8 @@ commonly believed that
 cornerstones
 Notable
 Much more likely to
+composite pattern for: Is much ... than:
+Is much 
 than
 fine-grained
 Relations are more fine-grained
@@ -575,13 +694,33 @@ There is no guarantee that
 drawback 
 circumvent the need 
 This solution also deals with
+composite pattern for: avoids the need to…:
+avoids the need to
 
 Partially in order to solve this problem
+composite pattern for: Often suffer from…:
+Often suffer from
 
+composite pattern for: Starts off with…:
+Starts off with
+
+composite pattern for: .. is part of the problem:
 
 is part of the problem
+composite pattern for: The rest of the… is organized as follows…:
+The rest of the
+composite pattern for: is organized as follows…:
+is organized as follows
 
+composite pattern for: We are well aware… that….:
+We are well aware
+composite pattern for: that….:
+that
 
+composite pattern for: Chapter … explains in more detail how we…:
+Chapter 
+composite pattern for: explains in more detail how we…:
+explains in more detail how we
 
 explains the relevance of
 presents an overview of
@@ -907,6 +1046,10 @@ we found
 we focused on
 we focus on
 We first review
+composite pattern for: we first define…as …:
+we first define
+composite pattern for: as …:
+as 
 
 we first deal with
 we first
@@ -930,7 +1073,11 @@ we draw upon
 we do know that
 We discuss
 we describe why
+composite pattern for: we defined ... as:
+we defined 
 as
+composite pattern for: we define... as:
+we define
 as
 we define
 we consider how to
@@ -1621,6 +1768,8 @@ there is no evidence
 few if any
 very real danger that
 there is little point in
+composite pattern for: there is likely to be considerable..:
+there is likely to be considerable
 
 there is indeed some evidence
 there is an additional
@@ -2112,6 +2261,8 @@ solely
 sole exception
 sole
 socioeconomic status
+composite pattern for: so...?:
+so
 ?
 small size of the sample
 so-called
@@ -2244,6 +2395,8 @@ significant challenges for
 significant barrier
 significant barrier
 not enough
+composite pattern for: little … progress:
+little 
 progress
 significant amounts
 significant
@@ -2265,6 +2418,8 @@ shown to be important
 shown to be
 shown that
 shown in Table
+composite pattern for: little … progress:
+little 
 progress
 should not be ignored
 shown in Fig.
@@ -2571,6 +2726,8 @@ results of this study demonstrated that
 results of this research indicate that
 results of this experiment mean that
 results of the present study point
+composite pattern for: results of the present …:
+results of the present 
 
 results of the present research point
 results of the present report point
@@ -3823,6 +3980,8 @@ Often
 offset
 offered some suggestions for
 offer powerful insights
+composite pattern for: of … concern:
+of 
 concern
 offer a different approach to
 offer a critique
@@ -3834,6 +3993,8 @@ of particular interest
 of interest to compare
 of interest to
 of interest
+composite pattern for: of ... concern:
+of 
 concern
 of greater concern
 represents a challenge
@@ -3962,6 +4123,8 @@ not prove that
 not only
 not necessarily
 not known whether
+composite pattern for: not … known:
+not 
 known
 not much
 not merely
@@ -3990,6 +4153,8 @@ not enough data
 not enough data
 not enough
 not completely understood
+composite pattern for: not … understood :
+not 
 understood 
 not clear, however,
 not clear whether
@@ -4019,7 +4184,11 @@ not adequately operationalized
 not adequately operationalized
 not adequately
 not able to
+composite pattern for: not a … solution:
+not a 
 solution
+composite pattern for: not a ... solution:
+not a 
 solution
 not a completely
 not
@@ -4282,6 +4451,8 @@ more than likely
 more than just
 more than half
 more than adequate
+composite pattern for: more than … %:
+more than 
 %
 more than
 research is needed
@@ -4308,6 +4479,8 @@ more interesting
 more instances of
 more instances
 more importantly
+composite pattern for: more important, it can….:
+more important, it can
 
 more important than
 more important
@@ -4719,6 +4892,8 @@ let us
 lessons learned
 lessens
 lessen the likelihood of
+composite pattern for: less… than:
+less
 than
 less than half
 less than expected
@@ -4786,12 +4961,24 @@ lagged
 lacks
 lacking
 lacked
+composite pattern for: lack of … has restricted:
+lack of 
 has restricted
+composite pattern for: lack of ... has restricted:
+lack of 
 has restricted
+composite pattern for: lack of ... has prevented:
+lack of 
 has prevented
+composite pattern for: lack of … has prevented:
+lack of 
 has prevented
+composite pattern for: lack of sufficiently … has:
+lack of sufficiently 
 has
 lack of this has precluded
+composite pattern for: lack of sufficiently … has:
+lack of sufficiently 
 has
 lack of
 lack
@@ -4893,10 +5080,16 @@ issues
 issue that
 issue raised by
 issue raised
+composite pattern for: issue of ... remain unanswered:
+issue of 
 remain unanswered
+composite pattern for: issue of ... remain unanswered:
+issue of 
 remain unanswered
 issue of reliability
 issue of reliability
+composite pattern for: however… remains:
+however
 remains
 issue of
 issue is to find
@@ -4908,6 +5101,8 @@ is well-known
 is used to refer to
 is used to describe
 is the fact that
+composite pattern for: is that ...which:
+is that 
 which
 is structured as follows
 is seen here as
@@ -4938,10 +5133,20 @@ is commonly considered
 is caused by
 is called
 is based on
+composite pattern for: is an...that:
+is an
 that
+composite pattern for: is an ... in which:
+is an 
 in which
+composite pattern for: is an ... for:
+is an 
 for
+composite pattern for: is a…. that:
+is a
 that
+composite pattern for: is a…. in which:
+is a
 in which
 is a way of
 is a type of
@@ -4955,9 +5160,19 @@ is a function of
 is a device that
 is a defining characteristic of
 is a common
+composite pattern for: is a …which:
+is a 
 which
+composite pattern for: is a … that…:
+is a 
+composite pattern for: that…:
+that
 
+composite pattern for: is a … in which:
+is a 
 in which
+composite pattern for: is a … for:
+is a 
 for
 irrespective of
 irrelevant
@@ -4966,6 +5181,8 @@ irregular
 involving
 involves
 involvement with
+composite pattern for: however… remains:
+however
 remains
 intended as a stepping-stone
 involved in
@@ -5235,11 +5452,21 @@ inadequacy
 inaccurate
 inability to
 inability
+composite pattern for: in…, ….is a:
+in
+composite pattern for: , ….is a:
+, 
 is a
+composite pattern for: in…, ….are:
+in
+composite pattern for: , ….are:
+, 
 are
 in-depth analysis of
 lack of
 in-depth
+composite pattern for: in which decreased … promotes:
+in which decreased 
 promotes
 in which case
 in view of
@@ -5365,6 +5592,8 @@ in the top
 in the third place
 in the table below
 in the table above
+composite pattern for: in the subsequent… of this chapter/unit:
+in the subsequent
 of this chapter/unit
 in the spirit of
 in the specific context of
@@ -5374,6 +5603,10 @@ in the second place
 in the {number} part of this study
 in the {number} part of this research
 in the {number} part of this paper
+composite pattern for: in the ... part of this …:
+in the 
+composite pattern for: part of this …:
+part of this 
 
 in the same way
 in the same
@@ -5391,6 +5624,8 @@ in the present study we focused
 in the present
 in the preceding
 in the past
+composite pattern for: in the next ... we will:
+in the next 
 we will
 in the next  we
 in the next chapter
@@ -5412,6 +5647,8 @@ in the hope that
 in the future
 in the following section we will
 in the following chapters
+composite pattern for: in the following ... we will:
+in the following 
 we will
 in the following
 in the first place
@@ -5440,7 +5677,11 @@ in some instances
 in short
 in order to solve this problem
 in sharp contrast
+composite pattern for: In  ... we will introduce:
+In  
 we will introduce
+composite pattern for: In section ... we will:
+In section 
 we will
 in response to
 in response
@@ -5494,6 +5735,8 @@ in exchange
 in excess of
 in every case
 in essence
+composite pattern for: in effect, this means that…:
+in effect, this means that
 
 in doing so
 in detail
@@ -5507,7 +5750,11 @@ in comparison
 in common with
 in common
 in combination with
+composite pattern for: In previous ... we have seen that:
+In previous 
 we have seen that
+composite pattern for: In chapter ... we have seen that:
+In chapter 
 we have seen that
 in certain respects
 in case
@@ -5795,8 +6042,12 @@ have the potential to
 have significant effects
 have shown
 have not been determined
+composite pattern for: have … no data:
+have 
 no data
 have made significant progress in overcoming
+composite pattern for: have ... no data:
+have 
 no data
 has not been determined
 have emerged
@@ -6008,8 +6259,14 @@ from then on
 from the word which means
 from the results it was found that
 from the above table
+composite pattern for: from the ….word meaning:
+from the 
 word meaning
 from now on
+composite pattern for: from a...word....meaning:
+from a
+composite pattern for: word....meaning:
+word
 meaning
 from a word
 frequently than expected
@@ -6988,6 +7245,8 @@ defined here as
 defined by
 defined as
 defined
+composite pattern for: define the field of … as:
+define the field of 
 as
 define as
 define
@@ -7233,6 +7492,8 @@ contribution
 contributing cause of
 contributing cause
 contributes to your understanding of
+composite pattern for: contributes to an understanding of...:
+contributes to an understanding of
 
 contributes to
 contributed to
@@ -7288,6 +7549,8 @@ constant
 consolidate
 consists of
 consistently
+composite pattern for: consistent with ... research:
+consistent with 
 research
 consistent with
 consistent
@@ -7612,6 +7875,8 @@ central issue in
 central issue
 central issue
 central for
+composite pattern for: central focus of this …was:
+central focus of this 
 was
 central focus
 central aim of this research is to
@@ -8259,14 +8524,22 @@ argue that
 argue strongly for
 argue for
 argue
+composite pattern for: arguably, though..:
+arguably, though
 
+composite pattern for: arguably though..:
+arguably though
 
 arguably
 areas for improvement
 areas for further research
 area of difficulty
 area of
+composite pattern for: are...which:
+are
 which
+composite pattern for: are...that:
+are
 that
 are well-known
 are ways to
@@ -8376,9 +8649,13 @@ analogously
 analogous to
 analogous
 an understanding of
+composite pattern for: an effective ... for:
+an effective 
 for
 an increased incidence of
 an example of
+composite pattern for: an effective ... for:
+an effective 
 for
 an attempt to
 an analysis of
@@ -8655,7 +8932,13 @@ ability
 abilities to
 abilities
 abandon
+composite pattern for: a… is a … which:
+a
+composite pattern for: is a … which:
+is a 
 which
+composite pattern for: a... is a:
+a
 is a
 a paucity of data
 a topic of much analysis in
@@ -8671,8 +8954,16 @@ further consideration in this
 final point to consider
 certain amount of caution
 better representation of
+composite pattern for: a … is one who:
+a 
 is one who
+composite pattern for: a … is an … that:
+a 
+composite pattern for: is an … that:
+is an 
 that
+composite pattern for: a ... is a:
+a 
 is a
 % of the total
 **p <.01
@@ -8693,9 +8984,13 @@ is a
 ) found
 ) explain
 (R =
+composite pattern for: (N = .....):
+(N = 
 )
 , that is,
 , known as the
+composite pattern for: - ..... -:
+- 
 -
 ) noted that
 find that

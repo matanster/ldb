@@ -18,7 +18,6 @@ object go {
   // gets mock data
   //
   println("loading sentences")
-  util.Logger.write("loading sentences")
   //val SentencesInputFile = "/home/matan/ingi/repos/back-end-js/docData/w4aXHuIDR8KGrQ688XEi/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
   val SentencesInputFile = "mock-data/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
   val sentences = Source.fromFile(SentencesInputFile).getLines
@@ -47,21 +46,22 @@ object go {
 
       val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } // discard non-founds
       if (indexes.isEmpty) {
-        println(pattern)
         util.Logger.write(pattern)
         return(List(pattern))
       }
       else {
+        util.Logger.write(s"composite pattern for: $pattern:")
         val pos = indexes.min
         val (leftSide, rest) = pattern.splitAt(pos)
         val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
+        util.Logger.write(leftSide)
         return List(leftSide) ::: breakDown(rightSide)
       }
     }
     
     val patterns = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
-    basicPatterns.foreach(rawInput => {
-      val pattern = (rawInput("pattern"), breakDown(rawInput("pattern")), rawInput("indication"))
+    basicPatterns.foreach(basicPattern => {
+      val pattern = (basicPattern("pattern"), breakDown(basicPattern("pattern")), basicPattern("indication"))
       patterns += pattern
       //println(s"${fragments.length} $pattern")
     })
