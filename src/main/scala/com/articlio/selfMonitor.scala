@@ -47,11 +47,9 @@ object selfMonitor extends Verticle {
     println("starting self-monitoring")
     logUsage("is")
     logUsageIfChanged
-    // under vertx: val timer = vertx.setPeriodic(interval, { timerID: Long => logUsageIfChanged })
+    // under vertx, simply: val timer = vertx.setPeriodic(interval, { timerID: Long => logUsageIfChanged })
     val timer = new java.util.Timer("selfMonitor") // give the timer thread a name for ops-friendliness
-    val task = new java.util.TimerTask {
-      override def run = logUsageIfChanged
-    }
+    val task = new java.util.TimerTask { override def run = logUsageIfChanged }
     timer.schedule(task, 0.toLong, interval.toLong)
   }
 
