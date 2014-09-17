@@ -1,8 +1,9 @@
-package com.articlio
+package com.articlio.selfMonitor
+
 import org.vertx.scala.core._
 import org.vertx.scala.platform.Verticle
 
-class selfMonitor extends Verticle {
+object selfMonitor extends Verticle {
 
   def percentThreshold = 10
   def interval = 1000
@@ -42,10 +43,18 @@ class selfMonitor extends Verticle {
 
   }
 
-  override def start {
+  override def start { /* keep function name for vert.x compatibility */
+    println("starting self-monitoring")
     logUsage("is")
     logUsageIfChanged
-    val timer = vertx.setPeriodic(interval, { timerID: Long => logUsageIfChanged })
+    // under vertx: val timer = vertx.setPeriodic(interval, { timerID: Long => logUsageIfChanged })
+    val timer = new java.util.Timer("selfMonitor") // give the timer thread a name for ops-friendliness
+    val task = new java.util.TimerTask {
+      override def run = logUsageIfChanged
+    }
+    timer.schedule(task, 0.toLong, interval.toLong)
   }
-}
 
+  start
+
+}

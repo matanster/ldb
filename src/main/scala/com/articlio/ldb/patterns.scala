@@ -46,15 +46,15 @@ object go {
 
       val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } // discard non-founds
       if (indexes.isEmpty) {
-        util.Logger.write(pattern)
+        util.Logger.write(pattern, "patterns")
         return(List(pattern))
       }
       else {
-        util.Logger.write(s"composite pattern for: $pattern:")
+        util.Logger.write(s"composite pattern for: $pattern:", "patterns")
         val pos = indexes.min
         val (leftSide, rest) = pattern.splitAt(pos)
         val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
-        util.Logger.write(leftSide)
+        util.Logger.write(leftSide, "patterns")
         return List(leftSide) ::: breakDown(rightSide)
       }
     }
