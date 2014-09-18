@@ -1,7 +1,7 @@
 package com.articlio.util
 
 //
-// Semantically routes messages to destinations, currently only to local file destinations
+// Simple facility for timing code - timings get data logged, and written to the console
 //
 object Timelog {
 
@@ -13,6 +13,7 @@ object Timelog {
   def timer(timerName:String) = {
     if (timers contains timerName) {
       val output = s"$timerName took ${(System.nanoTime() - timers(timerName)) / 1000 / 1000} milliseconds"
+      timers -= timerName
       Logger.write(output, "timers")
       println(output)
     }
@@ -22,7 +23,7 @@ object Timelog {
   //
   // Usage: wraps around a function (or code block)
   //
-  def time[F](func: => F): F = {
+  def time[T](func: => T): T = {
     val start = System.nanoTime()
     val result = func // invoke the wrapped function
     val output = s"function took ${(System.nanoTime() - start) / 1000 / 1000} milliseconds"
