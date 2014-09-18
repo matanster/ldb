@@ -18,7 +18,7 @@ object csv {
   def getCSV : List[Map[String, String]] = {
 
     val t0 = System.nanoTime()
-    val reader = CSVReader.open("/home/matan/Downloads/July 24 2014 database - Markers.csv")
+    val reader = CSVReader.open("ldb/July 24 2014 database - Markers - filtered.csv")
     val iterator = reader.iterator
     iterator.next // skip first row assumed to be headers
 
