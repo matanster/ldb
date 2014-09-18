@@ -30,6 +30,7 @@ object go {
     trie.onlyWholeWords();
     for (pattern <- patterns)
       pattern._2 map trie.addKeyword
+    util.Logger.write(patterns flatMap (pattern => pattern._2) mkString("\n"), "fragments")
   }
 
 
@@ -81,6 +82,8 @@ object go {
       //println(sentence)
       //println(emitsJ.size)
       //println(emits.mkString("\n"))
+      util.Logger.write(sentence, "matches")
+      util.Logger.write(emits.mkString("\n") + "\n", "matches")
       return(emits)
     }
     else return (List.empty[Map[String, Any]])

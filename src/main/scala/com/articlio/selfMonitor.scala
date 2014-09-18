@@ -3,10 +3,14 @@ package com.articlio.selfMonitor
 import org.vertx.scala.core._
 import org.vertx.scala.platform.Verticle
 
+//
+// Monitor own-JVM memory usage
+//
 object selfMonitor extends Verticle {
 
   def percentThreshold = 10
   def interval = 1000
+  val timer = new java.util.Timer("selfMonitor") // give the timer thread a name for ops-friendliness
 
   // get the hook to memory consumption
   import runtime.{ totalMemory, freeMemory, maxMemory } // http://stackoverflow.com/questions/3571203/what-is-the-exact-meaning-of-runtime-getruntime-totalmemory-and-freememory
@@ -43,14 +47,17 @@ object selfMonitor extends Verticle {
 
   }
 
+  def shutdown {
+    timer.cancel
+  }
+
   override def start { /* keep function name for vert.x compatibility */
     println("starting self-monitoring")
     logUsage("is")
     logUsageIfChanged
     // under vertx, simply: val timer = vertx.setPeriodic(interval, { timerID: Long => logUsageIfChanged })
-    val timer = new java.util.Timer("selfMonitor") // give the timer thread a name for ops-friendliness
-    val task = new java.util.TimerTask { override def run = logUsageIfChanged }
-    timer.schedule(task, 0.toLong, interval.toLong)
+    val recur = new java.util.TimerTask { override def run = logUsageIfChanged }
+    timer.schedule(recur, 0.toLong, interval.toLong)
   }
 
   start
