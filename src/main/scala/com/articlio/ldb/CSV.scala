@@ -1,4 +1,5 @@
 package com.articlio.ldb
+import com.articlio.util
 
 import scala.io.Source
 //import java.net.URLEncoder
@@ -17,7 +18,7 @@ object csv {
   //
   def getCSV : List[Map[String, String]] = {
 
-    val t0 = System.nanoTime()
+    util.Timelog.timer("reading CSV")
     val reader = CSVReader.open("ldb/July 24 2014 database - Markers - filtered.csv")
     val iterator = reader.iterator
     iterator.next // skip first row assumed to be headers
@@ -33,8 +34,7 @@ object csv {
       rawInputs ::= Map("pattern" -> pattern, "indication" -> indication)
     }
 
-    val t1 = System.nanoTime()
-    println(s"initializing from csv took ${(t1-t0)/1000/1000} milliseconds")
+    util.Timelog.timer("reading CSV")
 
     reader.close
     return rawInputs
