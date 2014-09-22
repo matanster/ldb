@@ -7,10 +7,22 @@ import scala.slick.direct._   // http://slick.typesafe.com/doc/2.1.0/direct-embe
 object DB {
   val host = "localhost"
   val port = "3306"
+  val database = "articlio"
+  val user = "articlio"
   println("starting DB connection...")
-  val db = Database.forURL(s"jdbc:mysql://$host:$port", driver = "com.mysql.jdbc.Driver") withSession {
+  val db = Database.forURL(s"jdbc:mysql://$host:$port/$database", user, driver = "com.mysql.jdbc.Driver") withSession {
   implicit session =>
     println("DB Session started")
+
+    class Something(tag: Tag) extends Table[(String, String)](tag, "Something") {
+      def sentence = column[String]("SENTENCE")
+      def matches  = column[String]("MATCHES")
+      def * = (sentence, matches)
+    }
+
+    val something = TableQuery[Something]
+
+    something.ddl.create
   }
 }
 
