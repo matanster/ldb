@@ -9,7 +9,12 @@ object Boot extends App {
 
   val s = selfMonitor.selfMonitor
   val l = ldb.go
-  storage.DB.write("","")
+
+  val data = Seq(("something new", "matches something new", "indicates something"),
+                 ("something new", "matches something new", "indicates something"))
+
+  storage.DB.dropCreate
+  storage.DB ++= (data)
 
   // closing stuff - to be moved to own function
   s.shutdown
