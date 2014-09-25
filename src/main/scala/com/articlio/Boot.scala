@@ -9,7 +9,9 @@ object Boot extends App {
 
   val s = selfMonitor.selfMonitor
   val l = ldb.go
-  val d = storage.DB
+  storage.DB.write("","")
 
+  // closing stuff - to be moved to own function
   s.shutdown
+  storage.DB.close
 }
