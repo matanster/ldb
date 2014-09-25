@@ -15,14 +15,15 @@ import com.github.tototoshi.csv._           // only good for "small" csv files; 
 
 object go {
 
+  //
+  // Builds and exposes the data structures necessary for working the rules database
+  //
   object patternsRepresentation {
+
     val patterns           = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
     val fragments2patterns = scala.collection.mutable.ListBuffer.empty[Map[String, String]]
 
-    //
-    // breaks down wildcard-containing patterns into fragments,
-    // creating a record mapping each fragment to its fragments
-    //
+    // build the data structures
     def build(rules: List[Map[String, String]])
     {
       val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
@@ -57,48 +58,52 @@ object go {
   }
 
   //
+  // initalizes an aho-corasick tree for searching all pattern fragments implied in the linguistic database
+  //
+  object AhoCorasick {
+
+    val trie = new Trie
+
+    def init {
+      trie.onlyWholeWords();
+      for (pattern <- patternsRepresentation.patterns)
+        pattern._2 map trie.addKeyword
+      util.Logger.write(patternsRepresentation.patterns flatMap (pattern => pattern._2) mkString("\n"), "fragments")
+    }
+
+    //
+    // invoke aho-corasick to find all fragments in given sentence
+    //
+    def go(sentence : String) : List[Map[String, Any]] = 
+    {
+      val emitsJ = trie.parseText(sentence)
+      
+      if (emitsJ.size > 0) {
+        val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart, "end" -> i.getEnd, "match" -> i.getKeyword))).toList
+        //println(sentence)
+        //println(emitsJ.size)
+        //println(emits.mkString("\n"))
+        util.Logger.write(sentence, "raw-matches")
+        util.Logger.write(emits.mkString("\n") + "\n", "raw-matches")
+        return(emits)
+      }
+      else return (List.empty[Map[String, Any]])
+    }
+  }
+
+  //
   // gets mock data
   //
   println("loading sentences")
   val SentencesInputFile = "mock-data/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
   val sentences = Source.fromFile(SentencesInputFile).getLines
-    
-  //
-  // initalizes an aho-corasick tree for searching all pattern fragments implied in the linguistic database
-  //
-  val trie = new Trie
-  def trieInit {
-    trie.onlyWholeWords();
-    for (pattern <- patternsRepresentation.patterns)
-      pattern._2 map trie.addKeyword
-    util.Logger.write(patternsRepresentation.patterns flatMap (pattern => pattern._2) mkString("\n"), "fragments")
-  }
-
   
-  //
-  // invoke aho-corasick to find all fragments in given sentence
-  //
-  def fragmentMatch(sentence : String) : List[Map[String, Any]] = 
-  {
-    val emitsJ = trie.parseText(sentence)
-    
-    if (emitsJ.size > 0) {
-      val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart, "end" -> i.getEnd, "match" -> i.getKeyword))).toList
-      //println(sentence)
-      //println(emitsJ.size)
-      //println(emits.mkString("\n"))
-      util.Logger.write(sentence, "raw-matches")
-      util.Logger.write(emits.mkString("\n") + "\n", "raw-matches")
-      return(emits)
-    }
-    else return (List.empty[Map[String, Any]])
-  }
-  
+  // run rules per sentence    
   val rules = csv.getCSV
   patternsRepresentation.build(rules)
-  trieInit
+  AhoCorasick.init
   for (sentence <- sentences) {
-    val foundFragments = fragmentMatch(sentence)
+    val foundFragments = AhoCorasick.go(sentence)
   }
 }
 
