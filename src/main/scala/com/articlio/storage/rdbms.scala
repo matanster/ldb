@@ -14,7 +14,9 @@ object DB {
   val db = Database.forURL(s"jdbc:mysql://$host:$port/$database", user, driver = "com.mysql.jdbc.Driver")
   implicit val session: Session = db.createSession
 
-  class Matches(tag: Tag) extends Table[(String, String, String)](tag, "Matches") {
+  type Match = (String, String, String)
+
+  class Matches(tag: Tag) extends Table[Match](tag, "Matches") {
     def sentence        = column[String]("sentence")
     def matchPattern    = column[String]("matchPattern")
     def matchIndication = column[String]("matchIndication")
@@ -34,11 +36,21 @@ object DB {
     matches.ddl.create
   }
 
+  case class Payload(atype: String)
+
+  def write(payload: Payload) = payload.getClass match {
+    case Match => 
+      matches += ("something", "matches something", "indicates something")   
+      matches ++= Seq(("something new", "matches something new", "indicates something"),
+                      ("something new", "matches something new", "indicates something"))
+  }
+
+  /*
   def write(message:String, msgType:String) = {
     matches += ("something", "matches something", "indicates something")   
     matches ++= Seq(("something new", "matches something new", "indicates something"),
                     ("something new", "matches something new", "indicates something"))
-  }
+  }*/
 
   def close = session.close
 }
