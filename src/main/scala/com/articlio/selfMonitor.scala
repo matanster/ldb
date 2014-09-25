@@ -6,7 +6,7 @@ import org.vertx.scala.platform.Verticle
 //
 // Monitor own-JVM memory usage
 //
-object selfMonitor extends Verticle {
+object Monitor extends Verticle {
 
   def percentThreshold = 10
   def interval = 1000

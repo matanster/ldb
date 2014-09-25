@@ -7,7 +7,7 @@ object Boot extends App {
 
   println("main starting...")
 
-  val s = selfMonitor.selfMonitor
+  val s = selfMonitor.Monitor
   val l = ldb.go
 
   val data = Seq(("something new", "matches something new", "indicates something"),
