@@ -1,6 +1,6 @@
 package com.articlio.ldb
 
-import com.articlio.util
+import com.articlio.util._
 import com.articlio.selfMonitor
 import scala.io.Source
 //import java.net.URLEncoder
@@ -33,15 +33,15 @@ object go {
       def breakDown(pattern: String): List[String] = {
         val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } // discard non-founds
         if (indexes.isEmpty) {
-          util.Logger.write(pattern, "patterns")
+          Logger.write(pattern, "patterns")
           return(List(pattern))
         }
         else {
-          util.Logger.write(s"composite pattern for: $pattern:", "patterns")
+          Logger.write(s"composite pattern for: $pattern:", "patterns")
           val pos = indexes.min
           val (leftSide, rest) = pattern.splitAt(pos)
           val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
-          util.Logger.write(leftSide, "patterns")
+          Logger.write(leftSide, "patterns")
           return List(leftSide) ::: breakDown(rightSide)
         }
       }
@@ -74,7 +74,7 @@ object go {
       trie.onlyWholeWords();
       for (rule <- patternsRepresentation.rules)
         rule._2 map trie.addKeyword
-      util.Logger.write(patternsRepresentation.rules flatMap (rule => rule._2) mkString("\n"), "fragments")
+      Logger.write(patternsRepresentation.rules flatMap (rule => rule._2) mkString("\n"), "fragments")
     }
 
     //
@@ -89,8 +89,8 @@ object go {
         //println(sentence)
         //println(emitsJ.size)
         //println(emits.mkString("\n"))
-        util.Logger.write(sentence, "raw-matches")
-        util.Logger.write(emits.mkString("\n") + "\n", "raw-matches")
+        Logger.write(sentence, "raw-matches")
+        Logger.write(emits.mkString("\n") + "\n", "raw-matches")
         return(emits)
       }
       else return (List.empty[Map[String, Any]])
@@ -108,45 +108,6 @@ object go {
   val inputRules = csv.getCSV
   patternsRepresentation.build(inputRules)
   AhoCorasick.init
-
-  //
-  // Output basic descriptive statistics for a sequence of numbers
-  // TODO: move to util/visualization
-  class Descriptive(vals: Seq[java.lang.Number], title:String) {
-    import org.apache.commons.math3.stat.descriptive.{DescriptiveStatistics} // for using descriptive statistics over collections    
-    var descriptive = new DescriptiveStatistics                              // NOT thread safe (http://commons.apache.org/proper/commons-math/apidocs/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.html#addValue(double))
-    vals.foreach(value => descriptive.addValue(value.doubleValue))
-    
-    // Some descriptive statistics from http://commons.apache.org/proper/commons-math/apidocs/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.html
-    val average  = descriptive.getMean
-    val std      = descriptive.getStandardDeviation
-    val variance = descriptive.getVariance
-    val zerosP   = (vals.count(_ == 0).doubleValue / vals.length.doubleValue)
-
-    def allApacheCommons: String = descriptive.toString 
-
-    def basic = {
-      val printables = Seq(("average", average),
-                           ("variance", variance),
-                           ("std", std),
-                           ("% zero", zerosP))
-      val maxLen = (printables map (p => p._1.length)).max
-      printables.foreach(p => println(p._1 + ':' + (" " * (1 + maxLen - p._1.length)) + p._2.toString)) // padded printout of each statistic
-    }
-
-    def input = {
-      println(vals.mkString(" "))
-    }
-
-    def all = { 
-      println()
-      println(title)
-      input 
-      basic
-      println()
-    }
-
-  }
 
   val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
 
