@@ -10,8 +10,6 @@ import org.ahocorasick.trie._
 //import scala.collection.JavaConversions._ // work with Java collections as if they were Scala
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
 import com.github.tototoshi.csv._           // only good for "small" csv files; https://github.com/tototoshi/scala-csv/issues/11
-//import scala.collection.mutable.MutableList
-//import org.apache.commons.math3           // for using descriptive statistics over collections
 
 object go {
 
@@ -20,14 +18,16 @@ object go {
   //
   object patternsRepresentation {
 
-    val patterns           = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
-    val fragments2patterns = scala.collection.mutable.ListBuffer.empty[Map[String, String]]
+    val rules                = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
+    val patterns2indications = scala.collection.mutable.HashMap.empty[String, String]
+    val fragments2patterns   = new collection.mutable.HashMap[String, collection.mutable.Set[String]] with collection.mutable.MultiMap[String, String]
 
     // build the data structures
-    def build(rules: List[Map[String, String]])
+    def build(inputRules: List[Map[String, String]])
     {
       val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
       val wildchars = List('.', '…', ' ')  // characters indicating whether we are inside a wildcard sequence.. hence - "wildchars"
+
 
       // breaks down a wildcard-containing pattern into a list of its fragments 
       def breakDown(pattern: String): List[String] = {
@@ -46,29 +46,35 @@ object go {
         }
       }
 
-      rules.foreach(rule => {
+      inputRules.foreach(inputRule => {
    
-        val fragments = breakDown(rule("pattern"))
-        val pattern = (rule("pattern"), fragments, rule("indication"))
-        patterns += pattern
+        val fragments = breakDown(inputRule("pattern"))
 
-        fragments.foreach(fragment => fragments2patterns += Map("fragment" -> fragment, "pattern" -> rule("pattern")))
+        val rule = (inputRule("pattern"), fragments, inputRule("indication"))
+        rules += rule
+
+        fragments.foreach(fragment => fragments2patterns addBinding (fragment, inputRule("pattern")))
+        patterns2indications += ((inputRule("pattern"), inputRule("indication")))
       })
+
+      //println(fragments2patterns)
+      println(patterns2indications)
     }
+
   }
 
   //
   // initalizes an aho-corasick tree for searching all pattern fragments implied in the linguistic database
-  //
+  // TODO: switch to use fragments map!
   object AhoCorasick {
 
     val trie = new Trie
 
     def init {
       trie.onlyWholeWords();
-      for (pattern <- patternsRepresentation.patterns)
-        pattern._2 map trie.addKeyword
-      util.Logger.write(patternsRepresentation.patterns flatMap (pattern => pattern._2) mkString("\n"), "fragments")
+      for (rule <- patternsRepresentation.rules)
+        rule._2 map trie.addKeyword
+      util.Logger.write(patternsRepresentation.rules flatMap (rule => rule._2) mkString("\n"), "fragments")
     }
 
     //
@@ -99,12 +105,66 @@ object go {
   val sentences = Source.fromFile(SentencesInputFile).getLines
   
   // run rules per sentence    
-  val rules = csv.getCSV
-  patternsRepresentation.build(rules)
+  val inputRules = csv.getCSV
+  patternsRepresentation.build(inputRules)
   AhoCorasick.init
-  for (sentence <- sentences) {
-    val foundFragments = AhoCorasick.go(sentence)
+
+  //
+  // Output basic descriptive statistics for a sequence of numbers
+  // TODO: move to util/visualization
+  class Descriptive(vals: Seq[java.lang.Number], title:String) {
+    import org.apache.commons.math3.stat.descriptive.{DescriptiveStatistics} // for using descriptive statistics over collections    
+    var descriptive = new DescriptiveStatistics                              // NOT thread safe (http://commons.apache.org/proper/commons-math/apidocs/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.html#addValue(double))
+    vals.foreach(value => descriptive.addValue(value.doubleValue))
+    
+    // Some descriptive statistics from http://commons.apache.org/proper/commons-math/apidocs/org/apache/commons/math3/stat/descriptive/DescriptiveStatistics.html
+    val average  = descriptive.getMean
+    val std      = descriptive.getStandardDeviation
+    val variance = descriptive.getVariance
+    val zerosP   = (vals.count(_ == 0).doubleValue / vals.length.doubleValue)
+
+    def allApacheCommons: String = descriptive.toString 
+
+    def basic = {
+      val printables = Seq(("average", average),
+                           ("variance", variance),
+                           ("std", std),
+                           ("% zero", zerosP))
+      val maxLen = (printables map (p => p._1.length)).max
+      printables.foreach(p => println(p._1 + ':' + (" " * (1 + maxLen - p._1.length)) + p._2.toString)) // padded printout of each statistic
+    }
+
+    def input = {
+      println(vals.mkString(" "))
+    }
+
+    def all = { 
+      println()
+      println(title)
+      input 
+      basic
+      println()
+    }
+
   }
+
+  val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
+
+  for (sentence <- sentences) {
+    val matchedFragments = AhoCorasick.go(sentence)
+    sentenceMatchCount += matchedFragments.length
+
+    // for each matched fragment, trace back to the patterns to which it belongs,
+    // then check if that pattern is matched in its entirety
+    matchedFragments.foreach(matched => { 
+      val fragmentPatterns = patternsRepresentation.fragments2patterns.get(matched("match").toString).get
+      //fragments2patterns.foreach(pattern => {
+      
+      //})
+    })
+  }
+  
+  new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
 }
 
 
