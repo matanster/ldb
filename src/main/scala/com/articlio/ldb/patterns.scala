@@ -19,8 +19,10 @@ object go {
   object patternsRepresentation {
 
     val rules                = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
+    
     val patterns2indications = scala.collection.mutable.HashMap.empty[String, String]
     val fragments2patterns   = new collection.mutable.HashMap[String, collection.mutable.Set[String]] with collection.mutable.MultiMap[String, String]
+    val patterns2fragments   = new collection.mutable.HashMap[String, collection.mutable.Set[String]] with collection.mutable.MultiMap[String, String]   
 
     // build the data structures
     def build(inputRules: List[Map[String, String]])
@@ -53,7 +55,11 @@ object go {
         val rule = (inputRule("pattern"), fragments, inputRule("indication"))
         rules += rule
 
-        fragments.foreach(fragment => fragments2patterns addBinding (fragment, inputRule("pattern")))
+        fragments.foreach(fragment => {
+          fragments2patterns addBinding (fragment, inputRule("pattern"))
+          patterns2fragments addBinding (inputRule("pattern"), fragment)
+        })
+
         patterns2indications += ((inputRule("pattern"), inputRule("indication")))
       })
 
@@ -80,12 +86,12 @@ object go {
     //
     // invoke aho-corasick to find all fragments in given sentence
     //
-    def go(sentence : String) : List[Map[String, Any]] = 
+    def go(sentence : String) : List[Map[String, String]] = 
     {
       val emitsJ = trie.parseText(sentence)
       
       if (emitsJ.size > 0) {
-        val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart, "end" -> i.getEnd, "match" -> i.getKeyword))).toList
+        val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart.toString, "end" -> i.getEnd.toString, "match" -> i.getKeyword.toString))).toList
         //println(sentence)
         //println(emitsJ.size)
         //println(emits.mkString("\n"))
@@ -93,12 +99,12 @@ object go {
         Logger.write(emits.mkString("\n") + "\n", "raw-matches")
         return(emits)
       }
-      else return (List.empty[Map[String, Any]])
+      else return (List.empty[Map[String, String]])
     }
   }
 
   //
-  // gets mock data
+  // get mock data
   //
   println("loading sentences")
   val SentencesInputFile = "mock-data/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
@@ -115,13 +121,33 @@ object go {
     val matchedFragments = AhoCorasick.go(sentence)
     sentenceMatchCount += matchedFragments.length
 
+    // checks if all fragments making up a pattern, are contained in target string *in order*
+    def isInOrder(fragments: scala.collection.mutable.Set[String], loc: Integer) : Boolean = {
+      if (fragments.isEmpty) return true  // getting to the end of the list without returning false --> true
+      else {
+        val head = fragments.head
+        
+        val matches = matchedFragments.filter(_("match") == head) 
+        if (matches.isEmpty) return false                         // has this pattern been matched for this sentence?
+        if (matches.exists(_("start").toInt > loc))               // has it been matched in order?
+          isInOrder(fragments.tail, (matches.map(_("end").toInt).min))
+        else 
+          false
+      }
+    }
+
     // for each matched fragment, trace back to the patterns to which it belongs,
-    // then check if that pattern is matched in its entirety
+    // then check if that pattern is matched in its entirety - i.e. if all its fragments match in order.
     matchedFragments.foreach(matched => { 
       val fragmentPatterns = patternsRepresentation.fragments2patterns.get(matched("match").toString).get
-      //fragments2patterns.foreach(pattern => {
-      
-      //})
+      fragmentPatterns.foreach(pattern => { 
+        if (isInOrder (patternsRepresentation.patterns2fragments.get(pattern).get, -1)) {
+          println(sentence)
+          println(s"- matches pattern '$pattern'")
+          val indication = patternsRepresentation.patterns2indications.get(pattern).get
+          println(s"= which indicates '$indication'")
+        }
+      })
     })
   }
   
