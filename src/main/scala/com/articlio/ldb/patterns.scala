@@ -16,66 +16,73 @@ object go {
   //
   // Builds and exposes the data structures necessary for working the rules database
   //
-  object patternsRepresentation {
+  class patternsRepresentation(inputRules: List[Map[String, String]]) {
 
-    val rules                = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)] // perhaps this one can be factored away alltogether - a bit superfluous (?)
+    val rules = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
 
+    // patterns to indications map - 
+    // each pattern correlates to only one indictaion 
     val patterns2indications = scala.collection.mutable.HashMap.empty[String, String]
 
-    // fragments to patterns map - patterns collections are scala Sets because order and appearing-more-than once are not necessary
-    val fragments2patterns   = new collection.mutable.HashMap[String, collection.mutable.Set[String]] with collection.mutable.MultiMap[String, String]
+    // fragments to patterns map - 
+    // patterns collections are scala Sets 
+    // because order and appearing-more-than once are not necessary
+    val fragments2patterns   = new collection.mutable.HashMap[String, collection.mutable.Set[String]] 
+                               with collection.mutable.MultiMap[String, String]
     
-    // patterns to fragments map - fragments collections are scala Lists as order and appearing-more-than-once matter
+    // patterns to fragments map - 
+    // fragments collections are scala Lists as order and appearing-more-than-once matter
     val patterns2fragments   = new collection.mutable.HashMap[String, List[String]] 
 
     // build the data structures
-    def build(inputRules: List[Map[String, String]])
-    {
-      val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
-      val wildchars = List('.', '…', ' ')  // characters indicating whether we are inside a wildcard sequence.. hence - "wildchars"
+    private val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
+    private val wildchars = List('.', '…', ' ')  // characters indicating whether we are inside a wildcard sequence.. hence - "wildchars"
 
-
-      // breaks down a wildcard-containing pattern into a list of its fragments 
-      def breakDown(pattern: String): List[String] = {
-        val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } // discard non-founds
-        if (indexes.isEmpty) {
-          Logger.write(pattern, "patterns")
-          return(List(pattern))
-        }
-        else {
-          Logger.write(s"composite pattern for: $pattern:", "patterns")
-          val pos = indexes.min
-          val (leftSidePlus1, rest) = pattern.splitAt(pos); val leftSide = leftSidePlus1.dropRight(1) // split and drop space
-          val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
-          Logger.write(leftSide, "patterns")
-          return List(leftSide) ::: breakDown(rightSide)
-        }
+    // breaks down a wildcard-containing pattern into a list of its fragments 
+    def breakDown(pattern: String): List[String] = {
+      val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } // discard non-founds
+      if (indexes.isEmpty) {
+        Logger.write(pattern, "patterns")
+        return(List(pattern))
       }
-
-      inputRules.foreach(inputRule => {
-   
-        val fragments = breakDown(inputRule("pattern"))
-        println
-        println(s"fragments: $fragments")
-
-        val rule = (inputRule("pattern"), fragments, inputRule("indication"))
-        rules += rule
-
-        fragments.foreach(fragment => {
-          fragments2patterns addBinding (fragment, inputRule("pattern"))
-          patterns2fragments += ((inputRule("pattern"), fragments))
-        })
-        println(s"patterns2fragments: $patterns2fragments")
-        println
-
-        patterns2indications += ((inputRule("pattern"), inputRule("indication")))
-      })
-
-      //println(fragments2patterns)
-      //println(patterns2indications)
-      Monitor.logUsage("after patterns representation building is")
+      else {
+        Logger.write(s"composite pattern for: $pattern:", "patterns")
+        val pos = indexes.min
+        val (leftSidePlus1, rest) = pattern.splitAt(pos); val leftSide = leftSidePlus1.dropRight(1) // split and drop space
+        val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
+        Logger.write(leftSide, "patterns")
+        return List(leftSide) ::: breakDown(rightSide)
+      }
     }
 
+    inputRules.foreach(inputRule => {
+ 
+      val fragments = breakDown(inputRule("pattern"))
+      val rule = (inputRule("pattern"), fragments, inputRule("indication"))
+      rules += rule
+
+      println
+      println(s"fragments: $fragments")
+      println
+
+      fragments.foreach(fragment => {
+        fragments2patterns addBinding (fragment, inputRule("pattern"))
+        patterns2fragments += ((inputRule("pattern"), fragments))
+      })
+      println(s"patterns2fragments: $patterns2fragments")
+      println
+
+      patterns2indications += ((inputRule("pattern"), inputRule("indication")))
+    })
+
+    // bag of all fragments - 
+    // uses a Set to avoid duplicate strings
+    val allFragments : Set[String] = rules.map(rule => rule._2).flatten.toSet
+
+    //println(fragments2patterns)
+    //println(patterns2indications)
+    Monitor.logUsage("after patterns representation building is")
+    Logger.write(allFragments.mkString("\n"), "fragments")
   }
 
   //
@@ -85,11 +92,9 @@ object go {
 
     val trie = new Trie
 
-    def init {
+    def init (allFragments: Set[String]) {
       trie.onlyWholeWords()
-      for (rule <- patternsRepresentation.rules)
-        rule._2 map trie.addKeyword
-      Logger.write(patternsRepresentation.rules flatMap (rule => rule._2) mkString("\n"), "fragments")
+      allFragments foreach trie.addKeyword
     }
 
     //
@@ -121,8 +126,8 @@ object go {
   
   // run rules per sentence    
   val inputRules = csv.getCSV
-  patternsRepresentation.build(inputRules)
-  AhoCorasick.init
+  val rep = new patternsRepresentation(inputRules)
+  AhoCorasick.init(rep.allFragments)
 
   val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
 
@@ -151,12 +156,12 @@ object go {
     // for each matched fragment, trace back to the patterns to which it belongs,
     // then check if that pattern is matched in its entirety - i.e. if all its fragments match in order.
     matchedFragments.foreach(matched => { 
-      val fragmentPatterns = patternsRepresentation.fragments2patterns.get(matched("match").toString).get
+      val fragmentPatterns = rep.fragments2patterns.get(matched("match").toString).get
       fragmentPatterns.foreach(pattern => { 
-        if (isInOrder (patternsRepresentation.patterns2fragments.get(pattern).get, -1)) {
+        if (isInOrder (rep.patterns2fragments.get(pattern).get, -1)) {
           println(sentence)
           println(s"- matches pattern '$pattern'")
-          val indication = patternsRepresentation.patterns2indications.get(pattern).get
+          val indication = rep.patterns2indications.get(pattern).get
           println(s"= which indicates '$indication'")
         }
       })

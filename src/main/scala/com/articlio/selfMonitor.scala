@@ -57,7 +57,7 @@ object Monitor extends Verticle {
   }
 
   def shutdown {
-    logUsage("before shutting down self monitoring is")
+    logUsage("before shutting down self-monitoring is")
     timer.cancel
   }
 
