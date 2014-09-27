@@ -18,11 +18,15 @@ object go {
   //
   object patternsRepresentation {
 
-    val rules                = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
-    
+    val rules                = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)] // perhaps this one can be factored away alltogether - a bit superfluous (?)
+
     val patterns2indications = scala.collection.mutable.HashMap.empty[String, String]
+
+    // fragments to patterns map - patterns collections are scala Sets because order and appearing-more-than once are not necessary
     val fragments2patterns   = new collection.mutable.HashMap[String, collection.mutable.Set[String]] with collection.mutable.MultiMap[String, String]
-    val patterns2fragments   = new collection.mutable.HashMap[String, collection.mutable.Set[String]] with collection.mutable.MultiMap[String, String]   
+    
+    // patterns to fragments map - fragments collections are scala Lists as order and appearing-more-than-once matter
+    val patterns2fragments   = new collection.mutable.HashMap[String, List[String]] 
 
     // build the data structures
     def build(inputRules: List[Map[String, String]])
@@ -41,7 +45,7 @@ object go {
         else {
           Logger.write(s"composite pattern for: $pattern:", "patterns")
           val pos = indexes.min
-          val (leftSide, rest) = pattern.splitAt(pos)
+          val (leftSidePlus1, rest) = pattern.splitAt(pos); val leftSide = leftSidePlus1.dropRight(1) // split and drop space
           val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
           Logger.write(leftSide, "patterns")
           return List(leftSide) ::: breakDown(rightSide)
@@ -51,20 +55,25 @@ object go {
       inputRules.foreach(inputRule => {
    
         val fragments = breakDown(inputRule("pattern"))
+        println
+        println(s"fragments: $fragments")
 
         val rule = (inputRule("pattern"), fragments, inputRule("indication"))
         rules += rule
 
         fragments.foreach(fragment => {
           fragments2patterns addBinding (fragment, inputRule("pattern"))
-          patterns2fragments addBinding (inputRule("pattern"), fragment)
+          patterns2fragments += ((inputRule("pattern"), fragments))
         })
+        println(s"patterns2fragments: $patterns2fragments")
+        println
 
         patterns2indications += ((inputRule("pattern"), inputRule("indication")))
       })
 
       //println(fragments2patterns)
-      println(patterns2indications)
+      //println(patterns2indications)
+      //println
     }
 
   }
@@ -77,7 +86,7 @@ object go {
     val trie = new Trie
 
     def init {
-      trie.onlyWholeWords();
+      trie.onlyWholeWords()
       for (rule <- patternsRepresentation.rules)
         rule._2 map trie.addKeyword
       Logger.write(patternsRepresentation.rules flatMap (rule => rule._2) mkString("\n"), "fragments")
@@ -122,7 +131,7 @@ object go {
     sentenceMatchCount += matchedFragments.length
 
     // checks if all fragments making up a pattern, are contained in target string *in order*
-    def isInOrder(fragments: scala.collection.mutable.Set[String], loc: Integer) : Boolean = {
+    def isInOrder(fragments: List[String], loc: Integer) : Boolean = {
       if (fragments.isEmpty) return true  // getting to the end of the list without returning false --> true
       else {
         val head = fragments.head
@@ -135,6 +144,9 @@ object go {
           false
       }
     }
+
+    println(s"matched fragments: $matchedFragments")
+    println
 
     // for each matched fragment, trace back to the patterns to which it belongs,
     // then check if that pattern is matched in its entirety - i.e. if all its fragments match in order.
