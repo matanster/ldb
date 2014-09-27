@@ -15,7 +15,7 @@ object Timelog {
       val output = s"$timerName took ${(System.nanoTime() - timers(timerName)) / 1000 / 1000} milliseconds"
       timers -= timerName
       Logger.write(output, "timers")
-      println(output)
+      Console.log(output, "timers")
     }
     else timers(timerName) = System.nanoTime()
   }
@@ -28,7 +28,7 @@ object Timelog {
     val result = func // invoke the wrapped function
     val output = s"function took ${(System.nanoTime() - start) / 1000 / 1000} milliseconds"
     Logger.write(output, "timers")
-    println(output)
+    Console.log(output, "timers")
     return(result)
   }
 }

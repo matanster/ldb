@@ -6,7 +6,7 @@ import com.articlio.storage
 
 object Boot extends App {
 
-  Console.log("Starting...", "startup")
+  Console.log("starting...", "startup")
 
   Monitor
   val l = ldb.go
