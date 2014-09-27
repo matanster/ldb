@@ -1,11 +1,12 @@
 import com.articlio.ldb
 import com.articlio.reproduce
 import com.articlio.selfMonitor.{Monitor}
+import com.articlio.util.{Console}
 import com.articlio.storage
 
 object Boot extends App {
 
-  println("main starting...")
+  Console.log("Starting...", "startup")
 
   Monitor
   val l = ldb.go

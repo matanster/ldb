@@ -2,6 +2,7 @@ package com.articlio.selfMonitor
 
 import org.vertx.scala.core._
 import org.vertx.scala.platform.Verticle
+import com.articlio.util.{Console}
 
 //
 // Monitor own-JVM memory usage
@@ -28,7 +29,7 @@ object Monitor extends Verticle {
   }
   
   def logUsage (verb: String) {
-    System.out.println(f"JVM Heap usage ${verb} ${current("heapPercent")}%.1f" + "%" + f" of JVM heap (${current("heapUsed")/1024/1024}%.0fMB of ${current("heapTotal")/1024/1024}%.0fMB)")
+    Console.log(f"JVM Heap usage ${verb} ${current("heapPercent")}%.1f" + "%" + f" of JVM heap (${current("heapUsed")/1024/1024}%.0fMB of ${current("heapTotal")/1024/1024}%.0fMB)", "performance")
   }
 
   def logUsageIfChanged {
@@ -61,15 +62,18 @@ object Monitor extends Verticle {
   }
 
   override def start { /* keep function name for vert.x compatibility */
-    println("starting self-monitoring")
+    println("starting self-monitoring...")
 
     val maxHeapLimit = maxMemory // This is determined by the JVM runtime according to the XMX value, but does not precisely equal it (http://stackoverflow.com/questions/13729652/runtime-maxmemory-and-xmx)
-    System.out.println(f"JVM Max Heap Allocation Limit (determined mostly by its XMX) is ${maxHeapLimit/1024/1024}%.0fMB)")
+    Console.log(f"JVM Max Heap Allocation Limit (determined mostly by its XMX) is ${maxHeapLimit/1024/1024}%.0fMB", "performance")
 
-    logUsageAfterGC("is") // with Java HotSpot(TM) 64-Bit Server VM, Java 1.7.0_51 under SBT, this significantly
-                          // reduces heap size after SBT/Scala bootsrapped and this self-monitoring object started,
-                          // thus providing a better sense of application memory usage during development
-                          // as startup time is of little concern, this would probably not adversely affect production.
+    logUsageAfterGC("is") // This initial garbage collections can dip way beyond the JVM Xms startup allocation value -
+                          // thus providing a better sense of application memory usage during development. Indeed, with 
+                          // Java HotSpot(TM) 64-Bit Server VM, Java 1.7.0_51 under SBT, this significantly reduces
+                          // heap size after SBT/Scala bootsrapped and this self-monitoring object started.
+                          // As startup time is of little concern, this would probably not adversely affect production.
+
+
     logUsageIfChanged
     // under vertx, simply: val timer = vertx.setPeriodic(interval, { timerID: Long => logUsageIfChanged })
     val recur = new java.util.TimerTask { override def run = logUsageIfChanged }
