@@ -1,7 +1,7 @@
 package com.articlio.ldb
 
 import com.articlio.util._
-import com.articlio.selfMonitor
+import com.articlio.selfMonitor.{Monitor}
 import scala.io.Source
 //import java.net.URLEncoder
 //import spray.json._
@@ -73,7 +73,7 @@ object go {
 
       //println(fragments2patterns)
       //println(patterns2indications)
-      //println
+      Monitor.logUsage("after patterns representation building is")
     }
 
   }
