@@ -18,8 +18,6 @@ object go {
   //
   class patternsRepresentation(inputRules: List[Map[String, String]]) {
 
-    val rules = scala.collection.mutable.ListBuffer.empty[(String, List[String], String)]
-
     // patterns to indications map - 
     // each pattern correlates to only one indictaion 
     val patterns2indications = scala.collection.mutable.HashMap.empty[String, String]
@@ -42,47 +40,39 @@ object go {
     def breakDown(pattern: String): List[String] = {
       val indexes = wildcards map pattern.indexOf filter { i: Int => i > -1 } // discard non-founds
       if (indexes.isEmpty) {
-        Logger.write(pattern, "patterns")
         return(List(pattern))
       }
       else {
-        Logger.write(s"composite pattern for: $pattern:", "patterns")
         val pos = indexes.min
         val (leftSidePlus1, rest) = pattern.splitAt(pos); val leftSide = leftSidePlus1.dropRight(1) // split and drop space
         val rightSide = rest.dropWhile((char) => wildchars.exists((wildchar) => char == wildchar))
-        Logger.write(leftSide, "patterns")
         return List(leftSide) ::: breakDown(rightSide)
       }
     }
 
-    inputRules.foreach(inputRule => {
+    case class Rule (pattern: String, fragments: List[String], indication: String) 
+    val rules: List[Rule] = inputRules map (inputRule => new Rule(inputRule("pattern"), breakDown(inputRule("pattern")), inputRule("indication")))
+
+    rules.foreach(rule => {
  
-      val fragments = breakDown(inputRule("pattern"))
-      val rule = (inputRule("pattern"), fragments, inputRule("indication"))
-      rules += rule
+      Logger.write(s"${rule.fragments}","db-rule-fragments")
 
-      println
-      println(s"fragments: $fragments")
-      println
-
-      fragments.foreach(fragment => {
-        fragments2patterns addBinding (fragment, inputRule("pattern"))
-        patterns2fragments += ((inputRule("pattern"), fragments))
+      rule.fragments.foreach(fragment => {
+        fragments2patterns addBinding (fragment, rule.pattern)
+        patterns2fragments += ((rule.pattern, rule.fragments))
       })
-      println(s"patterns2fragments: $patterns2fragments")
-      println
 
-      patterns2indications += ((inputRule("pattern"), inputRule("indication")))
+      patterns2indications += ((rule.pattern, rule.indication))
     })
 
     // bag of all fragments - 
     // uses a Set to avoid duplicate strings
-    val allFragments : Set[String] = rules.map(rule => rule._2).flatten.toSet
+    val allFragmentsDistinct : Set[String] = rules.map(rule => rule.fragments).flatten.toSet
 
     //println(fragments2patterns)
     //println(patterns2indications)
     Monitor.logUsage("after patterns representation building is")
-    Logger.write(allFragments.mkString("\n"), "fragments")
+    Logger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
   }
 
   //
@@ -92,9 +82,9 @@ object go {
 
     val trie = new Trie
 
-    def init (allFragments: Set[String]) {
+    def init (fragments: Set[String]) {
       trie.onlyWholeWords()
-      allFragments foreach trie.addKeyword
+      fragments foreach trie.addKeyword
     }
 
     //
@@ -106,11 +96,8 @@ object go {
       
       if (emitsJ.size > 0) {
         val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart.toString, "end" -> i.getEnd.toString, "match" -> i.getKeyword.toString))).toList
-        //println(sentence)
-        //println(emitsJ.size)
-        //println(emits.mkString("\n"))
-        Logger.write(sentence, "raw-matches")
-        Logger.write(emits.mkString("\n") + "\n", "raw-matches")
+        Logger.write(sentence, "sentence-fragment-matches")
+        Logger.write(emits.mkString("\n") + "\n", "sentence-fragment-matches")
         return(emits)
       }
       else return (List.empty[Map[String, String]])
@@ -127,7 +114,7 @@ object go {
   // run rules per sentence    
   val inputRules = csv.getCSV
   val rep = new patternsRepresentation(inputRules)
-  AhoCorasick.init(rep.allFragments)
+  AhoCorasick.init(rep.allFragmentsDistinct)
 
   val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
 
@@ -150,19 +137,14 @@ object go {
       }
     }
 
-    println(s"matched fragments: $matchedFragments")
-    println
-
     // for each matched fragment, trace back to the patterns to which it belongs,
     // then check if that pattern is matched in its entirety - i.e. if all its fragments match in order.
     matchedFragments.foreach(matched => { 
       val fragmentPatterns = rep.fragments2patterns.get(matched("match").toString).get
       fragmentPatterns.foreach(pattern => { 
         if (isInOrder (rep.patterns2fragments.get(pattern).get, -1)) {
-          println(sentence)
-          println(s"- matches pattern '$pattern'")
           val indication = rep.patterns2indications.get(pattern).get
-          println(s"= which indicates '$indication'")
+          Logger.write(s"sentence '$sentence' matches pattern '$pattern' -> which indicates '$indication'","sentence-matches")
         }
       })
     })

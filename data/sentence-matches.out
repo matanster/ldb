@@ -1,0 +1,4 @@
+sentence 'our aaa laid the foundations for something' matches pattern 'our ... laid the foundations for' -> which indicates 'contribution'
+sentence 'our aaa laid the foundations for something' matches pattern 'our ... laid the foundations for' -> which indicates 'contribution'
+sentence 'and indeed our aaa laid the foundations for something' matches pattern 'our ... laid the foundations for' -> which indicates 'contribution'
+sentence 'and indeed our aaa laid the foundations for something' matches pattern 'our ... laid the foundations for' -> which indicates 'contribution'
