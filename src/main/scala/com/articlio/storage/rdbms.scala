@@ -10,7 +10,7 @@ import scala.slick.direct._   // http://slick.typesafe.com/doc/2.1.0/direct-embe
 //import Database.dynamicSession
 //import scala.slick.jdbc.{GetResult, StaticQuery}
 
-object DB {
+object OutDB {
 
   // connection parameters
   val host     = "localhost"

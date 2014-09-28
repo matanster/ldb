@@ -13,10 +13,10 @@ object Boot extends App {
   val data = Seq(("something new", "matches something new", "indicates something"),
                  ("something new", "matches something new", "indicates something"))
 
-  storage.DB.dropCreate
-  storage.DB ++= (data)
+  storage.OutDB.dropCreate
+  storage.OutDB ++= (data)
 
   // closing stuff - to be moved to own function
   Monitor.shutdown
-  storage.DB.close
+  storage.OutDB.close
 }

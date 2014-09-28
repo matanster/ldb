@@ -12,31 +12,34 @@ import com.github.tototoshi.csv._           // only good for "small" csv files; 
 //import scala.collection.mutable.MutableList
 //import org.apache.commons.math3           // for using descriptive statistics over collections
 
+case class RawInput (pattern: String, indication: String) 
+
 object csv {
   //
   // Extract raw values from database CSV (skipping the first headers done really not scala-idiomatically for now..)
   //
-  def getCSV : List[Map[String, String]] = {
+  def getCSV : Seq[RawInput] = {
 
     util.Timelog.timer("reading CSV")
     val reader = CSVReader.open("ldb/July 24 2014 database - Markers - filtered.csv")
     val iterator = reader.iterator
     iterator.next // skip first row assumed to be headers
 
-    var rawInputs = List[Map[String, String]]() // switch to val scala.collection.mutable.MutableList and += for more correct Scala
-                                                // http://stackoverflow.com/questions/6557169/how-to-declare-empty-list-and-then-add-string-in-scala
+    var rawInput = Seq[RawInput]() 
+
+    println(rawInput.getClass)
 
     while (iterator.hasNext)
     { 
       val asArray: Array[String] = iterator.next.toArray // convert to Array for easy column access
       val pattern = asArray(2)
       val indication = asArray(3)
-      rawInputs ::= Map("pattern" -> pattern, "indication" -> indication)
+      rawInput = rawInput :+ new RawInput(pattern, indication)
     }
 
     util.Timelog.timer("reading CSV")
 
     reader.close
-    return rawInputs
+    return rawInput
   }
 }
