@@ -51,7 +51,9 @@ object go {
     }
 
     case class Rule (pattern: String, fragments: List[String], indication: String) 
-    val rules: Seq[Rule] = inputRules map (inputRule => new Rule(inputRule.pattern, breakDown(Text.deSentenceCase(inputRule.pattern)), inputRule.indication))
+    val rules: Seq[Rule] = inputRules map (inputRule => new Rule(inputRule.pattern, 
+                                                                 breakDown(Text.deSentenceCase(inputRule.pattern)), 
+                                                                 inputRule.indication))
 
     rules.foreach(rule => {
       rule.fragments.foreach(fragment => {
@@ -144,15 +146,19 @@ object go {
 
       // for each matched fragment, trace back to the patterns to which it belongs,
       // then check if that pattern is matched in its entirety - i.e. if all its fragments match in order.
+
+      val possiblePatternMatches = Set.newBuilder[String] // a Set to avoid duplicates
+
       matchedFragments.foreach(matched => { 
         val fragmentPatterns = db.fragments2patterns.get(matched("match").toString).get
-        println(fragmentPatterns.getClass)
-        fragmentPatterns.foreach(pattern => { 
-          if (isInOrder (db.patterns2fragments.get(pattern).get, -1)) {
-            val indication = db.patterns2indications.get(pattern).get
-            Logger.write(s"sentence '$sentence' matches pattern '$pattern' -> which indicates '$indication'","sentence-matches")
-          }
-        })
+        possiblePatternMatches ++= fragmentPatterns
+      })
+
+      possiblePatternMatches.result.foreach(pattern => { 
+        if (isInOrder (db.patterns2fragments.get(pattern).get, -1)) {
+          val indication = db.patterns2indications.get(pattern).get
+          Logger.write(s"sentence '$sentence' matches pattern '$pattern' -> which indicates '$indication'","sentence-matches")
+        }
       })
     }
     new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
