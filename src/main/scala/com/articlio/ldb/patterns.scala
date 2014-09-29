@@ -157,7 +157,9 @@ object go {
       possiblePatternMatches.result.foreach(pattern => { 
         if (isInOrder (db.patterns2fragments.get(pattern).get, -1)) {
           val indication = db.patterns2indications.get(pattern).get
-          Logger.write(s"sentence '$sentence' matches pattern '$pattern' -> which indicates '$indication'","sentence-matches")
+          Logger.write(Seq(s"sentence '$sentence'",
+                           s"matches pattern '$pattern'",
+                           s"which indicates '$indication'").mkString("\n") + "\n","sentence-matches")
         }
       })
     }
