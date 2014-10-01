@@ -1,5 +1,7 @@
 package com.articlio.ldb
-import com.articlio.util
+import com.articlio.util._
+import com.articlio.util.Text._
+//import com.articlio.util.{wordFollowing}
 
 import scala.io.Source
 //import java.net.URLEncoder
@@ -11,13 +13,17 @@ import scala.collection.JavaConverters._    // convert Java colllections to Scal
 import com.github.tototoshi.csv._           // only good for "small" csv files; https://github.com/tototoshi/scala-csv/issues/11
 //import scala.collection.mutable.MutableList
 //import org.apache.commons.math3           // for using descriptive statistics over collections
+import com.github.verbalexpressions.VerbalExpression._
 
 // rule parameter classes
-abstract class parameter (nickname: String)
-class mustInclude (nickname: String, mustHave: Set[String]) extends parameter (nickname)
-class mustBeUnder (nickname: String, section: Set[String]) extends parameter (nickname)
+//class Include (nickname: Symbol, ave: Set[String]) extends parameter (nickname)
+//class BeUnder (nickname: Symbol, section: Set[String]) extends parameter (nickname)
 
 case class RawInput (pattern: String, indication: String, parameters: Seq[String]) 
+
+case class Parameter (nickname: Symbol, parameterType: Symbol, necessity: Symbol)
+case class Rules (pattern: String, indication: String, parameters: Parameter) 
+//case class Rule (pattern: String, indication: String, parameters: Seq[String]) extends RawInput (pattern, indication, parameters)
 
 object csv {
 
@@ -26,7 +32,7 @@ object csv {
   //
   def getCSV : Seq[RawInput] = {
 
-    util.Timelog.timer("reading CSV")
+    Timelog.timer("reading CSV")
     val reader = CSVReader.open("ldb/July 24 2014 database - Markers - filtered.csv")
     val iterator = reader.iterator
     iterator.next // skip first row assumed to be headers
@@ -38,21 +44,31 @@ object csv {
       val asArray: Array[String] = iterator.next.toArray // convert to Array for easy column access
       val pattern = asArray(2)
       val indication = asArray(3)
-      val parameters : Seq[String] = Seq(asArray(6), asArray(7)) // additional parameters expressed in the database CSV
+      val parameters : Seq[String] = Seq(asArray(5), asArray(6)) // additional parameters expressed in the database CSV
       
       rawInput = rawInput :+ new RawInput(pattern, indication, parameters)
     }
 
     rawInput map { rule =>   
-      // detect expressed rules
       rule.parameters.foreach(parameter => {
-        val s = Seq(Map("self ref" -> "self-ref"), Map("diectic" -> "diectic-ref"))
-        //if (parameter.containsSlice("self ref")) => new MustInclude("self-ref", Set("self ref")
-        //if (parameter.containsSlice("diectic"))  => new MustInclude("diectic-ref", Set("diectic")
+
+        val selfRef    : Boolean             = parameter.containsSlice("self ref")
+        val diecticRef : Boolean             = parameter.containsSlice("diectic")
+        val section    : Option[Seq[String]] = wordFollowingAny(parameter, Seq("in ", "or in "))
+        val modality   : Symbol              = if (parameter.containsSlice("no ") | parameter.containsSlice("not ")) 'mustNot 
+                                               else 'must
+        
+        if (section.isDefined) {
+          println(section.get)
+          println(parameter)
+        }
+
+
+
       })
     }
 
-    util.Timelog.timer("reading CSV")
+    Timelog.timer("reading CSV")
 
     reader.close
     return rawInput

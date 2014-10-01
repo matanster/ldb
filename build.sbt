@@ -27,7 +27,11 @@ libraryDependencies ++= {
 
 seq(SbtStartScript.startScriptForClassesSettings: _*)
 
-Revolver.settings
+//
+// spray revolver, only for development
+//
+
+Revolver.settings 
 
 mainClass in Revolver.reStart := Some("org.vertx.java.platform.impl.cli.Starter")
 
@@ -64,3 +68,7 @@ libraryDependencies ++= Seq(
 )
 
 libraryDependencies += "mysql" % "mysql-connector-java" % "latest.release"
+
+resolvers += "Sonatype releases" at "http://oss.sonatype.org/content/repositories/releases/"
+
+libraryDependencies += "com.github.verbalexpressions" %% "scalaverbalexpression" % "1.0.1"
