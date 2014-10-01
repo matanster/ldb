@@ -15,29 +15,49 @@ import com.github.tototoshi.csv._           // only good for "small" csv files; 
 //import org.apache.commons.math3           // for using descriptive statistics over collections
 import com.github.verbalexpressions.VerbalExpression._
 
-// rule parameter classes
-//class Include (nickname: Symbol, ave: Set[String]) extends parameter (nickname)
-//class BeUnder (nickname: Symbol, section: Set[String]) extends parameter (nickname)
+//
+// structure for input CSV representation
+//
+case class RawCSVInput (pattern: String, indication: String, parameters: Seq[String]) 
 
-case class RawInput (pattern: String, indication: String, parameters: Seq[String]) 
+//
+// class hierarchy for describing rule properties
+//
+abstract class Property {
+  val subType: Symbol
+  val necessityModality: Symbol
+}
 
-case class Parameter (nickname: Symbol, parameterType: Symbol, necessity: Symbol)
-case class Rules (pattern: String, indication: String, parameters: Parameter) 
-//case class Rule (pattern: String, indication: String, parameters: Seq[String]) extends RawInput (pattern, indication, parameters)
+case class ReferenceProperty (subType: Symbol, 
+                              necessityModality: Symbol) 
+                              extends Property 
 
-object csv {
+case class LocationProperty (subType: Symbol, 
+                             parameter: Seq[String], 
+                             necessityModality: Symbol)
+                             extends Property
+
+
+//
+// final rule representation
+//
+case class Rule (pattern: String, indication: String, properties: Option[Seq[Property]]) 
+
+
+object CSV {
 
   //
   // Extract raw values from database CSV (skipping the first headers done really not scala-idiomatically for now..)
   //
-  def getCSV : Seq[RawInput] = {
+  def getCSV : Seq[RawCSVInput] = {
 
     Timelog.timer("reading CSV")
+
     val reader = CSVReader.open("ldb/July 24 2014 database - Markers - filtered.csv")
     val iterator = reader.iterator
     iterator.next // skip first row assumed to be headers
 
-    var rawInput = Seq[RawInput]() 
+    var rawInput = Seq[RawCSVInput]() 
 
     while (iterator.hasNext)
     { 
@@ -46,47 +66,48 @@ object csv {
       val indication = asArray(3)
       val parameters : Seq[String] = Seq(asArray(5), asArray(6)) // additional parameters expressed in the database CSV
       
-      rawInput = rawInput :+ new RawInput(pattern, indication, parameters)
-    }
-
-    rawInput map { rule =>   
-      rule.parameters filter (_.nonEmpty) foreach (parameter => {
-
-        val selfRef    : Boolean             = parameter.containsSlice("self ref")
-        val deicticRef : Boolean             = parameter.containsSlice("deictic")
-        val section    : Option[Seq[String]] = wordFollowingAny(parameter, Seq("in ", "or in "))
-        val modality   : Symbol              = if (parameter.containsSlice("no ") | parameter.containsSlice("not ")) 'mustNot 
-                                               else 'must
-        /*
-        if (section.isDefined) {
-          println(section.get)
-          println(parameter)
-        }*/
-
-        /*
-        if (selfRef) {
-          println(s"Self Ref: $selfRef")
-          println(parameter)
-        }*/
-
-
-        /*
-        if (deicticRef) {
-          println(s"deicticRef Ref: $deicticRef")
-         nln(parameter)
-        }*/    
-
-        if (modality == 'must) {
-          println(s"modality: $modality")
-          println(parameter)
-        }
-
-      })
+      rawInput = rawInput :+ new RawCSVInput(pattern, indication, parameters)
     }
 
     Timelog.timer("reading CSV")
-
     reader.close
-    return rawInput
+
+    rawInput
+  }
+
+  //
+  // build rules from the raw CSV input rows
+  //
+  def deriveFromCSV : Seq[Rule] = {
+
+    val rules = scala.collection.mutable.Seq.newBuilder[Rule]
+    val rawInput = getCSV
+
+    rawInput map { rawInputRule =>   
+
+      val ruleProperties = scala.collection.mutable.Seq.newBuilder[Property]
+
+      rawInputRule.parameters filter (_.nonEmpty) foreach (parameter => {
+
+        val selfRef    : Boolean             = parameter.containsSlice("self ref")
+        val deicticRef : Boolean             = parameter.containsSlice("deictic")
+        val youRef     : Boolean             = parameter.containsSlice("\"you\"")
+        val sections   : Option[Seq[String]] = wordFollowingAny(parameter, Seq("in ", "or in "))
+        val modality   : Symbol              = if (parameter.containsSlice("no ") | parameter.containsSlice("not ")) 'mustNot 
+                                               else 'must
+
+        if (selfRef) ruleProperties += ReferenceProperty('self, modality)
+        if (deicticRef) ruleProperties += ReferenceProperty('deictic, modality)
+        if (youRef) ruleProperties += ReferenceProperty('you, modality)
+        if (sections.isDefined) ruleProperties += LocationProperty('inside, sections.get, modality)
+
+      })
+
+      rules += new Rule(rawInputRule.pattern, rawInputRule.indication, if (ruleProperties.result.nonEmpty) Some(ruleProperties.result) else None)
+
+    }
+
+    Logger.write(rules.result.mkString("\n"), "db-rules")
+    return rules.result
   }
 }

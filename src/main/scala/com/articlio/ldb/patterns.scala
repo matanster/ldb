@@ -16,7 +16,7 @@ object go {
   //
   // Builds and exposes the data structures necessary for working the rules database
   //
-  class LDB(inputRules: Seq[RawInput]) {
+  class LDB(inputRules: Seq[Rule]) {
 
     // patterns to indications map - 
     // each pattern correlates to only one indictaion 
@@ -115,7 +115,7 @@ object go {
   val sentences = Source.fromFile(SentencesInputFile).getLines
    
   // run rules per sentence    
-  val inputRules = csv.getCSV
+  val inputRules = CSV.deriveFromCSV
   val db = new LDB(inputRules)
   AhoCorasick.init(db.allFragmentsDistinct)
 
