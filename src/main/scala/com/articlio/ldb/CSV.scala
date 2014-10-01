@@ -50,20 +50,36 @@ object csv {
     }
 
     rawInput map { rule =>   
-      rule.parameters.foreach(parameter => {
+      rule.parameters filter (_.nonEmpty) foreach (parameter => {
 
         val selfRef    : Boolean             = parameter.containsSlice("self ref")
-        val diecticRef : Boolean             = parameter.containsSlice("diectic")
+        val deicticRef : Boolean             = parameter.containsSlice("deictic")
         val section    : Option[Seq[String]] = wordFollowingAny(parameter, Seq("in ", "or in "))
         val modality   : Symbol              = if (parameter.containsSlice("no ") | parameter.containsSlice("not ")) 'mustNot 
                                                else 'must
-        
+        /*
         if (section.isDefined) {
           println(section.get)
           println(parameter)
+        }*/
+
+        /*
+        if (selfRef) {
+          println(s"Self Ref: $selfRef")
+          println(parameter)
+        }*/
+
+
+        /*
+        if (deicticRef) {
+          println(s"deicticRef Ref: $deicticRef")
+         nln(parameter)
+        }*/    
+
+        if (modality == 'must) {
+          println(s"modality: $modality")
+          println(parameter)
         }
-
-
 
       })
     }
