@@ -15,6 +15,7 @@ object go {
 
   //
   // Builds and exposes the data structures necessary for working the rules database
+  // Refactor opportunity: use newBuilder and .result rather than hold mutable and immutable collections - for correct coding style without loss of performance!
   //
   class LDB(inputRules: Seq[Rule]) {
 
@@ -80,7 +81,7 @@ object go {
 
   //
   // initalizes an aho-corasick tree for searching all pattern fragments implied in the linguistic database
-  // TODO: switch to use fragments map!
+  //
   object AhoCorasick {
 
     val trie = new Trie
@@ -114,13 +115,18 @@ object go {
   val SentencesInputFile = "mock-data/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
   val sentences = Source.fromFile(SentencesInputFile).getLines
    
-  // run rules per sentence    
+  //
+  // match rules per sentence    
+  //
   val inputRules = CSV.deriveFromCSV
   val db = new LDB(inputRules)
   AhoCorasick.init(db.allFragmentsDistinct)
 
   processSentences
 
+  //
+  // matches rules per sentence    
+  //
   def processSentences {
 
     val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
@@ -166,26 +172,3 @@ object go {
     new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
   }
 }
-
-
-
-      // re-integrate to caller function, after return value type issue has solved
-      //val found = emits map (m => Map("match" -> m("match"), 
-      //                                "indication" -> patterns.find(pattern => pattern == m("match")).getOrElse(("", List.empty, "none"))._3))
-
-      //val matched = emits map (m => Map("match" -> m("match"), 
-      //                                  "indication" -> patterns.find(pattern => pattern._2.exists(fragment => fragment == m("match"))).getOrElse("no information category assigned")._3))
-
-      //println(matched.mkString("\n"))
-      //println(found.mkString("\n"))
-      //println()
-
-/*
-type matchSequence = (String, scala.collection.mutable.ListBuffer[String])
-
-    object all {
-      val fragments = scala.collection.mutable.ListBuffer.empty[String]
-      val matchSequences = scala.collection.mutable.ListBuffer.empty[matchSequence]
-    }
-*/
-
