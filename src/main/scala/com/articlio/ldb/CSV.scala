@@ -53,21 +53,30 @@ object CSV {
 
     Timelog.timer("reading CSV")
 
-    val reader = CSVReader.open("ldb/July 24 2014 database - Markers - filtered.csv")
+    //val reader = CSVReader.open("ldb/July 24 2014 database - Markers - filtered.csv")
+    val reader = CSVReader.open("ldb/Normalized from July 24 2014 database - Markers - filtered.csv")
     val iterator = reader.iterator
     iterator.next // skip first row assumed to be headers
 
     var rawInput = Seq[RawCSVInput]() 
+    var totalOff : Int = 0
 
     while (iterator.hasNext)
     { 
       val asArray: Array[String] = iterator.next.toArray // convert to Array for easy column access
-      val pattern = asArray(2)
-      val indication = asArray(3)
-      val parameters : Seq[String] = Seq(asArray(5), asArray(6)) // additional parameters expressed in the database CSV
+      val pattern = asArray(4)
+      val indication = asArray(5)
+      val parameters : Seq[String] = Seq(asArray(7), asArray(8)) // additional parameters expressed in the database CSV
       
-      rawInput = rawInput :+ new RawCSVInput(pattern, indication, parameters)
+      val off = (asArray(2) == "off")
+
+      if (off)
+        totalOff += 1
+      else
+        rawInput = rawInput :+ new RawCSVInput(pattern, indication, parameters)
     }
+
+    if (totalOff > 0) println(s"$totalOff rules disabled in input CSV, see input CSV for details")
 
     Timelog.timer("reading CSV")
     reader.close

@@ -77,7 +77,6 @@ Map(start -> 380, end -> 382, match -> for)
 Map(start -> 496, end -> 498, match -> for)
 
 In general, crossexperiment comparisons cannot convincingly test whether frequency effects change size across tasks because they use different stimuli (the magnitude of the effect on the response variable depends on the magnitude of the frequency manipulation) and different subjects (more skilled readers show smaller frequency effects than average readers; Ashby, Rayner, & Clifton, 2005). 
-Map(start -> 60, end -> 71, match -> test whether)
 Map(start -> 152, end -> 154, match -> the)
 Map(start -> 166, end -> 167, match -> of)
 Map(start -> 169, end -> 171, match -> the)
@@ -474,8 +473,6 @@ Map(start -> 94, end -> 96, match -> for)
 Map(start -> 94, end -> 110, match -> for understanding)
 Map(start -> 130, end -> 131, match -> of)
 Map(start -> 179, end -> 181, match -> our)
-Map(start -> 179, end -> 192, match -> our hypotheses)
-Map(start -> 183, end -> 192, match -> hypotheses)
 Map(start -> 234, end -> 236, match -> for)
 Map(start -> 238, end -> 240, match -> the)
 Map(start -> 252, end -> 253, match -> of)
@@ -538,7 +535,6 @@ Additionally, to avoid ceiling effects in error detection, subjects in these stu
 Map(start -> 157, end -> 158, match -> of)
 Map(start -> 160, end -> 162, match -> the)
 Map(start -> 210, end -> 212, match -> the)
-Map(start -> 233, end -> 244, match -> as predicted)
 Map(start -> 249, end -> 251, match -> the)
 
 From these studies, it is clear that the ability to detect spelling errors that are a result of letter substitutions or transpositions that produce nonwords (e.g., exict or exsit for exist; Healy, 1980, 1981; Holbrook, 1978a, 1978b)is fairly good, but depends on the similarity between wrong letters and intended letters (i.e., surface features of the word, relating to our hypothesized process of wordhood assessment). 
@@ -1609,7 +1605,6 @@ Presumably, this would result from subjects’ need to spend more time determini
 Map(start -> 12, end -> 15, match -> this)
 
 To test whether subjects adapt how they process words based on the precise nature of the spelling errors included in the stimuli, we ran a second experiment, similar to Experiment 1 except that, during proofreading, subjects checked for spelling errors (letter transpositions) that produced real, wrong words (e.g., trail produced trial; ‘‘The runners trained for the marathon on the trial behind the high school.’’). 
-Map(start -> 3, end -> 14, match -> test whether)
 Map(start -> 63, end -> 65, match -> the)
 Map(start -> 82, end -> 83, match -> of)
 Map(start -> 85, end -> 87, match -> the)
@@ -1623,9 +1618,7 @@ Map(start -> 397, end -> 399, match -> the)
 
 We analyzed the same reading measures as in Experiment 1 to determine whether (a) frequency effects are increased when checking for errors that constitute real, but inappropriate words and (b) to determine whether predictability effects increase when task demands make predictability information useful. 
 Map(start -> 12, end -> 14, match -> the)
-Map(start -> 57, end -> 76, match -> to determine whether)
 Map(start -> 128, end -> 130, match -> for)
-Map(start -> 193, end -> 212, match -> to determine whether)
 
 Additionally, we analyzed global reading measures and local reading measures on target words in the ﬁller stimuli (ﬁllers during the reading task and errors during the proofreading task), comparing them between the two experiments, to assess the relative difﬁculty of proofreading for nonword errors and proofreading for wrong word errors. 
 Map(start -> 96, end -> 98, match -> the)
@@ -1737,7 +1730,6 @@ Map(start -> 22, end -> 24, match -> the)
 
 Measure Variable b SE t First ﬁxation duration Task 24.14 4.40 5.49 Frequency 10.35 3.96 2.61 Task * Frequency 3.98 6.68 0.60 Task 18.05 3.71 4.87 Predictability 6.66 3.21 2.08 Task * Predictability 0.93 5.57 0.17 Single ﬁxation duration Task 33.22 5.76 5.77 Frequency 14.73 4.99 2.95 Task * Frequency 8.11 8.26 0.98 Task 19.73 3.99 4.95 Predictability 11.04 3.54 3.12 Task * Predictability 7.44 6.72 1.11 Gaze duration Task 51.75 6.28 8.25 Frequency 25.56 6.99 3.66 Task * Frequency 26.51 9.46 2.80 Task 44.79 6.41 6.99 Predictability 20.95 5.06 4.14 Task * Predictability 13.17 9.65 1.36 Total time Task 155.25 27.15 5.72 Frequency 36.53 15.67 2.33 Task * Frequency 55.08 24.94 2.21 Task 112.78 17.12 6.59 Predictability 49.27 11.66 4.23 Task * Predictability 57.60 21.18 2.72 Go-past time Task 91.48 15.25 6.00 Frequency 47.18 12.41 3.80 Task * Frequency 41.51 18.88 2.20 Task 69.06 11.36 6.08 Predictability 29.94 9.56 3.13 Task * Predictability 21.10 15.77 1.34 sentences when they were encountered in Experiment 2 (when subjects were checking for wrong words) to determine whether the type of error subjects anticipated changed the way they used different word properties (i.e., frequency and predictability; Tables 7–9). 
 Map(start -> 1049, end -> 1051, match -> for)
-Map(start -> 1066, end -> 1085, match -> to determine whether)
 Map(start -> 1087, end -> 1089, match -> the)
 Map(start -> 1096, end -> 1097, match -> of)
 Map(start -> 1134, end -> 1136, match -> the)
@@ -1768,7 +1760,6 @@ Map(start -> 0, end -> 6, match -> however)
 Map(start -> 14, end -> 16, match -> the)
 Map(start -> 70, end -> 72, match -> the)
 Map(start -> 74, end -> 77, match -> only)
-Map(start -> 105, end -> 124, match -> to determine whether)
 Map(start -> 126, end -> 128, match -> the)
 Map(start -> 150, end -> 152, match -> the)
 Map(start -> 224, end -> 226, match -> for)

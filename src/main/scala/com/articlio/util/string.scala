@@ -7,6 +7,9 @@ package com.articlio.util
 package object text { 
   def SPACE = " " // use to allow finding all spaces mentioned in code! 
 
+  def FIRST_ORDINALS = Seq("first", "second", "third", "forth", "fifth", "sixth", "seventh", "eighth",
+                           "1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th")
+
   // 
   // turns text into Sentence case. 
   // should decapitalize first word only if its capitalization is due to its location 
