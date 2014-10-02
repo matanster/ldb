@@ -88,8 +88,10 @@ object go {
     val trie = new Trie
 
     def init (fragments: Set[String]) {
+      Timelog.timer("aho-corasick initialization")
       trie.onlyWholeWords()
       fragments foreach trie.addKeyword
+      Timelog.timer("aho-corasick initialization")
     }
 
     //
@@ -98,7 +100,7 @@ object go {
     def go(sentence : String) : List[Map[String, String]] = 
     {
       val emitsJ = trie.parseText(deSentenceCase(sentence))
-      
+
       if (emitsJ.size > 0) {
         val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart.toString, "end" -> i.getEnd.toString, "match" -> i.getKeyword.toString))).toList
         Logger.write(sentence, "sentence-fragment-matches")
@@ -112,7 +114,7 @@ object go {
   //
   // get mock data
   //
-  println("loading sentences")
+  println("loading sentences...")
   val SentencesInputFile = "mock-data/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
   val sentences = Source.fromFile(SentencesInputFile).getLines
    
