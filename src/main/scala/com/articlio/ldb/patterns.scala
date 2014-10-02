@@ -1,6 +1,7 @@
 package com.articlio.ldb
 
 import com.articlio.util._
+import com.articlio.util.text._
 import com.articlio.selfMonitor.{Monitor}
 import scala.io.Source
 //import java.net.URLEncoder
@@ -53,7 +54,7 @@ object go {
 
     case class Rule (pattern: String, fragments: List[String], indication: String) 
     val rules: Seq[Rule] = inputRules map (inputRule => new Rule(inputRule.pattern, 
-                                                                 breakDown(Text.deSentenceCase(inputRule.pattern)), 
+                                                                 breakDown(deSentenceCase(inputRule.pattern)), 
                                                                  inputRule.indication))
 
     rules.foreach(rule => {
@@ -96,7 +97,7 @@ object go {
     //
     def go(sentence : String) : List[Map[String, String]] = 
     {
-      val emitsJ = trie.parseText(Text.deSentenceCase(sentence))
+      val emitsJ = trie.parseText(deSentenceCase(sentence))
       
       if (emitsJ.size > 0) {
         val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart.toString, "end" -> i.getEnd.toString, "match" -> i.getKeyword.toString))).toList
@@ -165,7 +166,7 @@ object go {
           val indication = db.patterns2indications.get(pattern).get
           Logger.write(Seq(s"sentence '$sentence'",
                            s"matches pattern '$pattern'",
-                           s"which indicates '$indication'").mkString("\n") + "\n","sentence-matches")
+                           s"which indicates '$indication'").mkString("\n") + "\n","sentence-pattern-matches")
         }
       })
     }

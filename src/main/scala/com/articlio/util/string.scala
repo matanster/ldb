@@ -1,12 +1,26 @@
 package com.articlio.util
 
-object Text {
+//
+// this is a package object for elegant access 
+// (as per http://www.scala-lang.org/docu/files/packageobjects/packageobjects.html)
+//
+package object text { 
+  def SPACE = " " // use to allow finding all spaces mentioned in code! 
 
-  // simply turns first letter to lowercase, assumes machine has English locale.
+  // 
+  // turns text into Sentence case. 
+  // should decapitalize first word only if its capitalization is due to its location 
+  // Limitation: current implementation only partially handles figuring if first word's capitalization is due to location or not.
+  //
   // uses http://www.scala-lang.org/api/current/index.html#scala.Char.toLower
   // with some refactor, toLowerCase can be used instead if need to override machine locale
-  def deSentenceCase = (text: String) => text.head.toLower + text.tail
-  def splitToWords = (word: String) => word.split(" ")
+  //
+  def deSentenceCase (text: String) : String = {
+    if (0 == text.indexOfSlice("I" + SPACE)) return text
+    return text.head.toLower + text.tail
+  }
+
+  def splitToWords = (word: String) => word.split(SPACE)
   
   def wordFollowing(text: String, following: String) : Option[String] = {
     if (text.containsSlice(following)) Some(text.drop(text.indexOfSlice(following) + following.length).takeWhile(char => !(Seq(' ', '.') contains char)))
