@@ -20,20 +20,6 @@ object go {
   //
   class LDB(inputRules: Seq[Rule]) {
 
-    // patterns to indications map - 
-    // each pattern correlates to only one indictaion 
-    private val patterns2indications_m = scala.collection.mutable.HashMap.empty[String, String]
-
-    // fragments to patterns map - 
-    // patterns collections are scala Sets 
-    // because order and appearing-more-than once are not necessary
-    private val fragments2patterns_m = new collection.mutable.HashMap[String, collection.mutable.Set[String]] 
-                                       with collection.mutable.MultiMap[String, String]
-    
-    // patterns to fragments map - 
-    // fragments collections are scala Lists as order and appearing-more-than-once matter
-    private val patterns2fragments_m = new collection.mutable.HashMap[String, List[String]] 
-
     // build the data structures
     private val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
     private val wildchars = List('.', '…', ' ')  // characters indicating whether we are inside a wildcard sequence.. hence - "wildchars"
@@ -56,20 +42,21 @@ object go {
     val rules: Seq[Rule] = inputRules map (inputRule => new Rule(inputRule.pattern, 
                                                                  breakDown(deSentenceCase(inputRule.pattern)), 
                                                                  inputRule.indication))
+    // patterns to indications map - 
+    // each pattern correlates to only one indictaion 
+    val patterns2indications : Map[String, String] = rules.map(rule => (rule.pattern -> rule.indication)).toMap
 
-    rules.foreach(rule => {
-      rule.fragments.foreach(fragment => {
-        fragments2patterns_m addBinding (fragment, rule.pattern)
-        patterns2fragments_m += ((rule.pattern, rule.fragments))
-      })
+    // patterns to fragments map - 
+    // fragments collections are scala Lists as order and appearing-more-than-once matter
+    val patterns2fragments : Map[String, List[String]] = rules.map(rule => (rule.pattern, rule.fragments)).toMap
 
-      patterns2indications_m += ((rule.pattern, rule.indication))
-    })
-
-    // immutably expose all that's been computed
-    val patterns2indications = patterns2indications_m.toMap[String, String]
-    val patterns2fragments   = patterns2fragments_m.toMap[String, List[String]]
-    val fragments2patterns   = fragments2patterns_m.map(kv => kv._1 -> kv._2.toSet)
+    // fragments to patterns map 
+    // (constructed through a mutable builder - to avoid the memory hogging of the alternative pure functional implementation)
+    // the pattern collections here are ultimately scala Sets because order and appearing-more-than once are not necessary
+    private val builder = new collection.mutable.HashMap[String, collection.mutable.Set[String]] 
+                          with collection.mutable.MultiMap[String, String]                                  // this is a multimap builder, the way scala needs it
+    rules.foreach(rule => rule.fragments.foreach(fragment => builder addBinding (fragment, rule.pattern)))  // build it
+    val fragments2patterns : Map[String, Set[String]] = builder.map(kv => kv._1 -> kv._2.toSet).toMap       // extract to immutable
 
     // bag of all fragments - 
     // uses a Set to avoid duplicate strings
