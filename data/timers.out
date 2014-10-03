@@ -1,2 +1,2 @@
-reading CSV took 726 milliseconds
-aho-corasick initialization took 30 milliseconds
+reading CSV took 488 milliseconds
+aho-corasick initialization took 13 milliseconds
