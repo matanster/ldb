@@ -47,7 +47,8 @@ case class Rule (pattern: String, indication: String, properties: Option[Seq[Pro
 object CSV {
 
   //
-  // Extract raw values from database CSV (skipping the first headers done really not scala-idiomatically for now..)
+  // Extract raw values from database CSV
+  // Slow (https://github.com/tototoshi/scala-csv/issues/11) but global initialization is currently insignificant
   //
   def getCSV : Seq[RawCSVInput] = {
 
@@ -89,6 +90,8 @@ object CSV {
   //
   def deriveFromCSV : Seq[Rule] = {
 
+    Timelog.timer("manipulating CSV input")
+
     val rules = scala.collection.mutable.Seq.newBuilder[Rule]
     val rawInput = getCSV
 
@@ -116,6 +119,7 @@ object CSV {
 
     }
 
+    Timelog.timer("manipulating CSV input")
     Logger.write(rules.result.mkString("\n"), "db-rules")
     return rules.result
   }

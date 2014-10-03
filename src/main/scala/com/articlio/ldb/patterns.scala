@@ -38,6 +38,8 @@ object go {
       }
     }
 
+    Timelog.timer("patterns representation building")
+
     case class Rule (pattern: String, fragments: List[String], indication: String) 
     val rules: Seq[Rule] = inputRules map (inputRule => new Rule(inputRule.pattern, 
                                                                  breakDown(deSentenceCase(inputRule.pattern)), 
@@ -62,6 +64,7 @@ object go {
     // uses a Set to avoid duplicate strings
     val allFragmentsDistinct : Set[String] = rules.map(rule => rule.fragments).flatten.toSet
 
+    Timelog.timer("patterns representation building")
     Monitor.logUsage("after patterns representation building is")
     Logger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
     Logger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
@@ -75,10 +78,10 @@ object go {
     val trie = new Trie
 
     def init (fragments: Set[String]) {
-      Timelog.timer("aho-corasick initialization")
+      Timelog.timer("aho-corasick initialization (lazy operations not necessarily included)")
       trie.onlyWholeWords()
       fragments foreach trie.addKeyword
-      Timelog.timer("aho-corasick initialization")
+      Timelog.timer("aho-corasick initialization (lazy operations not necessarily included)")
     }
 
     //
@@ -112,7 +115,9 @@ object go {
   val db = new LDB(inputRules)
   AhoCorasick.init(db.allFragmentsDistinct)
 
+  Timelog.timer("matching")
   processSentences
+  Timelog.timer("matching")
 
   //
   // matches rules per sentence    
