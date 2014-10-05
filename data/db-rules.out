@@ -525,7 +525,7 @@ Rule(potential negative effect,problem statement,Some(ArrayBuffer(LocationProper
 Rule(to further improve ,recommendation ,Some(ArrayBuffer(LocationProperty('inside,List(conclusion),'must))))
 Rule(should be carried out in order to better understand ,recommendation ,Some(ArrayBuffer(LocationProperty('inside,List(conclusion),'must))))
 Rule(should be conducted in order to  ,recommendation ,Some(ArrayBuffer(LocationProperty('inside,List(conclusion),'must))))
-Rule(one limitation in this {asr},limitation,Some(ArrayBuffer(LocationProperty('inside,List(conclusion),'must), ReferenceProperty('deictic,'must))))
+Rule(one limitation in {asr},limitation,Some(ArrayBuffer(LocationProperty('inside,List(conclusion),'must), ReferenceProperty('deictic,'must))))
 Rule( a selection bias may have influenced the results ,limitation,Some(ArrayBuffer(LocationProperty('inside,List(conclusion),'must))))
 Rule(the sample was small and ,limitation,Some(ArrayBuffer(LocationProperty('inside,List(conclusion),'must))))
 Rule(future research is warranted ,recommendation ,Some(ArrayBuffer(LocationProperty('inside,List(conclusion),'must))))

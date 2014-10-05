@@ -47,7 +47,7 @@ case class Rule (pattern: String, indication: String, properties: Option[Seq[Pro
 object CSV {
 
   //
-  // Extract raw values from database CSV
+  // Extract raw values from the database CSV
   // Slow (https://github.com/tototoshi/scala-csv/issues/11) but global initialization is currently insignificant
   //
   def getCSV : Seq[RawCSVInput] = {

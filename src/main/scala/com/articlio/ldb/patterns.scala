@@ -68,6 +68,20 @@ object go {
     Monitor.logUsage("after patterns representation building is")
     Logger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
     Logger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
+
+    Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
+    val ASRRules = rules.filter(rule => rule.pattern.containsSlice("{asr}"))
+    val expansion : Seq[String] = ASRRules.flatMap (rule => ArticleSelfReference.refs.map
+                                          (ref => rule.pattern.patch(rule.pattern.indexOfSlice("{asr}"), ref, "{asr}".length)))
+    
+    //println(ASRRules.mkString("\n"))
+    println(expansion.mkString("\n"))
+    println(rules.length)
+    println(ASRRules.length)
+    println(expansion.length)
+
+    Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
+
   }
 
   //
