@@ -25,6 +25,10 @@ case object    InFragment   extends PotentiallyPluggable(RefAppendable)
 case object    ByFragment   extends PotentiallyPluggable(RefAppendable)
 case object    OfFragment   extends PotentiallyPluggable(RefAppendable)
 
+//
+// class hierarchy for describing rules as derived by the CSV object
+//
+
 abstract class Rule
 case class SimpleRule (pattern: String, fragments: List[String], indication: String) 
 case class ExpandedRule (rule: SimpleRule) extends Rule {

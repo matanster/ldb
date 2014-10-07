@@ -21,7 +21,7 @@ import com.github.verbalexpressions.VerbalExpression._
 case class RawCSVInput (pattern: String, indication: String, parameters: Seq[String]) 
 
 //
-// class hierarchy for describing rule properties
+// class hierarchy for describing rules as derived by the CSV object
 //
 abstract class Property {
   val subType: Symbol
@@ -37,11 +37,8 @@ case class LocationProperty (subType: Symbol,
                              necessityModality: Symbol)
                              extends Property
 
-
-//
-// final rule representation
-//
 case class RuleInput (pattern: String, indication: String, properties: Option[Seq[Property]]) 
+
 
 object CSV {
 
