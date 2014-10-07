@@ -2,6 +2,7 @@ package com.articlio.ldb
 
 import com.articlio.util._
 import com.articlio.util.text._
+import com.articlio.LanguageModel._
 import com.articlio.selfMonitor.{Monitor}
 import scala.io.Source
 //import java.net.URLEncoder
@@ -10,7 +11,33 @@ import scala.io.Source
 import org.ahocorasick.trie._
 //import scala.collection.JavaConversions._ // work with Java collections as if they were Scala
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
-import com.github.tototoshi.csv._           // only good for "small" csv files; https://github.com/tototoshi/scala-csv/issues/11
+
+
+abstract class PlugType
+case object    RefAppendable  extends PlugType // self reference is potentially *appendable* to target phrase
+case object    RefPrependable extends PlugType // self reference is potentially *prependable* to target phrase
+
+abstract class PotentiallyPluggable (plugType: PlugType)
+case object    VerbFragment extends PotentiallyPluggable(RefPrependable)
+case object    NounFragment extends PotentiallyPluggable(RefPrependable)
+case object    SomeFragment extends PotentiallyPluggable(RefAppendable)
+case object    InFragment   extends PotentiallyPluggable(RefAppendable)
+case object    ByFragment   extends PotentiallyPluggable(RefAppendable)
+case object    OfFragment   extends PotentiallyPluggable(RefAppendable)
+
+abstract class Rule
+case class SimpleRule (pattern: String, fragments: List[String], indication: String) 
+case class ExpandedRule (rule: SimpleRule) extends Rule {
+  def getFragmentType : PotentiallyPluggable = {
+                          if (rule.pattern.containsSlice("{asr-V}")) return VerbFragment 
+                          if (rule.pattern.containsSlice("{asr-N}")) return NounFragment
+                          return SomeFragment
+  }
+
+  val fragmentType = getFragmentType
+  override def toString = s"$rule, $fragmentType"
+}
+
 
 object go {
 
@@ -18,7 +45,7 @@ object go {
   // Builds and exposes the data structures necessary for working the rules database
   // Refactor opportunity: use newBuilder and .result rather than hold mutable and immutable collections - for correct coding style without loss of performance!
   //
-  class LDB(inputRules: Seq[Rule]) {
+  class LDB(inputRules: Seq[RuleInput]) {
 
     // build the data structures
     private val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
@@ -40,8 +67,7 @@ object go {
 
     Timelog.timer("patterns representation building")
 
-    case class Rule (pattern: String, fragments: List[String], indication: String) 
-    val rules: Seq[Rule] = inputRules map (inputRule => new Rule(inputRule.pattern, 
+    val rules: Seq[SimpleRule] = inputRules map (inputRule => new SimpleRule(inputRule.pattern, 
                                                                  breakDown(deSentenceCase(inputRule.pattern)), 
                                                                  inputRule.indication))
     // patterns to indications map - 
@@ -62,6 +88,10 @@ object go {
 
     // bag of all fragments - 
     // uses a Set to avoid duplicate strings
+
+
+
+
     val allFragmentsDistinct : Set[String] = rules.map(rule => rule.fragments).flatten.toSet
 
     Timelog.timer("patterns representation building")
@@ -70,15 +100,24 @@ object go {
     Logger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
 
     Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
-    val ASRRules = rules.filter(rule => rule.pattern.containsSlice("{asr}"))
-    val expansion : Seq[String] = ASRRules.flatMap (rule => ArticleSelfReference.refs.map
-                                          (ref => rule.pattern.patch(rule.pattern.indexOfSlice("{asr}"), ref, "{asr}".length)))
+
+    //    
+
+    val ASRRules : Seq[ExpandedRule] = rules.filter(rule => rule.pattern.containsSlice("{asr")) map ExpandedRule
+    println(ASRRules)
+
+
+
+    //
+
+    //val expansion : Seq[String] = ASRRules.flatMap (rule => ArticleSelfReference.refsText.map
+    //                                      (refText => rule.pattern.patch(rule.pattern.indexOfSlice("{asr}"), refText, "{asr}".length)))
     
     //println(ASRRules.mkString("\n"))
-    println(expansion.mkString("\n"))
+    //println(expansion.mkString("\n"))
     println(rules.length)
     println(ASRRules.length)
-    println(expansion.length)
+    //println(expansion.length)
 
     Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
 

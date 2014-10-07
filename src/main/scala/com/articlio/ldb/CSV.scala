@@ -41,8 +41,7 @@ case class LocationProperty (subType: Symbol,
 //
 // final rule representation
 //
-case class Rule (pattern: String, indication: String, properties: Option[Seq[Property]]) 
-
+case class RuleInput (pattern: String, indication: String, properties: Option[Seq[Property]]) 
 
 object CSV {
 
@@ -88,11 +87,11 @@ object CSV {
   //
   // build rules from the raw CSV input rows
   //
-  def deriveFromCSV : Seq[Rule] = {
+  def deriveFromCSV : Seq[RuleInput] = {
 
     Timelog.timer("manipulating CSV input")
 
-    val rules = scala.collection.mutable.Seq.newBuilder[Rule]
+    val rules = scala.collection.mutable.Seq.newBuilder[RuleInput]
     val rawInput = getCSV
 
     rawInput map { rawInputRule =>   
@@ -115,7 +114,7 @@ object CSV {
 
       })
 
-      rules += new Rule(rawInputRule.pattern, rawInputRule.indication, if (ruleProperties.result.nonEmpty) Some(ruleProperties.result) else None)
+      rules += new RuleInput(rawInputRule.pattern, rawInputRule.indication, if (ruleProperties.result.nonEmpty) Some(ruleProperties.result) else None)
 
     }
 

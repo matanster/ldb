@@ -13,7 +13,6 @@ incompatibility between
 question was investigated
 future research might use a
 not yet been determined
-{our} hypotheses
 has been criticized
 we evaluate whether
 is clearly warranted
@@ -23,8 +22,6 @@ you will be able to
 susceptible to
 our results should be interpreted in the context of the following limitations
 problems can be seen as
-{asr} hypotheses were
-{asr} set of research questions
 model was verified
 for
 research questions in this paper
@@ -32,11 +29,13 @@ increased awareness of
 this limits our ability to rule out the possibility that
 systematic bias
 insight into
+{asr-N} hypotheses
 contributes to your understanding of
 limitation needs to be  pointed out
 negative effect of
 future work could also explore
 represents a challenge
+{asr-V} addresses the question of
 provide a basis for
 provide little information
 that may help in 
@@ -46,6 +45,7 @@ much less is known
 help you
 additonal benefit
 potential negative effect
+{our-N} hypotheses
 still some debate
 are much higher
 provide us with
@@ -55,6 +55,7 @@ have yet to
 size of sample population
 deepen your understanding of
 remain unanswered
+{asr-V} predicted
 challenge
 spills over to affect
 there is no guarantee that
@@ -82,6 +83,7 @@ provides strong evidence that
 issue of
 not enough data
 need further investigation
+we also expected that
 likely to be a major factor in 
 will help us to
 did not provide for
@@ -107,16 +109,17 @@ this study also makes contributions to our understanding of
 you should be able to
 avenues of future
 help you to understand
+{asr-V} test the hypothesis
 some doubts as to whether
 should be carried out in order to better understand 
-{asr} it was hypothesized that
+as {asr-V} predicted 
 merit attention
 this study also makes contributions to 
-as {asr} predicted 
 further studies should control for
 research question in this report
 still requires additional
 this limits our ability to 
+{asr-N} research questions were as follows
 been disappointing
 significant challenges for
 the hypothesis tested in {asr}
@@ -149,7 +152,6 @@ enables you to understand
 how our results generalize to other
 exists the possibility that the differences between
 very little empirical data
-{asr} following hypothesis
 may reflect
 limited understanding
 problem with this is that
@@ -173,7 +175,6 @@ no guarantee that
 needs to be explored further
 have to be interpreted with
 addresses only the question of
-{asr} first hypothesis
 we hope our
 study sheds light on the key role
 may provide a better
@@ -189,12 +190,11 @@ results of the current study highlight
 hypotheses investigated in this paper
 this solution also deals with
 these findings provide support for
-{asr} hypothesis was
 problem
+{asr-V} tested the following hypothesis
 might help you to
 further validation is needed 
 insufficient evidence
-{asr} test the hypothesis
 {asr} hypothesis in this
 increasingly in need of
 contributions
@@ -235,6 +235,8 @@ not feasible
 helpful for future research to
 provides new
 indicating significant
+{asr-N} hypothesized that
+{asr-N} research questions
 sharp decline
 however, most research has
 research question
@@ -248,7 +250,6 @@ not fully successful
 it is feasible that
 needs a more
 data sparseness
-{asr} final hypothesis
 did not allow for
 understand
 to cross-validate our findings
@@ -260,6 +261,7 @@ greatly reduced
 suggest a need for further research
 alarming rate
 have not yet been
+{asr-N} research question was
 benefit is
 need to be conducted
 literature available 
@@ -274,6 +276,7 @@ future research might
 although this limitation is partially offset by
 lack of
 issues related to
+in {asr} we address the question of
 few existing empirical studies have addressed
 has been criticised for
 insights
@@ -285,6 +288,7 @@ few studies have specifically addressed
 remains
 an interesting line of future research could be 
 questions in this article
+{asr-N} first hypothesis
 still have to find a way to
 allow you  to understand
 no evidence that
@@ -297,6 +301,7 @@ has
 increasingly aware of
 very few attempts to
 much previous research has focused on
+semantic Parsing using Distributional Semantics and Probabilistic Logic
 one limitation is the potential for
 there is a need for a 
 several limitations of our research
@@ -307,7 +312,6 @@ as yet no
 a paucity of data
 has not been determined
 allows the treatment of
-{asr} hypothesized that
 we call for
 less than adequate
 help us
@@ -321,9 +325,11 @@ yet
 needs more
 that should be considered
 we recommend
+{asr-N} set of hypotheses
 will help you to
 this paper presents new ideas 
 provides a basis
+{asr-N} hypothesis
 central issue
 a first limitation is our methodological
 should endeavor to
@@ -338,7 +344,6 @@ directions for additional research
 problems 
 allows us to
 there are at least
-sets of hypotheses
 doubts as to
 may have contributed
 problems
@@ -362,7 +367,6 @@ far less is known about
 will enable us to
 which can inflate correlations
 limitations of the present study provide avenues for further research 
-{asr} predicted
 the results of this study are open to the criticism that
 deeper understanding of
 provided a portrait of
@@ -393,6 +397,7 @@ enabled us to
 sharp drop
 further research is needed
 contributes to an understanding o
+in {asr} it was hypothesized that
 hypotheses:
 systematic biases
 need to be examined in more detail
@@ -433,9 +438,11 @@ hypothesis examined
 suffer from a number of limitations
 a number of limitations
 cannot be completely ruled out
+{asr-N} following hypotheses
 directions for further research
 additional studies are required
 the second limitation is the fact that the questionnaire design can also  
+{asr-V} addresses questions of
 needs of
 labour intensive
 problem is to
@@ -446,12 +453,10 @@ better understanding of
 future research could
 should be conducted in order to  
 not adequately operationalized
-{asr} research questions were
 appear to be inconsistent with
 for understanding
 crucial link between
 caution must be exercised when 
-{asr} we address the question of
 can be used
 should help you to
 as predicted by {asr}
@@ -470,13 +475,11 @@ future studies should
 measurement bias
 no research
 neglect to take into account
-{asr} hypotheses
 require further investigation
 another potential limitation is
 address the needs of
 is a subject for further research
 sheds light on
-{asr} hypothesis
 major limitations of
 progress
 question in this study
@@ -498,9 +501,9 @@ positive contribution
 research questions in this study
 to further improve 
 must be addressed
-{asr} tested the following hypothesis
 while a great deal of research has
 sharp increase
+{asr-N} sets of hypotheses
 sheds light
 however, extraneous factors
 allow you to
@@ -545,7 +548,6 @@ without further empirical examination.
 wasted
 it is proposed to maintain  
 is fragmented
-{asr} research questions were as follows
 not
 certain amount of caution
 little accumulated research
@@ -556,13 +558,11 @@ a need to identify factors that impact
 we hypothesize that
 overlooked
 contribution
-{asr} hypothesis:
 research question in this article
 a possibility we leave open for exploration in future research
 caution is warranted
  a selection bias may have influenced the results 
 expand awareness
-{asr} addresses questions of
 the sample was small and 
 complex and multi-faceted issue
 would provide a means of validating
@@ -583,6 +583,7 @@ constitute a potential
 our research complements
 an effective
 further validation is however needed in order to confirm
+{asr-V} hypothesized as
 helps to highlight
 our awareness
 no previous research
@@ -600,14 +601,12 @@ sharp decrease
 directions for future research
 often suffer from
 significant contribution
-we posit that
 more research should be done to examine
 problem we study is
 extended research is necessary
+{asr-N} final hypothesis
 these studies are subject to
-{asr} predicted that
 these findings should not be
-{asr} research questions were examined
 understand 
 little progress has been made
 few existing empirical studies have
@@ -615,7 +614,6 @@ the first limitation deals with the nature of a
 in order to solve this problem
 loss of 
 future studies should control for
-{asr} following hypotheses
 future research should attempt to establish statistically significant evidence
 problem area
 research questions in this report
@@ -632,17 +630,18 @@ caution must be used
 validity of the results of this study might be limited to
 questions in this report
 may help you to
-{asr} test whether
-{asr} we also expected that
 research question in this study
+{asr-N} research questions were
 further research is needed to elucidate whether
 it would be helpful for future research to
 merits special attention
 require further 
+{asr-N} following hypothesis
 valuable addition to
 not completely understood
 were not randomly assigned to
 neglect to consider
+{asr-V} address the question of
 limitations of our study
 insufficient data
 future work
@@ -656,9 +655,10 @@ questions in this research
 insufficient sample size
 biases
 question in this paper
+{asr-N} hypothesis:
 small size of the sample
 ineffective
-{asr} research questions
+{asr-V} test whether
 a limitation specific to
 this study extends previous research
 can help you to
@@ -679,10 +679,10 @@ we consider how to
 requires further
 increasingly important to
 additional research is required
+{asr-V} predicted that
 provides support for
 this study will spark continued interest
 future research should include 
-{asr} prediction
 future research could expand
 the study deepens the existing conceptualizations
 longitudinal
@@ -691,6 +691,7 @@ future researchers may wish to
  theory has seldom been applied
 study sheds light on 
 however, further validation is needed in order to 
+{asr-N} hypothesis was
 hypothesis investigated in this paper
 questions in this study
 further studies should
@@ -705,9 +706,11 @@ hypotheses were examined
 a number of limitations 
 these results challenge
 a finer-grained
+{asr-N} set of research questions
 address the problem
 significant barrier
 very real danger that
+{asr-V} posit that
 has been limited by its overwhelming reliance on 
 threaten
 undervalued
@@ -716,10 +719,13 @@ increasingly widespread
 problem with
 provide a means of
 hypotheses were investigated
+{asr-N} hypotheses were
 not a
+{asr-N} prediction
 necessary for understanding
 significant declines
 studies are needed
+in {asr} we posit that
 there is currently little
 additional research is also needed to investigate
 shed new light
@@ -749,7 +755,6 @@ problem of how to
 study also contributes to a better understanding of
 despite the fact that
 little or no consensus
-set of hypotheses
 provide strong evidence that
 research question in this paper
 is essential to
@@ -762,7 +767,6 @@ there are some questions
 convenience sampling framework
 we will be able to
 still lack
-{asr} research question was
 future research should
 research should explore
 although it leads to 
@@ -773,7 +777,6 @@ few if any
 labor-intensive
 provide us with a better understanding of the
 our findings provide evidence for 
-{asr} hypothesized as
 the
 cannot be completely
 our research highlights the importance of
