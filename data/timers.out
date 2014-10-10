@@ -1,6 +1,6 @@
-reading CSV took 744 milliseconds
-manipulating CSV input took 830 milliseconds
-patterns representation building took 22 milliseconds
-exapanding patterns containing article-self-references into all their combinations took 5 milliseconds
-aho-corasick initialization (lazy operations not necessarily included) took 29 milliseconds
-matching took 312 milliseconds
+reading CSV took 443 milliseconds
+manipulating CSV input took 474 milliseconds
+patterns representation building took 17 milliseconds
+exapanding patterns containing article-self-references into all their combinations took 36 milliseconds
+aho-corasick initialization (lazy operations not necessarily included) took 39 milliseconds
+matching took 259 milliseconds

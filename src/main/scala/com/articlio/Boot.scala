@@ -8,15 +8,20 @@ object Boot extends App {
   Console.log("starting...", "startup")
 
   Monitor
-  ldb.go
 
-  val data = Seq(("something new", "matches something new", "indicates something"),
-                 ("something new", "matches something new", "indicates something"))
+  try {
 
-  storage.OutDB.dropCreate
-  storage.OutDB ++= (data)
+    ldb.go
 
-  // closing stuff - to be moved to own function
-  Monitor.shutdown
-  storage.OutDB.close
+    val data = Seq(("something new", "matches something new", "indicates something"),
+                   ("something new", "matches something new", "indicates something"))
+
+    storage.OutDB.dropCreate
+    storage.OutDB ++= (data)
+    
+    } finally {
+        // closing stuff - to be moved to own function
+        Monitor.shutdown
+        storage.OutDB.close
+      }
 }
