@@ -5,8 +5,6 @@ import com.articlio.storage
 
 object Boot extends App {
 
-  Console.log("starting...", "startup")
-
   Monitor
 
   try {
