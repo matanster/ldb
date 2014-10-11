@@ -4,7 +4,7 @@
 // See properties.scala for previous worse yet working expansion modelling
 //
 
-package com.articlio.ldb
+package com.articlio.languageModel2
 import com.articlio.util.text._
 
 abstract class PhraseProperty
