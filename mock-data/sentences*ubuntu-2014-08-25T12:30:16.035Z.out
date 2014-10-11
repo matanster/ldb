@@ -1,4 +1,4 @@
-1. Introduction 
+{Introduction}
 our research laid the foundations for something
 The processing of a word in a sentence is affected by a range of linguistic properties, across many tasks and experimental paradigms, but how does the cognitive system change the way it responds to these properties in different tasks? 
 Two hallmark effects derive from the frequency of a word to be processed (high frequency words are processed more quickly than low frequency words) and the predictability of a word in its sentence context (more predictable words are processed more quickly than less predictable words; see Kutas & Federmeier, 2011; Rayner, 1998, 2009 0010-0277/$ - see front matter Ó 2013 The Authors. 
@@ -371,7 +371,8 @@ To investigate this question, we coded each error item in Experiment 1 as being 
 Even though approximately half of the words were pronounceable and half were not, this distinction did not affect detection accuracy (88% vs. 89%; z <1,p > .94). 
 These data suggest that subjects were primarily assessing wordhood through a full check against the lexicon or against context, rather than purely checking surface features such as pronounceability. 
 As mentioned above, though, the errors in Experiment 1 were easier to detect than those in Experiment 2, suggesting that the need to integrate the word with the sentence context in order to identify whether it is an error was likely what made the proofreading task in Experiment 2 more difﬁcult. 
-5. Conclusion The results of our study, combined with the experiments discussed in the introduction (Section 1), suggest that word and sentence processing during reading is highly adaptive and responsive to task demands. 
+{Conclusion} 
+The results of our study, combined with the experiments discussed in the introduction (Section 1), suggest that word and sentence processing during reading is highly adaptive and responsive to task demands. 
 That is, our subjects’ proofreading performance involved not just a more cautious version of normal reading, but rather a qualitative readjustment of different component sub-processes of overall reading so as to efﬁciently achieve high accuracy in identifying errors. 
 We saw that the size of the frequency effect increased when proofreading for any type of spelling error, reﬂecting the fact that word frequency is useful for detecting violations of word status (i.e., nonwords do not have a detectable word frequency), which might be a ﬁrst step in checking for spelling errors. 
 Likewise, when the relationship between words was crucial to identify spelling errors (in Experiment 2), we saw that the magnitude of the predictability effect increased, as well. 
