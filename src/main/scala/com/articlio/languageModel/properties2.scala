@@ -1,3 +1,9 @@
+//
+// Modeling for better expansion of asr patterns.
+// Not yet in use.
+// See properties.scala for previous worse yet working expansion modelling
+//
+
 package com.articlio.ldb
 import com.articlio.util.text._
 
