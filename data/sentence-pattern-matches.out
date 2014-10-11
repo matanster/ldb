@@ -39,12 +39,20 @@ matches pattern 'however'
 which indicates 'problem statement'
 
 sentence 'Wordhood assessment and content access need to occur when a word is ﬁrst encountered in order for understanding Table 1 Framework of some processes involved in normal reading and our hypotheses about how they change when proofreading for the two types of errors involved in Experiment 1 (nonwords) and Experiment 2 (wrong words). '
+matches pattern 'our hypotheses'
+which indicates 'hypothesis/research question  '
+
+sentence 'Wordhood assessment and content access need to occur when a word is ﬁrst encountered in order for understanding Table 1 Framework of some processes involved in normal reading and our hypotheses about how they change when proofreading for the two types of errors involved in Experiment 1 (nonwords) and Experiment 2 (wrong words). '
 matches pattern 'for understanding'
 which indicates 'contribution'
 
 sentence 'In sentence-level processing, however, predictability, which reﬂects degree of contextual ﬁt, is likely to be far more important than frequency: words with higher predictability are likely to be easier to integrate syntactically (Hale, 2001; Levy, 2008) and semantically (Kutas & Hillyard, 1984), and easier to validate as being a valid word, given the context and the visual input (Levy, Bicknell, Slattery, & Rayner, 2009). '
 matches pattern 'however'
 which indicates 'problem statement'
+
+sentence 'Additionally, to avoid ceiling effects in error detection, subjects in these studies were generally told to emphasize speed, potentially de-emphasizing some of the processes that would otherwise be involved in the proofreading task (as predicted by the framework described above). '
+matches pattern 'as predicted'
+which indicates 'hypothesis/research question  '
 
 sentence 'Less detectable are wrong word errors (Daneman & Stainton, 1993; Levy et al., 1986), which moreover show differences in the contribution of phonological similarity to the intended word: homophone substitutions (e.g., mail for male) are less detectable than spelling control substitutions (e.g., mile; Banks, Oka, & Shugarman, 1981; Jared et al., 1999), potentially implicating that phonological status may mediate content access. '
 matches pattern 'contribution of'

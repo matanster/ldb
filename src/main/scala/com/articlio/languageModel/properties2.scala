@@ -9,7 +9,7 @@ case object    Singular      extends PluralityType
 case object    Plural        extends PluralityType
 
 abstract class EntityType        extends PhraseProperty
-case object    WorkEntityType     extends EntityType
+case object    WorkEntityType    extends EntityType
 abstract class PersonaEntityType extends EntityType
 case object    PersonaEntityType extends PersonaEntityType
 case object    PersonalPronoun   extends PersonaEntityType with PersonalPronounForm
@@ -20,26 +20,46 @@ case object Object  extends PersonalPronounForm
 
 case class ProjectedForm(form: String) extends EmbeddingProjection
 
-class  Modulator (val modulator: String => String = identity[String]) extends EmbeddingProjection // defaults to identity function
-object Modulator { def apply(modulator: String => String) = new Modulator(modulator) }            // class constructor
+class  Modulator (val modulator: String => String) extends EmbeddingProjection 
+object Modulator {def apply(modulator: String => String) = new Modulator(modulator)} // class constructor
 
-case object DefaultPresentTenseModulator extends Modulator
-case object DefaultPossesiveModulator extends Modulator
+//
+// Common way to augment present tense verb stem
+//
+case object CommonPresentTenseModulator extends Modulator((presentTenseVerb: String) => 
+  // handles special case of present tenses that end with 's'
+  presentTenseVerb.endsWith("s") match {
+    case true  => presentTenseVerb + "es"
+    case false => presentTenseVerb + "s"
+  }
+)
+
+//
+// Most common way to add possessive relationship connective at end of noun phrase
+//
+case object CommonPossesiveModulator extends Modulator((selfText: String) =>
+  // handles special case of noun phrases that end with 's'
+  selfText.endsWith("s") match {
+    case true  => selfText + "'"
+    case false => selfText + "'s"
+  }
+)
 
 case class NounPhrase (
   baseForm                  : String,
   pluralityType             : PluralityType, 
   entityType                : EntityType, 
-  possesiveForm             : Modulator = DefaultPossesiveModulator,
-  presentTenseVerbModulator : Modulator = DefaultPresentTenseModulator
+  possesiveForm             : Modulator = CommonPossesiveModulator,
+  presentTenseVerbModulator : Modulator = CommonPresentTenseModulator
+
 )
 
-object ArticleSelfReferences {
+object SelfReferences {
 
   //
-  // article-self-reference triggers (noun phrases all)
+  // article-self-reference noun phrases
   //
-  object ArticleDirectSelfReference {
+  object ArticleSelfReference {
 
     // determiners and their determiner type (as per ontology at http://en.wikipedia.org/wiki/Determiner_phrase#The_competing_analyses)
     private val reference = Set( 
@@ -72,9 +92,8 @@ object ArticleSelfReferences {
       "project"
     )
 
-    //val references : Set[String] = for (firstHalf <- reference; secondHalf <- referencedAs) yield (firstHalf.text + SPACE + secondHalf.text)
     val references : Set[NounPhrase] = for (firstHalf <- reference; secondHalf <- referencedAs) 
-                                            yield NounPhrase(firstHalf + SPACE + secondHalf, Singular, WorkEntityType)
+                                         yield NounPhrase(firstHalf + SPACE + secondHalf, Singular, WorkEntityType)
   }
 
   //
@@ -84,12 +103,13 @@ object ArticleSelfReferences {
 
     // - to be categorized/tagged by their different properties such as inclusion/disclusion of a possesive(genetive) property.
     val references = Set(
-      NounPhrase("I", Singular, PersonaEntityType, possesiveForm = Modulator(_ => "My")),
-      NounPhrase("we", Plural, PersonaEntityType, possesiveForm = Modulator(_ => "Our")),
+      NounPhrase("I", Singular, PersonaEntityType, possesiveForm = Modulator(_ => "My"), presentTenseVerbModulator = Modulator(identity[String])), 
+      NounPhrase("we", Plural, PersonaEntityType, possesiveForm = Modulator(_ => "Our"), presentTenseVerbModulator = Modulator(identity[String])),
       NounPhrase("the author",  Singular, PersonaEntityType),
-      NounPhrase("the authors", Plural, PersonaEntityType)
+      NounPhrase("the authors", Plural, PersonaEntityType, presentTenseVerbModulator = Modulator(identity[String]))
     )
   }
 
- 
+  val references = ArticleSelfReference.references ++ ArticleAuthorSelfReference.references
+
 }

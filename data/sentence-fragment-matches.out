@@ -473,6 +473,7 @@ Map(start -> 94, end -> 96, match -> for)
 Map(start -> 94, end -> 110, match -> for understanding)
 Map(start -> 130, end -> 131, match -> of)
 Map(start -> 179, end -> 181, match -> our)
+Map(start -> 179, end -> 192, match -> our hypotheses)
 Map(start -> 234, end -> 236, match -> for)
 Map(start -> 238, end -> 240, match -> the)
 Map(start -> 252, end -> 253, match -> of)
@@ -535,6 +536,7 @@ Additionally, to avoid ceiling effects in error detection, subjects in these stu
 Map(start -> 157, end -> 158, match -> of)
 Map(start -> 160, end -> 162, match -> the)
 Map(start -> 210, end -> 212, match -> the)
+Map(start -> 233, end -> 244, match -> as predicted)
 Map(start -> 249, end -> 251, match -> the)
 
 From these studies, it is clear that the ability to detect spelling errors that are a result of letter substitutions or transpositions that produce nonwords (e.g., exict or exsit for exist; Healy, 1980, 1981; Holbrook, 1978a, 1978b)is fairly good, but depends on the similarity between wrong letters and intended letters (i.e., surface features of the word, relating to our hypothesized process of wordhood assessment). 
