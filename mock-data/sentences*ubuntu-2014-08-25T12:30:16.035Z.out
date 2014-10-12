@@ -1,4 +1,4 @@
-{Introduction}
+<introduction>
 our research laid the foundations for something
 The processing of a word in a sentence is affected by a range of linguistic properties, across many tasks and experimental paradigms, but how does the cognitive system change the way it responds to these properties in different tasks? 
 Two hallmark effects derive from the frequency of a word to be processed (high frequency words are processed more quickly than low frequency words) and the predictability of a word in its sentence context (more predictable words are processed more quickly than less predictable words; see Kutas & Federmeier, 2011; Rayner, 1998, 2009 0010-0277/$ - see front matter Ó 2013 The Authors. 
@@ -114,6 +114,7 @@ These ﬁrst two goals are tested in Experiment 1. The third goal was to compare
 In each experiment, we had subjects perform two tasks: reading for comprehension and then proofreading for spelling errors. 
 Both tasks included sentences without errors that contained either a frequency or a predictability manipulation that we used to determine the extent to which subjects were sensitive to these word properties. 
 In the ﬁrst experiment, subjects checked for spelling errors that produced nonwords (e.g., trcak instead of track), similar to the subjects in Kaakinen and Hyönä’s (2010) experiment. 
+</introduction>
 2. Experiment 1 2.1. 
 Method 2.1.1. 
 Subjects Forty-eight members of the University of California, San Diego community participated in the experiment for course credit, or monetary compensation ($10.00). 
@@ -371,7 +372,7 @@ To investigate this question, we coded each error item in Experiment 1 as being 
 Even though approximately half of the words were pronounceable and half were not, this distinction did not affect detection accuracy (88% vs. 89%; z <1,p > .94). 
 These data suggest that subjects were primarily assessing wordhood through a full check against the lexicon or against context, rather than purely checking surface features such as pronounceability. 
 As mentioned above, though, the errors in Experiment 1 were easier to detect than those in Experiment 2, suggesting that the need to integrate the word with the sentence context in order to identify whether it is an error was likely what made the proofreading task in Experiment 2 more difﬁcult. 
-{Conclusion} 
+<conclusion>
 The results of our study, combined with the experiments discussed in the introduction (Section 1), suggest that word and sentence processing during reading is highly adaptive and responsive to task demands. 
 That is, our subjects’ proofreading performance involved not just a more cautious version of normal reading, but rather a qualitative readjustment of different component sub-processes of overall reading so as to efﬁciently achieve high accuracy in identifying errors. 
 We saw that the size of the frequency effect increased when proofreading for any type of spelling error, reﬂecting the fact that word frequency is useful for detecting violations of word status (i.e., nonwords do not have a detectable word frequency), which might be a ﬁrst step in checking for spelling errors. 
@@ -384,7 +385,9 @@ Wotschack and Kliegl (2013) also reported modulation of both frequency and predi
 Taken together, these results and ours ﬁt naturally with claims that readers optimize how they read for their particular goals (Bicknell & Levy, 2010; Lewis, Shvartsman, & Singh, 2013) and that reading behavior can be well described as adaptive. 
 The general framework we introduced for understanding task-speciﬁc modulations in different component processing of reading, which predicted several of the key ﬁndings of our experiments and shed light on several more, may prove to be of further use in understanding modulations of reading behavior with other tasks, such as different types of proofreading (e.g., word-position errors) and scanning for keywords. 
 More generally, our ﬁndings broaden the range of examples of the adaptability of cognition, and point to the remarkable potential of the human mind to shape the details of even very highly practiced cognitive processing to the precise demands of the task and the agent’s particular goals. 
-Acknowledgments This research was supported by Grant HD065829 and training Grant DC000041 from the National Institutes of Health as well as Grant IIS0953870 from the National Science Foundation. 
+</conclusion>
+Acknowledgments 
+This research was supported by Grant HD065829 and training Grant DC000041 from the National Institutes of Health as well as Grant IIS0953870 from the National Science Foundation. 
 Portions of these data were presented at the CUNY Conference on Human Sentence Processing (2012; New York, NY) and the Annual Meeting of the Psychonomic Society (2012; Minneapolis, MN). 
 We thank Gerry Altmann, Reinhold Kliegl, Wayne Murray, and an anonymous reviewer for their comments on an earlier version. 
 Appendix A List of ﬁller stimuli (taken from Johnson, 2009) used in both experiments. 

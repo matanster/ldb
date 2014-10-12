@@ -4,7 +4,6 @@ import com.articlio.util._
 import com.articlio.util.text._
 import com.articlio.LanguageModel._
 import com.articlio.selfMonitor.{Monitor}
-import scala.io.Source
 //import java.net.URLEncoder
 //import spray.json._
 //import DefaultJsonProtocol._
@@ -28,7 +27,7 @@ case object    InByOfFragment   extends PotentiallyPluggable(RefAppendable)
 //
 
 abstract class Rule
-case class SimpleRule (pattern: String, fragments: List[String], indication: String) 
+case class SimpleRule (pattern: String, fragments: List[String], indication: String, locationProperty: Option[Seq[Property]]) 
 case class ExpandedRule (rule: SimpleRule) extends Rule {
   def getFragmentType : PotentiallyPluggable = {
                           if (rule.pattern.containsSlice("{asr-V}")) return VerbFragment 
@@ -48,6 +47,45 @@ object go {
   // Refactor opportunity: use newBuilder and .result rather than hold mutable and immutable collections - for correct coding style without loss of performance!
   //
   class LDB(inputRules: Seq[RuleInput]) {
+
+    //
+    // expand base rules into more rules - quite not triggered from the database data right now
+    //
+    def expand(rules: Seq[SimpleRule]) : Seq[ExpandedRule] = {
+
+      Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
+
+      val ASRRules : Seq[ExpandedRule] = rules.filter(rule => rule.pattern.containsSlice("{asr")) map ExpandedRule
+      println(ASRRules)
+
+      for (rule <- ASRRules) { 
+        rule.fragmentType match {
+            case VerbFragment => for (ref <- ArticleSelfReference.refs if (ref.annotatedL1.isnt(Personal))) 
+                                   println()
+                                   //println(ref.annotatedL1.sequence + rule.rule.pattern)
+            case NounFragment => for (ref <- ArticleSelfReference.refs if (ref.annotatedL1.is(PossesivePronoun)))  // must have props PossesivePronoun or possibly nounphrase + 's
+                                   println()
+                                   //println(ref.annotatedL1.sequence + rule.rule.pattern)
+            case InByOfFragment => for (ref <- ArticleSelfReference.refs if (ref.annotatedL1.isAnyOf(Set(Personal, Possesive))))
+                                   println(ref.annotatedL1.sequence + rule.rule.pattern)
+                                 
+          }
+        }
+
+      //
+
+      //val expansion : Seq[String] = ASRRules.flatMap (rule => ArticleSelfReference.refsText.map
+      //                                      (refText => rule.pattern.patch(rule.pattern.indexOfSlice("{asr}"), refText, "{asr}".length)))
+      
+      //println(ASRRules.mkString("\n"))
+      //println(expansion.mkString("\n"))
+      println(rules.length)
+      println(ASRRules.length)
+      //println(expansion.length)
+
+      Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
+      return ASRRules
+    }
 
     // build the data structures
     private val wildcards = List("..", "…")      // wildcard symbols allowed to the human who codes the CSV database
@@ -70,8 +108,10 @@ object go {
     Timelog.timer("patterns representation building")
 
     val rules: Seq[SimpleRule] = inputRules map (inputRule => new SimpleRule(inputRule.pattern, 
-                                                                 breakDown(deSentenceCase(inputRule.pattern)), 
-                                                                 inputRule.indication))
+                                                                   breakDown(deSentenceCase(inputRule.pattern)), 
+                                                                   inputRule.indication, 
+                                                                   inputRule.properties.collect { case locationProp : LocationProperty => locationProp }))
+                                                          
     // patterns to indications map - 
     // each pattern correlates to only one indictaion 
     val patterns2indications : Map[String, String] = rules.map(rule => (rule.pattern -> rule.indication)).toMap
@@ -88,12 +128,13 @@ object go {
     rules.foreach(rule => rule.fragments.foreach(fragment => builder addBinding (fragment, rule.pattern)))  // build it
     val fragments2patterns : Map[String, Set[String]] = builder.map(kv => kv._1 -> kv._2.toSet).toMap       // extract to immutable
 
+    //
+    // map back from patterns to rules (needed as aho-corasick returns strings not rules that included them)
+    //
+    val patterns2rules : Map[String, SimpleRule] = rules.map(rule => rule.pattern -> rule).toMap
+
     // bag of all fragments - 
     // uses a Set to avoid duplicate strings
-
-
-
-
     val allFragmentsDistinct : Set[String] = rules.map(rule => rule.fragments).flatten.toSet
 
     Timelog.timer("patterns representation building")
@@ -101,39 +142,7 @@ object go {
     Logger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
     Logger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
 
-    Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
-
-    //    
-
-    val ASRRules : Seq[ExpandedRule] = rules.filter(rule => rule.pattern.containsSlice("{asr")) map ExpandedRule
-    println(ASRRules)
-
-    for (rule <- ASRRules) { 
-      rule.fragmentType match {
-          case VerbFragment => for (ref <- ArticleSelfReference.refs if (ref.annotatedL1.isnt(Personal))) 
-                                 println()
-                                 //println(ref.annotatedL1.sequence + rule.rule.pattern)
-          case NounFragment => for (ref <- ArticleSelfReference.refs if (ref.annotatedL1.is(PossesivePronoun)))  // must have props PossesivePronoun or possibly nounphrase + 's
-                                 println()
-                                 //println(ref.annotatedL1.sequence + rule.rule.pattern)
-          case InByOfFragment => for (ref <- ArticleSelfReference.refs if (ref.annotatedL1.isAnyOf(Set(Personal, Possesive))))
-                                 println(ref.annotatedL1.sequence + rule.rule.pattern)
-                               
-        }
-      }
-
-    //
-
-    //val expansion : Seq[String] = ASRRules.flatMap (rule => ArticleSelfReference.refsText.map
-    //                                      (refText => rule.pattern.patch(rule.pattern.indexOfSlice("{asr}"), refText, "{asr}".length)))
-    
-    //println(ASRRules.mkString("\n"))
-    //println(expansion.mkString("\n"))
-    println(rules.length)
-    println(ASRRules.length)
-    //println(expansion.length)
-
-    Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
+    expand(rules) // should do nothing for now
 
   }
 
@@ -171,9 +180,29 @@ object go {
   //
   // get mock data
   //
-  println("loading sentences...")
-  val SentencesInputFile = "mock-data/sentences*ubuntu-2014-08-25T12:30:16.035Z.out"
-  val sentences = Source.fromFile(SentencesInputFile).getLines
+  val sentences = com.articlio.Input.get
+  case class AnnotatedSentence(sentence : String, section: String)
+  //val annotatedSentences Seq[AnnotatedSentence] = 
+  case class withinSection(sectionName: String) {
+    var inside = false
+    def isOpener(text: String)           = if (text == s"<$sectionName>")  inside = true
+    def isCloser(text: String)           = if (text == s"</$sectionName>") inside = false
+    def check   (text: String) = if (inside) isCloser(text)
+                                 else isOpener(text) 
+  }
+  
+  val introduction = new withinSection("introduction")
+  val interestingSections : Set[withinSection] = Set("introduction", "conclusion", "discussion") map withinSection
+
+  Timelog.timer("marking input doc sections")
+  for (sentence <- sentences) { 
+    interestingSections map (s => s.check(sentence))
+    interestingSections.foreach(s => s.inside match {
+      case true  => println(s.sectionName + "\n" + sentence)
+      case false =>        
+    })
+  } 
+  Timelog.timer("marking input doc sections")
    
   //
   // match rules per sentence    
@@ -230,6 +259,9 @@ object go {
                            s"which indicates '$indication'").mkString("\n") + "\n","sentence-pattern-matches")
         }
       })
+
+      //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
+
     }
     new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
   }

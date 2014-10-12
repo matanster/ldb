@@ -2655,12 +2655,13 @@ Map(start -> 157, end -> 159, match -> the)
 Map(start -> 222, end -> 224, match -> was)
 Map(start -> 243, end -> 245, match -> the)
 
-5. Conclusion The results of our study, combined with the experiments discussed in the introduction (Section 1), suggest that word and sentence processing during reading is highly adaptive and responsive to task demands. 
-Map(start -> 26, end -> 27, match -> of)
-Map(start -> 29, end -> 31, match -> our)
-Map(start -> 54, end -> 56, match -> the)
-Map(start -> 83, end -> 85, match -> the)
-Map(start -> 111, end -> 111, match -> ,)
+The results of our study, combined with the experiments discussed in the introduction (Section 1), suggest that word and sentence processing during reading is highly adaptive and responsive to task demands. 
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 12, end -> 13, match -> of)
+Map(start -> 15, end -> 17, match -> our)
+Map(start -> 40, end -> 42, match -> the)
+Map(start -> 69, end -> 71, match -> the)
+Map(start -> 97, end -> 97, match -> ,)
 
 That is, our subjects’ proofreading performance involved not just a more cautious version of normal reading, but rather a qualitative readjustment of different component sub-processes of overall reading so as to efﬁciently achieve high accuracy in identifying errors. 
 Map(start -> 9, end -> 11, match -> our)
@@ -2765,12 +2766,13 @@ Map(start -> 243, end -> 244, match -> of)
 Map(start -> 246, end -> 248, match -> the)
 Map(start -> 259, end -> 261, match -> the)
 
-Acknowledgments This research was supported by Grant HD065829 and training Grant DC000041 from the National Institutes of Health as well as Grant IIS0953870 from the National Science Foundation. 
-Map(start -> 21, end -> 28, match -> research)
-Map(start -> 30, end -> 32, match -> was)
-Map(start -> 95, end -> 97, match -> the)
-Map(start -> 119, end -> 120, match -> of)
-Map(start -> 162, end -> 164, match -> the)
+This research was supported by Grant HD065829 and training Grant DC000041 from the National Institutes of Health as well as Grant IIS0953870 from the National Science Foundation. 
+Map(start -> 0, end -> 3, match -> this)
+Map(start -> 5, end -> 12, match -> research)
+Map(start -> 14, end -> 16, match -> was)
+Map(start -> 79, end -> 81, match -> the)
+Map(start -> 103, end -> 104, match -> of)
+Map(start -> 146, end -> 148, match -> the)
 
 Portions of these data were presented at the CUNY Conference on Human Sentence Processing (2012; New York, NY) and the Annual Meeting of the Psychonomic Society (2012; Minneapolis, MN). 
 Map(start -> 9, end -> 10, match -> of)
