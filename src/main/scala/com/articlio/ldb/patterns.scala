@@ -177,33 +177,52 @@ object go {
     }
   }
 
+
   //
   // get mock data
   //
-  val sentences = com.articlio.Input.get
-  case class AnnotatedSentence(sentence : String, section: String)
-  //val annotatedSentences Seq[AnnotatedSentence] = 
-  case class withinSection(sectionName: String) {
-    var inside = false
-    def isOpener(text: String)           = if (text == s"<$sectionName>")  inside = true
-    def isCloser(text: String)           = if (text == s"</$sectionName>") inside = false
-    def check   (text: String) = if (inside) isCloser(text)
-                                 else isOpener(text) 
-  }
-  
-  val introduction = new withinSection("introduction")
-  val interestingSections : Set[withinSection] = Set("introduction", "conclusion", "discussion") map withinSection
 
-  Timelog.timer("marking input doc sections")
-  for (sentence <- sentences) { 
-    interestingSections map (s => s.check(sentence))
-    interestingSections.foreach(s => s.inside match {
-      case true  => println(s.sectionName + "\n" + sentence)
-      case false =>        
-    })
-  } 
-  Timelog.timer("marking input doc sections")
-   
+  /*case class AnnotatedSentence(sentence : String, section: String)
+  def getAnnotatedSentences : String = {
+    val sentences = com.articlio.Input.get
+    //val annotatedSentences Seq[AnnotatedSentence] = 
+    case class SectionDeterminer(sectionName: String) {
+      var inside = false
+      def isOpener (text: String, iterator: Iterator[String]) = if (text == s"<$sectionName>") {
+                                                                  inside = true
+                                                                  iterator.next // swallow this opener                                             
+                                                                } 
+      def isCloser (text: String, iterator: Iterator[String]) = if (text == s"</$sectionName>") {
+                                                                  inside = false
+                                                                  iterator.next // swallow this closer
+                                                                } 
+      def check    (text: String, iterator: Iterator[String]) = if (inside) isCloser(text, iterator)
+                                                                else isOpener(text, iterator) 
+    }
+    
+    val SectionDeterminers : Set[SectionDeterminer] = Set("introduction", "conclusion", "discussion") map SectionDeterminer
+
+    Timelog.timer("marking input doc sections")
+
+    while (sentences.hasNext)
+    { 
+      val sentence = sentences.next
+
+      SectionDeterminers map (s => s.check(sentence, sentences))
+      SectionDeterminers.foreach(s => s.inside match {
+        case true  => // println(s.sectionName + "\n" + sentence)
+        case false =>        
+      })
+    } 
+    Timelog.timer("marking input doc sections")
+    return sentences.
+  }*/   
+
+  //
+  // get mock data
+  //
+  val sentences = com.articlio.Input.getXML
+  
   //
   // match rules per sentence    
   //
@@ -251,14 +270,33 @@ object go {
         possiblePatternMatches ++= fragmentPatterns
       })
 
+      val possibleMatches = for (pattern <- possiblePatternMatches.result 
+                              if (isInOrder (db.patterns2fragments.get(pattern).get, -1))) 
+                                yield (pattern, sentence, db.patterns2indications.get(pattern).get, db.patterns2rules(pattern))
+
+      possibleMatches.foreach(p =>
+        Logger.write(Seq(s"sentence '${p._2}'",
+                         s"matches pattern '${p._1}'",
+                         s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
+
+      //
+      // trace back from pattern to rule
+      //
+      //
+      // filter out matches occuring outside their designated location requirement
+      //
+      val matches = possibleMatches.filter(p => p._4 == p._4)
+
+      /* superfluous to for-yield block now 
       possiblePatternMatches.result.foreach(pattern => { 
         if (isInOrder (db.patterns2fragments.get(pattern).get, -1)) {
           val indication = db.patterns2indications.get(pattern).get
-          Logger.write(Seq(s"sentence '$sentence'",
+          /*Logger.write(Seq(s"sentence '$sentence'",
                            s"matches pattern '$pattern'",
-                           s"which indicates '$indication'").mkString("\n") + "\n","sentence-pattern-matches")
+                           s"which indicates '$indication'").mkString("\n") + "\n","sentence-pattern-matches")*/
         }
-      })
+      })*/
+
 
       //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
 

@@ -12,14 +12,14 @@ Map(start -> 62, end -> 63, match -> of)
 Map(start -> 147, end -> 149, match -> the)
 Map(start -> 175, end -> 177, match -> the)
 
-Two hallmark effects derive from the frequency of a word to be processed (high frequency words are processed more quickly than low frequency words) and the predictability of a word in its sentence context (more predictable words are processed more quickly than less predictable words; see Kutas & Federmeier, 2011; Rayner, 1998, 2009 0010-0277/$ - see front matter Ó 2013 The Authors. 
+Two hallmark effects derive from the frequency of a word to be processed (high frequency words are processed more quickly than low frequency words) and the predictability of a word in its sentence context (more predictable words are processed more quickly than less predictable words; see Kutas &amp; Federmeier, 2011; Rayner, 1998, 2009 0010-0277/$ - see front matter Ó 2013 The Authors. 
 Map(start -> 33, end -> 35, match -> the)
 Map(start -> 47, end -> 48, match -> of)
 Map(start -> 122, end -> 125, match -> than)
 Map(start -> 152, end -> 154, match -> the)
 Map(start -> 171, end -> 172, match -> of)
 Map(start -> 256, end -> 259, match -> than)
-Map(start -> 327, end -> 327, match -> ,)
+Map(start -> 331, end -> 331, match -> ,)
 
 While frequency and predictability effects are robust and well documented, the magnitudes of these effects vary across tasks and paradigms (even when equating the magnitude of the frequency or predictability manipulation). 
 Map(start -> 75, end -> 77, match -> the)
@@ -68,15 +68,15 @@ Map(start -> 249, end -> 251, match -> the)
 Map(start -> 270, end -> 271, match -> of)
 Map(start -> 273, end -> 275, match -> the)
 
-Frequency effects Word frequency is one of the strongest linguistic aspects of a word that affects how easily it is processed, across many tasks (lexical decision, Stanners, Jastrzembski, & Westbrook, 1975; word naming, Berry, 1971; Forster & Chambers, 1973; reading a sentence, as indexed by eye ﬁxation times, Inhoff & Rayner, 1986; Rayner & Duffy, 1986; see Rayner, 1998, 2009 for reviews; and event related potentials, King & Kutas, 1998; Polich & Donchin, 1988; see Kutas & Federmeier, 2011 for a review). 
+Frequency effects Word frequency is one of the strongest linguistic aspects of a word that affects how easily it is processed, across many tasks (lexical decision, Stanners, Jastrzembski, &amp; Westbrook, 1975; word naming, Berry, 1971; Forster &amp; Chambers, 1973; reading a sentence, as indexed by eye ﬁxation times, Inhoff &amp; Rayner, 1986; Rayner &amp; Duffy, 1986; see Rayner, 1998, 2009 for reviews; and event related potentials, King &amp; Kutas, 1998; Polich &amp; Donchin, 1988; see Kutas &amp; Federmeier, 2011 for a review). 
 Map(start -> 40, end -> 41, match -> of)
 Map(start -> 43, end -> 45, match -> the)
 Map(start -> 76, end -> 77, match -> of)
-Map(start -> 373, end -> 373, match -> ,)
-Map(start -> 380, end -> 382, match -> for)
-Map(start -> 496, end -> 498, match -> for)
+Map(start -> 389, end -> 389, match -> ,)
+Map(start -> 396, end -> 398, match -> for)
+Map(start -> 524, end -> 526, match -> for)
 
-In general, crossexperiment comparisons cannot convincingly test whether frequency effects change size across tasks because they use different stimuli (the magnitude of the effect on the response variable depends on the magnitude of the frequency manipulation) and different subjects (more skilled readers show smaller frequency effects than average readers; Ashby, Rayner, & Clifton, 2005). 
+In general, crossexperiment comparisons cannot convincingly test whether frequency effects change size across tasks because they use different stimuli (the magnitude of the effect on the response variable depends on the magnitude of the frequency manipulation) and different subjects (more skilled readers show smaller frequency effects than average readers; Ashby, Rayner, &amp; Clifton, 2005). 
 Map(start -> 152, end -> 154, match -> the)
 Map(start -> 166, end -> 167, match -> of)
 Map(start -> 169, end -> 171, match -> the)
@@ -86,10 +86,10 @@ Map(start -> 230, end -> 231, match -> of)
 Map(start -> 233, end -> 235, match -> the)
 Map(start -> 337, end -> 340, match -> than)
 
-The most direct indication that frequency effects change across tasks comes from studies by Schilling, Rayner, and Chumbley (1998; for a more recent similar study, see Kuperman, Drieghe, Keuleers, & Brysbaert, 2013) and Rayner and Raney (1996; see also Rayner & Fischer, 1996, as well as Murray & Forster, 2008). 
+The most direct indication that frequency effects change across tasks comes from studies by Schilling, Rayner, and Chumbley (1998; for a more recent similar study, see Kuperman, Drieghe, Keuleers, &amp; Brysbaert, 2013) and Rayner and Raney (1996; see also Rayner &amp; Fischer, 1996, as well as Murray &amp; Forster, 2008). 
 Map(start -> 0, end -> 2, match -> the)
 Map(start -> 131, end -> 133, match -> for)
-Map(start -> 275, end -> 275, match -> ,)
+Map(start -> 283, end -> 283, match -> ,)
 
 Schilling et al. used the same materials and subjects and compared frequency effects between word naming, lexical decision, and gaze duration 1 (how long the eyes remain on a word before leaving it) during reading. 
 Map(start -> 22, end -> 24, match -> the)
@@ -119,21 +119,21 @@ Map(start -> 368, end -> 369, match -> of)
 Map(start -> 371, end -> 373, match -> the)
 Map(start -> 415, end -> 417, match -> the)
 
-Rayner and Raney (1996); see also Rayner & Fischer, 1996) found that the frequency effect (which was 53 ms when subjects read for comprehension) went away (i.e., was only 1 ms) when subjects searched for a particular word in a passage (and responded when they had found it). 
-Map(start -> 69, end -> 71, match -> the)
-Map(start -> 97, end -> 99, match -> was)
-Map(start -> 126, end -> 128, match -> for)
-Map(start -> 160, end -> 160, match -> ,)
-Map(start -> 162, end -> 164, match -> was)
-Map(start -> 166, end -> 169, match -> only)
-Map(start -> 200, end -> 202, match -> for)
+Rayner and Raney (1996); see also Rayner &amp; Fischer, 1996) found that the frequency effect (which was 53 ms when subjects read for comprehension) went away (i.e., was only 1 ms) when subjects searched for a particular word in a passage (and responded when they had found it). 
+Map(start -> 73, end -> 75, match -> the)
+Map(start -> 101, end -> 103, match -> was)
+Map(start -> 130, end -> 132, match -> for)
+Map(start -> 164, end -> 164, match -> ,)
+Map(start -> 166, end -> 168, match -> was)
+Map(start -> 170, end -> 173, match -> only)
+Map(start -> 204, end -> 206, match -> for)
 
 Rayner and Raney suggested that reading for comprehension requires accessing meaning (dependent on lexical access) and searching for a word in a text can be performed by more surface-level matching and may not be sensitive to frequency. 
 Map(start -> 40, end -> 42, match -> for)
 Map(start -> 129, end -> 131, match -> for)
 Map(start -> 206, end -> 208, match -> not)
 
-In a similar vein, during mindless reading (e.g., when the reader ‘‘zones out’’ and stops understanding the sentence but their eyes continue to move along the text) frequency effects are absent (Reichle, Rennenberg, & Schooler, 2010)or attenuated (Schad & Engbert, 2012). 
+In a similar vein, during mindless reading (e.g., when the reader ‘‘zones out’’ and stops understanding the sentence but their eyes continue to move along the text) frequency effects are absent (Reichle, Rennenberg, &amp; Schooler, 2010)or attenuated (Schad &amp; Engbert, 2012). 
 Map(start -> 48, end -> 48, match -> ,)
 Map(start -> 55, end -> 57, match -> the)
 Map(start -> 104, end -> 106, match -> the)
@@ -155,25 +155,25 @@ Map(start -> 108, end -> 110, match -> the)
 Map(start -> 127, end -> 129, match -> the)
 Map(start -> 172, end -> 174, match -> the)
 
-In fact, the predictability of a word (i.e., how expected the word is, given the prior context) has an effect on reading times and ﬁxation probabilities (Balota, Pollatsek, & Rayner, 1985; Drieghe, Rayner, & Pollatsek, 2005; Ehrlich & Rayner, 1981; Kliegl, Grabner, Rolfs, & Engbert, 2004; Rayner, Slattery, Drieghe, & Liversedge, 2011; Rayner & Well, 1996; Zola, 1984; see Rayner, 1998, 2009 for reviews) as well as ERPs (Kutas & Hillyard, 1984; see Kutas & Federmeier, 2011 for a review). 
+In fact, the predictability of a word (i.e., how expected the word is, given the prior context) has an effect on reading times and ﬁxation probabilities (Balota, Pollatsek, &amp; Rayner, 1985; Drieghe, Rayner, &amp; Pollatsek, 2005; Ehrlich &amp; Rayner, 1981; Kliegl, Grabner, Rolfs, &amp; Engbert, 2004; Rayner, Slattery, Drieghe, &amp; Liversedge, 2011; Rayner &amp; Well, 1996; Zola, 1984; see Rayner, 1998, 2009 for reviews) as well as ERPs (Kutas &amp; Hillyard, 1984; see Kutas &amp; Federmeier, 2011 for a review). 
 Map(start -> 9, end -> 11, match -> the)
 Map(start -> 28, end -> 29, match -> of)
 Map(start -> 43, end -> 43, match -> ,)
 Map(start -> 58, end -> 60, match -> the)
 Map(start -> 77, end -> 79, match -> the)
 Map(start -> 96, end -> 98, match -> has)
-Map(start -> 386, end -> 386, match -> ,)
-Map(start -> 393, end -> 395, match -> for)
-Map(start -> 476, end -> 478, match -> for)
+Map(start -> 410, end -> 410, match -> ,)
+Map(start -> 417, end -> 419, match -> for)
+Map(start -> 508, end -> 510, match -> for)
 
 Tests for predictability effects in isolated word processing tasks are rare. 
 Map(start -> 6, end -> 8, match -> for)
 
-However, some studies have recorded response times to target words presented after a sentence context (in word naming: Stanovich & West, 1979, 1981; West & Stanovich, 1982; and lexical decision: Schuberth & Eimas, 1977) or when the target word is preceded by a single prime word (in naming: de Groot, 1985; Meyer & Schvaneveldt, 1971; and lexical decision: Schuberth & Eimas, 1977). 
+However, some studies have recorded response times to target words presented after a sentence context (in word naming: Stanovich &amp; West, 1979, 1981; West &amp; Stanovich, 1982; and lexical decision: Schuberth &amp; Eimas, 1977) or when the target word is preceded by a single prime word (in naming: de Groot, 1985; Meyer &amp; Schvaneveldt, 1971; and lexical decision: Schuberth &amp; Eimas, 1977). 
 Map(start -> 0, end -> 6, match -> however)
 Map(start -> 22, end -> 25, match -> have)
-Map(start -> 141, end -> 141, match -> ,)
-Map(start -> 228, end -> 230, match -> the)
+Map(start -> 145, end -> 145, match -> ,)
+Map(start -> 240, end -> 242, match -> the)
 
 Here, cross task comparisons reveal that the predictability effect for primed lexical decision (65 ms) is larger than for primed naming (38 ms; de Groot, 1 Schilling et al. (1998) also analyzed ﬁrst ﬁxation duration and single ﬁxation duration. 
 Map(start -> 41, end -> 43, match -> the)
@@ -181,12 +181,12 @@ Map(start -> 67, end -> 69, match -> for)
 Map(start -> 113, end -> 116, match -> than)
 Map(start -> 118, end -> 120, match -> for)
 
-1985; cf. West & Stanovich, 1982), but these have not been directly compared to eye ﬁxations in reading using the same materials and the same subjects. 
-Map(start -> 33, end -> 33, match -> ,)
-Map(start -> 45, end -> 48, match -> have)
-Map(start -> 50, end -> 52, match -> not)
-Map(start -> 110, end -> 112, match -> the)
-Map(start -> 133, end -> 135, match -> the)
+1985; cf. West &amp; Stanovich, 1982), but these have not been directly compared to eye ﬁxations in reading using the same materials and the same subjects. 
+Map(start -> 37, end -> 37, match -> ,)
+Map(start -> 49, end -> 52, match -> have)
+Map(start -> 54, end -> 56, match -> not)
+Map(start -> 114, end -> 116, match -> the)
+Map(start -> 137, end -> 139, match -> the)
 
 Therefore, as with frequency effects, discussed in Section 1.1, the degree to which subjects respond to inter-word information (i.e., predictability, or the target word’s ﬁt into the sentence context) is also modulated by the type of processing the task requires. 
 Map(start -> 62, end -> 62, match -> ,)
@@ -207,10 +207,10 @@ Map(start -> 166, end -> 168, match -> the)
 Map(start -> 250, end -> 251, match -> of)
 Map(start -> 268, end -> 268, match -> ,)
 
-Thus, comparisons between tasks, such as Schilling et al. (1998; de Groot, 1985; Kuperman et al., 2013; West & Stanovich, 1982) are suggestive of, but not conclusive about, how different tasks affect word processing, particularly with respect to how word properties are emphasized. 
+Thus, comparisons between tasks, such as Schilling et al. (1998; de Groot, 1985; Kuperman et al., 2013; West &amp; Stanovich, 1982) are suggestive of, but not conclusive about, how different tasks affect word processing, particularly with respect to how word properties are emphasized. 
 Map(start -> 96, end -> 96, match -> ,)
-Map(start -> 143, end -> 144, match -> of)
-Map(start -> 151, end -> 153, match -> not)
+Map(start -> 147, end -> 148, match -> of)
+Map(start -> 155, end -> 157, match -> not)
 
 Therefore, we turn to a pair of tasks that can utilize the same stimuli, subjects, and response measures: reading for comprehension and proofreading. 
 Map(start -> 29, end -> 30, match -> of)
@@ -269,7 +269,7 @@ Map(start -> 35, end -> 36, match -> of)
 Map(start -> 104, end -> 104, match -> ,)
 Map(start -> 112, end -> 114, match -> for)
 
-Detection of these errors requires only the assessment of word status (i.e., whether the letter string is a known word; Daneman & Stainton, 1993; Levy, Newell, Snyder, & Timmins, 1986), and they can sometimes be identiﬁed from the surface features of the word alone (i.e., determining if the letter string follows orthographic rules of the language or can yield pronounceable output). 
+Detection of these errors requires only the assessment of word status (i.e., whether the letter string is a known word; Daneman &amp; Stainton, 1993; Levy, Newell, Snyder, &amp; Timmins, 1986), and they can sometimes be identiﬁed from the surface features of the word alone (i.e., determining if the letter string follows orthographic rules of the language or can yield pronounceable output). 
 Map(start -> 10, end -> 11, match -> of)
 Map(start -> 35, end -> 38, match -> only)
 Map(start -> 40, end -> 42, match -> the)
@@ -277,14 +277,14 @@ Map(start -> 55, end -> 56, match -> of)
 Map(start -> 75, end -> 75, match -> ,)
 Map(start -> 85, end -> 87, match -> the)
 Map(start -> 108, end -> 112, match -> known)
-Map(start -> 184, end -> 184, match -> ,)
-Map(start -> 227, end -> 229, match -> the)
-Map(start -> 248, end -> 249, match -> of)
-Map(start -> 251, end -> 253, match -> the)
-Map(start -> 271, end -> 271, match -> ,)
-Map(start -> 288, end -> 290, match -> the)
-Map(start -> 333, end -> 334, match -> of)
-Map(start -> 336, end -> 338, match -> the)
+Map(start -> 192, end -> 192, match -> ,)
+Map(start -> 235, end -> 237, match -> the)
+Map(start -> 256, end -> 257, match -> of)
+Map(start -> 259, end -> 261, match -> the)
+Map(start -> 279, end -> 279, match -> ,)
+Map(start -> 296, end -> 298, match -> the)
+Map(start -> 341, end -> 342, match -> of)
+Map(start -> 344, end -> 346, match -> the)
 
 Proofreading for these nonword (surface level) errors may be easiest because the proofreader need only check orthographic legality and/or word status and then stop (i.e., not try to integrate an error into the sentence). 
 Map(start -> 13, end -> 15, match -> for)
@@ -325,14 +325,14 @@ Map(start -> 364, end -> 365, match -> of)
 Theoretical framework With these considerations in mind, we now lay out a theoretical framework within which potential differences between various ‘‘reading’’ tasks, including normal reading for comprehension, proofreading to catch nonwords, and proofreading to catch wrong words, can be understood. 
 Map(start -> 191, end -> 193, match -> for)
 
-This framework is agnostic as to the speciﬁc model of eye movement control in reading (e.g., Bicknell & Levy, 2010; Engbert, Nuthmann, Richter, & Kliegl, 2005; Reichle, Pollatsek, Fisher, & Rayner, 1998; Reichle, Rayner, & Pollatsek, 2003; Schad & Engbert, 2012) assumed, although it should be noted that any complete model of reading must ultimately be able to account for task differences in reading behavior. 
+This framework is agnostic as to the speciﬁc model of eye movement control in reading (e.g., Bicknell &amp; Levy, 2010; Engbert, Nuthmann, Richter, &amp; Kliegl, 2005; Reichle, Pollatsek, Fisher, &amp; Rayner, 1998; Reichle, Rayner, &amp; Pollatsek, 2003; Schad &amp; Engbert, 2012) assumed, although it should be noted that any complete model of reading must ultimately be able to account for task differences in reading behavior. 
 Map(start -> 0, end -> 3, match -> this)
 Map(start -> 33, end -> 35, match -> the)
 Map(start -> 51, end -> 52, match -> of)
 Map(start -> 91, end -> 91, match -> ,)
-Map(start -> 272, end -> 279, match -> although)
-Map(start -> 324, end -> 325, match -> of)
-Map(start -> 370, end -> 372, match -> for)
+Map(start -> 292, end -> 299, match -> although)
+Map(start -> 344, end -> 345, match -> of)
+Map(start -> 390, end -> 392, match -> for)
 
 Our starting desideratum is that any type of reading—be it normal reading, scanning (skimming the text to ﬁnd keywords), or proofreading—must involve some combination of (1) identifying words and (2) combining the meanings of those identiﬁed words to recover sentence meaning. 
 Map(start -> 0, end -> 2, match -> our)
@@ -348,16 +348,16 @@ Map(start -> 5, end -> 6, match -> of)
 Map(start -> 124, end -> 125, match -> of)
 Map(start -> 148, end -> 149, match -> of)
 
-Word-form recognition can involve both decisions about whether or not the letter string is a word and, furthermore, what exact word it is. For example, wordhood assessment, which we deﬁne as recognizing whether the letter string has a legal (known) orthographic entry (similar to the ‘‘orthographic checking’’ process hypothesized by Kaakinen & Hyönä, 2010) is most obviously relevant for proofreading, but is also relevant even for normal reading since the reader must be able to deal with novel words. 
+Word-form recognition can involve both decisions about whether or not the letter string is a word and, furthermore, what exact word it is. For example, wordhood assessment, which we deﬁne as recognizing whether the letter string has a legal (known) orthographic entry (similar to the ‘‘orthographic checking’’ process hypothesized by Kaakinen &amp; Hyönä, 2010) is most obviously relevant for proofreading, but is also relevant even for normal reading since the reader must be able to deal with novel words. 
 Map(start -> 66, end -> 68, match -> not)
 Map(start -> 70, end -> 72, match -> the)
 Map(start -> 211, end -> 213, match -> the)
 Map(start -> 229, end -> 231, match -> has)
 Map(start -> 242, end -> 246, match -> known)
 Map(start -> 280, end -> 282, match -> the)
-Map(start -> 385, end -> 387, match -> for)
-Map(start -> 429, end -> 431, match -> for)
-Map(start -> 454, end -> 456, match -> the)
+Map(start -> 389, end -> 391, match -> for)
+Map(start -> 433, end -> 435, match -> for)
+Map(start -> 458, end -> 460, match -> the)
 
 We deﬁne form validation, on the other hand, as recognizing the speciﬁc sequence of letters constituting the word currently being read. 
 Map(start -> 29, end -> 31, match -> the)
@@ -408,7 +408,7 @@ Map(start -> 254, end -> 256, match -> the)
 Map(start -> 463, end -> 470, match -> could be)
 Map(start -> 583, end -> 585, match -> the)
 
-Nevertheless, if accessing content and performing sentence-level processing are not costly, it is possible that these processes would not be de-emphasized, since sentence-level context makes reading more efﬁcient overall (Bicknell & Levy, 2012; Ehrlich & Rayner, 1981; Morton, 1964; Rayner & Well, 1996). 
+Nevertheless, if accessing content and performing sentence-level processing are not costly, it is possible that these processes would not be de-emphasized, since sentence-level context makes reading more efﬁcient overall (Bicknell &amp; Levy, 2012; Ehrlich &amp; Rayner, 1981; Morton, 1964; Rayner &amp; Well, 1996). 
 Map(start -> 0, end -> 11, match -> nevertheless)
 Map(start -> 80, end -> 82, match -> not)
 Map(start -> 134, end -> 136, match -> not)
@@ -495,13 +495,13 @@ Map(start -> 137, end -> 138, match -> of)
 Process Reading Proofreading – nonwords Proofreading – wrong words Word identiﬁcation Wordhood assessment p " p ; Form validation p "" Content access pp ; " Sentence processing Integration pp ; " p ; Word-context validation pp ; " to proceed, hence their effects should not exclusively show up on late eye movement measures, but rather should appear during ﬁrst pass reading. 
 Map(start -> 270, end -> 272, match -> not)
 
-In sentence-level processing, however, predictability, which reﬂects degree of contextual ﬁt, is likely to be far more important than frequency: words with higher predictability are likely to be easier to integrate syntactically (Hale, 2001; Levy, 2008) and semantically (Kutas & Hillyard, 1984), and easier to validate as being a valid word, given the context and the visual input (Levy, Bicknell, Slattery, & Rayner, 2009). 
+In sentence-level processing, however, predictability, which reﬂects degree of contextual ﬁt, is likely to be far more important than frequency: words with higher predictability are likely to be easier to integrate syntactically (Hale, 2001; Levy, 2008) and semantically (Kutas &amp; Hillyard, 1984), and easier to validate as being a valid word, given the context and the visual input (Levy, Bicknell, Slattery, &amp; Rayner, 2009). 
 Map(start -> 30, end -> 36, match -> however)
 Map(start -> 76, end -> 77, match -> of)
 Map(start -> 129, end -> 132, match -> than)
-Map(start -> 295, end -> 295, match -> ,)
-Map(start -> 349, end -> 351, match -> the)
-Map(start -> 365, end -> 367, match -> the)
+Map(start -> 299, end -> 299, match -> ,)
+Map(start -> 353, end -> 355, match -> the)
+Map(start -> 369, end -> 371, match -> the)
 
 Our framework leaves open a number of possibilities, but it also makes three clear predictions: (1) overall speed is likely to be slower in proofreading than in normal reading provided that errors are reasonably difﬁcult to spot and subjects proofread to a high degree of accuracy; (2) effects of proofreading for nonwords should show up (at least) in early eye-movement measures; and (3) predictability effects are more likely to be magniﬁed in proofreading for wrong words than in proofreading for nonwords. 
 Map(start -> 0, end -> 2, match -> our)
@@ -552,30 +552,30 @@ Map(start -> 348, end -> 350, match -> the)
 Map(start -> 370, end -> 372, match -> our)
 Map(start -> 395, end -> 396, match -> of)
 
-Furthermore, subjects are better able to detect nonword errors when the intended word is low frequency (e.g., sleat for sleet) than when it is high frequency (e.g., grean for green; Van Orden, 1991; see also Holbrook, 1978b; Jared, Levy, & Rayner, 1999), suggesting that subjects are more likely to coerce an errorful letter string into a real word if it is similar to a high frequency word (wordhood assessment and form validation may have been rushed and performed too cursorily). 
+Furthermore, subjects are better able to detect nonword errors when the intended word is low frequency (e.g., sleat for sleet) than when it is high frequency (e.g., grean for green; Van Orden, 1991; see also Holbrook, 1978b; Jared, Levy, &amp; Rayner, 1999), suggesting that subjects are more likely to coerce an errorful letter string into a real word if it is similar to a high frequency word (wordhood assessment and form validation may have been rushed and performed too cursorily). 
 Map(start -> 68, end -> 70, match -> the)
 Map(start -> 108, end -> 108, match -> ,)
 Map(start -> 116, end -> 118, match -> for)
 Map(start -> 127, end -> 130, match -> than)
 Map(start -> 163, end -> 163, match -> ,)
 Map(start -> 171, end -> 173, match -> for)
-Map(start -> 253, end -> 253, match -> ,)
-Map(start -> 436, end -> 439, match -> have)
+Map(start -> 257, end -> 257, match -> ,)
+Map(start -> 440, end -> 443, match -> have)
 
-Less detectable are wrong word errors (Daneman & Stainton, 1993; Levy et al., 1986), which moreover show differences in the contribution of phonological similarity to the intended word: homophone substitutions (e.g., mail for male) are less detectable than spelling control substitutions (e.g., mile; Banks, Oka, & Shugarman, 1981; Jared et al., 1999), potentially implicating that phonological status may mediate content access. 
-Map(start -> 76, end -> 76, match -> ,)
-Map(start -> 83, end -> 83, match -> ,)
-Map(start -> 120, end -> 122, match -> the)
-Map(start -> 124, end -> 135, match -> contribution)
-Map(start -> 124, end -> 138, match -> contribution of)
-Map(start -> 137, end -> 138, match -> of)
-Map(start -> 167, end -> 169, match -> the)
-Map(start -> 215, end -> 215, match -> ,)
-Map(start -> 222, end -> 224, match -> for)
-Map(start -> 252, end -> 255, match -> than)
-Map(start -> 293, end -> 293, match -> ,)
-Map(start -> 344, end -> 344, match -> ,)
-Map(start -> 351, end -> 351, match -> ,)
+Less detectable are wrong word errors (Daneman &amp; Stainton, 1993; Levy et al., 1986), which moreover show differences in the contribution of phonological similarity to the intended word: homophone substitutions (e.g., mail for male) are less detectable than spelling control substitutions (e.g., mile; Banks, Oka, &amp; Shugarman, 1981; Jared et al., 1999), potentially implicating that phonological status may mediate content access. 
+Map(start -> 80, end -> 80, match -> ,)
+Map(start -> 87, end -> 87, match -> ,)
+Map(start -> 124, end -> 126, match -> the)
+Map(start -> 128, end -> 139, match -> contribution)
+Map(start -> 128, end -> 142, match -> contribution of)
+Map(start -> 141, end -> 142, match -> of)
+Map(start -> 171, end -> 173, match -> the)
+Map(start -> 219, end -> 219, match -> ,)
+Map(start -> 226, end -> 228, match -> for)
+Map(start -> 256, end -> 259, match -> than)
+Map(start -> 297, end -> 297, match -> ,)
+Map(start -> 352, end -> 352, match -> ,)
+Map(start -> 359, end -> 359, match -> ,)
 
 Perhaps in addition, it may be the case that spelling uncertainty, which coincides with homophony, mediates content access. 
 Map(start -> 31, end -> 33, match -> the)
@@ -1117,15 +1117,15 @@ The experimental session lasted for approximately forty-ﬁve minutes to one hou
 Map(start -> 0, end -> 2, match -> the)
 Map(start -> 32, end -> 34, match -> for)
 
-In the LMMs, task (reading vs. proofreading), target type (predictability item vs. frequency item, where applicable), and independent variable value (high vs. low, where applicable, or ﬁller (error-free in the reading block) vs. error (in the proofreading block), where applicable) were centered and entered as ﬁxed effects, and subjects and items were entered as crossed random effects, including intercepts and slopes (see Baayen, Davidson, & Bates, 2008), using the maximal random effects structure (Barr, Levy, Scheepers, & Tily, 2013). 
+In the LMMs, task (reading vs. proofreading), target type (predictability item vs. frequency item, where applicable), and independent variable value (high vs. low, where applicable, or ﬁller (error-free in the reading block) vs. error (in the proofreading block), where applicable) were centered and entered as ﬁxed effects, and subjects and items were entered as crossed random effects, including intercepts and slopes (see Baayen, Davidson, &amp; Bates, 2008), using the maximal random effects structure (Barr, Levy, Scheepers, &amp; Tily, 2013). 
 Map(start -> 3, end -> 5, match -> the)
 Map(start -> 44, end -> 44, match -> ,)
 Map(start -> 116, end -> 116, match -> ,)
 Map(start -> 206, end -> 208, match -> the)
 Map(start -> 239, end -> 241, match -> the)
 Map(start -> 262, end -> 262, match -> ,)
-Map(start -> 457, end -> 457, match -> ,)
-Map(start -> 465, end -> 467, match -> the)
+Map(start -> 461, end -> 461, match -> ,)
+Map(start -> 469, end -> 471, match -> the)
 
 For models that did not converge before reaching the iteration limit, we removed random effects that accounted for the least variance and did not signiﬁcantly improve the model’s ﬁt to the data iteratively until the model did converge. 
 Map(start -> 0, end -> 2, match -> for)
@@ -1138,13 +1138,13 @@ Map(start -> 167, end -> 169, match -> the)
 Map(start -> 185, end -> 187, match -> the)
 Map(start -> 212, end -> 214, match -> the)
 
-3 In order to ﬁt the LMMs, the lmer function from the lme4 package (Bates, Maechler, & Bolker, 2011) was used within the R Environment for Statistical Computing (R Development Core Team, 2009). 
+3 In order to ﬁt the LMMs, the lmer function from the lme4 package (Bates, Maechler, &amp; Bolker, 2011) was used within the R Environment for Statistical Computing (R Development Core Team, 2009). 
 Map(start -> 17, end -> 19, match -> the)
 Map(start -> 27, end -> 29, match -> the)
 Map(start -> 50, end -> 52, match -> the)
-Map(start -> 101, end -> 103, match -> was)
-Map(start -> 117, end -> 119, match -> the)
-Map(start -> 135, end -> 137, match -> for)
+Map(start -> 105, end -> 107, match -> was)
+Map(start -> 121, end -> 123, match -> the)
+Map(start -> 139, end -> 141, match -> for)
 
 For ﬁxation duration measures, we used linear mixed-effects regression, and report regression coefﬁcients (b), which estimate the effect size (in milliseconds) of the reported comparison, and the t-value of the effect coefﬁcient. 
 Map(start -> 0, end -> 2, match -> for)
@@ -1423,7 +1423,7 @@ Map(start -> 46, end -> 48, match -> the)
 Map(start -> 80, end -> 82, match -> our)
 Map(start -> 98, end -> 99, match -> of)
 
-Here, the results are quite clear: frequency effects were reliably larger during proofreading than during reading across all measures (single ﬁxation duration: b = 13.12, t = 2.07; gaze duration: b = 29.91, t = 3.13; total time: b = 38.66, t = 2.52, go-past time: 34.86, t = 2.38) with the exception of ﬁrst ﬁxation duration (b = 3.92, t < 1) whereas the effect of predictability was not modulated by task in any ﬁxation time measure (all ts < 1.14). 
+Here, the results are quite clear: frequency effects were reliably larger during proofreading than during reading across all measures (single ﬁxation duration: b = 13.12, t = 2.07; gaze duration: b = 29.91, t = 3.13; total time: b = 38.66, t = 2.52, go-past time: 34.86, t = 2.38) with the exception of ﬁrst ﬁxation duration (b = 3.92, t &lt; 1) whereas the effect of predictability was not modulated by task in any ﬁxation time measure (all ts &lt; 1.14). 
 Map(start -> 6, end -> 8, match -> the)
 Map(start -> 94, end -> 97, match -> than)
 Map(start -> 169, end -> 169, match -> ,)
@@ -1434,10 +1434,10 @@ Map(start -> 269, end -> 269, match -> ,)
 Map(start -> 286, end -> 288, match -> the)
 Map(start -> 300, end -> 301, match -> of)
 Map(start -> 334, end -> 334, match -> ,)
-Map(start -> 351, end -> 353, match -> the)
-Map(start -> 362, end -> 363, match -> of)
-Map(start -> 380, end -> 382, match -> was)
-Map(start -> 384, end -> 386, match -> not)
+Map(start -> 354, end -> 356, match -> the)
+Map(start -> 365, end -> 366, match -> of)
+Map(start -> 383, end -> 385, match -> was)
+Map(start -> 387, end -> 389, match -> not)
 
 The interaction between task and the frequency effect in these data replicates Kaakinen and Hyönä’s result (in a different language: English), showing that the effect of frequency becomes larger when proofreading for spelling errors that produce nonwords (see goal 1, in Section 1.4). 
 Map(start -> 0, end -> 2, match -> the)
@@ -1476,7 +1476,7 @@ Map(start -> 192, end -> 192, match -> ,)
 Map(start -> 284, end -> 286, match -> for)
 Map(start -> 288, end -> 290, match -> the)
 
-Fixation probability measures.Results of the logistic mixed-effects regression analyses on ﬁxation probability measures are reported in Table 6. As with the reading time measures, in Section 2.2.2.1, ﬁxation probability measures showed a robust effect of task, with a higher probability of ﬁxating the target (frequency items: z = 2.49, p = .01; predictability items: z = 3.77, p < .001), regressing into the Table 6 Results of the logistic regression mixed effects models for ﬁxation probability measures in Experiment 1. All measures were centered before being entered into the analyses. 
+Fixation probability measures.Results of the logistic mixed-effects regression analyses on ﬁxation probability measures are reported in Table 6. As with the reading time measures, in Section 2.2.2.1, ﬁxation probability measures showed a robust effect of task, with a higher probability of ﬁxating the target (frequency items: z = 2.49, p = .01; predictability items: z = 3.77, p &lt; .001), regressing into the Table 6 Results of the logistic regression mixed effects models for ﬁxation probability measures in Experiment 1. All measures were centered before being entered into the analyses. 
 Map(start -> 38, end -> 39, match -> of)
 Map(start -> 41, end -> 43, match -> the)
 Map(start -> 153, end -> 155, match -> the)
@@ -1486,39 +1486,39 @@ Map(start -> 287, end -> 288, match -> of)
 Map(start -> 298, end -> 300, match -> the)
 Map(start -> 335, end -> 335, match -> ,)
 Map(start -> 376, end -> 376, match -> ,)
-Map(start -> 387, end -> 387, match -> ,)
-Map(start -> 405, end -> 407, match -> the)
-Map(start -> 425, end -> 426, match -> of)
-Map(start -> 428, end -> 430, match -> the)
-Map(start -> 473, end -> 475, match -> for)
-Map(start -> 576, end -> 578, match -> the)
+Map(start -> 390, end -> 390, match -> ,)
+Map(start -> 408, end -> 410, match -> the)
+Map(start -> 428, end -> 429, match -> of)
+Map(start -> 431, end -> 433, match -> the)
+Map(start -> 476, end -> 478, match -> for)
+Map(start -> 579, end -> 581, match -> the)
 
-Measure Variable bz p Fixation probability Task .38 2.49 .01 Frequency .68 4.24 <.001 Task * Frequency .18 0.71 .48 Task .48 3.77 <.001 Predictability .23 1.78 .08 Task * Predictability .21 0.84 .40 Regressions into the target Task .57 3.77 <.001 Frequency .03 0.19 .85 Task * Frequency .71 2.63 .009 Task .85 5.43 <.001 Predictability .78 4.65 <.001 Task * Predictability .90 2.36 .02 Regressions out of the target Task .81 4.47 <.001 Frequency .21 1.20 .23 Task * Frequency .14 0.40 .69 Task .16 .91 .37 Predictability .36 1.94 .05 Task * Predictability .45 1.35 .18 target (frequency items: z = 3.77, p < .001; predictability items: z = 5.43, p < .001) and regressing out of the target for frequency items (z = 4.47, p < .001) but not predictability items (all ps > .24). 
-Map(start -> 216, end -> 218, match -> the)
-Map(start -> 402, end -> 403, match -> of)
-Map(start -> 405, end -> 407, match -> the)
-Map(start -> 602, end -> 602, match -> ,)
-Map(start -> 644, end -> 644, match -> ,)
-Map(start -> 675, end -> 676, match -> of)
-Map(start -> 678, end -> 680, match -> the)
-Map(start -> 689, end -> 691, match -> for)
-Map(start -> 718, end -> 718, match -> ,)
-Map(start -> 734, end -> 736, match -> not)
+Measure Variable bz p Fixation probability Task .38 2.49 .01 Frequency .68 4.24 &lt;.001 Task * Frequency .18 0.71 .48 Task .48 3.77 &lt;.001 Predictability .23 1.78 .08 Task * Predictability .21 0.84 .40 Regressions into the target Task .57 3.77 &lt;.001 Frequency .03 0.19 .85 Task * Frequency .71 2.63 .009 Task .85 5.43 &lt;.001 Predictability .78 4.65 &lt;.001 Task * Predictability .90 2.36 .02 Regressions out of the target Task .81 4.47 &lt;.001 Frequency .21 1.20 .23 Task * Frequency .14 0.40 .69 Task .16 .91 .37 Predictability .36 1.94 .05 Task * Predictability .45 1.35 .18 target (frequency items: z = 3.77, p &lt; .001; predictability items: z = 5.43, p &lt; .001) and regressing out of the target for frequency items (z = 4.47, p &lt; .001) but not predictability items (all ps &gt; .24). 
+Map(start -> 222, end -> 224, match -> the)
+Map(start -> 417, end -> 418, match -> of)
+Map(start -> 420, end -> 422, match -> the)
+Map(start -> 620, end -> 620, match -> ,)
+Map(start -> 665, end -> 665, match -> ,)
+Map(start -> 699, end -> 700, match -> of)
+Map(start -> 702, end -> 704, match -> the)
+Map(start -> 713, end -> 715, match -> for)
+Map(start -> 742, end -> 742, match -> ,)
+Map(start -> 761, end -> 763, match -> not)
 
-Frequency yielded a main effect on probability of ﬁxating the target (z = 4.24, p < .001) but not the probability of regressing out of the target (p > .22) or the probability of regressing into the target (p > .84). 
+Frequency yielded a main effect on probability of ﬁxating the target (z = 4.24, p &lt; .001) but not the probability of regressing out of the target (p &gt; .22) or the probability of regressing into the target (p &gt; .84). 
 Map(start -> 47, end -> 48, match -> of)
 Map(start -> 58, end -> 60, match -> the)
 Map(start -> 78, end -> 78, match -> ,)
-Map(start -> 94, end -> 96, match -> not)
-Map(start -> 98, end -> 100, match -> the)
-Map(start -> 114, end -> 115, match -> of)
-Map(start -> 132, end -> 133, match -> of)
-Map(start -> 135, end -> 137, match -> the)
-Map(start -> 159, end -> 161, match -> the)
-Map(start -> 175, end -> 176, match -> of)
-Map(start -> 194, end -> 196, match -> the)
+Map(start -> 97, end -> 99, match -> not)
+Map(start -> 101, end -> 103, match -> the)
+Map(start -> 117, end -> 118, match -> of)
+Map(start -> 135, end -> 136, match -> of)
+Map(start -> 138, end -> 140, match -> the)
+Map(start -> 165, end -> 167, match -> the)
+Map(start -> 181, end -> 182, match -> of)
+Map(start -> 200, end -> 202, match -> the)
 
-Predictability yielded a marginal effect on the probability of ﬁxating the target (z = 1.78, p = .08), a signiﬁcant effect on the probability of regressing into the target (z = 4.65, p < .001) and marginal effect on the probability of regressing out of the target (z = 1.94, p = .05). 
+Predictability yielded a marginal effect on the probability of ﬁxating the target (z = 1.78, p = .08), a signiﬁcant effect on the probability of regressing into the target (z = 4.65, p &lt; .001) and marginal effect on the probability of regressing out of the target (z = 1.94, p = .05). 
 Map(start -> 44, end -> 46, match -> the)
 Map(start -> 60, end -> 61, match -> of)
 Map(start -> 71, end -> 73, match -> the)
@@ -1528,21 +1528,21 @@ Map(start -> 126, end -> 128, match -> the)
 Map(start -> 142, end -> 143, match -> of)
 Map(start -> 161, end -> 163, match -> the)
 Map(start -> 181, end -> 181, match -> ,)
-Map(start -> 216, end -> 218, match -> the)
-Map(start -> 232, end -> 233, match -> of)
-Map(start -> 250, end -> 251, match -> of)
-Map(start -> 253, end -> 255, match -> the)
-Map(start -> 273, end -> 273, match -> ,)
+Map(start -> 219, end -> 221, match -> the)
+Map(start -> 235, end -> 236, match -> of)
+Map(start -> 253, end -> 254, match -> of)
+Map(start -> 256, end -> 258, match -> the)
+Map(start -> 276, end -> 276, match -> ,)
 
-The only signiﬁcant interactions between task and our manipulations of frequency and predictability were on regressions into the target (frequency items: z = 2.63, p < .01; predictability items: z = 2.36, p < .001); all other interactions were not signiﬁcant (all ps > .17). 2.2.2.3. 
+The only signiﬁcant interactions between task and our manipulations of frequency and predictability were on regressions into the target (frequency items: z = 2.63, p &lt; .01; predictability items: z = 2.36, p &lt; .001); all other interactions were not signiﬁcant (all ps &gt; .17). 2.2.2.3. 
 Map(start -> 0, end -> 2, match -> the)
 Map(start -> 4, end -> 7, match -> only)
 Map(start -> 50, end -> 52, match -> our)
 Map(start -> 68, end -> 69, match -> of)
 Map(start -> 125, end -> 127, match -> the)
 Map(start -> 162, end -> 162, match -> ,)
-Map(start -> 203, end -> 203, match -> ,)
-Map(start -> 244, end -> 246, match -> not)
+Map(start -> 206, end -> 206, match -> ,)
+Map(start -> 250, end -> 252, match -> not)
 
 In addition to the analyses reported in Section 2.2.2.1, we tested whether the interaction in the frequency stimuli was signiﬁcantly different from the null interaction in the predictability stimuli (i.e., the threeway interaction) in two key measures: gaze duration and total time. 
 Map(start -> 15, end -> 17, match -> the)
@@ -1589,7 +1589,7 @@ Map(start -> 45, end -> 45, match -> ,)
 Map(start -> 65, end -> 67, match -> for)
 Map(start -> 135, end -> 137, match -> the)
 
-Thus, one would expect that, when proofreading for wrong word errors, subjects may need to or want to take into account the predictability of a word more fully than they do when proofreading for nonword errors (as in Experiment 1 and Kaakinen & Hyönä, 2010). 
+Thus, one would expect that, when proofreading for wrong word errors, subjects may need to or want to take into account the predictability of a word more fully than they do when proofreading for nonword errors (as in Experiment 1 and Kaakinen &amp; Hyönä, 2010). 
 Map(start -> 47, end -> 49, match -> for)
 Map(start -> 120, end -> 122, match -> the)
 Map(start -> 139, end -> 140, match -> of)
@@ -1688,7 +1688,7 @@ Map(start -> 85, end -> 87, match -> the)
 Map(start -> 166, end -> 168, match -> the)
 Map(start -> 197, end -> 198, match -> of)
 
-Question accuracy As in Experiment 1, subjects performed very well both on the comprehension questions (93% correct) and in the proofreading task (91% correct; Table 3). In addition to overall accuracy, we used responses in the proofreading task to calculate d 0 scores (the difference between the z-transforms of the hit rate and the false alarm rate; a measure of error detection) for each subject and compared them between experiments using an independent samples t test. Proofreading accuracy was signiﬁcantly higher in Experiment 1 (M = 3.05, SE = .065) than in Experiment 2 (M = 2.53, SE = .073; t(93) = 5.37, p < .001), indicating that checking for real words that were inappropriate in the sentence context was more difﬁcult than checking for spelling errors that produce nonwords. 
+Question accuracy As in Experiment 1, subjects performed very well both on the comprehension questions (93% correct) and in the proofreading task (91% correct; Table 3). In addition to overall accuracy, we used responses in the proofreading task to calculate d 0 scores (the difference between the z-transforms of the hit rate and the false alarm rate; a measure of error detection) for each subject and compared them between experiments using an independent samples t test. Proofreading accuracy was signiﬁcantly higher in Experiment 1 (M = 3.05, SE = .065) than in Experiment 2 (M = 2.53, SE = .073; t(93) = 5.37, p &lt; .001), indicating that checking for real words that were inappropriate in the sentence context was more difﬁcult than checking for spelling errors that produce nonwords. 
 Map(start -> 36, end -> 36, match -> ,)
 Map(start -> 75, end -> 77, match -> the)
 Map(start -> 124, end -> 126, match -> the)
@@ -1705,12 +1705,12 @@ Map(start -> 546, end -> 546, match -> ,)
 Map(start -> 559, end -> 562, match -> than)
 Map(start -> 589, end -> 589, match -> ,)
 Map(start -> 614, end -> 614, match -> ,)
-Map(start -> 625, end -> 625, match -> ,)
-Map(start -> 652, end -> 654, match -> for)
-Map(start -> 694, end -> 696, match -> the)
-Map(start -> 715, end -> 717, match -> was)
-Map(start -> 733, end -> 736, match -> than)
-Map(start -> 747, end -> 749, match -> for)
+Map(start -> 628, end -> 628, match -> ,)
+Map(start -> 655, end -> 657, match -> for)
+Map(start -> 697, end -> 699, match -> the)
+Map(start -> 718, end -> 720, match -> was)
+Map(start -> 736, end -> 739, match -> than)
+Map(start -> 750, end -> 752, match -> for)
 
 Eye movement measures As with the analyses of Experiment 1 (when subjects were checking for nonwords) we analyzed reading measures on the target words in the frequency (e.g., metal/alloy) or predictability (weeds/roses) manipulation Table 7 Local reading time measures (means and standard errors) on the target word with a frequency manipulation or predictability manipulation, separately across the two tasks (reading and proofreading) in Experiment 2. Measure Task Frequency Predictability High Low High Low First ﬁxation duration Reading 216 (4.8) 224 (4.6) 206 (4.1) 213 (3.1) Proofreading 239 (4.7) 250 (5.9) 225 (4.2) 231 (4.3) Single ﬁxation duration Reading 220 (5.0) 232 (6.5) 208 (4.6) 215 (3.1) Proofreading 249 (6.0) 266 (8.4) 223 (4.4) 239 (5.2) Gaze duration Reading 236 (6.2) 248 (7.4) 221 (5.9) 235 (4.6) Proofreading 275 (7.2) 312 (8.9) 260 (6.0) 287 (8.7) Total time Reading 285 (11.7) 293 (17.3) 257 (16.3) 278 (14.6) Proofreading 413 (26.3) 476 (32.2) 341 (16.6) 416 (24.5) Go-past time Reading 262 (8.5) 290 (13.9) 251 (9.1) 269 (9.9) Proofreading 335 (15.3) 400 (17.6) 309 (12.6) 350 (13.3) Fixation probability Reading 0.82 (.02) 0.85 (.02) 0.78 (0.02) 0.81 (0.02) Proofreading 0.86 (.02) 0.93 (.01) 0.85 (0.02) 0.87 (0.02) Regressions in Reading 0.14 (.02) 0.12 (.02) 0.08 (0.02) 0.14 (0.02) Proofreading 0.24 (.02) 0.23 (.02) 0.17 (0.02) 0.25 (0.03) Regressions out Reading 0.07 (.01) 0.11 (.02) 0.08 (0.01) 0.11 (0.02) Proofreading 0.12 (.02) 0.17 (.02) 0.11 (0.01) 0.16 (0.02) Table 8 Results of the linear mixed effects regression models for ﬁxation time measures in Experiment 2. All measures were centered before being entered into the analyses. 
 Map(start -> 30, end -> 32, match -> the)
@@ -1840,7 +1840,7 @@ Map(start -> 46, end -> 48, match -> the)
 Map(start -> 80, end -> 82, match -> our)
 Map(start -> 98, end -> 99, match -> of)
 
-Here, the results are quite clear: frequency effects were reliably larger during proofreading than reading across all measures (gaze duration: b = 26.51, t = 2.80; total time: b = 55.08, t = 2.21, go-past time: b = 41.51, t = 2.20) with the exception of ﬁrst ﬁxation duration (b = 3.98, t = 0.60) and single ﬁxation duration (b = 8.11, t = 0.98) whereas predictability was not modulated by task in any reading measure (all ts < 1.37) except for total time (b = 57.60, t = 2.72). 
+Here, the results are quite clear: frequency effects were reliably larger during proofreading than reading across all measures (gaze duration: b = 26.51, t = 2.80; total time: b = 55.08, t = 2.21, go-past time: b = 41.51, t = 2.20) with the exception of ﬁrst ﬁxation duration (b = 3.98, t = 0.60) and single ﬁxation duration (b = 8.11, t = 0.98) whereas predictability was not modulated by task in any reading measure (all ts &lt; 1.37) except for total time (b = 57.60, t = 2.72). 
 Map(start -> 6, end -> 8, match -> the)
 Map(start -> 94, end -> 97, match -> than)
 Map(start -> 152, end -> 152, match -> ,)
@@ -1853,8 +1853,8 @@ Map(start -> 285, end -> 285, match -> ,)
 Map(start -> 334, end -> 334, match -> ,)
 Map(start -> 369, end -> 371, match -> was)
 Map(start -> 373, end -> 375, match -> not)
-Map(start -> 441, end -> 443, match -> for)
-Map(start -> 466, end -> 466, match -> ,)
+Map(start -> 444, end -> 446, match -> for)
+Map(start -> 469, end -> 469, match -> ,)
 
 These data suggest that, when checking for spelling errors that produce real but inappropriate words, proofreaders still perform a qualitatively different type of word processing, which speciﬁcally ampliﬁes effects of word frequency. 
 Map(start -> 39, end -> 41, match -> for)
@@ -1873,15 +1873,15 @@ Map(start -> 215, end -> 217, match -> the)
 Map(start -> 260, end -> 262, match -> for)
 Map(start -> 363, end -> 365, match -> the)
 
-Measure Variable bz p Fixation probability Task .82 4.92 <.001 Frequency .83 5.77 <.001 Task * Frequency .54 2.14 <.05 Task .62 5.41 <.001 Predictability .19 1.77 .08 Task * Predictability .06 0.27 .79 Regressions into the target Task .91 5.60 <.001 Frequency .21 1.42 .16 Task * Frequency .30 1.33 .18 Task .97 6.05 <.001 Predictability .84 5.35 <.001 Task * Predictability .29 0.97 .33 Regressions out of the target Task .60 3.64 <.001 Frequency .44 2.56 .01 Task * Frequency .51 1.77 .08 Task .62 4.15 <.001 Predictability .49 3.71 <.001 Task * Predictability .15 0.52 .60 well the word ﬁts into the context of the sentence (i.e., during total time). 
-Map(start -> 219, end -> 221, match -> the)
-Map(start -> 404, end -> 405, match -> of)
-Map(start -> 407, end -> 409, match -> the)
-Map(start -> 581, end -> 583, match -> the)
-Map(start -> 599, end -> 601, match -> the)
-Map(start -> 611, end -> 612, match -> of)
-Map(start -> 614, end -> 616, match -> the)
-Map(start -> 632, end -> 632, match -> ,)
+Measure Variable bz p Fixation probability Task .82 4.92 &lt;.001 Frequency .83 5.77 &lt;.001 Task * Frequency .54 2.14 &lt;.05 Task .62 5.41 &lt;.001 Predictability .19 1.77 .08 Task * Predictability .06 0.27 .79 Regressions into the target Task .91 5.60 &lt;.001 Frequency .21 1.42 .16 Task * Frequency .30 1.33 .18 Task .97 6.05 &lt;.001 Predictability .84 5.35 &lt;.001 Task * Predictability .29 0.97 .33 Regressions out of the target Task .60 3.64 &lt;.001 Frequency .44 2.56 .01 Task * Frequency .51 1.77 .08 Task .62 4.15 &lt;.001 Predictability .49 3.71 &lt;.001 Task * Predictability .15 0.52 .60 well the word ﬁts into the context of the sentence (i.e., during total time). 
+Map(start -> 231, end -> 233, match -> the)
+Map(start -> 425, end -> 426, match -> of)
+Map(start -> 428, end -> 430, match -> the)
+Map(start -> 611, end -> 613, match -> the)
+Map(start -> 629, end -> 631, match -> the)
+Map(start -> 641, end -> 642, match -> of)
+Map(start -> 644, end -> 646, match -> the)
+Map(start -> 662, end -> 662, match -> ,)
 
 We return to the issue of why this effect only appears on a late measure in Section 4.2. 3.2.2.2. 
 Map(start -> 13, end -> 15, match -> the)
@@ -1890,39 +1890,39 @@ Map(start -> 23, end -> 24, match -> of)
 Map(start -> 30, end -> 33, match -> this)
 Map(start -> 42, end -> 45, match -> only)
 
-Fixation probability measures.As with the reading time measures reported in Section 3.2.2.1, ﬁxation probability measures showed a robust effect of task, with a higher probability of ﬁxating the target (frequency items: z = 4.92, p < .001; predictability items: z = 5.41, p < .001), regressing into the target (frequency items: z = 5.60, p < .001; predictability items: z = 6.05, p < .001) and regressing out of the target (frequency items: z = 3.64, p < .001; predictability items: z = 4.15, p < .001) in the proofreading task than in the reading task. 
+Fixation probability measures.As with the reading time measures reported in Section 3.2.2.1, ﬁxation probability measures showed a robust effect of task, with a higher probability of ﬁxating the target (frequency items: z = 4.92, p &lt; .001; predictability items: z = 5.41, p &lt; .001), regressing into the target (frequency items: z = 5.60, p &lt; .001; predictability items: z = 6.05, p &lt; .001) and regressing out of the target (frequency items: z = 3.64, p &lt; .001; predictability items: z = 4.15, p &lt; .001) in the proofreading task than in the reading task. 
 Map(start -> 38, end -> 40, match -> the)
 Map(start -> 91, end -> 91, match -> ,)
 Map(start -> 145, end -> 146, match -> of)
 Map(start -> 180, end -> 181, match -> of)
 Map(start -> 191, end -> 193, match -> the)
 Map(start -> 228, end -> 228, match -> ,)
-Map(start -> 270, end -> 270, match -> ,)
-Map(start -> 281, end -> 281, match -> ,)
-Map(start -> 299, end -> 301, match -> the)
-Map(start -> 336, end -> 336, match -> ,)
-Map(start -> 378, end -> 378, match -> ,)
-Map(start -> 409, end -> 410, match -> of)
-Map(start -> 412, end -> 414, match -> the)
-Map(start -> 449, end -> 449, match -> ,)
-Map(start -> 491, end -> 491, match -> ,)
-Map(start -> 506, end -> 508, match -> the)
-Map(start -> 528, end -> 531, match -> than)
-Map(start -> 536, end -> 538, match -> the)
+Map(start -> 273, end -> 273, match -> ,)
+Map(start -> 287, end -> 287, match -> ,)
+Map(start -> 305, end -> 307, match -> the)
+Map(start -> 342, end -> 342, match -> ,)
+Map(start -> 387, end -> 387, match -> ,)
+Map(start -> 421, end -> 422, match -> of)
+Map(start -> 424, end -> 426, match -> the)
+Map(start -> 461, end -> 461, match -> ,)
+Map(start -> 506, end -> 506, match -> ,)
+Map(start -> 524, end -> 526, match -> the)
+Map(start -> 546, end -> 549, match -> than)
+Map(start -> 554, end -> 556, match -> the)
 
-Frequency yielded a main effect on probability of ﬁxating the target (z = 5.77, p < .001) and probability of regressing out of the target (z = 2.56, p < .01) but not probability of regressing into the target (p > .15). 
+Frequency yielded a main effect on probability of ﬁxating the target (z = 5.77, p &lt; .001) and probability of regressing out of the target (z = 2.56, p &lt; .01) but not probability of regressing into the target (p &gt; .15). 
 Map(start -> 47, end -> 48, match -> of)
 Map(start -> 58, end -> 60, match -> the)
 Map(start -> 78, end -> 78, match -> ,)
-Map(start -> 106, end -> 107, match -> of)
-Map(start -> 124, end -> 125, match -> of)
-Map(start -> 127, end -> 129, match -> the)
-Map(start -> 147, end -> 147, match -> ,)
-Map(start -> 162, end -> 164, match -> not)
-Map(start -> 178, end -> 179, match -> of)
-Map(start -> 197, end -> 199, match -> the)
+Map(start -> 109, end -> 110, match -> of)
+Map(start -> 127, end -> 128, match -> of)
+Map(start -> 130, end -> 132, match -> the)
+Map(start -> 150, end -> 150, match -> ,)
+Map(start -> 168, end -> 170, match -> not)
+Map(start -> 184, end -> 185, match -> of)
+Map(start -> 203, end -> 205, match -> the)
 
-Predictability yielded a marginal effect on the probability of ﬁxating the target (z = 1.77, p = .08) and a signiﬁcant effect on the probability of regressing into the target (z = 5.35, p < .001) and regressing out of the target (z = 3.71, p < .001). 
+Predictability yielded a marginal effect on the probability of ﬁxating the target (z = 1.77, p = .08) and a signiﬁcant effect on the probability of regressing into the target (z = 5.35, p &lt; .001) and regressing out of the target (z = 3.71, p &lt; .001). 
 Map(start -> 44, end -> 46, match -> the)
 Map(start -> 60, end -> 61, match -> of)
 Map(start -> 71, end -> 73, match -> the)
@@ -1931,23 +1931,23 @@ Map(start -> 129, end -> 131, match -> the)
 Map(start -> 145, end -> 146, match -> of)
 Map(start -> 164, end -> 166, match -> the)
 Map(start -> 184, end -> 184, match -> ,)
-Map(start -> 215, end -> 216, match -> of)
-Map(start -> 218, end -> 220, match -> the)
-Map(start -> 238, end -> 238, match -> ,)
+Map(start -> 218, end -> 219, match -> of)
+Map(start -> 221, end -> 223, match -> the)
+Map(start -> 241, end -> 241, match -> ,)
 
-There was a signiﬁcant interaction between task and frequency on the probability of ﬁxating the target (z = 2.14, p < .05) and a marginal interaction on the probability of regressing out of the target (z = 1.77, p = .08). 
+There was a signiﬁcant interaction between task and frequency on the probability of ﬁxating the target (z = 2.14, p &lt; .05) and a marginal interaction on the probability of regressing out of the target (z = 1.77, p = .08). 
 Map(start -> 6, end -> 8, match -> was)
 Map(start -> 65, end -> 67, match -> the)
 Map(start -> 81, end -> 82, match -> of)
 Map(start -> 92, end -> 94, match -> the)
 Map(start -> 112, end -> 112, match -> ,)
-Map(start -> 153, end -> 155, match -> the)
-Map(start -> 169, end -> 170, match -> of)
-Map(start -> 187, end -> 188, match -> of)
-Map(start -> 190, end -> 192, match -> the)
-Map(start -> 210, end -> 210, match -> ,)
+Map(start -> 156, end -> 158, match -> the)
+Map(start -> 172, end -> 173, match -> of)
+Map(start -> 190, end -> 191, match -> of)
+Map(start -> 193, end -> 195, match -> the)
+Map(start -> 213, end -> 213, match -> ,)
 
-All other interactions were not signiﬁcant (all ps > .17). 
+All other interactions were not signiﬁcant (all ps &gt; .17). 
 Map(start -> 28, end -> 30, match -> not)
 
 Thus, it seems as if the interactions seen in total time in Experiment 2 were not due to an increased likelihood of making a regression into or out of the target word, but rather to the amount of time spent on the word during rereading. 
@@ -1969,7 +1969,7 @@ Map(start -> 210, end -> 212, match -> the)
 Map(start -> 288, end -> 290, match -> the)
 Map(start -> 314, end -> 316, match -> the)
 
-As in Section 2.2.2.3, we tested for the three-way interaction in two key measures: gaze duration (Fig. 1) and total time (Fig. 2). The results of these analyses revealed that neither the three-way interaction for gaze duration (b = 5.59, t < 1) nor total time (b = 2.26, t < 1) were signiﬁcant, suggesting that, when proofreading for wrong word errors, subjects processed words in a way that magniﬁed the effects of both word frequency and predictability in a similar way. 
+As in Section 2.2.2.3, we tested for the three-way interaction in two key measures: gaze duration (Fig. 1) and total time (Fig. 2). The results of these analyses revealed that neither the three-way interaction for gaze duration (b = 5.59, t &lt; 1) nor total time (b = 2.26, t &lt; 1) were signiﬁcant, suggesting that, when proofreading for wrong word errors, subjects processed words in a way that magniﬁed the effects of both word frequency and predictability in a similar way. 
 Map(start -> 21, end -> 21, match -> ,)
 Map(start -> 33, end -> 35, match -> for)
 Map(start -> 37, end -> 39, match -> the)
@@ -1977,10 +1977,10 @@ Map(start -> 144, end -> 145, match -> of)
 Map(start -> 184, end -> 186, match -> the)
 Map(start -> 210, end -> 212, match -> for)
 Map(start -> 237, end -> 237, match -> ,)
-Map(start -> 270, end -> 270, match -> ,)
-Map(start -> 331, end -> 333, match -> for)
-Map(start -> 402, end -> 404, match -> the)
-Map(start -> 414, end -> 415, match -> of)
+Map(start -> 273, end -> 273, match -> ,)
+Map(start -> 337, end -> 339, match -> for)
+Map(start -> 408, end -> 410, match -> the)
+Map(start -> 420, end -> 421, match -> of)
 
 However, when gaze duration was analyzed separately by stimulus set, the task by frequency interaction was signiﬁcant but the task by predictability interaction was not, and the three-way interaction, while not signiﬁcant, does suggest a trend in that direction. 
 Map(start -> 0, end -> 6, match -> however)
@@ -2130,14 +2130,14 @@ Map(start -> 175, end -> 177, match -> the)
 Map(start -> 234, end -> 236, match -> the)
 Map(start -> 266, end -> 268, match -> the)
 
-All analyses revealed a signiﬁcant effect of task (for all ﬁxation time measures, all ts > 12; for all ﬁxation probability measures, all ps < .001) with longer reading times on and higher probabilities of ﬁxating and regressing into or out of the target Fig. 2. Total time on target words across the two experiments, separated by stimulus type. 
+All analyses revealed a signiﬁcant effect of task (for all ﬁxation time measures, all ts &gt; 12; for all ﬁxation probability measures, all ps &lt; .001) with longer reading times on and higher probabilities of ﬁxating and regressing into or out of the target Fig. 2. Total time on target words across the two experiments, separated by stimulus type. 
 Map(start -> 42, end -> 43, match -> of)
 Map(start -> 51, end -> 53, match -> for)
-Map(start -> 95, end -> 97, match -> for)
-Map(start -> 202, end -> 203, match -> of)
-Map(start -> 240, end -> 241, match -> of)
-Map(start -> 243, end -> 245, match -> the)
-Map(start -> 296, end -> 298, match -> the)
+Map(start -> 98, end -> 100, match -> for)
+Map(start -> 208, end -> 209, match -> of)
+Map(start -> 246, end -> 247, match -> of)
+Map(start -> 249, end -> 251, match -> the)
+Map(start -> 302, end -> 304, match -> the)
 
 The left-hand panel represents frequency-manipulated stimuli, the central panel represents predictability-manipulated stimuli, and the right-hand panel represents ﬁller stimuli (normal control words in the reading tasks, nonword spelling errors during the proofreading task in Experiment 1, and wrong word spelling errors in Experiment 2). Data for the reading task represent the average for a given condition across the two experiments. 
 Map(start -> 0, end -> 2, match -> the)
@@ -2162,20 +2162,20 @@ Map(start -> 762, end -> 764, match -> the)
 Map(start -> 784, end -> 787, match -> than)
 Map(start -> 789, end -> 791, match -> the)
 
-There were signiﬁcant differences between experiments in gaze duration and total time (both ts > 2.09), as well as the probability of regressing out of and into the target (both ps < .001), but not for any of the other ﬁxation time measures (all ts < 1.77) or the probability of ﬁxating the target (p = .32). 
-Map(start -> 102, end -> 102, match -> ,)
-Map(start -> 115, end -> 117, match -> the)
-Map(start -> 131, end -> 132, match -> of)
-Map(start -> 149, end -> 150, match -> of)
-Map(start -> 161, end -> 163, match -> the)
-Map(start -> 188, end -> 188, match -> ,)
-Map(start -> 194, end -> 196, match -> not)
-Map(start -> 198, end -> 200, match -> for)
-Map(start -> 206, end -> 207, match -> of)
-Map(start -> 209, end -> 211, match -> the)
-Map(start -> 260, end -> 262, match -> the)
-Map(start -> 276, end -> 277, match -> of)
-Map(start -> 287, end -> 289, match -> the)
+There were signiﬁcant differences between experiments in gaze duration and total time (both ts &gt; 2.09), as well as the probability of regressing out of and into the target (both ps &lt; .001), but not for any of the other ﬁxation time measures (all ts &lt; 1.77) or the probability of ﬁxating the target (p = .32). 
+Map(start -> 105, end -> 105, match -> ,)
+Map(start -> 118, end -> 120, match -> the)
+Map(start -> 134, end -> 135, match -> of)
+Map(start -> 152, end -> 153, match -> of)
+Map(start -> 164, end -> 166, match -> the)
+Map(start -> 194, end -> 194, match -> ,)
+Map(start -> 200, end -> 202, match -> not)
+Map(start -> 204, end -> 206, match -> for)
+Map(start -> 212, end -> 213, match -> of)
+Map(start -> 215, end -> 217, match -> the)
+Map(start -> 269, end -> 271, match -> the)
+Map(start -> 285, end -> 286, match -> of)
+Map(start -> 296, end -> 298, match -> the)
 
 Most important for our purposes were tests for interactions between task and experiment. 
 Map(start -> 15, end -> 17, match -> for)
@@ -2203,7 +2203,7 @@ The pattern of results changed, though, in later measures.
 Map(start -> 0, end -> 2, match -> the)
 Map(start -> 12, end -> 13, match -> of)
 
-Here, reading time on the target increased more in the proofreading block when checking for wrong words (Experiment 2) than when checking for nonwords (Experiment 1) for total time on the target (b = 191.27, t = 3.88; see Fig. 2) but not signiﬁcantly in go-past time (t < .32). 
+Here, reading time on the target increased more in the proofreading block when checking for wrong words (Experiment 2) than when checking for nonwords (Experiment 1) for total time on the target (b = 191.27, t = 3.88; see Fig. 2) but not signiﬁcantly in go-past time (t &lt; .32). 
 Map(start -> 22, end -> 24, match -> the)
 Map(start -> 51, end -> 53, match -> the)
 Map(start -> 88, end -> 90, match -> for)
@@ -2214,19 +2214,19 @@ Map(start -> 184, end -> 186, match -> the)
 Map(start -> 206, end -> 206, match -> ,)
 Map(start -> 234, end -> 236, match -> not)
 
-There was no signiﬁcant interaction between task and experiment on the probability of ﬁxating or regressing into the target (both ps > .14) but there was a signiﬁcant interaction on the probability of regressing out of the target (z = 2.92, p < .001) with a small increase in regressions out of the target in Experiment 1 (.07 in reading compared to .08 in proofreading) and a large effect in Experiment 2 (.09 in reading compared to .18 in proofreading). 
+There was no signiﬁcant interaction between task and experiment on the probability of ﬁxating or regressing into the target (both ps &gt; .14) but there was a signiﬁcant interaction on the probability of regressing out of the target (z = 2.92, p &lt; .001) with a small increase in regressions out of the target in Experiment 1 (.07 in reading compared to .08 in proofreading) and a large effect in Experiment 2 (.09 in reading compared to .18 in proofreading). 
 Map(start -> 6, end -> 8, match -> was)
 Map(start -> 67, end -> 69, match -> the)
 Map(start -> 83, end -> 84, match -> of)
 Map(start -> 113, end -> 115, match -> the)
-Map(start -> 150, end -> 152, match -> was)
-Map(start -> 182, end -> 184, match -> the)
-Map(start -> 198, end -> 199, match -> of)
-Map(start -> 216, end -> 217, match -> of)
-Map(start -> 219, end -> 221, match -> the)
-Map(start -> 239, end -> 239, match -> ,)
-Map(start -> 292, end -> 293, match -> of)
-Map(start -> 295, end -> 297, match -> the)
+Map(start -> 153, end -> 155, match -> was)
+Map(start -> 185, end -> 187, match -> the)
+Map(start -> 201, end -> 202, match -> of)
+Map(start -> 219, end -> 220, match -> of)
+Map(start -> 222, end -> 224, match -> the)
+Map(start -> 242, end -> 242, match -> ,)
+Map(start -> 298, end -> 299, match -> of)
+Map(start -> 301, end -> 303, match -> the)
 
 These data conﬁrm that the proofreading task in Experiment 2 (checking for real, but inappropriate words for the context) was more difﬁcult than the proofreading task in Experiment 1 (checking for nonwords). 
 Map(start -> 23, end -> 25, match -> the)
@@ -2273,13 +2273,13 @@ Map(start -> 691, end -> 693, match -> for)
 All measures were centered before being entered into the analyses. 
 Map(start -> 53, end -> 55, match -> the)
 
-Measure Variable bz p Fixation probability Task 1.02 9.13 <.001 Experiment .21 1.00 .32 Task * Experiment .30 1.24 .22 Regressions into the target Task 2.15 15.96 <.001 Experiment .70 3.85 <.001 Task * Experiment .37 1.43 .15 Regressions out of the target Task .71 6.51 <.001 Experiment .67 3.71 <.001 Task * Experiment .67 2.92 <.005 4. General discussion Let us now consider these data in light of the theoretical framework laid out in the Introduction. 
-Map(start -> 136, end -> 138, match -> the)
-Map(start -> 242, end -> 243, match -> of)
-Map(start -> 245, end -> 247, match -> the)
-Map(start -> 397, end -> 398, match -> of)
-Map(start -> 400, end -> 402, match -> the)
-Map(start -> 438, end -> 440, match -> the)
+Measure Variable bz p Fixation probability Task 1.02 9.13 &lt;.001 Experiment .21 1.00 .32 Task * Experiment .30 1.24 .22 Regressions into the target Task 2.15 15.96 &lt;.001 Experiment .70 3.85 &lt;.001 Task * Experiment .37 1.43 .15 Regressions out of the target Task .71 6.51 &lt;.001 Experiment .67 3.71 &lt;.001 Task * Experiment .67 2.92 &lt;.005 4. General discussion Let us now consider these data in light of the theoretical framework laid out in the Introduction. 
+Map(start -> 139, end -> 141, match -> the)
+Map(start -> 251, end -> 252, match -> of)
+Map(start -> 254, end -> 256, match -> the)
+Map(start -> 415, end -> 416, match -> of)
+Map(start -> 418, end -> 420, match -> the)
+Map(start -> 456, end -> 458, match -> the)
 
 Based on consideration of ﬁve component processes central to normal reading—wordhood assessment, form validation, content access, integration, and word-context validation—and how different types of proofreading are likely to emphasize or de-emphasize each of these component processes, this framework made three basic predictions regarding the outcome of our two experiments, each of which was conﬁrmed. 
 Map(start -> 23, end -> 24, match -> of)
@@ -2322,7 +2322,7 @@ Map(start -> 98, end -> 98, match -> ,)
 Map(start -> 136, end -> 138, match -> was)
 Map(start -> 167, end -> 170, match -> than)
 
-(Note, however, that the two types of proofreading interacted in slightly different ways with word frequency; see Section 4.2 for further discussion.) However, we must also note that even tasks that should be less onerous than reading (e.g., x-string scanning) can lead to longer reading times (Rayner & Fischer, 1996). 
+(Note, however, that the two types of proofreading interacted in slightly different ways with word frequency; see Section 4.2 for further discussion.) However, we must also note that even tasks that should be less onerous than reading (e.g., x-string scanning) can lead to longer reading times (Rayner &amp; Fischer, 1996). 
 Map(start -> 7, end -> 13, match -> however)
 Map(start -> 21, end -> 23, match -> the)
 Map(start -> 35, end -> 36, match -> of)
@@ -2493,25 +2493,25 @@ Thus, our result implies either that none of content access, integration, or wor
 Map(start -> 6, end -> 8, match -> our)
 Map(start -> 42, end -> 43, match -> of)
 
-Although our data do not distinguish between these two possibilities, the latter seems highly plausible, especially considering previous results that visual sentence context can strongly modulate explicit visual lexical decision times (Wright & Garrett, 1984). 
+Although our data do not distinguish between these two possibilities, the latter seems highly plausible, especially considering previous results that visual sentence context can strongly modulate explicit visual lexical decision times (Wright &amp; Garrett, 1984). 
 Map(start -> 0, end -> 7, match -> although)
 Map(start -> 9, end -> 11, match -> our)
 Map(start -> 21, end -> 23, match -> not)
 Map(start -> 70, end -> 72, match -> the)
 
-We also consider it unlikely that sentence-level integration is completely shut off even during proofreading for nonwords; given that one basic consequence of linguistic context in reading is that it allows for reading to proceed more quickly (Bicknell & Levy, 2012; Ehrlich & Rayner, 1981; Morton, 1964; Rayner & Well, 1996), it makes sense that subjects would continue to use linguistic context during word processing (and thus show predictability effects) in order to proofread more quickly. 
+We also consider it unlikely that sentence-level integration is completely shut off even during proofreading for nonwords; given that one basic consequence of linguistic context in reading is that it allows for reading to proceed more quickly (Bicknell &amp; Levy, 2012; Ehrlich &amp; Rayner, 1981; Morton, 1964; Rayner &amp; Well, 1996), it makes sense that subjects would continue to use linguistic context during word processing (and thus show predictability effects) in order to proofread more quickly. 
 Map(start -> 109, end -> 111, match -> for)
 Map(start -> 156, end -> 157, match -> of)
 Map(start -> 207, end -> 209, match -> for)
-Map(start -> 325, end -> 325, match -> ,)
+Map(start -> 337, end -> 337, match -> ,)
 
-Interestingly, one of the differences between our (and Kaakinen & Hyönä’s, 2010) proofreading paradigm and the other proofreading studies described in Section 1.3.2 is that the other experiments often emphasized speed as opposed to accuracy (to avoid ceiling effects since their dependent measure was percent detection). 
+Interestingly, one of the differences between our (and Kaakinen &amp; Hyönä’s, 2010) proofreading paradigm and the other proofreading studies described in Section 1.3.2 is that the other experiments often emphasized speed as opposed to accuracy (to avoid ceiling effects since their dependent measure was percent detection). 
 Map(start -> 19, end -> 20, match -> of)
 Map(start -> 22, end -> 24, match -> the)
 Map(start -> 46, end -> 48, match -> our)
-Map(start -> 107, end -> 109, match -> the)
-Map(start -> 173, end -> 175, match -> the)
-Map(start -> 297, end -> 299, match -> was)
+Map(start -> 111, end -> 113, match -> the)
+Map(start -> 177, end -> 179, match -> the)
+Map(start -> 301, end -> 303, match -> was)
 
 It would be worth investigating in future studies whether and how the effects we have found here would change if speed were emphasized as opposed to accuracy. 
 Map(start -> 66, end -> 68, match -> the)
@@ -2633,7 +2633,7 @@ Map(start -> 179, end -> 181, match -> the)
 To investigate this question, we coded each error item in Experiment 1 as being either pronounceable or unpronounceable in English. 
 Map(start -> 15, end -> 18, match -> this)
 
-Even though approximately half of the words were pronounceable and half were not, this distinction did not affect detection accuracy (88% vs. 89%; z <1,p > .94). 
+Even though approximately half of the words were pronounceable and half were not, this distinction did not affect detection accuracy (88% vs. 89%; z &lt;.1,p &gt; .94). 
 Map(start -> 31, end -> 32, match -> of)
 Map(start -> 34, end -> 36, match -> the)
 Map(start -> 77, end -> 79, match -> not)
@@ -2730,7 +2730,7 @@ Map(start -> 264, end -> 266, match -> not)
 Wotschack and Kliegl (2013) also reported modulation of both frequency and predictability effects in response to differential question difﬁculty. 
 Map(start -> 53, end -> 54, match -> of)
 
-Taken together, these results and ours ﬁt naturally with claims that readers optimize how they read for their particular goals (Bicknell & Levy, 2010; Lewis, Shvartsman, & Singh, 2013) and that reading behavior can be well described as adaptive. 
+Taken together, these results and ours ﬁt naturally with claims that readers optimize how they read for their particular goals (Bicknell &amp; Levy, 2010; Lewis, Shvartsman, &amp; Singh, 2013) and that reading behavior can be well described as adaptive. 
 Map(start -> 100, end -> 102, match -> for)
 
 The general framework we introduced for understanding task-speciﬁc modulations in different component processing of reading, which predicted several of the key ﬁndings of our experiments and shed light on several more, may prove to be of further use in understanding modulations of reading behavior with other tasks, such as different types of proofreading (e.g., word-position errors) and scanning for keywords. 
@@ -3253,9 +3253,9 @@ Map(start -> 28, end -> 30, match -> the)
 Map(start -> 24, end -> 26, match -> the)
 Map(start -> 60, end -> 61, match -> of)
 
-Appendix C List of stimuli with a predictability manipulation (items 1-12 were taken from Rayner & Well, 1996; items 13-60 were taken from Balota et al., 1985) used in both experiments. 
+Appendix C List of stimuli with a predictability manipulation (items 1-12 were taken from Rayner &amp; Well, 1996; items 13-60 were taken from Balota et al., 1985) used in both experiments. 
 Map(start -> 16, end -> 17, match -> of)
-Map(start -> 152, end -> 152, match -> ,)
+Map(start -> 156, end -> 156, match -> ,)
 
 Target words are presented in italics with the high predictability word ﬁrst and the low predictability word second. 
 Map(start -> 43, end -> 45, match -> the)
@@ -3499,8 +3499,8 @@ Map(start -> 14, end -> 16, match -> the)
 Map(start -> 28, end -> 30, match -> the)
 Map(start -> 75, end -> 77, match -> the)
 
-LMM outputs Measure Variable Experiment 1 Experiment 2 btb t First ﬁxation duration Task 5.20 1.68 14.36 4.73 Frequency .38 <1 2.74 <1 Task * Frequency 2.39 <1 2.80 <1 Task 3.65 1.16 10.33 2.49 Predictability À0.43 <1 1.36 <1 Task * Predictability 9.33 1.44 12.12 1.84 Gaze duration Task 8.85 2.05 33.62 5.84 Frequency 4.19 1.26 9.16 2.21 Task * Frequency 9.23 1.38 6.42 <1 Task 6.27 1.05 21.31 3.64 Predictability 1.79 <1 2.51 <1 Task * Predictability 9.00 1.05 20.21 2.01 Total time Task 30.81 4.39 136.63 5.46 Frequency 4.72 <1 19.64 1.93 Task * Frequency 17.02 1.69 14.92 <1 Task 16.60 2.28 54.66 3.46 Predictability 6.97 1.32 5.08 <1 Task * Predictability 1.88 0.26 29.15 1.29 Regressions in (z & p) Task 6.83 <.001 6.96 <.001 Frequency 3.87 <.001 1.24 .21 Task * Frequency 1.99 .047 2.00 .046 Task .74 .46 4.28 <.001 Predictability 3.39 <.001 3.48 <.001 Task * Predictability 1.05 0.29 .33 .74 Regressions out (z & p) Task .31 .76 .57 .56 Frequency 1.49 .14 1.87 .06 Task * Frequency .50 .62 .02 .99 Task .72 .47 1.24 .22 Predictability 2.27 <.05 1.30 .20 Task * Predictability .50 0.62 1.35 .18 Appendix E Means and standard errors (aggregated by subject) and results of LMM models for reading measures on the post-target word Experiment 1 Frequency Predictability Proof Read Proof Read Hi Low Hi Low Hi Low Hi Low ffd 227 (5.1) 226 (4.4) 225 (5.9) 227 (6.5) 214 (5.3) 217 (5.2) 209 (6.1) 215 (5.9) gzd 270 (6.4) 266 (5.6) 257 (7.6) 274 (9.5) 237 (7.4) 239 (6.8) 226 (7.1) 231 (6.6) sfd 234 (5.9) 232 (4.9) 234 (7.3) 240 (7.7) 212 (5.3) 221 (5.7) 212 (6.2) 222 (6.8) tvt 334 (12.6) 342 (11.3) 293 (9.6) 306 (11.3) 264 (9.8) 278 (10.7) 234 (7.5) 246 (8.4) gopast 326 (11.5) 335 (12.4) 294 (11.0) 306 (12.4) 279 (13.0) 286 (14.1) 238 (8.2) 268 (14.7) skip 0.86 (0.02) 0.85 (0.02) 0.85 (0.02) 0.87 (0.02) 0.52 (0.02) 0.52 (0.02) 0.48 (0.02) 0.51 (0.02) regin 0.16 (0.02) 0.13 (0.02) 0.10 (0.01) 0.08 (0.01) 0.09 (0.01) 0.10 (0.01) 0.08 (0.01) 0.11 (0.02) regout 0.08 (0.01) 0.12 (0.01) 0.07 (0.01) 0.07 (0.01) 0.05 (0.01) 0.06 (0.01) 0.02 (0.01) 0.05 (0.01) 
-Map(start -> 1175, end -> 1176, match -> of)
-Map(start -> 1189, end -> 1191, match -> for)
-Map(start -> 1213, end -> 1215, match -> the)
+LMM outputs Measure Variable Experiment 1 Experiment 2 btb t First ﬁxation duration Task 5.20 1.68 14.36 4.73 Frequency .38 &lt;.1 2.74 &lt;.1 Task * Frequency 2.39 &lt;.1 2.80 &lt;.1 Task 3.65 1.16 10.33 2.49 Predictability À0.43 &lt;.1 1.36 &lt;.1 Task * Predictability 9.33 1.44 12.12 1.84 Gaze duration Task 8.85 2.05 33.62 5.84 Frequency 4.19 1.26 9.16 2.21 Task * Frequency 9.23 1.38 6.42 &lt;.1 Task 6.27 1.05 21.31 3.64 Predictability 1.79 &lt;.1 2.51 &lt;.1 Task * Predictability 9.00 1.05 20.21 2.01 Total time Task 30.81 4.39 136.63 5.46 Frequency 4.72 &lt;.1 19.64 1.93 Task * Frequency 17.02 1.69 14.92 &lt;.1 Task 16.60 2.28 54.66 3.46 Predictability 6.97 1.32 5.08 &lt;.1 Task * Predictability 1.88 0.26 29.15 1.29 Regressions in (z &amp; p) Task 6.83 &lt;.001 6.96 &lt;.001 Frequency 3.87 &lt;.001 1.24 .21 Task * Frequency 1.99 .047 2.00 .046 Task .74 .46 4.28 &lt;.001 Predictability 3.39 &lt;.001 3.48 &lt;.001 Task * Predictability 1.05 0.29 .33 .74 Regressions out (z &amp; p) Task .31 .76 .57 .56 Frequency 1.49 .14 1.87 .06 Task * Frequency .50 .62 .02 .99 Task .72 .47 1.24 .22 Predictability 2.27 &lt;.05 1.30 .20 Task * Predictability .50 0.62 1.35 .18 Appendix E Means and standard errors (aggregated by subject) and results of LMM models for reading measures on the post-target word Experiment 1 Frequency Predictability Proof Read Proof Read Hi Low Hi Low Hi Low Hi Low ffd 227 (5.1) 226 (4.4) 225 (5.9) 227 (6.5) 214 (5.3) 217 (5.2) 209 (6.1) 215 (5.9) gzd 270 (6.4) 266 (5.6) 257 (7.6) 274 (9.5) 237 (7.4) 239 (6.8) 226 (7.1) 231 (6.6) sfd 234 (5.9) 232 (4.9) 234 (7.3) 240 (7.7) 212 (5.3) 221 (5.7) 212 (6.2) 222 (6.8) tvt 334 (12.6) 342 (11.3) 293 (9.6) 306 (11.3) 264 (9.8) 278 (10.7) 234 (7.5) 246 (8.4) gopast 326 (11.5) 335 (12.4) 294 (11.0) 306 (12.4) 279 (13.0) 286 (14.1) 238 (8.2) 268 (14.7) skip 0.86 (0.02) 0.85 (0.02) 0.85 (0.02) 0.87 (0.02) 0.52 (0.02) 0.52 (0.02) 0.48 (0.02) 0.51 (0.02) regin 0.16 (0.02) 0.13 (0.02) 0.10 (0.01) 0.08 (0.01) 0.09 (0.01) 0.10 (0.01) 0.08 (0.01) 0.11 (0.02) regout 0.08 (0.01) 0.12 (0.01) 0.07 (0.01) 0.07 (0.01) 0.05 (0.01) 0.06 (0.01) 0.02 (0.01) 0.05 (0.01) 
+Map(start -> 1252, end -> 1253, match -> of)
+Map(start -> 1266, end -> 1268, match -> for)
+Map(start -> 1290, end -> 1292, match -> the)
 

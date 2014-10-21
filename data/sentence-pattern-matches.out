@@ -14,7 +14,7 @@ sentence 'Taken together, data on frequency effects across tasks suggest that wh
 matches pattern 'although'
 which indicates 'problem statement'
 
-sentence 'However, some studies have recorded response times to target words presented after a sentence context (in word naming: Stanovich & West, 1979, 1981; West & Stanovich, 1982; and lexical decision: Schuberth & Eimas, 1977) or when the target word is preceded by a single prime word (in naming: de Groot, 1985; Meyer & Schvaneveldt, 1971; and lexical decision: Schuberth & Eimas, 1977). '
+sentence 'However, some studies have recorded response times to target words presented after a sentence context (in word naming: Stanovich &amp; West, 1979, 1981; West &amp; Stanovich, 1982; and lexical decision: Schuberth &amp; Eimas, 1977) or when the target word is preceded by a single prime word (in naming: de Groot, 1985; Meyer &amp; Schvaneveldt, 1971; and lexical decision: Schuberth &amp; Eimas, 1977). '
 matches pattern 'however'
 which indicates 'problem statement'
 
@@ -22,15 +22,15 @@ sentence 'First, however, we discuss possible task differences introduced by pro
 matches pattern 'however'
 which indicates 'problem statement'
 
-sentence 'This framework is agnostic as to the speciﬁc model of eye movement control in reading (e.g., Bicknell & Levy, 2010; Engbert, Nuthmann, Richter, & Kliegl, 2005; Reichle, Pollatsek, Fisher, & Rayner, 1998; Reichle, Rayner, & Pollatsek, 2003; Schad & Engbert, 2012) assumed, although it should be noted that any complete model of reading must ultimately be able to account for task differences in reading behavior. '
+sentence 'This framework is agnostic as to the speciﬁc model of eye movement control in reading (e.g., Bicknell &amp; Levy, 2010; Engbert, Nuthmann, Richter, &amp; Kliegl, 2005; Reichle, Pollatsek, Fisher, &amp; Rayner, 1998; Reichle, Rayner, &amp; Pollatsek, 2003; Schad &amp; Engbert, 2012) assumed, although it should be noted that any complete model of reading must ultimately be able to account for task differences in reading behavior. '
 matches pattern 'although'
 which indicates 'problem statement'
 
-sentence 'Word-form recognition can involve both decisions about whether or not the letter string is a word and, furthermore, what exact word it is. For example, wordhood assessment, which we deﬁne as recognizing whether the letter string has a legal (known) orthographic entry (similar to the ‘‘orthographic checking’’ process hypothesized by Kaakinen & Hyönä, 2010) is most obviously relevant for proofreading, but is also relevant even for normal reading since the reader must be able to deal with novel words. '
+sentence 'Word-form recognition can involve both decisions about whether or not the letter string is a word and, furthermore, what exact word it is. For example, wordhood assessment, which we deﬁne as recognizing whether the letter string has a legal (known) orthographic entry (similar to the ‘‘orthographic checking’’ process hypothesized by Kaakinen &amp; Hyönä, 2010) is most obviously relevant for proofreading, but is also relevant even for normal reading since the reader must be able to deal with novel words. '
 matches pattern 'not … known'
 which indicates 'problem statement'
 
-sentence 'Nevertheless, if accessing content and performing sentence-level processing are not costly, it is possible that these processes would not be de-emphasized, since sentence-level context makes reading more efﬁcient overall (Bicknell & Levy, 2012; Ehrlich & Rayner, 1981; Morton, 1964; Rayner & Well, 1996). '
+sentence 'Nevertheless, if accessing content and performing sentence-level processing are not costly, it is possible that these processes would not be de-emphasized, since sentence-level context makes reading more efﬁcient overall (Bicknell &amp; Levy, 2012; Ehrlich &amp; Rayner, 1981; Morton, 1964; Rayner &amp; Well, 1996). '
 matches pattern 'nevertheless'
 which indicates 'problem statement'
 
@@ -46,7 +46,7 @@ sentence 'Wordhood assessment and content access need to occur when a word is �
 matches pattern 'for understanding'
 which indicates 'contribution'
 
-sentence 'In sentence-level processing, however, predictability, which reﬂects degree of contextual ﬁt, is likely to be far more important than frequency: words with higher predictability are likely to be easier to integrate syntactically (Hale, 2001; Levy, 2008) and semantically (Kutas & Hillyard, 1984), and easier to validate as being a valid word, given the context and the visual input (Levy, Bicknell, Slattery, & Rayner, 2009). '
+sentence 'In sentence-level processing, however, predictability, which reﬂects degree of contextual ﬁt, is likely to be far more important than frequency: words with higher predictability are likely to be easier to integrate syntactically (Hale, 2001; Levy, 2008) and semantically (Kutas &amp; Hillyard, 1984), and easier to validate as being a valid word, given the context and the visual input (Levy, Bicknell, Slattery, &amp; Rayner, 2009). '
 matches pattern 'however'
 which indicates 'problem statement'
 
@@ -54,11 +54,11 @@ sentence 'Additionally, to avoid ceiling effects in error detection, subjects in
 matches pattern 'as predicted'
 which indicates 'hypothesis/research question  '
 
-sentence 'Less detectable are wrong word errors (Daneman & Stainton, 1993; Levy et al., 1986), which moreover show differences in the contribution of phonological similarity to the intended word: homophone substitutions (e.g., mail for male) are less detectable than spelling control substitutions (e.g., mile; Banks, Oka, & Shugarman, 1981; Jared et al., 1999), potentially implicating that phonological status may mediate content access. '
+sentence 'Less detectable are wrong word errors (Daneman &amp; Stainton, 1993; Levy et al., 1986), which moreover show differences in the contribution of phonological similarity to the intended word: homophone substitutions (e.g., mail for male) are less detectable than spelling control substitutions (e.g., mile; Banks, Oka, &amp; Shugarman, 1981; Jared et al., 1999), potentially implicating that phonological status may mediate content access. '
 matches pattern 'contribution of'
 which indicates 'contribution'
 
-sentence 'Less detectable are wrong word errors (Daneman & Stainton, 1993; Levy et al., 1986), which moreover show differences in the contribution of phonological similarity to the intended word: homophone substitutions (e.g., mail for male) are less detectable than spelling control substitutions (e.g., mile; Banks, Oka, & Shugarman, 1981; Jared et al., 1999), potentially implicating that phonological status may mediate content access. '
+sentence 'Less detectable are wrong word errors (Daneman &amp; Stainton, 1993; Levy et al., 1986), which moreover show differences in the contribution of phonological similarity to the intended word: homophone substitutions (e.g., mail for male) are less detectable than spelling control substitutions (e.g., mile; Banks, Oka, &amp; Shugarman, 1981; Jared et al., 1999), potentially implicating that phonological status may mediate content access. '
 matches pattern 'contribution'
 which indicates 'contribution'
 
@@ -106,11 +106,11 @@ sentence 'However, in later measures, reading time increased more in Experiment 
 matches pattern 'however'
 which indicates 'problem statement'
 
-sentence '(Note, however, that the two types of proofreading interacted in slightly different ways with word frequency; see Section 4.2 for further discussion.) However, we must also note that even tasks that should be less onerous than reading (e.g., x-string scanning) can lead to longer reading times (Rayner & Fischer, 1996). '
+sentence '(Note, however, that the two types of proofreading interacted in slightly different ways with word frequency; see Section 4.2 for further discussion.) However, we must also note that even tasks that should be less onerous than reading (e.g., x-string scanning) can lead to longer reading times (Rayner &amp; Fischer, 1996). '
 matches pattern 'however'
 which indicates 'problem statement'
 
-sentence 'Although our data do not distinguish between these two possibilities, the latter seems highly plausible, especially considering previous results that visual sentence context can strongly modulate explicit visual lexical decision times (Wright & Garrett, 1984). '
+sentence 'Although our data do not distinguish between these two possibilities, the latter seems highly plausible, especially considering previous results that visual sentence context can strongly modulate explicit visual lexical decision times (Wright &amp; Garrett, 1984). '
 matches pattern 'although'
 which indicates 'problem statement'
 
