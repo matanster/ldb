@@ -218,11 +218,8 @@ object go {
     return sentences.
   }*/   
 
-  //
-  // get mock data
-  //
-  val sentences = com.articlio.Input.getXML
-  
+
+
   //
   // match rules per sentence    
   //
@@ -230,19 +227,85 @@ object go {
   val db = new LDB(inputRules)
   AhoCorasick.init(db.allFragmentsDistinct)
 
+  //
+  // get mock data
+  //
+  val sections = com.articlio.Input.getXML
+
+  //
+  // separate into util file
+  //
+  val SPACE = " "
+  
+  val specialCaseWords = Seq("vs.", "al.", "cf.", "st." ,"Fig.", "FIG.")
+
+  implicit class MyStringOps(val s: String) {
+    def endsWithAny(any: Seq[String]) : Boolean = {
+      for (word <- any)
+        if (s.endsWith(SPACE + word)) return true
+      return false
+    }
+  }
+
+  def sentenceSplit (text: String) : Seq[String] = {
+
+    if (text.isEmpty) 
+      return Seq.empty[String]
+
+    for (i <- 2 to text.length) {
+
+      val tentative = text.take(i) 
+
+      if (tentative.endsWith(". "))      
+        if (tentative.drop(1).endsWithAny(specialCaseWords) && text.isDefinedAt(i) && (text.charAt(i).isUpper))
+          return Seq(tentative.drop(1)) ++ sentenceSplit(text.drop(i))
+
+      if (tentative.endsWith(". "))      
+          return Seq(tentative.drop(1)) ++ sentenceSplit(text.drop(i))
+    }
+
+    return Seq(text) // getting to the end of the text without sentence delimitation having been detected, 
+                     // this code flushes the entire text as one sentence.
+                     // future intricacies may call to trigger a notice here.
+  }
+
+
+  def sentenceTokenize (text: String) : Seq[String] = {
+    //val sentences = Seq.newBuilder[String] 
+    //return sentences.result
+    return sentenceSplit(text)
+  }
+
+
+
+  case class AnnotatedSentence(text : String, section: String)
+  /*val sentences : Seq[AnnotatedSentence] = sections.flatMap(section => 
+                                           section.paragraphs.flatMap(paragraph => sentenceTokenize(paragraph)
+                                           .map(sentence => AnnotatedSentence(sentence, section.sectionTitle))))
+*/
+
+  val sentences = sections.head.paragraphs.flatMap(paragraph => sentenceSplit(paragraph))
+                                           .map(sentence => AnnotatedSentence(sentence, "aaa"))
+
+
+  println(sentences.head)
+
+  //
+  // process sentence by sentence
+  //
   Timelog.timer("matching")
-  processSentences
+  processSentences(sentences)
   Timelog.timer("matching")
 
   //
   // matches rules per sentence    
   //
-  def processSentences {
+  def processSentences (sentences : Seq[AnnotatedSentence]) = {
 
     val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
 
     for (sentence <- sentences) {
-      val matchedFragments = AhoCorasick.go(sentence)
+      val matchedFragments = AhoCorasick.go(sentence.text)
       sentenceMatchCount += matchedFragments.length
 
       // checks if all fragments making up a pattern, are contained in target string *in order*
