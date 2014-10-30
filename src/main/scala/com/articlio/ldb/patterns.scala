@@ -257,11 +257,14 @@ object go {
       val tentative = text.take(i) 
 
       if (tentative.endsWith(". "))      
-        if (tentative.drop(1).endsWithAny(specialCaseWords) && text.isDefinedAt(i) && (text.charAt(i).isUpper))
-          return Seq(tentative.drop(1)) ++ sentenceSplit(text.drop(i))
+        if (tentative.dropRight(1).endsWithAny(specialCaseWords) && text.isDefinedAt(i) && (text.charAt(i).isUpper))
+          return Seq(tentative) ++ sentenceSplit(text.drop(i))
 
       if (tentative.endsWith(". "))      
-          return Seq(tentative.drop(1)) ++ sentenceSplit(text.drop(i))
+          return Seq(tentative.dropRight(1)) ++ sentenceSplit(text.drop(i))
+
+      if (tentative.endsWith("? ") || tentative.endsWith("! "))      
+          return Seq(tentative.dropRight(1)) ++ sentenceSplit(text.drop(i))
     }
 
     return Seq(text) // getting to the end of the text without sentence delimitation having been detected, 
@@ -270,10 +273,14 @@ object go {
   }
 
 
-  def sentenceTokenize (text: String) : Seq[String] = {
+  def sentenceSplitter (text: String) : Seq[String] = {
     //val sentences = Seq.newBuilder[String] 
     //return sentences.result
-    return sentenceSplit(text)
+
+    Logger.write(text, "JATS-paragraphs")
+    val sentences = sentenceSplit(text)
+    Logger.write(sentences.mkString("\n"), "JATS-sentences")
+    return sentences
   }
 
 
@@ -284,11 +291,11 @@ object go {
                                            .map(sentence => AnnotatedSentence(sentence, section.sectionTitle))))
 */
 
-  val sentences = sections.head.paragraphs.flatMap(paragraph => sentenceSplit(paragraph))
+  val sentences = sections.head.paragraphs.flatMap(paragraph => sentenceSplitter(paragraph))
                                            .map(sentence => AnnotatedSentence(sentence, "aaa"))
 
 
-  println(sentences.head)
+  //println(sentences.head)
 
   //
   // process sentence by sentence

@@ -24,7 +24,7 @@ object Input {
     val sections = for (node <- JATSinput \ "body" \ "sec") 
                      yield JATSsection(node.attributes("sec-type").toString, 
                                       (node \ "title").head.child.head.toString, 
-                                      (node \ "p") map (node => node.child.head.toString)) // forgoing the nuance and noise of annotation
+                                      (node \ "p") map (node => node.toString)) // forgoing the nuance and noise of annotation
                                                                                            // within each paragraph (e.g. ref annotations),
                                                                                            // for now
 
