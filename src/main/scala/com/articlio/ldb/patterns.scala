@@ -1,5 +1,6 @@
 package com.articlio.ldb
 
+import com.articlio.input._
 import com.articlio.util._
 import com.articlio.util.text._
 import com.articlio.LanguageModel._
@@ -10,7 +11,6 @@ import com.articlio.selfMonitor.{Monitor}
 import org.ahocorasick.trie._
 //import scala.collection.JavaConversions._ // work with Java collections as if they were Scala
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
-
 
 abstract class PlugType
 case object    RefAppendable  extends PlugType // self reference is potentially *appendable* to target phrase
@@ -230,7 +230,7 @@ object go {
   //
   // get mock data
   //
-  val sections = com.articlio.Input.getXML
+  val sections = JATSsections.load("elife-articles(XML)/elife00425styled.xml")
 
   //
   // separate into util file
@@ -247,7 +247,7 @@ object go {
     }
   }
 
-  def sentenceSplit (text: String) : Seq[String] = {
+  def sentenceSplit (AnnotatedText: String) : Seq[String] = {
 
     if (text.isEmpty) 
       return Seq.empty[String]
@@ -273,7 +273,7 @@ object go {
   }
 
 
-  def sentenceSplitter (text: String) : Seq[String] = {
+  def sentenceSplitter (text: AnnotatedText) : Seq[String] = {
     //val sentences = Seq.newBuilder[String] 
     //return sentences.result
 
@@ -283,9 +283,7 @@ object go {
     return sentences
   }
 
-
-
-  case class AnnotatedSentence(text : String, section: String)
+  case class AnnotatedSentence(text : AnnotatedText, section: String)
   /*val sentences : Seq[AnnotatedSentence] = sections.flatMap(section => 
                                            section.paragraphs.flatMap(paragraph => sentenceTokenize(paragraph)
                                            .map(sentence => AnnotatedSentence(sentence, section.sectionTitle))))
