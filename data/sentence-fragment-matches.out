@@ -122,3 +122,608 @@ Map(start -> 238, end -> 238, match -> ,)
 Map(start -> 257, end -> 257, match -> ,)
 Map(start -> 264, end -> 264, match -> ,)
 
+fMRI (3 Tesla) was used to measure the blood oxygenation level-dependent (BOLD) signal in the brains of 13 right-handed subjects (7 females; mean age: 25.7 years) during a slow event-related design with a delay interval.
+Map(start -> 15, end -> 17, match -> was)
+Map(start -> 35, end -> 37, match -> the)
+Map(start -> 90, end -> 92, match -> the)
+Map(start -> 101, end -> 102, match -> of)
+
+Subjects used either the right hand or a tool (controlled by the right hand) to execute a precision reach-to-grasp (Grasp) or reach-to-touch (Reach) movement towards a single centrally located real three-dimensional (3D) target object made of Lego blocks (Figure 1B).
+Map(start -> 21, end -> 23, match -> the)
+Map(start -> 61, end -> 63, match -> the)
+Map(start -> 240, end -> 241, match -> of)
+
+The tool used was a set of reverse tongs; when the hand closed on the grips, the ends of the tongs would open and vice versa.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 14, end -> 16, match -> was)
+Map(start -> 24, end -> 25, match -> of)
+Map(start -> 47, end -> 49, match -> the)
+Map(start -> 66, end -> 68, match -> the)
+Map(start -> 77, end -> 79, match -> the)
+Map(start -> 86, end -> 87, match -> of)
+Map(start -> 89, end -> 91, match -> the)
+
+As such, different hand kinematics were required to operate the tool compared to when the hand was used alone.
+Map(start -> 60, end -> 62, match -> the)
+Map(start -> 86, end -> 88, match -> the)
+Map(start -> 95, end -> 97, match -> was)
+
+Use of the hand and tool were alternated across experimental runs.
+Map(start -> 4, end -> 5, match -> of)
+Map(start -> 7, end -> 9, match -> the)
+
+The position of the target object was changed between hand and tool experimental runs in order for the grasps and reaches to be performed at a comfortable distance for each effector (Figure 1B).
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 13, end -> 14, match -> of)
+Map(start -> 16, end -> 18, match -> the)
+Map(start -> 34, end -> 36, match -> was)
+Map(start -> 95, end -> 97, match -> for)
+Map(start -> 99, end -> 101, match -> the)
+Map(start -> 164, end -> 166, match -> for)
+
+On each trial, subjects were first cued to the action to be carried out (grasp or reach).
+Map(start -> 43, end -> 45, match -> the)
+
+Then, following a delay period, they performed the instructed action (with the hand or tool, depending on the experimental run).
+Map(start -> 47, end -> 49, match -> the)
+Map(start -> 75, end -> 77, match -> the)
+Map(start -> 106, end -> 108, match -> the)
+
+The delay timing of the paradigm allowed us to divide the trial into discrete time epochs and isolate the sustained plan-related neural responses that evolve prior to movement from the transient visual response (Preview phase) and the movement execution response (Execute phase; Figure 1C,D).10.7554/eLife.00425.003Figure 1.Experimental methods and evoked neural activity.(A) Subject setup shown from side view.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 17, end -> 18, match -> of)
+Map(start -> 20, end -> 22, match -> the)
+Map(start -> 54, end -> 56, match -> the)
+Map(start -> 102, end -> 104, match -> the)
+Map(start -> 181, end -> 183, match -> the)
+Map(start -> 231, end -> 233, match -> the)
+
+(B) (Left) experimental apparatus and target object shown from the subject’s point of view for experimental runs where either the hand (top) or reverse tool (bottom) were used.
+Map(start -> 63, end -> 65, match -> the)
+Map(start -> 83, end -> 84, match -> of)
+Map(start -> 91, end -> 93, match -> for)
+Map(start -> 126, end -> 128, match -> the)
+
+The location of the target object (white block) was switched between run types but did not change its position from trial-to-trial within a imaging run.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 13, end -> 14, match -> of)
+Map(start -> 16, end -> 18, match -> the)
+Map(start -> 48, end -> 50, match -> was)
+Map(start -> 87, end -> 89, match -> not)
+
+Dashed line represents the participant’s arc of reachability for each run type.
+Map(start -> 23, end -> 25, match -> the)
+Map(start -> 45, end -> 46, match -> of)
+Map(start -> 61, end -> 63, match -> for)
+
+In both cases (left panels), the hand is shown at its starting location.
+Map(start -> 27, end -> 27, match -> ,)
+Map(start -> 29, end -> 31, match -> the)
+
+Green star with dark shadow represents the fixation LED and its location in depth.
+Map(start -> 39, end -> 41, match -> the)
+
+(Right) Hand and tool positions during movements performed by the subject.
+Map(start -> 62, end -> 64, match -> the)
+
+(C) Timing of each event-related trial.
+Map(start -> 11, end -> 12, match -> of)
+
+Trials began with the 3D object being illuminated while the subject maintained fixation (Preview phase; 6 s).
+Map(start -> 18, end -> 20, match -> the)
+Map(start -> 56, end -> 58, match -> the)
+
+Subjects were then instructed via headphones to perform one of two movements: Grasp the object (‘Grasp’) without lifting it or Touch the object (‘Touch’), initiating the Plan phase portion of the trial.
+Map(start -> 60, end -> 61, match -> of)
+Map(start -> 84, end -> 86, match -> the)
+Map(start -> 133, end -> 135, match -> the)
+Map(start -> 153, end -> 153, match -> ,)
+Map(start -> 166, end -> 168, match -> the)
+Map(start -> 189, end -> 190, match -> of)
+Map(start -> 192, end -> 194, match -> the)
+
+Following a fixed delay interval (12 s), subjects were cued (by an auditory ‘beep’) to perform the instructed movement (initiating the Execute phase) and then return to the starting location.
+Map(start -> 39, end -> 39, match -> ,)
+Map(start -> 95, end -> 97, match -> the)
+Map(start -> 131, end -> 133, match -> the)
+Map(start -> 169, end -> 171, match -> the)
+
+2 s after the Go cue, vision of the workspace was extinguished and participants waited for the following trial to begin (14-s intertrial interval, ITI).
+Map(start -> 10, end -> 12, match -> the)
+Map(start -> 29, end -> 30, match -> of)
+Map(start -> 32, end -> 34, match -> the)
+Map(start -> 46, end -> 48, match -> was)
+Map(start -> 87, end -> 89, match -> for)
+Map(start -> 91, end -> 93, match -> the)
+
+MVPA was performed using single fMRI trials in two ways: 1) based on the % signal change (SC) BOLD activation evoked for each single time point in the trial (time-resolved decoding), allowing us to pinpoint when predictive movement information was available and 2) based on a windowed average of the % SC BOLD activation in the 4 s (2 imaging volumes) prior to movement initiation (denoted by the gray shaded bar).DOI:http://dx.doi.org/10.7554/eLife.00425.003fMRI (3 Tesla) was used to measure the blood oxygenation level-dependent (BOLD) signal in the brains of 13 right-handed subjects (7 females; mean age: 25.7 years) during a slow event-related design with a delay interval.
+Map(start -> 5, end -> 7, match -> was)
+Map(start -> 69, end -> 71, match -> the)
+Map(start -> 117, end -> 119, match -> for)
+Map(start -> 147, end -> 149, match -> the)
+Map(start -> 181, end -> 181, match -> ,)
+Map(start -> 244, end -> 246, match -> was)
+Map(start -> 293, end -> 294, match -> of)
+Map(start -> 296, end -> 298, match -> the)
+Map(start -> 324, end -> 326, match -> the)
+Map(start -> 393, end -> 395, match -> the)
+Map(start -> 474, end -> 476, match -> was)
+Map(start -> 494, end -> 496, match -> the)
+Map(start -> 549, end -> 551, match -> the)
+Map(start -> 560, end -> 561, match -> of)
+
+Subjects used either the right hand or a tool (controlled by the right hand) to execute a precision reach-to-grasp (Grasp) or reach-to-touch (Reach) movement towards a single centrally located real three-dimensional (3D) target object made of Lego blocks (Figure 1BFigure 1B).
+Map(start -> 21, end -> 23, match -> the)
+Map(start -> 61, end -> 63, match -> the)
+Map(start -> 240, end -> 241, match -> of)
+
+The tool used was a set of reverse tongs; when the hand closed on the grips, the ends of the tongs would open and vice versa.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 14, end -> 16, match -> was)
+Map(start -> 24, end -> 25, match -> of)
+Map(start -> 47, end -> 49, match -> the)
+Map(start -> 66, end -> 68, match -> the)
+Map(start -> 77, end -> 79, match -> the)
+Map(start -> 86, end -> 87, match -> of)
+Map(start -> 89, end -> 91, match -> the)
+
+As such, different hand kinematics were required to operate the tool compared to when the hand was used alone.
+Map(start -> 60, end -> 62, match -> the)
+Map(start -> 86, end -> 88, match -> the)
+Map(start -> 95, end -> 97, match -> was)
+
+Use of the hand and tool were alternated across experimental runs.
+Map(start -> 4, end -> 5, match -> of)
+Map(start -> 7, end -> 9, match -> the)
+
+The position of the target object was changed between hand and tool experimental runs in order for the grasps and reaches to be performed at a comfortable distance for each effector (Figure 1BFigure 1B).
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 13, end -> 14, match -> of)
+Map(start -> 16, end -> 18, match -> the)
+Map(start -> 34, end -> 36, match -> was)
+Map(start -> 95, end -> 97, match -> for)
+Map(start -> 99, end -> 101, match -> the)
+Map(start -> 164, end -> 166, match -> for)
+
+On each trial, subjects were first cued to the action to be carried out (grasp or reach).
+Map(start -> 43, end -> 45, match -> the)
+
+Then, following a delay period, they performed the instructed action (with the hand or tool, depending on the experimental run).
+Map(start -> 47, end -> 49, match -> the)
+Map(start -> 75, end -> 77, match -> the)
+Map(start -> 106, end -> 108, match -> the)
+
+The delay timing of the paradigm allowed us to divide the trial into discrete time epochs and isolate the sustained plan-related neural responses that evolve prior to movement from the transient visual response (Preview phase) and the movement execution response (Execute phase; Figure 1C,DFigure 1C,D).10.7554/eLife.00425.003Figure 1.Experimental methods and evoked neural activity.(A) Subject setup shown from side view.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 17, end -> 18, match -> of)
+Map(start -> 20, end -> 22, match -> the)
+Map(start -> 54, end -> 56, match -> the)
+Map(start -> 102, end -> 104, match -> the)
+Map(start -> 181, end -> 183, match -> the)
+Map(start -> 231, end -> 233, match -> the)
+
+(B) (Left) experimental apparatus and target object shown from the subject’s point of view for experimental runs where either the hand (top) or reverse tool (bottom) were used.
+Map(start -> 63, end -> 65, match -> the)
+Map(start -> 83, end -> 84, match -> of)
+Map(start -> 91, end -> 93, match -> for)
+Map(start -> 126, end -> 128, match -> the)
+
+The location of the target object (white block) was switched between run types but did not change its position from trial-to-trial within a imaging run.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 13, end -> 14, match -> of)
+Map(start -> 16, end -> 18, match -> the)
+Map(start -> 48, end -> 50, match -> was)
+Map(start -> 87, end -> 89, match -> not)
+
+Dashed line represents the participant’s arc of reachability for each run type.
+Map(start -> 23, end -> 25, match -> the)
+Map(start -> 45, end -> 46, match -> of)
+Map(start -> 61, end -> 63, match -> for)
+
+In both cases (left panels), the hand is shown at its starting location.
+Map(start -> 27, end -> 27, match -> ,)
+Map(start -> 29, end -> 31, match -> the)
+
+Green star with dark shadow represents the fixation LED and its location in depth.
+Map(start -> 39, end -> 41, match -> the)
+
+(Right) Hand and tool positions during movements performed by the subject.
+Map(start -> 62, end -> 64, match -> the)
+
+(C) Timing of each event-related trial.
+Map(start -> 11, end -> 12, match -> of)
+
+Trials began with the 3D object being illuminated while the subject maintained fixation (Preview phase; 6 s).
+Map(start -> 18, end -> 20, match -> the)
+Map(start -> 56, end -> 58, match -> the)
+
+Subjects were then instructed via headphones to perform one of two movements: Grasp the object (‘Grasp’) without lifting it or Touch the object (‘Touch’), initiating the Plan phase portion of the trial.
+Map(start -> 60, end -> 61, match -> of)
+Map(start -> 84, end -> 86, match -> the)
+Map(start -> 133, end -> 135, match -> the)
+Map(start -> 153, end -> 153, match -> ,)
+Map(start -> 166, end -> 168, match -> the)
+Map(start -> 189, end -> 190, match -> of)
+Map(start -> 192, end -> 194, match -> the)
+
+Following a fixed delay interval (12 s), subjects were cued (by an auditory ‘beep’) to perform the instructed movement (initiating the Execute phase) and then return to the starting location.
+Map(start -> 39, end -> 39, match -> ,)
+Map(start -> 95, end -> 97, match -> the)
+Map(start -> 131, end -> 133, match -> the)
+Map(start -> 169, end -> 171, match -> the)
+
+2 s after the Go cue, vision of the workspace was extinguished and participants waited for the following trial to begin (14-s intertrial interval, ITI).
+Map(start -> 10, end -> 12, match -> the)
+Map(start -> 29, end -> 30, match -> of)
+Map(start -> 32, end -> 34, match -> the)
+Map(start -> 46, end -> 48, match -> was)
+Map(start -> 87, end -> 89, match -> for)
+Map(start -> 91, end -> 93, match -> the)
+
+MVPA was performed using single fMRI trials in two ways: 1) based on the % signal change (SC) BOLD activation evoked for each single time point in the trial (time-resolved decoding), allowing us to pinpoint when predictive movement information was available and 2) based on a windowed average of the % SC BOLD activation in the 4 s (2 imaging volumes) prior to movement initiation (denoted by the gray shaded bar).DOI:http://dx.doi.org/10.7554/eLife.00425.00310.7554/eLife.00425.00310.7554/eLife.00425.003Figure 1.Figure 1.Experimental methods and evoked neural activity.(A) Subject setup shown from side view.
+Map(start -> 5, end -> 7, match -> was)
+Map(start -> 69, end -> 71, match -> the)
+Map(start -> 117, end -> 119, match -> for)
+Map(start -> 147, end -> 149, match -> the)
+Map(start -> 181, end -> 181, match -> ,)
+Map(start -> 244, end -> 246, match -> was)
+Map(start -> 293, end -> 294, match -> of)
+Map(start -> 296, end -> 298, match -> the)
+Map(start -> 324, end -> 326, match -> the)
+Map(start -> 393, end -> 395, match -> the)
+
+(B) (Left) experimental apparatus and target object shown from the subject’s point of view for experimental runs where either the hand (top) or reverse tool (bottom) were used.
+Map(start -> 63, end -> 65, match -> the)
+Map(start -> 83, end -> 84, match -> of)
+Map(start -> 91, end -> 93, match -> for)
+Map(start -> 126, end -> 128, match -> the)
+
+The location of the target object (white block) was switched between run types but did not change its position from trial-to-trial within a imaging run.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 13, end -> 14, match -> of)
+Map(start -> 16, end -> 18, match -> the)
+Map(start -> 48, end -> 50, match -> was)
+Map(start -> 87, end -> 89, match -> not)
+
+Dashed line represents the participant’s arc of reachability for each run type.
+Map(start -> 23, end -> 25, match -> the)
+Map(start -> 45, end -> 46, match -> of)
+Map(start -> 61, end -> 63, match -> for)
+
+In both cases (left panels), the hand is shown at its starting location.
+Map(start -> 27, end -> 27, match -> ,)
+Map(start -> 29, end -> 31, match -> the)
+
+Green star with dark shadow represents the fixation LED and its location in depth.
+Map(start -> 39, end -> 41, match -> the)
+
+(Right) Hand and tool positions during movements performed by the subject.
+Map(start -> 62, end -> 64, match -> the)
+
+(C) Timing of each event-related trial.
+Map(start -> 11, end -> 12, match -> of)
+
+Trials began with the 3D object being illuminated while the subject maintained fixation (Preview phase; 6 s).
+Map(start -> 18, end -> 20, match -> the)
+Map(start -> 56, end -> 58, match -> the)
+
+Subjects were then instructed via headphones to perform one of two movements: Grasp the object (‘Grasp’) without lifting it or Touch the object (‘Touch’), initiating the Plan phase portion of the trial.
+Map(start -> 60, end -> 61, match -> of)
+Map(start -> 84, end -> 86, match -> the)
+Map(start -> 133, end -> 135, match -> the)
+Map(start -> 153, end -> 153, match -> ,)
+Map(start -> 166, end -> 168, match -> the)
+Map(start -> 189, end -> 190, match -> of)
+Map(start -> 192, end -> 194, match -> the)
+
+Following a fixed delay interval (12 s), subjects were cued (by an auditory ‘beep’) to perform the instructed movement (initiating the Execute phase) and then return to the starting location.
+Map(start -> 39, end -> 39, match -> ,)
+Map(start -> 95, end -> 97, match -> the)
+Map(start -> 131, end -> 133, match -> the)
+Map(start -> 169, end -> 171, match -> the)
+
+2 s after the Go cue, vision of the workspace was extinguished and participants waited for the following trial to begin (14-s intertrial interval, ITI).
+Map(start -> 10, end -> 12, match -> the)
+Map(start -> 29, end -> 30, match -> of)
+Map(start -> 32, end -> 34, match -> the)
+Map(start -> 46, end -> 48, match -> was)
+Map(start -> 87, end -> 89, match -> for)
+Map(start -> 91, end -> 93, match -> the)
+
+MVPA was performed using single fMRI trials in two ways: 1) based on the % signal change (SC) BOLD activation evoked for each single time point in the trial (time-resolved decoding), allowing us to pinpoint when predictive movement information was available and 2) based on a windowed average of the % SC BOLD activation in the 4 s (2 imaging volumes) prior to movement initiation (denoted by the gray shaded bar).DOI:http://dx.doi.org/10.7554/eLife.00425.003Experimental methods and evoked neural activity.Experimental methods and evoked neural activity.(A) Subject setup shown from side view.
+Map(start -> 5, end -> 7, match -> was)
+Map(start -> 69, end -> 71, match -> the)
+Map(start -> 117, end -> 119, match -> for)
+Map(start -> 147, end -> 149, match -> the)
+Map(start -> 181, end -> 181, match -> ,)
+Map(start -> 244, end -> 246, match -> was)
+Map(start -> 293, end -> 294, match -> of)
+Map(start -> 296, end -> 298, match -> the)
+Map(start -> 324, end -> 326, match -> the)
+Map(start -> 393, end -> 395, match -> the)
+
+(B) (Left) experimental apparatus and target object shown from the subject’s point of view for experimental runs where either the hand (top) or reverse tool (bottom) were used.
+Map(start -> 63, end -> 65, match -> the)
+Map(start -> 83, end -> 84, match -> of)
+Map(start -> 91, end -> 93, match -> for)
+Map(start -> 126, end -> 128, match -> the)
+
+The location of the target object (white block) was switched between run types but did not change its position from trial-to-trial within a imaging run.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 13, end -> 14, match -> of)
+Map(start -> 16, end -> 18, match -> the)
+Map(start -> 48, end -> 50, match -> was)
+Map(start -> 87, end -> 89, match -> not)
+
+Dashed line represents the participant’s arc of reachability for each run type.
+Map(start -> 23, end -> 25, match -> the)
+Map(start -> 45, end -> 46, match -> of)
+Map(start -> 61, end -> 63, match -> for)
+
+In both cases (left panels), the hand is shown at its starting location.
+Map(start -> 27, end -> 27, match -> ,)
+Map(start -> 29, end -> 31, match -> the)
+
+Green star with dark shadow represents the fixation LED and its location in depth.
+Map(start -> 39, end -> 41, match -> the)
+
+(Right) Hand and tool positions during movements performed by the subject.
+Map(start -> 62, end -> 64, match -> the)
+
+(C) Timing of each event-related trial.
+Map(start -> 11, end -> 12, match -> of)
+
+Trials began with the 3D object being illuminated while the subject maintained fixation (Preview phase; 6 s).
+Map(start -> 18, end -> 20, match -> the)
+Map(start -> 56, end -> 58, match -> the)
+
+Subjects were then instructed via headphones to perform one of two movements: Grasp the object (‘Grasp’) without lifting it or Touch the object (‘Touch’), initiating the Plan phase portion of the trial.
+Map(start -> 60, end -> 61, match -> of)
+Map(start -> 84, end -> 86, match -> the)
+Map(start -> 133, end -> 135, match -> the)
+Map(start -> 153, end -> 153, match -> ,)
+Map(start -> 166, end -> 168, match -> the)
+Map(start -> 189, end -> 190, match -> of)
+Map(start -> 192, end -> 194, match -> the)
+
+Following a fixed delay interval (12 s), subjects were cued (by an auditory ‘beep’) to perform the instructed movement (initiating the Execute phase) and then return to the starting location.
+Map(start -> 39, end -> 39, match -> ,)
+Map(start -> 95, end -> 97, match -> the)
+Map(start -> 131, end -> 133, match -> the)
+Map(start -> 169, end -> 171, match -> the)
+
+2 s after the Go cue, vision of the workspace was extinguished and participants waited for the following trial to begin (14-s intertrial interval, ITI).
+Map(start -> 10, end -> 12, match -> the)
+Map(start -> 29, end -> 30, match -> of)
+Map(start -> 32, end -> 34, match -> the)
+Map(start -> 46, end -> 48, match -> was)
+Map(start -> 87, end -> 89, match -> for)
+Map(start -> 91, end -> 93, match -> the)
+
+MVPA was performed using single fMRI trials in two ways: 1) based on the % signal change (SC) BOLD activation evoked for each single time point in the trial (time-resolved decoding), allowing us to pinpoint when predictive movement information was available and 2) based on a windowed average of the % SC BOLD activation in the 4 s (2 imaging volumes) prior to movement initiation (denoted by the gray shaded bar).(AA) Subject setup shown from side view.
+Map(start -> 5, end -> 7, match -> was)
+Map(start -> 69, end -> 71, match -> the)
+Map(start -> 117, end -> 119, match -> for)
+Map(start -> 147, end -> 149, match -> the)
+Map(start -> 181, end -> 181, match -> ,)
+Map(start -> 244, end -> 246, match -> was)
+Map(start -> 293, end -> 294, match -> of)
+Map(start -> 296, end -> 298, match -> the)
+Map(start -> 324, end -> 326, match -> the)
+Map(start -> 393, end -> 395, match -> the)
+
+(BB) (Left) experimental apparatus and target object shown from the subject’s point of view for experimental runs where either the hand (top) or reverse tool (bottom) were used.
+Map(start -> 64, end -> 66, match -> the)
+Map(start -> 84, end -> 85, match -> of)
+Map(start -> 92, end -> 94, match -> for)
+Map(start -> 127, end -> 129, match -> the)
+
+The location of the target object (white block) was switched between run types but did not change its position from trial-to-trial within a imaging run.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 13, end -> 14, match -> of)
+Map(start -> 16, end -> 18, match -> the)
+Map(start -> 48, end -> 50, match -> was)
+Map(start -> 87, end -> 89, match -> not)
+
+Dashed line represents the participant’s arc of reachability for each run type.
+Map(start -> 23, end -> 25, match -> the)
+Map(start -> 45, end -> 46, match -> of)
+Map(start -> 61, end -> 63, match -> for)
+
+In both cases (left panels), the hand is shown at its starting location.
+Map(start -> 27, end -> 27, match -> ,)
+Map(start -> 29, end -> 31, match -> the)
+
+Green star with dark shadow represents the fixation LED and its location in depth.
+Map(start -> 39, end -> 41, match -> the)
+
+(Right) Hand and tool positions during movements performed by the subject.
+Map(start -> 62, end -> 64, match -> the)
+
+(CC) Timing of each event-related trial.
+Map(start -> 12, end -> 13, match -> of)
+
+Trials began with the 3D object being illuminated while the subject maintained fixation (Preview phase; 6 s).
+Map(start -> 18, end -> 20, match -> the)
+Map(start -> 56, end -> 58, match -> the)
+
+Subjects were then instructed via headphones to perform one of two movements: Grasp the object (‘Grasp’) without lifting it or Touch the object (‘Touch’), initiating the Plan phase portion of the trial.
+Map(start -> 60, end -> 61, match -> of)
+Map(start -> 84, end -> 86, match -> the)
+Map(start -> 133, end -> 135, match -> the)
+Map(start -> 153, end -> 153, match -> ,)
+Map(start -> 166, end -> 168, match -> the)
+Map(start -> 189, end -> 190, match -> of)
+Map(start -> 192, end -> 194, match -> the)
+
+Following a fixed delay interval (12 s), subjects were cued (by an auditory ‘beep’) to perform the instructed movement (initiating the Execute phase) and then return to the starting location.
+Map(start -> 39, end -> 39, match -> ,)
+Map(start -> 95, end -> 97, match -> the)
+Map(start -> 131, end -> 133, match -> the)
+Map(start -> 169, end -> 171, match -> the)
+
+2 s after the Go cue, vision of the workspace was extinguished and participants waited for the following trial to begin (14-s intertrial interval, ITI).
+Map(start -> 10, end -> 12, match -> the)
+Map(start -> 29, end -> 30, match -> of)
+Map(start -> 32, end -> 34, match -> the)
+Map(start -> 46, end -> 48, match -> was)
+Map(start -> 87, end -> 89, match -> for)
+Map(start -> 91, end -> 93, match -> the)
+
+MVPA was performed using single fMRI trials in two ways: 1) based on the % signal change (SC) BOLD activation evoked for each single time point in the trial (time-resolved decoding), allowing us to pinpoint when predictive movement information was available and 2) based on a windowed average of the % SC BOLD activation in the 4 s (2 imaging volumes) prior to movement initiation (denoted by the gray shaded bar).DOI:http://dx.doi.org/10.7554/eLife.00425.003DOI:DOI:http://dx.doi.org/10.7554/eLife.00425.003http://dx.doi.org/10.7554/eLife.00425.003
+Map(start -> 5, end -> 7, match -> was)
+Map(start -> 69, end -> 71, match -> the)
+Map(start -> 117, end -> 119, match -> for)
+Map(start -> 147, end -> 149, match -> the)
+Map(start -> 181, end -> 181, match -> ,)
+Map(start -> 244, end -> 246, match -> was)
+Map(start -> 293, end -> 294, match -> of)
+Map(start -> 296, end -> 298, match -> the)
+Map(start -> 324, end -> 326, match -> the)
+Map(start -> 393, end -> 395, match -> the)
+
+Behavioral, neuropsychological and neurophysiological evidence demonstrates that a central and governing feature of movement planning, and indeed of higher-level cognition in general, is the linking together of overarching action goals with the precise underlying kinematics required by the body to achieve those goals (Haaland et al., 2000; Andersen and Buneo, 2002; Fogassi et al., 2005; Grafton and Hamilton, 2007; Umilta et al., 2008).
+Map(start -> 113, end -> 114, match -> of)
+Map(start -> 146, end -> 147, match -> of)
+Map(start -> 187, end -> 189, match -> the)
+Map(start -> 208, end -> 209, match -> of)
+Map(start -> 241, end -> 243, match -> the)
+Map(start -> 287, end -> 289, match -> the)
+Map(start -> 334, end -> 334, match -> ,)
+Map(start -> 382, end -> 382, match -> ,)
+Map(start -> 431, end -> 431, match -> ,)
+
+Exactly how the human brain supports this cognitive capacity, particularly in the everyday example of tool-use, remains poorly understood.
+Map(start -> 12, end -> 14, match -> the)
+Map(start -> 37, end -> 40, match -> this)
+Map(start -> 78, end -> 80, match -> the)
+Map(start -> 99, end -> 100, match -> of)
+Map(start -> 112, end -> 118, match -> remains)
+
+Here we manipulated the type of object-directed hand action that was planned (grasping vs reaching) as well as the effector (hand vs tool) used to implement that action.
+Map(start -> 20, end -> 22, match -> the)
+Map(start -> 29, end -> 30, match -> of)
+Map(start -> 65, end -> 67, match -> was)
+Map(start -> 111, end -> 113, match -> the)
+
+At the effector-specific level, we found that SPOC and EBA discriminated upcoming hand movements only whereas SMG and pMTG discriminated upcoming tool movements only.
+Map(start -> 3, end -> 5, match -> the)
+Map(start -> 97, end -> 100, match -> only)
+Map(start -> 161, end -> 164, match -> only)
+
+aIPS, aIPS, t-aIPS) and motor cortex areas discriminated planned actions for both the hand and tool, but did not cross-decode between the two effectors.
+Map(start -> 73, end -> 75, match -> for)
+Map(start -> 82, end -> 84, match -> the)
+Map(start -> 109, end -> 111, match -> not)
+Map(start -> 134, end -> 136, match -> the)
+
+At the effector-independent level, in posterior parietal (pIPS and midIPS) and premotor (PMd and PMv) cortex areas, we found that the pre-movement patterns predictive of grasp vs reach actions for the hand also predicted grasp vs reach actions with the tool.
+Map(start -> 3, end -> 5, match -> the)
+Map(start -> 130, end -> 132, match -> the)
+Map(start -> 167, end -> 168, match -> of)
+Map(start -> 193, end -> 195, match -> for)
+Map(start -> 197, end -> 199, match -> the)
+Map(start -> 249, end -> 251, match -> the)
+
+Notably, because the tool-effector required very different hand kinematics than when the hand was used alone, this suggests that these brain areas encoded the action performed rather than the specific muscle movements needed to achieve it.
+Map(start -> 17, end -> 19, match -> the)
+Map(start -> 75, end -> 78, match -> than)
+Map(start -> 85, end -> 87, match -> the)
+Map(start -> 94, end -> 96, match -> was)
+Map(start -> 110, end -> 113, match -> this)
+Map(start -> 155, end -> 157, match -> the)
+Map(start -> 176, end -> 186, match -> rather than)
+Map(start -> 183, end -> 186, match -> than)
+Map(start -> 188, end -> 190, match -> the)
+
+Consistent with the transfer of goals for the hand to those of the tool, this finding resonates with embodied theories of tool use whereby through use, tools become incorporated as part of the body schema.
+Map(start -> 16, end -> 18, match -> the)
+Map(start -> 29, end -> 30, match -> of)
+Map(start -> 38, end -> 40, match -> for)
+Map(start -> 42, end -> 44, match -> the)
+Map(start -> 60, end -> 61, match -> of)
+Map(start -> 63, end -> 65, match -> the)
+Map(start -> 73, end -> 76, match -> this)
+Map(start -> 119, end -> 120, match -> of)
+Map(start -> 186, end -> 187, match -> of)
+Map(start -> 189, end -> 191, match -> the)
+
+Notably, however, in the majority of regions tested we find that neural representations remain linked to either the hand or tool.Behavioral, neuropsychological and neurophysiological evidence demonstrates that a central and governing feature of movement planning, and indeed of higher-level cognition in general, is the linking together of overarching action goals with the precise underlying kinematics required by the body to achieve those goals (Haaland et al., 2000Haaland et al., 2000; Andersen and Buneo, 2002Andersen and Buneo, 2002; Fogassi et al., 2005Fogassi et al., 2005; Grafton and Hamilton, 2007Grafton and Hamilton, 2007; Umilta et al., 2008Umilta et al., 2008).
+Map(start -> 9, end -> 15, match -> however)
+Map(start -> 21, end -> 23, match -> the)
+Map(start -> 34, end -> 35, match -> of)
+Map(start -> 112, end -> 114, match -> the)
+Map(start -> 242, end -> 243, match -> of)
+Map(start -> 275, end -> 276, match -> of)
+Map(start -> 316, end -> 318, match -> the)
+Map(start -> 337, end -> 338, match -> of)
+Map(start -> 370, end -> 372, match -> the)
+Map(start -> 416, end -> 418, match -> the)
+Map(start -> 463, end -> 463, match -> ,)
+Map(start -> 483, end -> 483, match -> ,)
+Map(start -> 555, end -> 555, match -> ,)
+Map(start -> 575, end -> 575, match -> ,)
+Map(start -> 650, end -> 650, match -> ,)
+Map(start -> 669, end -> 669, match -> ,)
+
+Exactly how the human brain supports this cognitive capacity, particularly in the everyday example of tool-use, remains poorly understood.
+Map(start -> 12, end -> 14, match -> the)
+Map(start -> 37, end -> 40, match -> this)
+Map(start -> 78, end -> 80, match -> the)
+Map(start -> 99, end -> 100, match -> of)
+Map(start -> 112, end -> 118, match -> remains)
+
+Here we manipulated the type of object-directed hand action that was planned (grasping vs reaching) as well as the effector (hand vs tool) used to implement that action.
+Map(start -> 20, end -> 22, match -> the)
+Map(start -> 29, end -> 30, match -> of)
+Map(start -> 65, end -> 67, match -> was)
+Map(start -> 111, end -> 113, match -> the)
+
+At the effector-specific level, we found that SPOC and EBA discriminated upcoming hand movements only whereas SMG and pMTG discriminated upcoming tool movements only.
+Map(start -> 3, end -> 5, match -> the)
+Map(start -> 97, end -> 100, match -> only)
+Map(start -> 161, end -> 164, match -> only)
+
+aIPS, aIPS, t-aIPS) and motor cortex areas discriminated planned actions for both the hand and tool, but did not cross-decode between the two effectors.
+Map(start -> 73, end -> 75, match -> for)
+Map(start -> 82, end -> 84, match -> the)
+Map(start -> 109, end -> 111, match -> not)
+Map(start -> 134, end -> 136, match -> the)
+
+At the effector-independent level, in posterior parietal (pIPS and midIPS) and premotor (PMd and PMv) cortex areas, we found that the pre-movement patterns predictive of grasp vs reach actions for the hand also predicted grasp vs reach actions with the tool.
+Map(start -> 3, end -> 5, match -> the)
+Map(start -> 130, end -> 132, match -> the)
+Map(start -> 167, end -> 168, match -> of)
+Map(start -> 193, end -> 195, match -> for)
+Map(start -> 197, end -> 199, match -> the)
+Map(start -> 249, end -> 251, match -> the)
+
+Notably, because the tool-effector required very different hand kinematics than when the hand was used alone, this suggests that these brain areas encoded the action performed rather than the specific muscle movements needed to achieve it.
+Map(start -> 17, end -> 19, match -> the)
+Map(start -> 75, end -> 78, match -> than)
+Map(start -> 85, end -> 87, match -> the)
+Map(start -> 94, end -> 96, match -> was)
+Map(start -> 110, end -> 113, match -> this)
+Map(start -> 155, end -> 157, match -> the)
+Map(start -> 176, end -> 186, match -> rather than)
+Map(start -> 183, end -> 186, match -> than)
+Map(start -> 188, end -> 190, match -> the)
+
+Consistent with the transfer of goals for the hand to those of the tool, this finding resonates with embodied theories of tool use whereby through use, tools become incorporated as part of the body schema.
+Map(start -> 16, end -> 18, match -> the)
+Map(start -> 29, end -> 30, match -> of)
+Map(start -> 38, end -> 40, match -> for)
+Map(start -> 42, end -> 44, match -> the)
+Map(start -> 60, end -> 61, match -> of)
+Map(start -> 63, end -> 65, match -> the)
+Map(start -> 73, end -> 76, match -> this)
+Map(start -> 119, end -> 120, match -> of)
+Map(start -> 186, end -> 187, match -> of)
+Map(start -> 189, end -> 191, match -> the)
+
+Notably, however, in the majority of regions tested we find that neural representations remain linked to either the hand or tool.
+Map(start -> 9, end -> 15, match -> however)
+Map(start -> 21, end -> 23, match -> the)
+Map(start -> 34, end -> 35, match -> of)
+Map(start -> 112, end -> 114, match -> the)
+

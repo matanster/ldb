@@ -56,7 +56,7 @@ class JATS (filePath: String) {
       xmlNode.child foreach build
     }
     
-    build(section.paragraph.head)
+    if (!section.paragraph.isEmpty) build(section.paragraph.head)
     
     return JATSsection(section.sectionJATStype, sentences.result)
   }

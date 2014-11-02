@@ -248,10 +248,8 @@ object go {
 
   
   val sentences: Seq[LocatedText] = sections.flatMap(section =>  
-     paragraphSplitter(LocatedText(section.paragraph.mkString(""),  section.sectionType)))
+     paragraphSplitter(LocatedText(section.paragraph.map(a => a.text).mkString(""),  section.sectionType)))
  
-    // myObject =>  myObject.text).mkString("")), section.sectionType)
-
   //
   // process sentence by sentence
   //

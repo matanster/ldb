@@ -1,4 +1,8 @@
-sentence 'AnnotatedSentence(It remains unclear whether the highly specialized brain areas within these tool-, body-, and action-related networks in humans also play important roles in planning real movements with a tool or with the body (hand) alone.</p>,aaa)'
-matches pattern 'it remains unclear whether'
+sentence 'LocatedText(Notably, however, in the majority of regions tested we find that neural representations remain linked to either the hand or tool.Behavioral, neuropsychological and neurophysiological evidence demonstrates that a central and governing feature of movement planning, and indeed of higher-level cognition in general, is the linking together of overarching action goals with the precise underlying kinematics required by the body to achieve those goals (Haaland et al., 2000Haaland et al., 2000; Andersen and Buneo, 2002Andersen and Buneo, 2002; Fogassi et al., 2005Fogassi et al., 2005; Grafton and Hamilton, 2007Grafton and Hamilton, 2007; Umilta et al., 2008Umilta et al., 2008).,discussion)'
+matches pattern 'however'
+which indicates 'problem statement'
+
+sentence 'LocatedText(Notably, however, in the majority of regions tested we find that neural representations remain linked to either the hand or tool.,discussion)'
+matches pattern 'however'
 which indicates 'problem statement'
 
