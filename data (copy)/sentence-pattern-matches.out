@@ -1,0 +1,4 @@
+sentence 'AnnotatedSentence(It remains unclear whether the highly specialized brain areas within these tool-, body-, and action-related networks in humans also play important roles in planning real movements with a tool or with the body (hand) alone.</p>,aaa)'
+matches pattern 'it remains unclear whether'
+which indicates 'problem statement'
+

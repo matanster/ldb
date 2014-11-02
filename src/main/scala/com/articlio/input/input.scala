@@ -35,21 +35,25 @@ object JATSloader{
 case class Annotation (annotation: String)
 case class AnnotatedText (text: String, annotations: Seq[Annotation])
 
-object sentences {
-  val JATSsections= JATSloader.load("elife-articles(XML)/elife00425styled.xml")
-
-  val sentences = Seq.newBuilder[AnnotatedText]
-  val annotation = Annotation("stripped-text")
+//
+// IN:        top XML node of an XML node hierarchy, 
+// OUT:    a tree mirror of it, made of plain self-defined object nodes
+//
+class JATS (filePath: String) {
+  private val JATSsections= JATSloader.load(filePath) // "elife-articles(XML)/elife00425styled.xml"
+  private val sentences = Seq.newBuilder[AnnotatedText]
+  private val annotation = Annotation("stripped-text")
   
-  def build(xmlNode: Node) : Unit = {
+  // a recursive cloner. can add filtering logic here later.
+  def build(xmlNode: Node) {
     println(xmlNode.label)
     sentences += AnnotatedText(xmlNode.text, Seq(annotation))
     xmlNode.child foreach build
   }
 
   build(JATSsections.head.paragraph.head)
-  println(sentences.result)
-  
+  val sentenceObjects = sentences.result
+  println(sentenceObjects)
 }
 
 //println(sections.head.paragraphs.mkString("\n"))

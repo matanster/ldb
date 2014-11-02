@@ -230,7 +230,7 @@ object go {
   //
   // get mock data
   //
-  val sections = JATSsections.load("elife-articles(XML)/elife00425styled.xml")
+  val section = new JATS("elife-articles(XML)/elife00425styled.xml")
 
   //
   // separate into util file
@@ -247,7 +247,7 @@ object go {
     }
   }
 
-  def sentenceSplit (text: AnnotatedText) : Seq[String] = {
+  def sentenceSplit (text: String) : Seq[String] = {
 
     if (text.isEmpty) 
       return Seq.empty[String]
@@ -255,7 +255,7 @@ object go {
     for (i <- 2 to text.length) {
 
       val tentative = text.take(i) 
-j
+
       if (tentative.endsWith(". "))      
         if (tentative.dropRight(1).endsWithAny(specialCaseWords) && text.isDefinedAt(i) && (text.charAt(i).isUpper))
           return Seq(tentative) ++ sentenceSplit(text.drop(i))
@@ -273,7 +273,7 @@ j
   }
 
 
-  def paragraphSplitter (text: AnnotatedText) : Seq[String] = {
+  def paragraphSplitter (text: String) : Seq[String] = {
     //val sentences = Seq.newBuilder[String] 
     //return sentences.result
 
@@ -290,7 +290,7 @@ j
 */
 
   
-  val sentences = sections.flatMap(s => paragraphSplitter(s.paragraph))
+  val sentences = paragraphSplitter(section.sentenceObjects.flatMap(myObject =>  myObject.text).mkString(""))
   //val sentences = sections.head.paragraphs.flatMap(paragraph => paragraphSplitter(paragraph))
   //                                         .map(sentence => AnnotatedSentence(sentence, "aaa"))
   //println(sentences.head)
@@ -305,12 +305,12 @@ j
   //
   // matches rules per sentence    
   //
-  def processSentences (sentences : Seq[AnnotatedSentence]) = {
+  def processSentences (sentences : Seq[String]) = {
 
     val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
 
     for (sentence <- sentences) {
-      val matchedFragments = AhoCorasick.go(sentence.text)
+      val matchedFragments = AhoCorasick.go(sentence)
       sentenceMatchCount += matchedFragments.length
 
       // checks if all fragments making up a pattern, are contained in target string *in order*
