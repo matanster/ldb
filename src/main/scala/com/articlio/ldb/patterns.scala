@@ -247,7 +247,7 @@ object go {
     }
   }
 
-  def sentenceSplit (AnnotatedText: String) : Seq[String] = {
+  def sentenceSplit (text: AnnotatedText) : Seq[String] = {
 
     if (text.isEmpty) 
       return Seq.empty[String]
@@ -255,7 +255,7 @@ object go {
     for (i <- 2 to text.length) {
 
       val tentative = text.take(i) 
-
+j
       if (tentative.endsWith(". "))      
         if (tentative.dropRight(1).endsWithAny(specialCaseWords) && text.isDefinedAt(i) && (text.charAt(i).isUpper))
           return Seq(tentative) ++ sentenceSplit(text.drop(i))
@@ -273,7 +273,7 @@ object go {
   }
 
 
-  def sentenceSplitter (text: AnnotatedText) : Seq[String] = {
+  def paragraphSplitter (text: AnnotatedText) : Seq[String] = {
     //val sentences = Seq.newBuilder[String] 
     //return sentences.result
 
@@ -289,10 +289,10 @@ object go {
                                            .map(sentence => AnnotatedSentence(sentence, section.sectionTitle))))
 */
 
-  val sentences = sections.head.paragraphs.flatMap(paragraph => sentenceSplitter(paragraph))
-                                           .map(sentence => AnnotatedSentence(sentence, "aaa"))
-
-
+  
+  val sentences = sections.flatMap(s => paragraphSplitter(s.paragraph))
+  //val sentences = sections.head.paragraphs.flatMap(paragraph => paragraphSplitter(paragraph))
+  //                                         .map(sentence => AnnotatedSentence(sentence, "aaa"))
   //println(sentences.head)
 
   //
