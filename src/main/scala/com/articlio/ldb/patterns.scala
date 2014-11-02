@@ -177,49 +177,6 @@ object go {
     }
   }
 
-
-  //
-  // get mock data
-  //
-
-  /*case class AnnotatedSentence(sentence : String, section: String)
-  def getAnnotatedSentences : String = {
-    val sentences = com.articlio.Input.get
-    //val annotatedSentences Seq[AnnotatedSentence] = 
-    case class SectionDeterminer(sectionName: String) {
-      var inside = false
-      def isOpener (text: String, iterator: Iterator[String]) = if (text == s"<$sectionName>") {
-                                                                  inside = true
-                                                                  iterator.next // swallow this opener                                             
-                                                                } 
-      def isCloser (text: String, iterator: Iterator[String]) = if (text == s"</$sectionName>") {
-                                                                  inside = false
-                                                                  iterator.next // swallow this closer
-                                                                } 
-      def check    (text: String, iterator: Iterator[String]) = if (inside) isCloser(text, iterator)
-                                                                else isOpener(text, iterator) 
-    }
-    
-    val SectionDeterminers : Set[SectionDeterminer] = Set("introduction", "conclusion", "discussion") map SectionDeterminer
-
-    Timelog.timer("marking input doc sections")
-
-    while (sentences.hasNext)
-    { 
-      val sentence = sentences.next
-
-      SectionDeterminers map (s => s.check(sentence, sentences))
-      SectionDeterminers.foreach(s => s.inside match {
-        case true  => // println(s.sectionName + "\n" + sentence)
-        case false =>        
-      })
-    } 
-    Timelog.timer("marking input doc sections")
-    return sentences.
-  }*/   
-
-
-
   //
   // match rules per sentence    
   //
@@ -228,9 +185,9 @@ object go {
   AhoCorasick.init(db.allFragmentsDistinct)
 
   //
-  // get mock data
+  // get data
   //
-  val section = new JATS("elife-articles(XML)/elife00425styled.xml")
+  val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425styled.xml").paragraphSentences
 
   //
   // separate into util file
@@ -272,28 +229,28 @@ object go {
                      // future intricacies may call to trigger a notice here.
   }
 
+  case class AnnotatedSentence(text : AnnotatedText, section: String)
+  
+  case class LocatedText(text: String, section: String)
 
-  def paragraphSplitter (text: String) : Seq[String] = {
-    //val sentences = Seq.newBuilder[String] 
-    //return sentences.result
+  def paragraphSplitter (toSplit: LocatedText) : Seq[LocatedText] = {
 
-    Logger.write(text, "JATS-paragraphs")
-    val sentences = sentenceSplit(text)
+    Logger.write(toSplit.text, "JATS-paragraphs")
+    val sentences = sentenceSplit(toSplit.text)
     Logger.write(sentences.mkString("\n"), "JATS-sentences")
-    return sentences
+    return sentences map (sentence => LocatedText(sentence, toSplit.section))
   }
 
-  case class AnnotatedSentence(text : AnnotatedText, section: String)
   /*val sentences : Seq[AnnotatedSentence] = sections.flatMap(section => 
                                            section.paragraphs.flatMap(paragraph => sentenceTokenize(paragraph)
                                            .map(sentence => AnnotatedSentence(sentence, section.sectionTitle))))
 */
 
   
-  val sentences = paragraphSplitter(section.sentenceObjects.flatMap(myObject =>  myObject.text).mkString(""))
-  //val sentences = sections.head.paragraphs.flatMap(paragraph => paragraphSplitter(paragraph))
-  //                                         .map(sentence => AnnotatedSentence(sentence, "aaa"))
-  //println(sentences.head)
+  val sentences: Seq[LocatedText] = sections.flatMap(section =>  
+     paragraphSplitter(LocatedText(section.paragraph.mkString(""),  section.sectionType)))
+ 
+    // myObject =>  myObject.text).mkString("")), section.sectionType)
 
   //
   // process sentence by sentence
@@ -302,15 +259,17 @@ object go {
   processSentences(sentences)
   Timelog.timer("matching")
 
+   
+  
   //
   // matches rules per sentence    
   //
-  def processSentences (sentences : Seq[String]) = {
+  def processSentences (sentences : Seq[LocatedText]) = {
 
     val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
 
     for (sentence <- sentences) {
-      val matchedFragments = AhoCorasick.go(sentence)
+      val matchedFragments = AhoCorasick.go(sentence.text)
       sentenceMatchCount += matchedFragments.length
 
       // checks if all fragments making up a pattern, are contained in target string *in order*
@@ -372,3 +331,44 @@ object go {
     new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
   }
 }
+
+   
+   
+   
+    /*case class AnnotatedSentence(sentence : String, section: String)
+  def getAnnotatedSentences : String = {
+    val sentences = com.articlio.Input.get
+    //val annotatedSentences Seq[AnnotatedSentence] = 
+    case class SectionDeterminer(sectionName: String) {
+      var inside = false
+      def isOpener (text: String, iterator: Iterator[String]) = if (text == s"<$sectionName>") {
+                                                                  inside = true
+                                                                  iterator.next // swallow this opener                                             
+                                                                } 
+      def isCloser (text: String, iterator: Iterator[String]) = if (text == s"</$sectionName>") {
+                                                                  inside = false
+                                                                  iterator.next // swallow this closer
+                                                                } 
+      def check    (text: String, iterator: Iterator[String]) = if (inside) isCloser(text, iterator)
+                                                                else isOpener(text, iterator) 
+    }
+    
+    val SectionDeterminers : Set[SectionDeterminer] = Set("introduction", "conclusion", "discussion") map SectionDeterminer
+
+    Timelog.timer("marking input doc sections")
+
+    while (sentences.hasNext)
+    { 
+      val sentence = sentences.next
+
+      SectionDeterminers map (s => s.check(sentence, sentences))
+      SectionDeterminers.foreach(s => s.inside match {
+        case true  => // println(s.sectionName + "\n" + sentence)
+        case false =>        
+      })
+    } 
+    Timelog.timer("marking input doc sections")
+    return sentences.
+  }*/   
+
+
