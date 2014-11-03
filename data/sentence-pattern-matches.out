@@ -1,5 +1,9 @@
-sentence 'LocatedText(Notably, however, in the majority of regions tested we find that neural representations remain linked to either the hand or tool.Behavioral, neuropsychological and neurophysiological evidence demonstrates that a central and governing feature of movement planning, and indeed of higher-level cognition in general, is the linking together of overarching action goals with the precise underlying kinematics required by the body to achieve those goals (Haaland et al., 2000Haaland et al., 2000; Andersen and Buneo, 2002Andersen and Buneo, 2002; Fogassi et al., 2005Fogassi et al., 2005; Grafton and Hamilton, 2007Grafton and Hamilton, 2007; Umilta et al., 2008Umilta et al., 2008).,discussion)'
-matches pattern 'however'
+sentence 'LocatedText(It remains unclear whether the highly specialized brain areas within these tool-, body-, and action-related networks in humans also play important roles in planning real movements with a tool or with the body (hand) alone.The purpose of the current study was to examine exactly how and where in the human brain tool-specific, hand-specific, and effector-independent (shared hand and tool) representations are coded.,intro)'
+matches pattern 'it remains unclear whether'
+which indicates 'problem statement'
+
+sentence 'LocatedText(These ROIs were defined by performing a whole-brain voxel-wise search contrasting the activity evoked during movement generation (i.e., movement planning [Plan phase] and execution [Execute phase]) vs the activity evoked during simple visual object presentation (Preview phase; when subjects had vision of the target object yet were unaware of which action [Grasp vs Reach] to perform).,results)'
+matches pattern 'yet'
 which indicates 'problem statement'
 
 sentence 'LocatedText(Notably, however, in the majority of regions tested we find that neural representations remain linked to either the hand or tool.,discussion)'

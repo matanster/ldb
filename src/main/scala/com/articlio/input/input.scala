@@ -52,11 +52,14 @@ class JATS (filePath: String) {
 
     // a recursive cloner. can add filtering logic here later.
     def build(xmlNode: Node) {
-      sentences += AnnotatedText(xmlNode.text, Seq(annotation))
+      if (xmlNode.child.isEmpty) {
+        sentences += AnnotatedText(xmlNode.text, Seq(annotation))
+        println(xmlNode.text)
+      }
       xmlNode.child foreach build
     }
     
-    if (!section.paragraph.isEmpty) build(section.paragraph.head)
+    if (!section.paragraph.isEmpty) section.paragraph.foreach(build)
     
     return JATSsection(section.sectionJATStype, sentences.result)
   }
