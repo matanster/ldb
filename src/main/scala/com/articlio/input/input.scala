@@ -20,6 +20,7 @@ case class AnnotatedText (text: String, annotations: Seq[Annotation])
 case class Paragraph(sentences: Seq[AnnotatedText])
 case class JATSsection(sectionType: String, paragraphs: Seq[Paragraph])
 
+
 object JATSloader{
   // to follow this XML api, see:
   //    the tests at https://github.com/scala/scala-xml/blob/master/src/test/scala/scala/xml/XMLTest.scala
@@ -32,7 +33,7 @@ object JATSloader{
     val sections = for (node <- JATSinput \ "body" \ "sec")
       yield JATSsectionRaw(node.attributes("sec-type").toString,
       (node \ "title").head.child.head.toString,
-      node \ "p")
+      node \ "p" ++ node \ "sec")
     return sections
   }
 }
@@ -53,15 +54,16 @@ class JATS (filePath: String) {
       
       val sentences = Seq.newBuilder[AnnotatedText]
       
-      // a recursive cloner. can add filtering logic here later.
+      // a recursive cloner, that filters out figures and tables
       def build(xmlNode: Node) {
         if (xmlNode.child.isEmpty) {
           sentences += AnnotatedText(xmlNode.text, Seq(annotation))
           println(xmlNode.text)
         }
         xmlNode.child foreach(c => c.label match {
-          case "fig" =>
-          case "table-wrap" =>
+          case "fig" => // filters out figure elements
+          case "table-wrap" => // filters out table elements
+          case "title" => // ignore nested section's title (till we propagate a subsection's role. for now we just grab whatever's within a subsection.
           case _ => build(c)
         })
       }

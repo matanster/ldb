@@ -187,7 +187,7 @@ object go {
   //
   // get data
   //
-  val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425styled.xml").sections
+  val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425styled.xml").sections // elife04395
 
   //
   // separate into util file
