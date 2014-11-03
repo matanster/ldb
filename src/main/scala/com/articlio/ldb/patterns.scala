@@ -187,7 +187,7 @@ object go {
   //
   // get data
   //
-  val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425styled.xml").paragraphSentences
+  val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425styled.xml").sections
 
   //
   // separate into util file
@@ -233,7 +233,7 @@ object go {
   
   case class LocatedText(text: String, section: String)
 
-  def paragraphSplitter (toSplit: LocatedText) : Seq[LocatedText] = {
+  def sentenceSplitter (toSplit: LocatedText) : Seq[LocatedText] = {
 
     Logger.write(toSplit.text, "JATS-paragraphs")
     val sentences = sentenceSplit(toSplit.text)
@@ -246,9 +246,9 @@ object go {
                                            .map(sentence => AnnotatedSentence(sentence, section.sectionTitle))))
 */
 
-  
-  val sentences: Seq[LocatedText] = sections.flatMap(section =>  
-     paragraphSplitter(LocatedText(section.paragraph.map(a => a.text).mkString(""),  section.sectionType)))
+  // flat map all section -> paragraph -> sentences into one big pile of sentences. 
+  val sentences: Seq[LocatedText] = sections.flatMap(section =>  section.paragraphs.flatMap(p =>
+     sentenceSplitter(LocatedText(p.sentences.map(s => s.text).mkString(""),  section.sectionType)))) 
  
   //
   // process sentence by sentence
@@ -300,7 +300,8 @@ object go {
                                 yield (pattern, sentence, db.patterns2indications.get(pattern).get, db.patterns2rules(pattern))
 
       possibleMatches.foreach(p =>
-        Logger.write(Seq(s"sentence '${p._2}'",
+        Logger.write(Seq(s"sentence '${p._2.text}'",
+                         s"in section ${p._2.section}",
                          s"matches pattern '${p._1}'",
                          s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
 

@@ -13,11 +13,12 @@ object Input {
   }
 }
 
-case class JATSsectionRaw(sectionJATStype: String, sectionTitle: String, paragraph: NodeSeq)
+case class JATSsectionRaw(sectionJATStype: String, sectionTitle: String, paragraphs: NodeSeq)
 
 case class Annotation (annotation: String)
 case class AnnotatedText (text: String, annotations: Seq[Annotation])
-case class JATSsection(sectionType: String, paragraph: Seq[AnnotatedText])
+case class Paragraph(sentences: Seq[AnnotatedText])
+case class JATSsection(sectionType: String, paragraphs: Seq[Paragraph])
 
 object JATSloader{
   // to follow this XML api, see:
@@ -44,23 +45,31 @@ class JATS (filePath: String) {
   private val JATSsectionsRaw = JATSloader.load(filePath) // "elife-articles(XML)/elife00425styled.xml"
   private val annotation = Annotation("stripped-text")
 
-  val paragraphSentences = JATSsectionsRaw map builder
-  
   def builder (section: JATSsectionRaw) : JATSsection = {
     
-    val sentences = Seq.newBuilder[AnnotatedText]
+    val paragraphs= Seq.newBuilder[Paragraph]
 
-    // a recursive cloner. can add filtering logic here later.
-    def build(xmlNode: Node) {
-      if (xmlNode.child.isEmpty) {
-        sentences += AnnotatedText(xmlNode.text, Seq(annotation))
-        println(xmlNode.text)
+    def buildParagraph(xmlNode: Node) : Paragraph = {
+      
+      val sentences = Seq.newBuilder[AnnotatedText]
+      
+      // a recursive cloner. can add filtering logic here later.
+      def build(xmlNode: Node) {
+        if (xmlNode.child.isEmpty) {
+          sentences += AnnotatedText(xmlNode.text, Seq(annotation))
+          println(xmlNode.text)
+        }
+        xmlNode.child foreach build
       }
-      xmlNode.child foreach build
+      
+      build(xmlNode)
+      return Paragraph(sentences.result)
     }
     
-    if (!section.paragraph.isEmpty) section.paragraph.foreach(build)
+    if (!section.paragraphs.isEmpty) paragraphs ++= section.paragraphs map buildParagraph
     
-    return JATSsection(section.sectionJATStype, sentences.result)
+    return JATSsection(section.sectionJATStype, paragraphs.result)
   }
+  
+  val sections = JATSsectionsRaw map builder
 }

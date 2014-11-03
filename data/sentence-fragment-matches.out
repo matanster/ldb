@@ -48,7 +48,7 @@ Map(start -> 353, end -> 355, match -> the)
 Map(start -> 389, end -> 390, match -> of)
 Map(start -> 392, end -> 394, match -> the)
 
-While provocative, how well does this single mechanism explain the neural substrates of tool use in humans, particularly within established networks that have been identified for tools (Lewis, 2006), hand actions (Culham et al., 2006), and body perception (Peelen and Downing, 2007)?Although considerable research has been done on the brain networks specialized for visual processing of tools and bodies and the visual-motor processing of hand actions, these topics have largely been studied in isolation.
+While provocative, how well does this single mechanism explain the neural substrates of tool use in humans, particularly within established networks that have been identified for tools (Lewis, 2006), hand actions (Culham et al., 2006), and body perception (Peelen and Downing, 2007)?
 Map(start -> 33, end -> 36, match -> this)
 Map(start -> 63, end -> 65, match -> the)
 Map(start -> 85, end -> 86, match -> of)
@@ -57,14 +57,17 @@ Map(start -> 175, end -> 177, match -> for)
 Map(start -> 198, end -> 198, match -> ,)
 Map(start -> 227, end -> 227, match -> ,)
 Map(start -> 234, end -> 234, match -> ,)
-Map(start -> 305, end -> 312, match -> research)
-Map(start -> 314, end -> 316, match -> has)
-Map(start -> 331, end -> 333, match -> the)
-Map(start -> 362, end -> 364, match -> for)
-Map(start -> 384, end -> 385, match -> of)
-Map(start -> 408, end -> 410, match -> the)
-Map(start -> 436, end -> 437, match -> of)
-Map(start -> 466, end -> 469, match -> have)
+
+Although considerable research has been done on the brain networks specialized for visual processing of tools and bodies and the visual-motor processing of hand actions, these topics have largely been studied in isolation.
+Map(start -> 0, end -> 7, match -> although)
+Map(start -> 22, end -> 29, match -> research)
+Map(start -> 31, end -> 33, match -> has)
+Map(start -> 48, end -> 50, match -> the)
+Map(start -> 79, end -> 81, match -> for)
+Map(start -> 101, end -> 102, match -> of)
+Map(start -> 125, end -> 127, match -> the)
+Map(start -> 153, end -> 154, match -> of)
+Map(start -> 183, end -> 186, match -> have)
 
 Increasing evidence from functional magnetic resonance imaging (fMRI) suggests that human frontoparietal and occipitotemporal cortex contain specialized regions that selectively represent tools and bodies (Downing et al., 2001; Lewis, 2006; Frey, 2007; Peelen and Downing, 2007; Peeters et al., 2009; Valyear and Culham, 2010; Bracci et al., 2012).
 Map(start -> 220, end -> 220, match -> ,)
@@ -127,17 +130,20 @@ Map(start -> 385, end -> 385, match -> ,)
 Map(start -> 460, end -> 460, match -> ,)
 Map(start -> 475, end -> 475, match -> ,)
 
-It remains unclear whether the highly specialized brain areas within these tool-, body-, and action-related networks in humans also play important roles in planning real movements with a tool or with the body (hand) alone.The purpose of the current study was to examine exactly how and where in the human brain tool-specific, hand-specific, and effector-independent (shared hand and tool) representations are coded.
+It remains unclear whether the highly specialized brain areas within these tool-, body-, and action-related networks in humans also play important roles in planning real movements with a tool or with the body (hand) alone.
 Map(start -> 3, end -> 9, match -> remains)
 Map(start -> 0, end -> 25, match -> it remains unclear whether)
 Map(start -> 27, end -> 29, match -> the)
 Map(start -> 80, end -> 80, match -> ,)
 Map(start -> 87, end -> 87, match -> ,)
 Map(start -> 200, end -> 202, match -> the)
-Map(start -> 234, end -> 235, match -> of)
-Map(start -> 237, end -> 239, match -> the)
-Map(start -> 255, end -> 257, match -> was)
-Map(start -> 295, end -> 297, match -> the)
+
+The purpose of the current study was to examine exactly how and where in the human brain tool-specific, hand-specific, and effector-independent (shared hand and tool) representations are coded.
+Map(start -> 0, end -> 2, match -> the)
+Map(start -> 12, end -> 13, match -> of)
+Map(start -> 15, end -> 17, match -> the)
+Map(start -> 33, end -> 35, match -> was)
+Map(start -> 73, end -> 75, match -> the)
 
 To this aim we used fMRI to examine neural activity while human subjects performed a delayed-movement task that required grasp or reach actions towards a single target object.
 Map(start -> 3, end -> 6, match -> this)
@@ -156,7 +162,7 @@ Map(start -> 208, end -> 208, match -> ,)
 Map(start -> 231, end -> 233, match -> the)
 Map(start -> 257, end -> 259, match -> was)
 
-Using multi-voxel pattern analysis (MVPA) to decode preparatory (pre-movement) signals, we then probed exactly where in frontoparietal cortex and in tool- and body-selective areas in occipitotemporal cortex movement plans (grasping vs reaching) for the hand and tool were distinct (effector-specific) vs where signals related to upcoming actions of the hand could be used to predict the same actions performed with the tool (effector-independent).Consistent with an effector-specific coding of hand- and tool-related movements we found that preparatory signals in SPOC and EBA differentiated upcoming movements of the hand only (i.e., hand-specific) whereas in SMG and pMTG they discriminated upcoming movements of the tool only (i.e., tool-specific).
+Using multi-voxel pattern analysis (MVPA) to decode preparatory (pre-movement) signals, we then probed exactly where in frontoparietal cortex and in tool- and body-selective areas in occipitotemporal cortex movement plans (grasping vs reaching) for the hand and tool were distinct (effector-specific) vs where signals related to upcoming actions of the hand could be used to predict the same actions performed with the tool (effector-independent).
 Map(start -> 245, end -> 247, match -> for)
 Map(start -> 249, end -> 251, match -> the)
 Map(start -> 346, end -> 347, match -> of)
@@ -164,15 +170,17 @@ Map(start -> 349, end -> 351, match -> the)
 Map(start -> 358, end -> 365, match -> could be)
 Map(start -> 383, end -> 385, match -> the)
 Map(start -> 415, end -> 417, match -> the)
-Map(start -> 491, end -> 492, match -> of)
-Map(start -> 611, end -> 612, match -> of)
-Map(start -> 614, end -> 616, match -> the)
-Map(start -> 623, end -> 626, match -> only)
-Map(start -> 633, end -> 633, match -> ,)
-Map(start -> 712, end -> 713, match -> of)
-Map(start -> 715, end -> 717, match -> the)
-Map(start -> 724, end -> 727, match -> only)
-Map(start -> 734, end -> 734, match -> ,)
+
+Consistent with an effector-specific coding of hand- and tool-related movements we found that preparatory signals in SPOC and EBA differentiated upcoming movements of the hand only (i.e., hand-specific) whereas in SMG and pMTG they discriminated upcoming movements of the tool only (i.e., tool-specific).
+Map(start -> 44, end -> 45, match -> of)
+Map(start -> 164, end -> 165, match -> of)
+Map(start -> 167, end -> 169, match -> the)
+Map(start -> 176, end -> 179, match -> only)
+Map(start -> 186, end -> 186, match -> ,)
+Map(start -> 265, end -> 266, match -> of)
+Map(start -> 268, end -> 270, match -> the)
+Map(start -> 277, end -> 280, match -> only)
+Map(start -> 287, end -> 287, match -> ,)
 
 In addition, in anterior parietal regions (e.g., aIPS) and motor cortex we found that pre-movement activity patterns discriminated planned actions of ‘both’ the hand and tool but, importantly, could not be used to predict upcoming actions of the other effector.
 Map(start -> 47, end -> 47, match -> ,)
@@ -311,7 +319,7 @@ Map(start -> 46, end -> 48, match -> was)
 Map(start -> 87, end -> 89, match -> for)
 Map(start -> 91, end -> 93, match -> the)
 
-MVPA was performed using single fMRI trials in two ways: 1) based on the % signal change (SC) BOLD activation evoked for each single time point in the trial (time-resolved decoding), allowing us to pinpoint when predictive movement information was available and 2) based on a windowed average of the % SC BOLD activation in the 4 s (2 imaging volumes) prior to movement initiation (denoted by the gray shaded bar).DOI:http://dx.doi.org/10.7554/eLife.00425.003We implemented MVPA in specific frontoparietal and occipitotemporal cortex regions-of-interest (ROIs) for each time-point within a trial and examined, during movement planning (Plan Phase): 1) whether we could predict upcoming grasps (G) vs reaches (R) with either the hand (i.e., Hand-G vs Hand-R) or tool (i.e., Tool-G vs Tool-R) or both and 2) where in the network of areas preparatory patterns of activity for the hand could be used to predict preparatory patterns of activity for the tool and vice versa (e.g., where Hand-G predicts Tool-G activity, and vice versa).
+MVPA was performed using single fMRI trials in two ways: 1) based on the % signal change (SC) BOLD activation evoked for each single time point in the trial (time-resolved decoding), allowing us to pinpoint when predictive movement information was available and 2) based on a windowed average of the % SC BOLD activation in the 4 s (2 imaging volumes) prior to movement initiation (denoted by the gray shaded bar).DOI:http://dx.doi.org/10.7554/eLife.00425.003
 Map(start -> 5, end -> 7, match -> was)
 Map(start -> 69, end -> 71, match -> the)
 Map(start -> 117, end -> 119, match -> for)
@@ -322,30 +330,34 @@ Map(start -> 293, end -> 294, match -> of)
 Map(start -> 296, end -> 298, match -> the)
 Map(start -> 324, end -> 326, match -> the)
 Map(start -> 393, end -> 395, match -> the)
-Map(start -> 542, end -> 543, match -> of)
-Map(start -> 561, end -> 563, match -> for)
-Map(start -> 724, end -> 726, match -> the)
-Map(start -> 738, end -> 738, match -> ,)
-Map(start -> 771, end -> 771, match -> ,)
-Map(start -> 815, end -> 817, match -> the)
-Map(start -> 827, end -> 828, match -> of)
-Map(start -> 857, end -> 858, match -> of)
-Map(start -> 869, end -> 871, match -> for)
-Map(start -> 873, end -> 875, match -> the)
-Map(start -> 882, end -> 889, match -> could be)
-Map(start -> 928, end -> 929, match -> of)
-Map(start -> 940, end -> 942, match -> for)
-Map(start -> 944, end -> 946, match -> the)
-Map(start -> 973, end -> 973, match -> ,)
 
-With respect to this second aim, it is important to note that based on differences between hand and tool experimental runs, a brain area showing effector-independent preparatory activity patterns cannot be attributable to low-level similarities in motor kinematics (i.e., because the hand and tool required opposite operating mechanics) or sensory input across trial types (i.e., because the object’s visual position with respect to fixation changed between hand and tool runs).We first localized a common set of action-related ROIs within each individual subject for subsequent MVPA.
+We implemented MVPA in specific frontoparietal and occipitotemporal cortex regions-of-interest (ROIs) for each time-point within a trial and examined, during movement planning (Plan Phase): 1) whether we could predict upcoming grasps (G) vs reaches (R) with either the hand (i.e., Hand-G vs Hand-R) or tool (i.e., Tool-G vs Tool-R) or both and 2) where in the network of areas preparatory patterns of activity for the hand could be used to predict preparatory patterns of activity for the tool and vice versa (e.g., where Hand-G predicts Tool-G activity, and vice versa).
+Map(start -> 83, end -> 84, match -> of)
+Map(start -> 102, end -> 104, match -> for)
+Map(start -> 265, end -> 267, match -> the)
+Map(start -> 279, end -> 279, match -> ,)
+Map(start -> 312, end -> 312, match -> ,)
+Map(start -> 356, end -> 358, match -> the)
+Map(start -> 368, end -> 369, match -> of)
+Map(start -> 398, end -> 399, match -> of)
+Map(start -> 410, end -> 412, match -> for)
+Map(start -> 414, end -> 416, match -> the)
+Map(start -> 423, end -> 430, match -> could be)
+Map(start -> 469, end -> 470, match -> of)
+Map(start -> 481, end -> 483, match -> for)
+Map(start -> 485, end -> 487, match -> the)
+Map(start -> 514, end -> 514, match -> ,)
+
+With respect to this second aim, it is important to note that based on differences between hand and tool experimental runs, a brain area showing effector-independent preparatory activity patterns cannot be attributable to low-level similarities in motor kinematics (i.e., because the hand and tool required opposite operating mechanics) or sensory input across trial types (i.e., because the object’s visual position with respect to fixation changed between hand and tool runs).
 Map(start -> 16, end -> 19, match -> this)
 Map(start -> 270, end -> 270, match -> ,)
 Map(start -> 280, end -> 282, match -> the)
 Map(start -> 378, end -> 378, match -> ,)
 Map(start -> 388, end -> 390, match -> the)
-Map(start -> 510, end -> 511, match -> of)
-Map(start -> 564, end -> 566, match -> for)
+
+We first localized a common set of action-related ROIs within each individual subject for subsequent MVPA.
+Map(start -> 32, end -> 33, match -> of)
+Map(start -> 86, end -> 88, match -> for)
 
 These ROIs were defined by performing a whole-brain voxel-wise search contrasting the activity evoked during movement generation (i.e., movement planning [Plan phase] and execution [Execute phase]) vs the activity evoked during simple visual object presentation (Preview phase; when subjects had vision of the target object yet were unaware of which action [Grasp vs Reach] to perform).
 Map(start -> 82, end -> 84, match -> the)
@@ -422,10 +434,10 @@ Map(start -> 67, end -> 69, match -> the)
 ROI acronyms are spelled out in main text.DOI:http://dx.doi.org/10.7554/eLife.00425.00410.7554/eLife.00425.005Table 1.ROIs with corresponding Talairach coordinates (mean x, y, and z centre of mass and standard deviations) and sizesDOI:http://dx.doi.org/10.7554/eLife.00425.005ROI nameTailarach coordinatesROI sizexyzstd xstd ystd zmm3Nr voxelsParieto-frontal ROIs L Superior parieto-occipital cortex (SPOC)−8−75292.42.93.6146954 L Posterior intraparietal sulcus (pIPS)−22−68453.43.74.1164061 L Middle intraparietal sulcus (midIPS)−32−56464.443.9194372 L Posterior anterior intraparietal sulcus (post.
 Map(start -> 189, end -> 190, match -> of)
 
-Std = standard deviation.A subset of participants from the motor experiment (n = 8) were recruited for a second localizer experiment.
-Map(start -> 34, end -> 35, match -> of)
-Map(start -> 55, end -> 57, match -> the)
-Map(start -> 99, end -> 101, match -> for)
+A subset of participants from the motor experiment (n = 8) were recruited for a second localizer experiment.
+Map(start -> 9, end -> 10, match -> of)
+Map(start -> 30, end -> 32, match -> the)
+Map(start -> 74, end -> 76, match -> for)
 
 The purpose of this second scan session was to localize well-documented visual-perceptual ROIs involved in body- and tool-selective processing and then examine, using the motor experiment data from these same subjects, whether hand and tool movement plans could be decoded from these separately identified object-selective areas.
 Map(start -> 0, end -> 2, match -> the)
@@ -462,16 +474,18 @@ Map(start -> 105, end -> 106, match -> of)
 Map(start -> 143, end -> 145, match -> the)
 Map(start -> 152, end -> 153, match -> of)
 
-The aim here was to clarify the nature and specificity of these sensory-motor responses in the context of planning object-directed hand and tool movements.To localize these visual-perceptual ROIs we used a standard block-design localizer task in which participants were required to view static color photos of familiar tools, headless bodies, non-tool objects, and scrambled up versions of these same stimuli (Figure 5A for timing and protocol; see also Valyear and Culham, 2010).
+The aim here was to clarify the nature and specificity of these sensory-motor responses in the context of planning object-directed hand and tool movements.
 Map(start -> 0, end -> 2, match -> the)
 Map(start -> 13, end -> 15, match -> was)
 Map(start -> 28, end -> 30, match -> the)
 Map(start -> 55, end -> 56, match -> of)
 Map(start -> 91, end -> 93, match -> the)
 Map(start -> 103, end -> 104, match -> of)
-Map(start -> 307, end -> 308, match -> of)
-Map(start -> 387, end -> 388, match -> of)
-Map(start -> 420, end -> 422, match -> for)
+
+To localize these visual-perceptual ROIs we used a standard block-design localizer task in which participants were required to view static color photos of familiar tools, headless bodies, non-tool objects, and scrambled up versions of these same stimuli (Figure 5A for timing and protocol; see also Valyear and Culham, 2010).
+Map(start -> 152, end -> 153, match -> of)
+Map(start -> 232, end -> 233, match -> of)
+Map(start -> 265, end -> 267, match -> for)
 
 To identify the brain areas selectively involved in tool-related visual processing, in each subject we searched for regions showing heightened activation for tools compared to headless bodies, non-tool objects, and scrambled stimuli (conjunction contrast: [(Tools > Bodies) AND (Tools > Objects) AND (Tools > Scrambled)], t = 3, p<0.005, corrected).
 Map(start -> 12, end -> 14, match -> the)
