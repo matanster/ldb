@@ -252,7 +252,7 @@ Map(start -> 47, end -> 49, match -> the)
 Map(start -> 75, end -> 77, match -> the)
 Map(start -> 106, end -> 108, match -> the)
 
-The delay timing of the paradigm allowed us to divide the trial into discrete time epochs and isolate the sustained plan-related neural responses that evolve prior to movement from the transient visual response (Preview phase) and the movement execution response (Execute phase; Figure 1C,D).10.7554/eLife.00425.003Figure 1.Experimental methods and evoked neural activity.(A) Subject setup shown from side view.
+The delay timing of the paradigm allowed us to divide the trial into discrete time epochs and isolate the sustained plan-related neural responses that evolve prior to movement from the transient visual response (Preview phase) and the movement execution response (Execute phase; Figure 1C,D).
 Map(start -> 0, end -> 2, match -> the)
 Map(start -> 17, end -> 18, match -> of)
 Map(start -> 20, end -> 22, match -> the)
@@ -260,76 +260,6 @@ Map(start -> 54, end -> 56, match -> the)
 Map(start -> 102, end -> 104, match -> the)
 Map(start -> 181, end -> 183, match -> the)
 Map(start -> 231, end -> 233, match -> the)
-
-(B) (Left) experimental apparatus and target object shown from the subject’s point of view for experimental runs where either the hand (top) or reverse tool (bottom) were used.
-Map(start -> 63, end -> 65, match -> the)
-Map(start -> 83, end -> 84, match -> of)
-Map(start -> 91, end -> 93, match -> for)
-Map(start -> 126, end -> 128, match -> the)
-
-The location of the target object (white block) was switched between run types but did not change its position from trial-to-trial within a imaging run.
-Map(start -> 0, end -> 2, match -> the)
-Map(start -> 13, end -> 14, match -> of)
-Map(start -> 16, end -> 18, match -> the)
-Map(start -> 48, end -> 50, match -> was)
-Map(start -> 87, end -> 89, match -> not)
-
-Dashed line represents the participant’s arc of reachability for each run type.
-Map(start -> 23, end -> 25, match -> the)
-Map(start -> 45, end -> 46, match -> of)
-Map(start -> 61, end -> 63, match -> for)
-
-In both cases (left panels), the hand is shown at its starting location.
-Map(start -> 27, end -> 27, match -> ,)
-Map(start -> 29, end -> 31, match -> the)
-
-Green star with dark shadow represents the fixation LED and its location in depth.
-Map(start -> 39, end -> 41, match -> the)
-
-(Right) Hand and tool positions during movements performed by the subject.
-Map(start -> 62, end -> 64, match -> the)
-
-(C) Timing of each event-related trial.
-Map(start -> 11, end -> 12, match -> of)
-
-Trials began with the 3D object being illuminated while the subject maintained fixation (Preview phase; 6 s).
-Map(start -> 18, end -> 20, match -> the)
-Map(start -> 56, end -> 58, match -> the)
-
-Subjects were then instructed via headphones to perform one of two movements: Grasp the object (‘Grasp’) without lifting it or Touch the object (‘Touch’), initiating the Plan phase portion of the trial.
-Map(start -> 60, end -> 61, match -> of)
-Map(start -> 84, end -> 86, match -> the)
-Map(start -> 133, end -> 135, match -> the)
-Map(start -> 153, end -> 153, match -> ,)
-Map(start -> 166, end -> 168, match -> the)
-Map(start -> 189, end -> 190, match -> of)
-Map(start -> 192, end -> 194, match -> the)
-
-Following a fixed delay interval (12 s), subjects were cued (by an auditory ‘beep’) to perform the instructed movement (initiating the Execute phase) and then return to the starting location.
-Map(start -> 39, end -> 39, match -> ,)
-Map(start -> 95, end -> 97, match -> the)
-Map(start -> 131, end -> 133, match -> the)
-Map(start -> 169, end -> 171, match -> the)
-
-2 s after the Go cue, vision of the workspace was extinguished and participants waited for the following trial to begin (14-s intertrial interval, ITI).
-Map(start -> 10, end -> 12, match -> the)
-Map(start -> 29, end -> 30, match -> of)
-Map(start -> 32, end -> 34, match -> the)
-Map(start -> 46, end -> 48, match -> was)
-Map(start -> 87, end -> 89, match -> for)
-Map(start -> 91, end -> 93, match -> the)
-
-MVPA was performed using single fMRI trials in two ways: 1) based on the % signal change (SC) BOLD activation evoked for each single time point in the trial (time-resolved decoding), allowing us to pinpoint when predictive movement information was available and 2) based on a windowed average of the % SC BOLD activation in the 4 s (2 imaging volumes) prior to movement initiation (denoted by the gray shaded bar).DOI:http://dx.doi.org/10.7554/eLife.00425.003
-Map(start -> 5, end -> 7, match -> was)
-Map(start -> 69, end -> 71, match -> the)
-Map(start -> 117, end -> 119, match -> for)
-Map(start -> 147, end -> 149, match -> the)
-Map(start -> 181, end -> 181, match -> ,)
-Map(start -> 244, end -> 246, match -> was)
-Map(start -> 293, end -> 294, match -> of)
-Map(start -> 296, end -> 298, match -> the)
-Map(start -> 324, end -> 326, match -> the)
-Map(start -> 393, end -> 395, match -> the)
 
 We implemented MVPA in specific frontoparietal and occipitotemporal cortex regions-of-interest (ROIs) for each time-point within a trial and examined, during movement planning (Plan Phase): 1) whether we could predict upcoming grasps (G) vs reaches (R) with either the hand (i.e., Hand-G vs Hand-R) or tool (i.e., Tool-G vs Tool-R) or both and 2) where in the network of areas preparatory patterns of activity for the hand could be used to predict preparatory patterns of activity for the tool and vice versa (e.g., where Hand-G predicts Tool-G activity, and vice versa).
 Map(start -> 83, end -> 84, match -> of)
@@ -398,7 +328,7 @@ Map(start -> 76, end -> 77, match -> of)
 Map(start -> 217, end -> 217, match -> ,)
 Map(start -> 251, end -> 251, match -> ,)
 
-One additional area, left somatosensory (SS-cortex), was selected as a sensory control region, not expected to accurately decode movements until stimulation of the hand’s mechanoreceptors at movement onset (i.e., at the Execute phase).10.7554/eLife.00425.004Figure 2.Frontoparietal brain areas selected for movement plan decoding.Cortical areas that exhibited larger responses during movement preparation and/or execution than the preceding visual phase [(Plan + Execute) > 2*(Preview)] are shown as orange/yellow activation.
+One additional area, left somatosensory (SS-cortex), was selected as a sensory control region, not expected to accurately decode movements until stimulation of the hand’s mechanoreceptors at movement onset (i.e., at the Execute phase).
 Map(start -> 51, end -> 51, match -> ,)
 Map(start -> 53, end -> 55, match -> was)
 Map(start -> 95, end -> 97, match -> not)
@@ -406,33 +336,6 @@ Map(start -> 157, end -> 158, match -> of)
 Map(start -> 160, end -> 162, match -> the)
 Map(start -> 211, end -> 211, match -> ,)
 Map(start -> 216, end -> 218, match -> the)
-Map(start -> 303, end -> 305, match -> for)
-Map(start -> 422, end -> 425, match -> than)
-Map(start -> 427, end -> 429, match -> the)
-
-The general locations of the selected ROIs are outlined in circles (actual ROIs were anatomically defined separately in each subject).
-Map(start -> 0, end -> 2, match -> the)
-Map(start -> 22, end -> 23, match -> of)
-Map(start -> 25, end -> 27, match -> the)
-
-Linked to each ROI is the corresponding % SC BOLD activity averaged across voxels, trials, and subjects within each ROI and plotted according to trial length.
-Map(start -> 22, end -> 24, match -> the)
-
-This time course activity clearly delineates the sustained preparatory responses that form prior to movement onset in each area.
-Map(start -> 0, end -> 3, match -> this)
-Map(start -> 45, end -> 47, match -> the)
-
-Vertical lines correspond to the onset of the Plan and Execute phases of each trial (from left to right).
-Map(start -> 29, end -> 31, match -> the)
-Map(start -> 39, end -> 40, match -> of)
-Map(start -> 42, end -> 44, match -> the)
-Map(start -> 70, end -> 71, match -> of)
-
-Sulcal landmarks are denoted by white lines (stylized according to the corresponding legend).
-Map(start -> 67, end -> 69, match -> the)
-
-ROI acronyms are spelled out in main text.DOI:http://dx.doi.org/10.7554/eLife.00425.00410.7554/eLife.00425.005Table 1.ROIs with corresponding Talairach coordinates (mean x, y, and z centre of mass and standard deviations) and sizesDOI:http://dx.doi.org/10.7554/eLife.00425.005ROI nameTailarach coordinatesROI sizexyzstd xstd ystd zmm3Nr voxelsParieto-frontal ROIs L Superior parieto-occipital cortex (SPOC)−8−75292.42.93.6146954 L Posterior intraparietal sulcus (pIPS)−22−68453.43.74.1164061 L Middle intraparietal sulcus (midIPS)−32−56464.443.9194372 L Posterior anterior intraparietal sulcus (post.
-Map(start -> 189, end -> 190, match -> of)
 
 A subset of participants from the motor experiment (n = 8) were recruited for a second localizer experiment.
 Map(start -> 9, end -> 10, match -> of)

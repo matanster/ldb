@@ -59,7 +59,11 @@ class JATS (filePath: String) {
           sentences += AnnotatedText(xmlNode.text, Seq(annotation))
           println(xmlNode.text)
         }
-        xmlNode.child foreach build
+        xmlNode.child foreach(c => c.label match {
+          case "fig" =>
+          case "table-wrap" =>
+          case _ => build(c)
+        })
       }
       
       build(xmlNode)
