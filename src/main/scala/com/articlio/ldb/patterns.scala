@@ -304,7 +304,9 @@ object go {
                          s"in section ${p._2.section}",
                          s"matches pattern '${p._1}'",
                          s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
-
+      
+      if (!possibleMatches.isEmpty)Logger.write(sentence.text, "output")
+      
       //
       // trace back from pattern to rule
       //
