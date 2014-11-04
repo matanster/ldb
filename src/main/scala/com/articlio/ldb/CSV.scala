@@ -33,7 +33,7 @@ case class ReferenceProperty (subType: Symbol,
                               extends Property 
 
 case class LocationProperty (subType: Symbol, 
-                             parameter: Seq[String], 
+                             parameters: Seq[String], 
                              necessityModality: Symbol)
                              extends Property
 
@@ -72,7 +72,7 @@ object CSV {
       val asArray: Array[String] = iterator.next.toArray // convert to Array for easy column access
       val pattern = asArray(4)
       val indication = asArray(5)
-      val parameters : Seq[String] = Seq(asArray(7), asArray(8)) // additional parameters expressed in the database CSV
+      val parameters : Seq[String] = Seq(asArray(6), asArray(7), asArray(8)) // additional parameters expressed in the database CSV
       
       val off = (asArray(2) == "off")
 

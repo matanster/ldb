@@ -48,6 +48,8 @@ object go {
   //
   class LDB(inputRules: Seq[RuleInput]) {
 
+    Logger.write(inputRules.mkString("\n"), "db-rules1.1")    
+    
     //
     // expand base rules into more rules - quite not triggered from the database data right now
     //
@@ -110,8 +112,13 @@ object go {
     val rules: Seq[SimpleRule] = inputRules map (inputRule => new SimpleRule(inputRule.pattern, 
                                                                    breakDown(deSentenceCase(inputRule.pattern)), 
                                                                    inputRule.indication, 
-                                                                   inputRule.properties.collect { case locationProp : LocationProperty => locationProp }))
-                                                          
+                                                                   // inputRule.properties.collect { case locationProp : LocationProperty => locationProp }))
+                                                                   if (inputRule.properties.isDefined) 
+                                                                     Some(inputRule.properties.get.filter(property => property.isInstanceOf[LocationProperty]))
+                                                                   else 
+                                                                     None))
+    Logger.write(rules.mkString("\n"), "db-rules2")                                                      
+    
     // patterns to indications map - 
     // each pattern correlates to only one indictaion 
     val patterns2indications : Map[String, String] = rules.map(rule => (rule.pattern -> rule.indication)).toMap
@@ -310,16 +317,22 @@ object go {
       //
       // filter out matches occuring outside their designated location requirement
       //
-     possibleMatches.foreach(p => {
-          if (!p._4.locationProperty.isDefined) println("no location criteria in rule")
-          else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameter == SectionNames.translation(p._2.section)) println("location criteria matched!")
-          else println("location criteria not matched")
-      })
 
       val matches = possibleMatches.filter(p => {
-          if (!p._4.locationProperty.isDefined) true
-          else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameter == SectionNames.translation(p._2.section)) true
-          else false
+          println(p._4)
+          if (!p._4.locationProperty.isDefined) {
+            println("no location criteria in rule")
+            true
+          }
+          else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+            SectionNames.translation(parameter) == p._2.section)) {
+              println("location criteria matched!")
+              true
+          }
+          else {
+            println("location criteria not matched")
+            false
+          }
       })
 
       if (!matches.isEmpty)Logger.write(sentence.text, "output")
