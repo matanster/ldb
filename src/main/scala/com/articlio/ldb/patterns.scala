@@ -303,29 +303,35 @@ object go {
         Logger.write(Seq(s"sentence '${p._2.text}'",
                          s"in section ${p._2.section}",
                          s"matches pattern '${p._1}'",
-                         s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
+                         s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches (location agnostic)"))
       
-      if (!possibleMatches.isEmpty)Logger.write(sentence.text, "output")
+      if (!possibleMatches.isEmpty)Logger.write(sentence.text, "output (location agnostic)")
       
-      //
-      // trace back from pattern to rule
-      //
       //
       // filter out matches occuring outside their designated location requirement
       //
-      val matches = possibleMatches.filter(p => p._4 == p._4)
+     possibleMatches.foreach(p => {
+          if (!p._4.locationProperty.isDefined) println("no location criteria in rule")
+          else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameter == SectionNames.translation(p._2.section)) println("location criteria matched!")
+          else println("location criteria not matched")
+      })
 
-      /* superfluous to for-yield block now 
-      possiblePatternMatches.result.foreach(pattern => { 
-        if (isInOrder (db.patterns2fragments.get(pattern).get, -1)) {
-          val indication = db.patterns2indications.get(pattern).get
-          /*Logger.write(Seq(s"sentence '$sentence'",
-                           s"matches pattern '$pattern'",
-                           s"which indicates '$indication'").mkString("\n") + "\n","sentence-pattern-matches")*/
-        }
-      })*/
+      val matches = possibleMatches.filter(p => {
+          if (!p._4.locationProperty.isDefined) true
+          else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameter == SectionNames.translation(p._2.section)) true
+          else false
+      })
 
-
+      if (!matches.isEmpty)Logger.write(sentence.text, "output")
+      
+       matches.foreach(m =>
+        Logger.write(Seq(s"sentence '${m._2.text}'",
+                         s"in section ${m._2.section}",
+                         s"matches pattern '${m._1}'",
+                         s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
+      
+      //matches.foreach(m => Logger.write(m._2.text, "output"))
+      
       //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
 
     }

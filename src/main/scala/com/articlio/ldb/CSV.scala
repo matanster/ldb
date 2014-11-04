@@ -39,6 +39,15 @@ case class LocationProperty (subType: Symbol,
 
 case class RuleInput (pattern: String, indication: String, properties: Option[Seq[Property]]) 
 
+abstract class DBtoJATStranslation {
+  val translation: Map[String, String]
+}
+
+object SectionNames extends DBtoJATStranslation {
+  val translation = Map("introduction" -> "intro",
+                                         "discussion" -> "discussion",
+                                         "conclusion" -> "discussion")
+}
 
 object CSV {
 
