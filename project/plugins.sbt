@@ -9,7 +9,3 @@ addSbtPlugin("com.typesafe.sbt" %% "sbt-start-script" % "0.10.0")
 addSbtPlugin("io.spray" % "sbt-revolver" % "0.7.1")
 
 addSbtPlugin("org.netbeans.nbsbt" % "nbsbt-plugin" % "1.1.2")
-
-resolvers += "jgit-repo" at "http://download.eclipse.org/jgit/maven"
-
-addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.6.4")

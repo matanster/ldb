@@ -195,8 +195,8 @@ object go {
   // get data
   //
   //val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425cleaned-but-not-styled.xml").sections // elife04395, elife-articles(XML)/elife00425styled.xml
-  //val sections : Seq[JATSsection] = new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet.xml", "pdf-converted").sections // elife04395, elife-articles(XML)/elife00425styled.xml
-  val document = new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife03399.xml")
+  val document = new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet.xml", "pdf-converted") // elife04395, elife-articles(XML)/elife00425styled.xml
+  //val document = new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife03399.xml")
   val sections : Seq[JATSsection] = document.sections // elife04395, elife-articles(XML)/elife00425styled.xml
 
   //
@@ -250,11 +250,6 @@ object go {
     Logger.write(sentences.mkString("\n"), "JATS-sentences")
     return sentences map (sentence => LocatedText(sentence, toSplit.section))
   }
-
-  /*val sentences : Seq[AnnotatedSentence] = sections.flatMap(section => 
-                                           section.paragraphs.flatMap(paragraph => sentenceTokenize(paragraph)
-                                           .map(sentence => AnnotatedSentence(sentence, section.sectionTitle))))
-*/
 
   // flat map all section -> paragraph -> sentences into one big pile of sentences. 
   val sentences: Seq[LocatedText] = sections.flatMap(section =>  section.paragraphs.flatMap(p =>
@@ -335,7 +330,7 @@ object go {
             true
           }
           else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-              !sectionTypeScheme .translation.contains(parameter) || sectionTypeScheme .translation(parameter) == p._2.section)) {
+              sectionTypeScheme .translation.contains(parameter) && sectionTypeScheme .translation(parameter) == p._2.section)) {
               println("location criteria matched!")
               true
           }
@@ -362,43 +357,5 @@ object go {
   }
 }
 
-   
-   
-   
-    /*case class AnnotatedSentence(sentence : String, section: String)
-  def getAnnotatedSentences : String = {
-    val sentences = com.articlio.Input.get
-    //val annotatedSentences Seq[AnnotatedSentence] = 
-    case class SectionDeterminer(sectionName: String) {
-      var inside = false
-      def isOpener (text: String, iterator: Iterator[String]) = if (text == s"<$sectionName>") {
-                                                                  inside = true
-                                                                  iterator.next // swallow this opener                                             
-                                                                } 
-      def isCloser (text: String, iterator: Iterator[String]) = if (text == s"</$sectionName>") {
-                                                                  inside = false
-                                                                  iterator.next // swallow this closer
-                                                                } 
-      def check    (text: String, iterator: Iterator[String]) = if (inside) isCloser(text, iterator)
-                                                                else isOpener(text, iterator) 
-    }
-    
-    val SectionDeterminers : Set[SectionDeterminer] = Set("introduction", "conclusion", "discussion") map SectionDeterminer
-
-    Timelog.timer("marking input doc sections")
-
-    while (sentences.hasNext)
-    { 
-      val sentence = sentences.next
-
-      SectionDeterminers map (s => s.check(sentence, sentences))
-      SectionDeterminers.foreach(s => s.inside match {
-        case true  => // println(s.sectionName + "\n" + sentence)
-        case false =>        
-      })
-    } 
-    Timelog.timer("marking input doc sections")
-    return sentences.
-  }*/   
 
 

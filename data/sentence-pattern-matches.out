@@ -1,15 +1,18 @@
-sentence 'Although centrioles usually organize only small amounts of PCM in interphase cells, the PCM expands dramatically as cells prepare to enter mitosis—a process termed centrosome maturation (Khodjakov and Rieder, 1999).'
+sentence '
+The specific contributions of this paper are as follows: we trained one of the largest convolutional neural networks to date on the subsets of ImageNet used in the ILSVRC-2010 and ILSVRC-2012 competitions [2] and achieved by far the best results ever reported on these datasets.'
 in section intro
-matches pattern 'although'
-which indicates 'problem statement'
+matches pattern 'contributions of this'
+which indicates 'contribution'
 
-sentence 'Many PCM proteins, however, can be recruited to mitotic centrosomes in the absence of Cnn, albeit at reduced levels (Lucas and Raff, 2007), suggesting that at least one other protein must be able to form a scaffold around centrioles that can recruit other PCM components.'
+sentence '
+The specific contributions of this paper are as follows: we trained one of the largest convolutional neural networks to date on the subsets of ImageNet used in the ILSVRC-2010 and ILSVRC-2012 competitions [2] and achieved by far the best results ever reported on these datasets.'
 in section intro
-matches pattern 'however'
-which indicates 'problem statement'
-
-sentence 'Although DSpd-2 and Cnn have a major role in centrosome maturation, we stress that other PCM components are likely to make important contributions.'
-in section discussion
 matches pattern 'contributions'
+which indicates 'contribution'
+
+sentence '
+Choosing the pattern of connectivity is a problem for cross-validation, but this allows us to precisely tune the amount of communication until it is an acceptable fraction of the amount of computation.'
+in section intro
+matches pattern 'allows us to'
 which indicates 'contribution'
 

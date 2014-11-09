@@ -1,145 +1,58 @@
-sentence 'Although centrioles usually organize only small amounts of PCM in interphase cells, the PCM expands dramatically as cells prepare to enter mitosis—a process termed centrosome maturation (Khodjakov and Rieder, 1999).'
+sentence '
+However, the immense complexity of the object recognition task means that this problem cannot be specified even by a dataset as large as ImageNet, so our model should also have lots of prior knowledge to compensate for all the data we don’t have.'
 in section intro
-matches pattern 'although'
+matches pattern 'problem'
 which indicates 'problem statement'
 
-sentence 'Many PCM proteins, however, can be recruited to mitotic centrosomes in the absence of Cnn, albeit at reduced levels (Lucas and Raff, 2007), suggesting that at least one other protein must be able to form a scaffold around centrioles that can recruit other PCM components.'
+sentence '
+The specific contributions of this paper are as follows: we trained one of the largest convolutional neural networks to date on the subsets of ImageNet used in the ILSVRC-2010 and ILSVRC-2012 competitions [2] and achieved by far the best results ever reported on these datasets.'
 in section intro
-matches pattern 'however'
-which indicates 'problem statement'
+matches pattern 'contributions of this'
+which indicates 'contribution'
 
-sentence 'Nevertheless, it was clear from recovery profiles that the PCM fraction of D-PLP-GFP did not initially recover centrally and then move outwards, but rather recovered throughout the PCM volume.'
-in section results
-matches pattern 'nevertheless'
-which indicates 'problem statement'
-
-sentence 'DSpd-2-GFP had a similar distribution with several spoke-like projections extending from a central ring (Figure 3C), although, in agreement with our radial profiling data, much less DSpd-2 extended into the more peripheral regions of the PCM (Figure 3C).'
-in section results
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'Thus, although the centrosomal binding sites for DSpd-2 and Cnn appear to be concentrated around the mother centriole, they do not precisely overlap and they recruit DSpd-2 and Cnn at different rates, strongly suggesting that DSpd-2 and Cnn are not incorporated into the PCM together as part of the same complex.'
-in section results
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'Anti-Asl antibodies bound to centrosomes and reduced the rate of DSpd-2-GFP incorporation into the PCM by ∼75%, whereas anti-DSas-4 and anti-D-PLP antibodies had little effect (Figure 5)—although these antibodies bound to centrioles/centrosomes and at least partially disrupted the function of their cognate protein (Basto et al., 2008; Novak et al., 2014; unpublished data).'
-in section results
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'Although we cannot be certain that Asl and DSpd-2 interact directly in vivo, collectively our data indicate that Asl has an important, and potentially direct, role in recruiting DSpd-2 to mother centrioles in fly embryos.10.7554/eLife.03399.013Video 3.(related to Figure 5).'
-in section results
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'We noticed, however, that the distribution of DSpd-2-GFP, but not Asl-GFP, around the mother centriole closely matched the distribution of the initial binding sites for GFP-Cnn, as revealed by our 3D-SIM FRAP experiments (compare the recovering GFP-Cnn signal at t = 60 s in Figure 4B to the unbleached DSpd-2-GFP signal at t = −30 s in Figure 4A; also compare the average profile of DSpd-2-GFP to the average initial recovery profile of GFP-Cnn, Figure 4D).'
-in section results
-matches pattern 'however'
-which indicates 'problem statement'
-
-sentence 'Although we cannot be certain that Cnn and DSpd-2 interact directly in vivo, collectively our data indicate that DSpd-2 has an important, and potentially direct, role in recruiting Cnn to mother centrioles in fly embryos, while Asl appears to have a more minor role.'
-in section results
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'Although there was a dramatic reduction in the amount of DSpd-2-GFP associated with centrosomes in the absence of Cnn (Figure 8A,B), FRAP experiments revealed that the initial rate of DSpd-2-GFP incorporation was unperturbed (Figure 8C–E).'
-in section results
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'Both proteins have been implicated in PCM recruitment, so we reasoned that such scaffolds might provide a platform on which other PCM proteins assemble during mitosis.To test this idea, we analyzed larval brain cells where centrioles organize almost no PCM or MTs during interphase but mature to organize large amounts of both during mitosis (Martinez-Campos et al., 2004; Rogers et al., 2008; Figure 9A).'
-in section results
-matches pattern 'almost no'
-which indicates 'problem statement'
-
-sentence 'Remarkably, however, centrosome maturation appeared to be abolished in the mitotic brain cells lacking both Cnn and DSpd-2 (Figure 9D,H).'
-in section results
-matches pattern 'however'
-which indicates 'problem statement'
-
-sentence 'In live mitotic brain cells co-expressing the centriolar marker GFP-PACT and the MT marker Jupiter-mCherry (Figure 9—figure supplement 2; Video 5), centrosomes with MT asters were detectable in almost all cells lacking either Cnn (n = 18/18) or DSpd-2 (n = 24/25), but in almost no cells lacking both proteins (n = 1/24).'
-in section results
-matches pattern 'almost no'
-which indicates 'problem statement'
-
-sentence 'No centrosomal MT asters, however, can be observed in cnn;dspd-2 double mutant neuroblasts and the spindle appears to form independently of centrosomes (D).DOI: http://dx.doi.org/10.7554/eLife.03399.022'
-in section results
-matches pattern 'however'
-which indicates 'problem statement'
-
-sentence 'DSpd-2 and Cnn partially depend on each other for their centrosomal localization, and both proteins are required to ensure robust centrosome maturation.'
-in section discussion
-matches pattern 'are required'
-which indicates 'problem statement'
-
-sentence 'Although, we have identified direct interactions between Asl and DSpd-2 and between DSpd-2 and Cnn by Y2H, and the endogenous proteins can all co-immunoprecipitate with one another in fly embryo extracts (Conduit et al., 2010; Gopalakrishnan et al., 2011), we stress that we cannot be certain that these interactions are direct in vivo.'
-in section discussion
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'We recently showed that although Asl is essential for centriole duplication, it is not incorporated into daughter centrioles until they have passed through mitosis and matured into new mother centrioles (Novak et al., 2014), and Asl/Cep152 proteins mainly localize to mother centrioles in several species (Sir et al., 2011; Fu and Glover, 2012; Lawo et al., 2012; Mennella et al., 2012; Sonnen et al., 2012).'
-in section discussion
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'Although DSpd-2 seems to be the major recruiter of centrosomal Cnn in embryos, there must be an alternative recruiter, as the centrosomal localization of Cnn is not abolished in the absence of DSpd-2 (Figure 7, Figure 9C).'
-in section discussion
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'Asl is an attractive candidate as anti-Asl antibodies perturb Cnn recruitment to centrioles (Conduit et al., 2010) (although this could be an indirect consequence of their effect on DSpd-2 recruitment), and Asl and Cnn interact in our Y2H analysis.'
-in section discussion
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'It remains unclear, however, whether DSpd-2 itself can form a scaffold, or whether it requires other proteins to do so.'
-in section discussion
-matches pattern 'however'
-which indicates 'problem statement'
-
-sentence 'Moreover, mutations in human Cdk5Rap2/Cnn have been implicated in microcephaly (Bond et al., 2005), a pathology linked to a failure in neural progenitor cell proliferation, although the precise reason for this is unclear (Bond and Woods, 2006; Megraw et al., 2011).'
-in section discussion
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'Although DSpd-2 and Cnn have a major role in centrosome maturation, we stress that other PCM components are likely to make important contributions.'
-in section discussion
-matches pattern 'although'
-which indicates 'problem statement'
-
-sentence 'Although DSpd-2 and Cnn have a major role in centrosome maturation, we stress that other PCM components are likely to make important contributions.'
-in section discussion
+sentence '
+The specific contributions of this paper are as follows: we trained one of the largest convolutional neural networks to date on the subsets of ImageNet used in the ILSVRC-2010 and ILSVRC-2012 competitions [2] and achieved by far the best results ever reported on these datasets.'
+in section intro
 matches pattern 'contributions'
 which indicates 'contribution'
 
-sentence 'These centriolar fibrils, however, cannot explain how centrioles organize such a vastly expanded PCM matrix during mitosis, and D-PLP appears to have an important, but more minor, role in mitotic PCM assembly in vivo (Martinez-Campos et al., 2004).'
-in section discussion
+sentence 'The size of our network made overfitting a significant problem, even with 1.2 million labeled training examples, so we used several effective techniques for preventing overfitting, which are described in Section 4.'
+in section intro
+matches pattern 'problem'
+which indicates 'problem statement'
+
+sentence 'However, kernels in layer 4 take input only from those kernel maps in layer 3 which reside on the same GPU.'
+in section intro
 matches pattern 'however'
 which indicates 'problem statement'
 
-sentence 'Nevertheless, proteins like D-PLP will certainly help recruit other PCM proteins and help form structural links within the PCM, thus strengthening the mitotic PCM matrix.'
-in section discussion
-matches pattern 'nevertheless'
+sentence '
+Choosing the pattern of connectivity is a problem for cross-validation, but this allows us to precisely tune the amount of communication until it is an acceptable fraction of the amount of computation.'
+in section intro
+matches pattern 'problem'
 which indicates 'problem statement'
 
-sentence 'To our knowledge, however, no PCM component has yet been shown to assemble from the inside out and to flux away from the centrioles in any other system.'
-in section discussion
-matches pattern 'yet'
-which indicates 'problem statement'
+sentence '
+Choosing the pattern of connectivity is a problem for cross-validation, but this allows us to precisely tune the amount of communication until it is an acceptable fraction of the amount of computation.'
+in section intro
+matches pattern 'allows us to'
+which indicates 'contribution'
 
-sentence 'To our knowledge, however, no PCM component has yet been shown to assemble from the inside out and to flux away from the centrioles in any other system.'
-in section discussion
+sentence '
+There is, however, a very efficient version of model combination that only costs about a factor of two during training.'
+in section intro
 matches pattern 'however'
 which indicates 'problem statement'
 
-sentence 'Nevertheless, although the precise molecular details will likely vary from cell type to cell type and from species to species, we suspect that this unusual dynamic behaviour of an underlying mitotic PCM scaffold will prove to be a general feature of mitotic centrosome assembly in many systems.'
-in section discussion
-matches pattern 'although'
-which indicates 'problem statement'
+sentence '
+We initialized the neuron biases in the second, fourth, and fifth convolutional layers, as well as in the fully-connected hidden layers, with the constant 1.'
+in section intro
+matches pattern 'biases'
+which indicates 'limitation '
 
-sentence 'Nevertheless, although the precise molecular details will likely vary from cell type to cell type and from species to species, we suspect that this unusual dynamic behaviour of an underlying mitotic PCM scaffold will prove to be a general feature of mitotic centrosome assembly in many systems.'
-in section discussion
-matches pattern 'nevertheless'
-which indicates 'problem statement'
+sentence '
+We initialized the neuron biases in the remaining layers with the constant 0.'
+in section intro
+matches pattern 'biases'
+which indicates 'limitation '
 
