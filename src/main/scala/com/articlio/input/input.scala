@@ -42,7 +42,7 @@ object JATSloader{
 // constructor argument: top XML node of an XML node hierarchy, 
 // derived member:            a tree mirror of it, made of plain self-defined object nodes
 //
-class JATS (filePath: String) {
+class JATS (filePath: String, val sectioningType: String = "eLife") {
   private val JATSsectionsRaw = JATSloader.load(filePath) // "elife-articles(XML)/elife00425styled.xml"
   private val annotation = Annotation("stripped-text")
 
@@ -58,7 +58,7 @@ class JATS (filePath: String) {
       def build(xmlNode: Node) {
         if (xmlNode.child.isEmpty) {
           sentences += AnnotatedText(xmlNode.text, Seq(annotation))
-          println(xmlNode.text)
+          //println(xmlNode.text)
         }
         xmlNode.child foreach(c => c.label match {
           case "fig" => // filters out figure elements

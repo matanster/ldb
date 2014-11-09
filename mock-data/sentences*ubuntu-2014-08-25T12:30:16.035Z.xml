@@ -1,6 +1,8 @@
-<article>
-<introduction>
-our research laid the foundations for something
+<?xml version="1.0" encoding="UTF-8"?>
+<article xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML">
+<body>
+<sec sec-type="intro" id="s1"><title>Introduction</title>
+<p>
 The processing of a word in a sentence is affected by a range of linguistic properties, across many tasks and experimental paradigms, but how does the cognitive system change the way it responds to these properties in different tasks? 
 Two hallmark effects derive from the frequency of a word to be processed (high frequency words are processed more quickly than low frequency words) and the predictability of a word in its sentence context (more predictable words are processed more quickly than less predictable words; see Kutas &amp; Federmeier, 2011; Rayner, 1998, 2009 0010-0277/$ - see front matter Ó 2013 The Authors. 
 While frequency and predictability effects are robust and well documented, the magnitudes of these effects vary across tasks and paradigms (even when equating the magnitude of the frequency or predictability manipulation). 
@@ -115,8 +117,9 @@ These ﬁrst two goals are tested in Experiment 1. The third goal was to compare
 In each experiment, we had subjects perform two tasks: reading for comprehension and then proofreading for spelling errors. 
 Both tasks included sentences without errors that contained either a frequency or a predictability manipulation that we used to determine the extent to which subjects were sensitive to these word properties. 
 In the ﬁrst experiment, subjects checked for spelling errors that produced nonwords (e.g., trcak instead of track), similar to the subjects in Kaakinen and Hyönä’s (2010) experiment. 
-</introduction>
-<rest>
+</p></sec>
+<sec sec-type="rest" id="s1"><title></title>
+<p>
 2. Experiment 1 2.1. 
 Method 2.1.1. 
 Subjects Forty-eight members of the University of California, San Diego community participated in the experiment for course credit, or monetary compensation ($10.00). 
@@ -374,8 +377,9 @@ To investigate this question, we coded each error item in Experiment 1 as being 
 Even though approximately half of the words were pronounceable and half were not, this distinction did not affect detection accuracy (88% vs. 89%; z &lt;.1,p &gt; .94). 
 These data suggest that subjects were primarily assessing wordhood through a full check against the lexicon or against context, rather than purely checking surface features such as pronounceability. 
 As mentioned above, though, the errors in Experiment 1 were easier to detect than those in Experiment 2, suggesting that the need to integrate the word with the sentence context in order to identify whether it is an error was likely what made the proofreading task in Experiment 2 more difﬁcult. 
-</rest>
-<conclusion>
+</p></sec>
+<sec sec-type="conclusion" id="s1"><title>Conclusion</title>
+<p>
 The results of our study, combined with the experiments discussed in the introduction (Section 1), suggest that word and sentence processing during reading is highly adaptive and responsive to task demands. 
 That is, our subjects’ proofreading performance involved not just a more cautious version of normal reading, but rather a qualitative readjustment of different component sub-processes of overall reading so as to efﬁciently achieve high accuracy in identifying errors. 
 We saw that the size of the frequency effect increased when proofreading for any type of spelling error, reﬂecting the fact that word frequency is useful for detecting violations of word status (i.e., nonwords do not have a detectable word frequency), which might be a ﬁrst step in checking for spelling errors. 
@@ -388,192 +392,5 @@ Wotschack and Kliegl (2013) also reported modulation of both frequency and predi
 Taken together, these results and ours ﬁt naturally with claims that readers optimize how they read for their particular goals (Bicknell &amp; Levy, 2010; Lewis, Shvartsman, &amp; Singh, 2013) and that reading behavior can be well described as adaptive. 
 The general framework we introduced for understanding task-speciﬁc modulations in different component processing of reading, which predicted several of the key ﬁndings of our experiments and shed light on several more, may prove to be of further use in understanding modulations of reading behavior with other tasks, such as different types of proofreading (e.g., word-position errors) and scanning for keywords. 
 More generally, our ﬁndings broaden the range of examples of the adaptability of cognition, and point to the remarkable potential of the human mind to shape the details of even very highly practiced cognitive processing to the precise demands of the task and the agent’s particular goals. 
-</conclusion>
-<other>
-Acknowledgments 
-This research was supported by Grant HD065829 and training Grant DC000041 from the National Institutes of Health as well as Grant IIS0953870 from the National Science Foundation. 
-Portions of these data were presented at the CUNY Conference on Human Sentence Processing (2012; New York, NY) and the Annual Meeting of the Psychonomic Society (2012; Minneapolis, MN). 
-We thank Gerry Altmann, Reinhold Kliegl, Wayne Murray, and an anonymous reviewer for their comments on an earlier version. 
-</other>
-<appendix>
-Appendix A List of ﬁller stimuli (taken from Johnson, 2009) used in both experiments. 
-Words presented in italics below were used as target words in the reading task (not in italics in the experiment). 
-Words in boldface to the right (not bolded in the experiment) replaced the target words and were used as errors in the proofreading task (ﬁrst column are nonword errors from Experiment 1, second column are wrong word errors from Experiment 2). 1 For Halloween, Julie dressed up like an alien and impressed the neighbors. 
-aline angle 2 John used the mathematical device to measure the exact slope of the steel beam. 
-sloep angel 3 The gardening tools were stored in the wooden shed for safe keeping. 
-sehd bran 4 Judith is an alcoholic and visits all of the local pubs in town quite frequently. 
-pbus bras 5 Kaitlyn was continually tormented by the thought of a mean bully confronting her. 
-bulyl beats 6 During the symphony, I thought that many of the loud tones were a bit off. 
-tonse beast 7 When the paint spilled, it made a large blob of color on the drop cloth below. 
-bolb bolt 8 The ocean harbor was full of white ships rocking with the waves. 
-shisp boast 9 The carpenter removed the rusty nail and replaced it with a shiny new one. 
-nial blot 10 The healthy cereal contained more oats than the other leading competitor. 
-otas barn 11 Phyllis carefully fastened the straps on the cotton bibs to secure them. 
-bbis bars 12 The musical instrument that was for sale was a silver ﬂute and so I bought it. ﬂtue bulge 13 Unfortunately, the swelling from the heat caused the lumps in the tire. 
-lupms bugle 14 Janice found that the waters were surprisingly cool that July morning. 
-colo clam 15 The man in the meat department used the knife to carefully slice the turkey. 
-silce crave 16 While walking along the beach, Gail picked up a sandy crab to show her husband. 
-crba calm 17 The expert said that the damage was caused by a clog that had gone undetected. 
-colg colt 18 The train was powered by natural fuel and was fairly energy efﬁcient. 
-fule cola 19 The oceanfront property overlooked the beautiful beach and the crashing waves. 
-beahc coats 20 Jennifer went to the clothing store to buy some woolen socks for her relatives. 
-socsk coast 21 Kelli drank all of the cherry-ﬂavored soda and then asked for a reﬁll. 
-soad coal 22 The little horse turned out to be a small foal that belonged to my neighbor. 
-faol clot 23 Seriously, $200 per hour was the rate that the lawyer charged for advice. 
-reat cots 24 You should never be jealous of others or covet something that they have. 
-cvoet carve 25 Rachel entered the information into the chart before she forgot about it. cahrt dairy 26 The cold weather made Philip’s toes feel like they were going to fall off. 
-teos eras 27 Since the beginning of time, the earth has seen many eons of development. 
-enos ears 28 The company was going through many changes so the manager hired another employee. 
-hried fried 29 In order to show his dissatisfaction, Karl stuck out his chin and complained. 
-chni ﬁts 30 My impatient mother told me about the bout of anger that she had last week. 
-botu ﬁst 31 To cook the chicken, my grandmother baked it and then served it over rice. 
-bkaed ﬁred 32 The woman purchased a sexy lace halter for her wedding and honeymoon. 
-hlater grater 33 Go to the kitchen and get the new cheese slicer to prepare the cheddar. 
-silcer garter 34 Bill’s improper behaviors caused Judy to call him a big jerk behind his back. 
-jrek lair 35 The government came out with more ridiculous laws, deeply angering the citizens. 
-lwas leis 36 The animal that I saw turned out to be a sleepy lamb resting in the shade. 
-lmab loin 37 When I couldn’t ﬁnd my wallet, I concluded that it would likely be gone forever. 
-goen lots 38 The musical composition was a graceful sonata written in the 18th century. 
-sonaat minute 39 The lawyer worked on the project for one decade before giving up. decaed minuet 40 Timothy saw the yellow bird sitting in an old pine in his backyard. 
-pien nets 41 The ﬁsherman loaded the boat up with hooks, rods, and plenty of bait. 
-rosd nest 42 The small table was unsteady because the steel base had been bent. 
-baes pots 43 The artist used the kiln to heat the ceramic jars before painting them. 
-jasr post 44 The children were told to be extremelyquick and out of obedience, they were. 
-quikc quite 45 Unfortunately, the antique was covered in mold and had to be thrown away. 
-modl ruts 46 The workers tried to ﬁx the road by ﬁlling the deep dips with lots of asphalt. 
-disp rust 47 The music in the worship service was truly divine and touched many people. 
-dviine scared 48 The predator made the small animal feel very uneasy as it hid in the brush. 
-uenasy sacred 49 In order to complete the recipe, the baker added eggs to the batter. 
-egsg slat 50 The sheets were made of an expensive silky material that felt good to the touch. 
-sliky stain 51 The document will be ofﬁcial once the president edits the copy on his desk. 
-edtis sings 52 The proud athlete won a shiny golden trophy for his performance. 
-gloden sliver 53 Since my aunt is not at all shy, she fearlessly chats loudly in public. 
-chtas signs 54 To ﬁnish the construction project, Hank needed to buy another long slab of wood. 
-salb salt 55 The thunderstorm caused the trunk of the tree to crack down the middle. 
-crcak spilt 56 Tim hoped that cleaning the blanket would remove the horrible scent that it had. 
-secnt satin 57 The runners trained for the marathon on the new track behind the high school. 
-trcak trial 58 I went to the courthouse to see the judge that I had heard so much about. 
-jugde trail 59 The wedding ceremony was intended to unify the couple as husband and wife. 
-unﬁy untie 60 The humid weather caused the cover of the book to curl and be permanently damaged. 
-crul wrap Appendix B List of stimuli with a frequency manipulation (taken from Drieghe et al., 2008) used in both experiments. 
-Target words are presented in italics with the high frequency word ﬁrst and the low frequency word second. 
-For each sentence the high or low frequency words were counterbalanced across task (reading for comprehension vs. proofreading). 
-1 Because his wife was ill, he visited the local beach/swamp without her. 
-2 The main tourist attraction was the local beach/swamp which was well-known. 
-3 Anxiously the happy bride/groom awaited the arrival of the rest of the family. 
-4 The idiot took a picture of the wrong bride/groom standing in front of the church. 
-5 Outside in the neglected yard was a brown chair/canoe which he had never thrown away. 
-6 The surrealistic painting depicted a black chair/tulip standing on top of a red table. 
-7 He gave the waitress an extra check/bonus rewarding her for her excellent service. 
-8 On stage there was a young child/tenor singing with the most amazing voice. 
-9 When he opened the door he saw a young child/puppy walking across the street. 
-10 The woman chose the wrong color/broom because nobody helped her in the shop. 
-11 The heavy metal fan had a black cross/skull tattooed on his chest. 12 The t-shirt displayed a black cross/skull surrounded by a menacing snake. 
-13 To his outrage they did the wrong dance/psalm during the ceremony. 
-14 Barbara never wore the brown dress/pants again after that disastrous party. 
-15 Betsy always wore a thick dress/apron because the thin ones wore out too fast. 16 Sam was disappointed they didn’t sell his usual drink/snack anywhere on campus. 
-17 The waiter brought the wrong drink/cider annihilating his chances for a big tip. 
-18 She never had a worse enemy/crush before the day she met Andy. 
-19 The teacher was shocked when the quiet girls/pupil suddenly disrupted class. 
-20 George placed a clean glass/plate accidentally back into the dishwasher. 
-21 After killing the bison the locals cooked the fresh heart/liver celebrating the hunt. 
-22 The crime rate in urban homes/jails continues to rise each year. 
-23 The population in urban homes/jails rises for the fourth year in a row. 
-24 In the zoo he saw a young horse/camel clearly suffering from the cold weather. 
-25 The cage contained a small horse/tiger which had a serious injury on its head. 
-26 We stopped at a rural hotel/motel hoping that they accepted credit cards. 
-27 From the top of the hill you can see the largehouse/manor where the celebrity lives. 
-28 Maria and Leo would like to vacation at a quiet house/lodge during the summer. 
-29 On display was a small image/photo portraying the young artist during the war. 
-30 Inside the book, a small image/photo depicting her late husband was hidden. 
-31 Tim and Adrian had never seen such a young judge/juror before this trial. 32 Joe was the ﬁrst judge/clown nominated for the prize in ﬁfty years. 
-33 On the table in the restaurant was a large knife/spoon which was not very clean. 
-34 The inner components are protected by a black metal/alloy increasing its lifespan. 
-35 The time traveler arrived in the wrong month/epoch causing quite some problems. 
-36 It only took one short month/cycle before the washing machine was broken again. 
-37 When Jenny heard the awful music/carol again she almost started to weep. 
-38 After Richard heard the awful music/carol twice he decided to go to another church. 
-39 Annoyed by the bad atmosphere he went to the other party/rodeo without his friend. 
-40 Accidentally he ended up going to the other party/rodeo where nobody knew him. 
-41 At the shop she bought a white phone/scarf knowing she would regret it later. 
-42 It was a painting of a white phone/scarf lying on a kitchen table. 
-43 I don’t think the white plant/lotus which I got for my birthday will last very long. 
-44 For Valentine’s Day, Tom bought his wife a white plant/lotus which was quite expensive. 
-45 The general said that without a basic radio/sonar using the boat was pointless. 
-46 Rumor was that the museum displayed the wrong riﬂe/spear during the exhibition. 
-47 He made the statement without his usual smile/irony which surprised his audience. 
-48 You could see on their faces that his usual smile/irony displeased them. 
-49 The victim was killed by a sharp stone/spear thrown at him from quite some distance. 
-50 In the hospital there was a small store/kiosk where you could buy ﬂowers or candy. 
-51 Written on the bathroom wall was a short story/rhyme stating Bob’s love for beer. 
-52 Natalie quickly washed the dirty table/stove before the party guests arrived. 
-53 Jack quickly cleaned the dirty table/stove before his parents arrived. 
-54 The police examined the empty train/vault hoping the criminals left ﬁngerprints. 
-55 The detective went over the empty train/vault without ﬁnding any extra clues. 
-56 It was not a quiet watch/clock because the noise it made sometimes even woke me up. 57 On the table there was a small watch/clock which David bought at the antique shop. 
-58 The mechanic wasn’t sure the ﬁxed wheel/brake would get them home. 
-59 The psychiatrist said he never saw a happy woman/thief throughout his career. 
-60 The cowboy made sure the young woman/squaw never ran out of food. 
-Appendix C List of stimuli with a predictability manipulation (items 1-12 were taken from Rayner &amp; Well, 1996; items 13-60 were taken from Balota et al., 1985) used in both experiments. 
-Target words are presented in italics with the high predictability word ﬁrst and the low predictability word second. 
-For each sentence the high or low predictability words were counterbalanced across task (reading for comprehension vs. proofreading). 
-1 They were startled by the sudden noise/voice from the next room. 
-2 New clues led to the criminal’s arrest/pardon years after the crime. 
-3 The girl crept slowly toward the door/edge without anyone hearing her. 
-4 The postman opened the package to inspect its contents/packing before sending it. 5 To keep the animals out of the garden, he put up a fence/hedge to block it off. 
-6 The hikers slowly climbed up the mountain/hillside to get a better view. 
-7 Jill looked back through the open window/curtain to see if the man was there. 
-8 He scraped the cold food from his plate/spoon before washing it. 9 The man decided to shave his beard/chest before the operation. 
-10 The worker was criticized by his boss/help but only behind his back. 
-11 The friends were not talking because they had a ﬁght/scheme last semester. 
-12 The woman died after a prolonged illness/surgery to everyone’s dismay. 
-13 The doctor told Fred that his drinking would damage his liver/heart very quickly. 
-14 Late at night, the loud crying of the hungry baby/girl woke the neighbors. 
-15 The women at the church were busy sewing a quilt/cover to sell at the carnival. 16 The banker loaned the businessman some more money/stuff for his new project. 
-17 For Halloween, Liz dressed up as an ugly old witch/ghost and went to the party. 
-18 The baby laughs and giggles when she shakes her new rattle/bottle for her father. 
-19 The skilled burglar stole all the gold and silver/copper trinkets in their house. 
-20 The lightening from the storm struck a large limb of a tree/bush in our backyard. 
-21 The skilled gardener went outside to pull up the weeds/roses along the driveway. 
-22 The sailor encouraged his younger brother to join the Navy/Army after high school. 
-23 He is a grouch in the morning until he has had his coffee/shower and read the paper. 
-24 It is clear that the tornado with its damaging winds/rains demolished the town. 
-25 The swift mugger snatched the elderly lady’s new purse/scarf from her hands. 
-26 She scoured her pots and pans/sink before her company arrived for the lasagna dinner. 
-27 Since the wedding was today, the baker rushed the wedding cake/pies to the reception. 
-28 The young actress rehearsed her new lines for the play/talk at the university. 
-29 The child started crying when the doctor gave her a shot/pill to stop the fever. 
-30 He went to the local post ofﬁce to pick up his mail/wife after a long day at work. 
-31 The busy bartender gave the regular customer her drink/glass and took her money. 
-32 When the class went to the zoo, the loud roar of the lion/bear frightened the child. 
-33 The hunter carefully aimed his expensive riﬂe at the deer/bird and ﬁred at it. 34 On Sundays, he watches the football game while drinking beer/wine and eating pretzels. 
-35 The industrious farmer gets all his fresh milk from the cows/goat on his dairy farm. 
-36 When the electricity in the house went out, she lit the candles/lantern to get light. 
-37 The pregnant woman had a craving for ice cream and pickles/bananas nearly every night. 
-38 She used a needle and thread/string to sew the torn hem in her skirt. 
-39 The young nervous paratrooper jumped out of the plane/chairwhen he heard the shots. 
-40 On the subway, one often has to push and shove/press through the crowd. 
-41 The fat opera singer has meticulously trained her voice/child for a number of years. 
-42 Her sweater was made of wool/silk imported from a village in Northern Ireland. 
-43 Because it snowed, the boy was anxious to use his sled on the hill/yard before it melted. 
-44 The baker put the bread/pizza in the hot oven to bake for 50 min. 
-45 Everyone in the court rose to their feet when the judge/queen entered the room. 
-46 At the circus, the audience laughed at the funny clown/tiger that ran around the stage. 
-47 The little boy enjoys having some cookies and milk/soda for a snack at night. 
-48 The little boy is going on a ﬁshing trip with his father/mother this coming weekend. 
-49 My younger brother has brilliantly composed a new song/tune for the school play. 
-50 The large gulls could be seen far out over the ocean/river when the fog cleared away. 
-Appendix D Means and standard errors (aggregated by subject) and results of LMM models for reading measures on the pre-target word. 
-Experiment 1 Frequency Predictability Proof Read Proof Proof Hi Low Hi Low Hi Low Hi Low ffd 226 (4.2) 227 (4.4) 209 (3.9) 214 (3.9) 217 (4.7) 222 (4.7) 209 (4.2) 205 (3.9) gzd 257 (6.4) 263 (7.1) 220 (4.5) 232 (5.5) 238 (6.1) 251 (8.0) 226 (4.7) 222 (5.1) sfd 230 (4.6) 234 (5.9) 212 (4.1) 218 (4.2) 219 (5.1) 226 (5.1) 210 (4.6) 204 (4.6) tvt 393 (25.0) 418 (28.4) 264 (13.5) 276 (14.2) 303 (13.2) 328 (15.8) 261 (15.5) 248 (8.8) gopast 302 (11.2) 311 (13.5) 261 (11.6) 268 (8.3) 290 (12.5) 306 (17.7) 262 (11.8) 254 (10.0) skip 0.87 (0.02) 0.88 (0.02) 0.85 (0.02) 0.85 (0.02) 0.51 (0.02) 0.52 (0.02) 0.54 (0.02) 0.52 (0.02) regin 0.12 (0.01) 0.14 (0.01) 0.05 (0.01) 0.07 (0.01) 0.06 (0.01) 0.09 (0.01) 0.04 (0.01) 0.08 (0.01) regout 0.07 (0.01) 0.06 (0.01) 0.08 (0.01) 0.07 (0.01) 0.04 (0.01) 0.04 (0.01) 0.04 (0.01) 0.04 (0.01) Experiment 2 Frequency Predictability Proof Read Proof Read Hi Low Hi Low Hi Low Hi Low ffd 216 (4.5) 214 (4.2) 209 (4.6) 210 (4.7) 209 (4.6) 204 (3.8) 199 (4.7) 204 (5.3) gzd 238 (5.7) 244 (6.8) 233 (6.7) 232 (6.9) 228 (5.5) 219 (4.4) 210 (6.3) 214 (6.9) sfd 217 (4.5) 220 (4.8) 214 (5.3) 214 (5.2) 212 (5.1) 206 (3.9) 199 (5.0) 205 (5.5) tvt 276 (8.0) 288 (10.1) 253 (8.3) 249 (8.6) 247 (7.5) 247 (6.5) 219 (6.6) 226 (7.9) gopast 254 (7.6) 258 (8.4) 254 (9.3) 250 (9.0) 251 (8.7) 247 (7.5) 227 (7.4) 231 (8.4) skip 0.90 (0.01) 0.88 (0.02) 0.82 (0.02) 0.85 (0.02) 0.57 (0.02) 0.53 (0.02) 0.51 (0.02) 0.51 (0.02) regin 0.24 (0.03) 0.29 (0.03) 0.11 (0.02) 0.13 (0.02) 0.14 (0.02) 0.20 (0.02) 0.10 (0.02) 0.12 (0.02) regout 0.11 (0.01) 0.12 (0.02) 0.11 (0.02) 0.11 (0.02) 0.07 (0.01) 0.07 (0.01) 0.05 (0.01) 0.06 (0.01) 51 Common reptiles, such as lizards/turtles and snakes often make little girls squeamish. 
-52 The pan pizza was made with a nice thick crust/dough covered with sauce. 
-53 Mary’s husband gave her a beautiful new pearl necklace/bracelet for their anniversary. 
-54 The thirsty runner drank a big glass of ice cold water/juice after the marathon. 
-55 On every job, the photographer takes his camera/sister with him. 
-56 For Valentine’s Day, she received some ﬂowers and candy/fruit from her husband. 
-57 We saw the old nun and the priest/bishop arrive together for the meeting this morning. 
-58 We saw the boy run down the street/avenue after his dog when its leash broke loose. 
-59 When the waiter brought the dinner the banker put salt and pepper/butter on his potato. 
-60 He pounded the nail into the plaster wall with a hammer/wrench and hung the picture. 
-LMM outputs Measure Variable Experiment 1 Experiment 2 btb t First ﬁxation duration Task 5.20 1.68 14.36 4.73 Frequency .38 &lt;.1 2.74 &lt;.1 Task * Frequency 2.39 &lt;.1 2.80 &lt;.1 Task 3.65 1.16 10.33 2.49 Predictability À0.43 &lt;.1 1.36 &lt;.1 Task * Predictability 9.33 1.44 12.12 1.84 Gaze duration Task 8.85 2.05 33.62 5.84 Frequency 4.19 1.26 9.16 2.21 Task * Frequency 9.23 1.38 6.42 &lt;.1 Task 6.27 1.05 21.31 3.64 Predictability 1.79 &lt;.1 2.51 &lt;.1 Task * Predictability 9.00 1.05 20.21 2.01 Total time Task 30.81 4.39 136.63 5.46 Frequency 4.72 &lt;.1 19.64 1.93 Task * Frequency 17.02 1.69 14.92 &lt;.1 Task 16.60 2.28 54.66 3.46 Predictability 6.97 1.32 5.08 &lt;.1 Task * Predictability 1.88 0.26 29.15 1.29 Regressions in (z &amp; p) Task 6.83 &lt;.001 6.96 &lt;.001 Frequency 3.87 &lt;.001 1.24 .21 Task * Frequency 1.99 .047 2.00 .046 Task .74 .46 4.28 &lt;.001 Predictability 3.39 &lt;.001 3.48 &lt;.001 Task * Predictability 1.05 0.29 .33 .74 Regressions out (z &amp; p) Task .31 .76 .57 .56 Frequency 1.49 .14 1.87 .06 Task * Frequency .50 .62 .02 .99 Task .72 .47 1.24 .22 Predictability 2.27 &lt;.05 1.30 .20 Task * Predictability .50 0.62 1.35 .18 Appendix E Means and standard errors (aggregated by subject) and results of LMM models for reading measures on the post-target word Experiment 1 Frequency Predictability Proof Read Proof Read Hi Low Hi Low Hi Low Hi Low ffd 227 (5.1) 226 (4.4) 225 (5.9) 227 (6.5) 214 (5.3) 217 (5.2) 209 (6.1) 215 (5.9) gzd 270 (6.4) 266 (5.6) 257 (7.6) 274 (9.5) 237 (7.4) 239 (6.8) 226 (7.1) 231 (6.6) sfd 234 (5.9) 232 (4.9) 234 (7.3) 240 (7.7) 212 (5.3) 221 (5.7) 212 (6.2) 222 (6.8) tvt 334 (12.6) 342 (11.3) 293 (9.6) 306 (11.3) 264 (9.8) 278 (10.7) 234 (7.5) 246 (8.4) gopast 326 (11.5) 335 (12.4) 294 (11.0) 306 (12.4) 279 (13.0) 286 (14.1) 238 (8.2) 268 (14.7) skip 0.86 (0.02) 0.85 (0.02) 0.85 (0.02) 0.87 (0.02) 0.52 (0.02) 0.52 (0.02) 0.48 (0.02) 0.51 (0.02) regin 0.16 (0.02) 0.13 (0.02) 0.10 (0.01) 0.08 (0.01) 0.09 (0.01) 0.10 (0.01) 0.08 (0.01) 0.11 (0.02) regout 0.08 (0.01) 0.12 (0.01) 0.07 (0.01) 0.07 (0.01) 0.05 (0.01) 0.06 (0.01) 0.02 (0.01) 0.05 (0.01) 
-</appendix>
-</article>
+</p></sec>
+</body></article>

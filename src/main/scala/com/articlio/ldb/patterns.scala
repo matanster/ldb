@@ -194,7 +194,10 @@ object go {
   //
   // get data
   //
-  val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425styled.xml").sections // elife04395
+  //val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425cleaned-but-not-styled.xml").sections // elife04395, elife-articles(XML)/elife00425styled.xml
+  //val sections : Seq[JATSsection] = new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet.xml", "pdf-converted").sections // elife04395, elife-articles(XML)/elife00425styled.xml
+  val document = new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife03399.xml")
+  val sections : Seq[JATSsection] = document.sections // elife04395, elife-articles(XML)/elife00425styled.xml
 
   //
   // separate into util file
@@ -256,10 +259,16 @@ object go {
   // flat map all section -> paragraph -> sentences into one big pile of sentences. 
   val sentences: Seq[LocatedText] = sections.flatMap(section =>  section.paragraphs.flatMap(p =>
      sentenceSplitter(LocatedText(p.sentences.map(s => s.text).mkString(""),  section.sectionType)))) 
- 
+
+  val sectionTypeScheme = document.sectioningType match {
+   case "pdf-converted" => pdfConvertedSectionTypeScheme
+   case _ => eLifeSectionTypeScheme 
+  }
+                                                                             
   //
   // process sentence by sentence
   //
+     
   Timelog.timer("matching")
   processSentences(sentences)
   Timelog.timer("matching")
@@ -318,6 +327,7 @@ object go {
       // filter out matches occuring outside their designated location requirement
       //
 
+           
       val matches = possibleMatches.filter(p => {
           println(p._4)
           if (!p._4.locationProperty.isDefined) {
@@ -325,7 +335,7 @@ object go {
             true
           }
           else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-            SectionNames.translation(parameter) == p._2.section)) {
+              !sectionTypeScheme .translation.contains(parameter) || sectionTypeScheme .translation(parameter) == p._2.section)) {
               println("location criteria matched!")
               true
           }
