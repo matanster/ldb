@@ -195,7 +195,7 @@ object go {
   // get data
   //
   //val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425cleaned-but-not-styled.xml").sections // elife04395, elife-articles(XML)/elife00425styled.xml
-  val document = new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet.xml", "pdf-converted") // elife04395, elife-articles(XML)/elife00425styled.xml
+  val document = new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet", "pdf-converted") // elife04395, elife-articles(XML)/elife00425styled.xml
   //val document = new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife03399.xml")
   val sections : Seq[JATSsection] = document.sections // elife04395, elife-articles(XML)/elife00425styled.xml
 
