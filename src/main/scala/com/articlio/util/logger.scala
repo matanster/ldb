@@ -3,8 +3,26 @@ package com.articlio.util
 //
 // Semantically routes messages to destinations, currently only to local file destinations
 //
-object Logger {
+class Logger (name: String) {
 
+  //
+  // take care of a ready empty target directory - move out to util package
+  //
+  def createDir(targetDirName: String) {
+    import java.io.{File}
+    import java.nio.file.{Path, Paths, Files}
+    import org.apache.commons.io.FileUtils.{deleteDirectory}
+    
+    def based(dir: String) = "data" + "/" + dir
+    
+    val targetDirObj = Paths.get(based(targetDirName))
+    if (Files.exists(targetDirObj)) deleteDirectory(new File(based(targetDirName)))
+    Files.createDirectory(targetDirObj)
+  }
+  
+  createDir(name)
+  println(s"opening logger: $name")
+  
   import java.nio.file.{Paths, Files, StandardOpenOption}
   import java.nio.charset.StandardCharsets
 
@@ -15,7 +33,7 @@ object Logger {
   //
   private def initializeType(msgType:String): java.nio.file.Path =
   {
-    val fileName = "data/" + msgType + ".out"
+    val fileName = "data/" + name + "/"+ msgType + ".out"
     val file = Paths.get(fileName)
     Files.deleteIfExists(file)
     file

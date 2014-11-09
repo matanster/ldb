@@ -5,6 +5,7 @@ package com.articlio.util
 //
 object Timelog {
 
+  val logger = new Logger("global-timers")
   val timers = scala.collection.mutable.Map.empty[String, Long]
 
   //
@@ -14,7 +15,7 @@ object Timelog {
     if (timers contains timerName) {
       val output = s"$timerName took ${(System.nanoTime() - timers(timerName)) / 1000 / 1000} milliseconds"
       timers -= timerName
-      Logger.write(output, "timers")
+      logger.write(output, "timers")
       Console.log(output, "timers")
     }
     else timers(timerName) = System.nanoTime()
@@ -27,7 +28,7 @@ object Timelog {
     val start = System.nanoTime()
     val result = func // invoke the wrapped function
     val output = s"function took ${(System.nanoTime() - start) / 1000 / 1000} milliseconds"
-    Logger.write(output, "timers")
+    logger.write(output, "timers")
     Console.log(output, "timers")
     return(result)
   }

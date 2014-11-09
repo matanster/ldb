@@ -43,6 +43,9 @@ object JATSloader{
 // derived member:            a tree mirror of it, made of plain self-defined object nodes
 //
 class JATS (filePath: String, val sectioningType: String = "eLife") {
+
+  val name = filePath.split("/").last
+  
   private val JATSsectionsRaw = JATSloader.load(filePath) // "elife-articles(XML)/elife00425styled.xml"
   private val annotation = Annotation("stripped-text")
 

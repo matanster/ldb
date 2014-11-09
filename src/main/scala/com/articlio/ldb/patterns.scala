@@ -40,7 +40,7 @@ case class ExpandedRule (rule: SimpleRule) extends Rule {
 }
 
 
-object go {
+object ldb {
 
   //
   // Builds and exposes the data structures necessary for working the rules database
@@ -48,7 +48,8 @@ object go {
   //
   class LDB(inputRules: Seq[RuleInput]) {
 
-    Logger.write(inputRules.mkString("\n"), "db-rules1.1")    
+    val logger = new Logger("global-ldb")    
+    logger.write(inputRules.mkString("\n"), "db-rules1.1")    
     
     //
     // expand base rules into more rules - quite not triggered from the database data right now
@@ -117,7 +118,7 @@ object go {
                                                                      Some(inputRule.properties.get.filter(property => property.isInstanceOf[LocationProperty]))
                                                                    else 
                                                                      None))
-    Logger.write(rules.mkString("\n"), "db-rules2")                                                      
+    logger.write(rules.mkString("\n"), "db-rules2")                                                      
     
     // patterns to indications map - 
     // each pattern correlates to only one indictaion 
@@ -146,8 +147,8 @@ object go {
 
     Timelog.timer("patterns representation building")
     Monitor.logUsage("after patterns representation building is")
-    Logger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
-    Logger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
+    logger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
+    logger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
 
     expand(rules) // should do nothing for now
 
@@ -170,14 +171,14 @@ object go {
     //
     // invoke aho-corasick to find all fragments in given sentence
     //
-    def go(sentence : String) : List[Map[String, String]] = 
+    def go(sentence : String, logger: Logger) : List[Map[String, String]] = 
     {
       val emitsJ = trie.parseText(deSentenceCase(sentence))
 
       if (emitsJ.size > 0) {
         val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart.toString, "end" -> i.getEnd.toString, "match" -> i.getKeyword.toString))).toList
-        Logger.write(sentence, "sentence-fragment-matches")
-        Logger.write(emits.mkString("\n") + "\n", "sentence-fragment-matches")
+        logger.write(sentence, "sentence-fragment-matches")
+        logger.write(emits.mkString("\n") + "\n", "sentence-fragment-matches")
         return(emits)
       }
       else return (List.empty[Map[String, String]])
@@ -189,173 +190,180 @@ object go {
   //
   val inputRules = CSV.deriveFromCSV
   val db = new LDB(inputRules)
-  AhoCorasick.init(db.allFragmentsDistinct)
-
-  //
-  // get data
-  //
-  //val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425cleaned-but-not-styled.xml").sections // elife04395, elife-articles(XML)/elife00425styled.xml
-  val document = new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet", "pdf-converted") // elife04395, elife-articles(XML)/elife00425styled.xml
-  //val document = new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife03399.xml")
-  val sections : Seq[JATSsection] = document.sections // elife04395, elife-articles(XML)/elife00425styled.xml
-
-  //
-  // separate into util file
-  //
-  val SPACE = " "
   
-  val specialCaseWords = Seq("vs.", "al.", "cf.", "st." ,"Fig.", "FIG.")
-
-  implicit class MyStringOps(val s: String) {
-    def endsWithAny(any: Seq[String]) : Boolean = {
-      for (word <- any)
-        if (s.endsWith(SPACE + word)) return true
-      return false
-    }
+  def init {                                                                             
+    AhoCorasick.init(db.allFragmentsDistinct)
   }
+                                                                       
+  def go (document: JATS) {
 
-  def sentenceSplit (text: String) : Seq[String] = {
-
-    if (text.isEmpty) 
-      return Seq.empty[String]
-
-    for (i <- 2 to text.length) {
-
-      val tentative = text.take(i) 
-
-      if (tentative.endsWith(". "))      
-        if (tentative.dropRight(1).endsWithAny(specialCaseWords) && text.isDefinedAt(i) && (text.charAt(i).isUpper))
-          return Seq(tentative) ++ sentenceSplit(text.drop(i))
-
-      if (tentative.endsWith(". "))      
-          return Seq(tentative.dropRight(1)) ++ sentenceSplit(text.drop(i))
-
-      if (tentative.endsWith("? ") || tentative.endsWith("! "))      
-          return Seq(tentative.dropRight(1)) ++ sentenceSplit(text.drop(i))
-    }
-
-    return Seq(text) // getting to the end of the text without sentence delimitation having been detected, 
-                     // this code flushes the entire text as one sentence.
-                     // future intricacies may call to trigger a notice here.
-  }
-
-  case class AnnotatedSentence(text : AnnotatedText, section: String)
-  
-  case class LocatedText(text: String, section: String)
-
-  def sentenceSplitter (toSplit: LocatedText) : Seq[LocatedText] = {
-
-    Logger.write(toSplit.text, "JATS-paragraphs")
-    val sentences = sentenceSplit(toSplit.text)
-    Logger.write(sentences.mkString("\n"), "JATS-sentences")
-    return sentences map (sentence => LocatedText(sentence, toSplit.section))
-  }
-
-  // flat map all section -> paragraph -> sentences into one big pile of sentences. 
-  val sentences: Seq[LocatedText] = sections.flatMap(section =>  section.paragraphs.flatMap(p =>
-     sentenceSplitter(LocatedText(p.sentences.map(s => s.text).mkString(""),  section.sectionType)))) 
-
-  val sectionTypeScheme = document.sectioningType match {
-   case "pdf-converted" => pdfConvertedSectionTypeScheme
-   case _ => eLifeSectionTypeScheme 
-  }
-                                                                             
-  //
-  // process sentence by sentence
-  //
-     
-  Timelog.timer("matching")
-  processSentences(sentences)
-  Timelog.timer("matching")
-
-   
-  
-  //
-  // matches rules per sentence    
-  //
-  def processSentences (sentences : Seq[LocatedText]) = {
-
-    val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
-
-    for (sentence <- sentences) {
-      val matchedFragments = AhoCorasick.go(sentence.text)
-      sentenceMatchCount += matchedFragments.length
-
-      // checks if all fragments making up a pattern, are contained in target string *in order*
-      def isInOrder(fragments: List[String], loc: Integer) : Boolean = {
-        if (fragments.isEmpty) return true  // getting to the end of the list without returning false --> true
-        else {
-          val head = fragments.head
+    val logger = new Logger(document.name)
           
-          val matches = matchedFragments.filter(_("match") == head) 
-          if (matches.isEmpty) return false                         // has this pattern been matched for this sentence?
-          if (matches.exists(_("start").toInt > loc))               // has it been matched in order?
-            isInOrder(fragments.tail, (matches.map(_("end").toInt).min))
-          else 
-            false
-        }
+    //
+    // get data
+    //
+    //val sections : Seq[JATSsection] = new JATS("elife-articles(XML)/elife00425cleaned-but-not-styled.xml").sections // elife04395, elife-articles(XML)/elife00425styled.xml
+    //val document = new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet", "pdf-converted") // elife04395, elife-articles(XML)/elife00425styled.xml
+    //val document = new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife03399.xml")
+    val sections : Seq[JATSsection] = document.sections // elife04395, elife-articles(XML)/elife00425styled.xml
+
+    //
+    // separate into util file
+    //
+    val SPACE = " "
+
+    val specialCaseWords = Seq("vs.", "al.", "cf.", "st." ,"Fig.", "FIG.")
+
+    implicit class MyStringOps(val s: String) {
+      def endsWithAny(any: Seq[String]) : Boolean = {
+        for (word <- any)
+          if (s.endsWith(SPACE + word)) return true
+        return false
+      }
+    }
+
+    def sentenceSplit (text: String) : Seq[String] = {
+
+      if (text.isEmpty) 
+        return Seq.empty[String]
+
+      for (i <- 2 to text.length) {
+
+        val tentative = text.take(i) 
+
+        if (tentative.endsWith(". "))      
+          if (tentative.dropRight(1).endsWithAny(specialCaseWords) && text.isDefinedAt(i) && (text.charAt(i).isUpper))
+            return Seq(tentative) ++ sentenceSplit(text.drop(i))
+
+        if (tentative.endsWith(". "))      
+            return Seq(tentative.dropRight(1)) ++ sentenceSplit(text.drop(i))
+
+        if (tentative.endsWith("? ") || tentative.endsWith("! "))      
+            return Seq(tentative.dropRight(1)) ++ sentenceSplit(text.drop(i))
       }
 
-      // for each matched fragment, trace back to the patterns to which it belongs,
-      // then check if that pattern is matched in its entirety - i.e. if all its fragments match in order.
-
-      val possiblePatternMatches = Set.newBuilder[String] // a Set to avoid duplicates
-
-      matchedFragments.foreach(matched => { 
-        val fragmentPatterns = db.fragments2patterns.get(matched("match").toString).get
-        possiblePatternMatches ++= fragmentPatterns
-      })
-
-      val possibleMatches = for (pattern <- possiblePatternMatches.result 
-                              if (isInOrder (db.patterns2fragments.get(pattern).get, -1))) 
-                                yield (pattern, sentence, db.patterns2indications.get(pattern).get, db.patterns2rules(pattern))
-
-      possibleMatches.foreach(p =>
-        Logger.write(Seq(s"sentence '${p._2.text}'",
-                         s"in section ${p._2.section}",
-                         s"matches pattern '${p._1}'",
-                         s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches (location agnostic)"))
-      
-      if (!possibleMatches.isEmpty)Logger.write(sentence.text, "output (location agnostic)")
-      
-      //
-      // filter out matches occuring outside their designated location requirement
-      //
-
-           
-      val matches = possibleMatches.filter(p => {
-          println(p._4)
-          if (!p._4.locationProperty.isDefined) {
-            println("no location criteria in rule")
-            true
-          }
-          else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-              sectionTypeScheme .translation.contains(parameter) && sectionTypeScheme .translation(parameter) == p._2.section)) {
-              println("location criteria matched!")
-              true
-          }
-          else {
-            println("location criteria not matched")
-            false
-          }
-      })
-
-      if (!matches.isEmpty)Logger.write(sentence.text, "output")
-      
-       matches.foreach(m =>
-        Logger.write(Seq(s"sentence '${m._2.text}'",
-                         s"in section ${m._2.section}",
-                         s"matches pattern '${m._1}'",
-                         s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
-      
-      //matches.foreach(m => Logger.write(m._2.text, "output"))
-      
-      //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
-
+      return Seq(text) // getting to the end of the text without sentence delimitation having been detected, 
+                       // this code flushes the entire text as one sentence.
+                       // future intricacies may call to trigger a notice here.
     }
-    new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
-  }
+
+    case class AnnotatedSentence(text : AnnotatedText, section: String)
+
+    case class LocatedText(text: String, section: String)
+
+    def sentenceSplitter (toSplit: LocatedText) : Seq[LocatedText] = {
+
+      logger.write(toSplit.text, "JATS-paragraphs")
+      val sentences = sentenceSplit(toSplit.text)
+      logger.write(sentences.mkString("\n"), "JATS-sentences")
+      return sentences map (sentence => LocatedText(sentence, toSplit.section))
+    }
+
+    // flat map all section -> paragraph -> sentences into one big pile of sentences. 
+    val sentences: Seq[LocatedText] = sections.flatMap(section =>  section.paragraphs.flatMap(p =>
+       sentenceSplitter(LocatedText(p.sentences.map(s => s.text).mkString(""),  section.sectionType)))) 
+
+    val sectionTypeScheme = document.sectioningType match {
+     case "pdf-converted" => pdfConvertedSectionTypeScheme
+     case _ => eLifeSectionTypeScheme 
+    }
+
+    //
+    // process sentence by sentence
+    //
+
+    Timelog.timer("matching")
+    processSentences(sentences)
+    Timelog.timer("matching")
+
+
+
+    //
+    // matches rules per sentence    
+    //
+    def processSentences (sentences : Seq[LocatedText]) = {
+
+      val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
+
+      for (sentence <- sentences) {
+        val matchedFragments = AhoCorasick.go(sentence.text, logger)
+        sentenceMatchCount += matchedFragments.length
+
+        // checks if all fragments making up a pattern, are contained in target string *in order*
+        def isInOrder(fragments: List[String], loc: Integer) : Boolean = {
+          if (fragments.isEmpty) return true  // getting to the end of the list without returning false --> true
+          else {
+            val head = fragments.head
+
+            val matches = matchedFragments.filter(_("match") == head) 
+            if (matches.isEmpty) return false                         // has this pattern been matched for this sentence?
+            if (matches.exists(_("start").toInt > loc))               // has it been matched in order?
+              isInOrder(fragments.tail, (matches.map(_("end").toInt).min))
+            else 
+              false
+          }
+        }
+
+        // for each matched fragment, trace back to the patterns to which it belongs,
+        // then check if that pattern is matched in its entirety - i.e. if all its fragments match in order.
+
+        val possiblePatternMatches = Set.newBuilder[String] // a Set to avoid duplicates
+
+        matchedFragments.foreach(matched => { 
+          val fragmentPatterns = db.fragments2patterns.get(matched("match").toString).get
+          possiblePatternMatches ++= fragmentPatterns
+        })
+
+        val possibleMatches = for (pattern <- possiblePatternMatches.result 
+                                if (isInOrder (db.patterns2fragments.get(pattern).get, -1))) 
+                                  yield (pattern, sentence, db.patterns2indications.get(pattern).get, db.patterns2rules(pattern))
+
+        possibleMatches.foreach(p =>
+          logger.write(Seq(s"sentence '${p._2.text}'",
+                           s"in section ${p._2.section}",
+                           s"matches pattern '${p._1}'",
+                           s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches (location agnostic)"))
+
+        if (!possibleMatches.isEmpty)logger.write(sentence.text, "output (location agnostic)")
+
+        //
+        // filter out matches occuring outside their designated location requirement
+        //
+
+
+        val matches = possibleMatches.filter(p => {
+            println(p._4)
+            if (!p._4.locationProperty.isDefined) {
+              println("no location criteria in rule")
+              true
+            }
+            else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+                sectionTypeScheme .translation.contains(parameter) && sectionTypeScheme .translation(parameter) == p._2.section)) {
+                println("location criteria matched!")
+                true
+            }
+            else {
+              println("location criteria not matched")
+              false
+            }
+        })
+
+        if (!matches.isEmpty)logger.write(sentence.text, "output")
+
+         matches.foreach(m =>
+          logger.write(Seq(s"sentence '${m._2.text}'",
+                           s"in section ${m._2.section}",
+                           s"matches pattern '${m._1}'",
+                           s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
+
+        //matches.foreach(m => logger.write(m._2.text, "output"))
+
+        //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
+
+      }
+      new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
+    }
+    
+  }                                                                             
+                                                                             
 }
-
-
-

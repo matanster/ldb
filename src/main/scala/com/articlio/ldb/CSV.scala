@@ -115,7 +115,8 @@ object CSV {
     }
 
     Timelog.timer("manipulating CSV input")
-    Logger.write(rules.result.mkString("\n"), "db-rules")
+    val logger = new Logger("global-ldb-csv")
+    logger.write(rules.result.mkString("\n"), "db-rules")
     return rules.result
   }
 }
