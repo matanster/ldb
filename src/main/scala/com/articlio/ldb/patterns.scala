@@ -330,7 +330,6 @@ object ldb {
         // filter out matches occuring outside their designated location requirement
         //
 
-
         val matches = possibleMatches.filter(p => {
             println(p._4)
             if (!p._4.locationProperty.isDefined) {

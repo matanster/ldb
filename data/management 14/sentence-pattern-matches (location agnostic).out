@@ -1,0 +1,6 @@
+sentence '
+The research question under consideration is do individual work values moderate the relationship between leader-member exchange dimensions and employee work satisfaction.'
+in section intro
+matches pattern 'research question'
+which indicates 'hypothesis/research question  '
+
