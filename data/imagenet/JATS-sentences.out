@@ -33,9 +33,7 @@ The specific contributions of this paper are as follows: we trained one of the l
 
 We wrote a highly-optimized GPU implementation of 2D convolution and all the other operations inherent in training convolutional neural networks, which we make available publicly 1 .
 
-Our network contains a number of new and unusual features which improve its performance and reduce its training time, which are detailed in Section 3.
-The size of our network made overfitting a significant problem, even with 1.2 million labeled training examples, so we used several effective techniques for preventing overfitting, which are described in Section 4.
-Our final network contains five convolutional and three fully-connected layers, and this depth seems to be important: we found that removing any convolutional layer (each of which contains no more than 1% of the model’s parameters) resulted in inferior performance.
+Our network contains a number of new and unusual features which improve its performance and reduce its training time, which are detailed in Section 3. The size of our network made overfitting a significant problem, even with 1.2 million labeled training examples, so we used several effective techniques for preventing overfitting, which are described in Section 4. Our final network contains five convolutional and three fully-connected layers, and this depth seems to be important: we found that removing any convolutional layer (each of which contains no more than 1% of the model’s parameters) resulted in inferior performance.
 
 In the end, the network’s size is limited mainly by the amount of memory available on current GPUs and by the amount of training time that we are willing to tolerate.
 
@@ -69,8 +67,7 @@ We did not pre-process the images in any other way, except for subtracting the m
 
 So we trained our network on the (centered) raw RGB values of the pixels.
 
-3 The Architecture The architecture of our network is summarized in Figure 2.
-It contains eight learned layers — five convolutional and three fully-connected.
+3 The Architecture The architecture of our network is summarized in Figure 2. It contains eight learned layers — five convolutional and three fully-connected.
 
 Below, we describe some of the novel or unusual features of our network’s architecture.
 
@@ -112,8 +109,7 @@ Current GPUs are particularly well-suited to cross-GPU parallelization, as they 
 
 The parallelization scheme that we employ essentially puts half of the kernels (or neurons) on each GPU, with one additional trick: the GPUs communicate only in certain layers.
 
-This means that, for example, the kernels of layer 3 take input from all kernel maps in layer 2.
-However, kernels in layer 4 take input only from those kernel maps in layer 3 which reside on the same GPU.
+This means that, for example, the kernels of layer 3 take input from all kernel maps in layer 2. However, kernels in layer 4 take input only from those kernel maps in layer 3 which reside on the same GPU.
 
 Choosing the pattern of connectivity is a problem for cross-validation, but this allows us to precisely tune the amount of communication until it is an acceptable fraction of the amount of computation.
 
@@ -164,8 +160,7 @@ If we set s = z, we obtain traditional local pooling as commonly employed in CNN
 
 If we set s < z, we obtain overlapping pooling.
 
-This is what we use throughout our network, with s = 2 and z = 3.
-This scheme reduces the top-1 and top-5 error rates by 0.4% and 0.3%, respectively, as compared with the non-overlapping scheme s = 2, z = 2, which produces output of equivalent dimensions.
+This is what we use throughout our network, with s = 2 and z = 3. This scheme reduces the top-1 and top-5 error rates by 0.4% and 0.3%, respectively, as compared with the non-overlapping scheme s = 2, z = 2, which produces output of equivalent dimensions.
 
 We generally observe during training that models with overlapping pooling find it slightly more difficult to overfit.
 
@@ -238,8 +233,7 @@ The second form of data augmentation consists of altering the intensities of the
 Specifically, we perform PCA on the set of RGB pixel values throughout the ImageNet training set.
 
 To each training image, we add multiples of the found principal components, 4 This is the reason why the input images in Figure 2 are 224 × 224 × 3-dimensional.
-with magnitudes proportional to the corresponding eigenvalues times a random variable drawn from a Gaussian with mean zero and standard deviation 0.1.
-
+with magnitudes proportional to the corresponding eigenvalues times a random variable drawn from a Gaussian with mean zero and standard deviation 0.1. 
 Therefore to each RGB image pixel I xy = [I R xy , I G xy , I B xy ] T we add the following quantity: [p 1 , p 2 , p 3 ][α 1 λ 1 , α 2 λ 2 , α 3 λ 3 ] T where p i and λ i are ith eigenvector and eigenvalue of the 3 × 3 covariance matrix of RGB pixel values, respectively, and α i is the aforementioned random variable.
 
 Each α i is drawn only once for all the pixels of a particular training image until that image is used for training again, at which point it is re-drawn.
@@ -251,8 +245,7 @@ This scheme reduces the top-1 error rate by over 1%.
 
 There is, however, a very efficient version of model combination that only costs about a factor of two during training.
 
-The recently-introduced technique, called “dropout” [10], consists of setting to zero the output of each hidden neuron with probability 0.5.
-
+The recently-introduced technique, called “dropout” [10], consists of setting to zero the output of each hidden neuron with probability 0.5. 
 The neurons which are “dropped out” in this way do not contribute to the forward pass and do not participate in backpropagation.
 
 So every time an input is presented, the neural network samples a different architecture, but all these architectures share weights.
@@ -263,15 +256,13 @@ It is, therefore, forced to learn more robust features that are useful in conjun
 
 At test time, we use all the neurons but multiply their outputs by 0.5, which is a reasonable approximation to taking the geometric mean of the predictive distributions produced by the exponentially-many dropout networks.
 
-We use dropout in the first two fully-connected layers of Figure 2.
-Without dropout, our network exhibits substantial overfitting.
+We use dropout in the first two fully-connected layers of Figure 2. Without dropout, our network exhibits substantial overfitting.
 
 Dropout roughly doubles the number of iterations required to converge.
 
 Figure 3: 96 convolutional kernels of size 11×11×3 learned by the first convolutional layer on the 224×224×3 input images.
 
-The top 48 kernels were learned on GPU 1 while the bottom 48 kernels were learned on GPU 2.
-See Section 6.1 for details.
+The top 48 kernels were learned on GPU 1 while the bottom 48 kernels were learned on GPU 2. See Section 6.1 for details.
 
 5 Details of learning We trained our models using stochastic gradient descent with a batch size of 128 examples, momentum of 0.9, and weight decay of 0.0005.
 
@@ -283,11 +274,9 @@ The update rule for weight w was v i+1 := 0.9 · v i − 0.0005 ·  · w i �
 
 We initialized the weights in each layer from a zero-mean Gaussian distribution with standard deviation 0.01.
 
-We initialized the neuron biases in the second, fourth, and fifth convolutional layers, as well as in the fully-connected hidden layers, with the constant 1.
-This initialization accelerates the early stages of learning by providing the ReLUs with positive inputs.
+We initialized the neuron biases in the second, fourth, and fifth convolutional layers, as well as in the fully-connected hidden layers, with the constant 1. This initialization accelerates the early stages of learning by providing the ReLUs with positive inputs.
 
-We initialized the neuron biases in the remaining layers with the constant 0.
-We used an equal learning rate for all layers, which we adjusted manually throughout training.
+We initialized the neuron biases in the remaining layers with the constant 0. We used an equal learning rate for all layers, which we adjusted manually throughout training.
 
 The heuristic which we followed was to divide the learning rate by 10 when the validation error rate stopped improving with the current learning rate.
 
@@ -295,8 +284,7 @@ The learning rate was initialized at 0.01 and reduced three times prior to termi
 
 We trained the network for roughly 90 cycles through the training set of 1.2 million images, which took five to six days on two NVIDIA GTX 580 3GB GPUs.
 
-6 Results Our results on ILSVRC-2010 are summarized in Table 1.
-Our network achieves top-1 and top-5 test set error rates of 37.5% and 17.0% 5 .
+6 Results Our results on ILSVRC-2010 are summarized in Table 1. Our network achieves top-1 and top-5 test set error rates of 37.5% and 17.0% 5 .
 
 The best performance achieved during the ILSVRC2010 competition was 47.1% and 28.2% with an approach that averages the predictions produced from six sparse-coding models trained on different features [2], and since then the best published results are 45.7% and 25.7% with an approach that averages the predictions of two classifiers trained on Fisher Vectors (FVs) computed from two types of densely-sampled features [24].
 
@@ -304,8 +292,7 @@ Model Top-1 Top-5 Sparse coding [2] 47.1% 28.2% SIFT + FVs [24] 45.7% 25.7% CNN 
 
 In italics are best results achieved by others.
 
-We also entered our model in the ILSVRC-2012 competition and report our results in Table 2.
-Since the ILSVRC-2012 test set labels are not publicly available, we cannot report test error rates for all the models that we tried.
+We also entered our model in the ILSVRC-2012 competition and report our results in Table 2. Since the ILSVRC-2012 test set labels are not publicly available, we cannot report test error rates for all the models that we tried.
 
 In the remainder of this paragraph, we use validation and test error rates interchangeably because in our experience they do not differ by more than 0.1% (see Table 2).
 The CNN described in this paper achieves a top-5 error rate of 18.2%.
@@ -340,8 +327,7 @@ The best published results on this dataset are 78.1% and 60.9% [19].
 
 The network has learned a variety of frequency- and orientation-selective kernels, as well as various colored blobs.
 
-Notice the specialization exhibited by the two GPUs, a result of the restricted connectivity described in Section 3.5.
-
+Notice the specialization exhibited by the two GPUs, a result of the restricted connectivity described in Section 3.5. 
 The kernels on GPU 1 are largely color-agnostic, while the kernels on on GPU 2 are largely color-specific.
 
 This kind of specialization occurs during every run and is independent of any particular random weight initialization (modulo a renumbering of the GPUs).
@@ -394,116 +380,75 @@ Thus far, our results have improved as we have made our network larger and train
 
 Ultimately we would like to use very large and deep convolutional nets on video sequences where the temporal structure provides very helpful information that is missing or far less obvious in static images.
 
-References [1] R.M.
-
-Bell and Y.
-Koren.
+References [1] R.M. 
+Bell and Y. Koren.
 
 Lessons from the netflix prize challenge.
 
 ACM SIGKDD Explorations Newsletter, 9(2):75–79, 2007.
 
-[2] A.
-Berg, J.
-Deng, and L.
-Fei-Fei.
+[2] A. Berg, J. Deng, and L. Fei-Fei.
 
 Large scale visual recognition challenge 2010.
 
 www.imagenet.org/challenges.
 2010.
 
-[3] L.
-Breiman.
+[3] L. Breiman.
 
 Random forests.
 
 Machine learning, 45(1):5–32, 2001.
 
-[4] D.
-Cire¸san, U.
-Meier, and J.
-Schmidhuber.
+[4] D. Cire¸san, U. Meier, and J. Schmidhuber.
 
 Multi-column deep neural networks for image classification.
 
 Arxiv preprint arXiv:1202.2745, 2012.
 
-[5] D.C.
-
-Cire¸san, U.
-Meier, J.
-Masci, L.M.
-
-Gambardella, and J.
-Schmidhuber.
+[5] D.C. 
+Cire¸san, U. Meier, J. Masci, L.M. 
+Gambardella, and J. Schmidhuber.
 
 High-performance neural networks for visual object classification.
 
 Arxiv preprint arXiv:1102.0183, 2011.
 
-[6] J.
-Deng, W.
-Dong, R.
-Socher, L.-J.
+[6] J. Deng, W. Dong, R. Socher, L.-J.
 
-Li, K.
-Li, and L.
-Fei-Fei.
+Li, K. Li, and L. Fei-Fei.
 
 ImageNet: A Large-Scale Hierarchical Image Database.
 
 In CVPR09, 2009.
 
-[7] J.
-Deng, A.
-Berg, S.
-Satheesh, H.
-Su, A.
-Khosla, and L.
-Fei-Fei.
+[7] J. Deng, A. Berg, S. Satheesh, H. Su, A. Khosla, and L. Fei-Fei.
 
 ILSVRC-2012, 2012.
 
 URL http://www.image-net.org/challenges/LSVRC/2012/.
-[8] L.
-Fei-Fei, R.
-Fergus, and P.
-Perona.
+[8] L. Fei-Fei, R. Fergus, and P. Perona.
 
 Learning generative visual models from few training examples: An incremental bayesian approach tested on 101 object categories.
 
 Computer Vision and Image Understanding, 106(1):59–70, 2007.
 
-[9] G.
-Griffin, A.
-Holub, and P.
-Perona.
+[9] G. Griffin, A. Holub, and P. Perona.
 
 Caltech-256 object category dataset.
 
 Technical Report 7694, California Institute of Technology, 2007.
 
 URL http://authors.library.caltech.edu/7694.
-[10] G.E.
-
-Hinton, N.
-Srivastava, A.
-Krizhevsky, I.
-Sutskever, and R.R.
-
+[10] G.E. 
+Hinton, N. Srivastava, A. Krizhevsky, I. Sutskever, and R.R. 
 Salakhutdinov.
 
 Improving neural networks by preventing co-adaptation of feature detectors.
 
 arXiv preprint arXiv:1207.0580, 2012.
 
-[11] K.
-Jarrett, K.
-Kavukcuoglu, M.
-A.
-Ranzato, and Y.
-LeCun.
+[11] K. Jarrett, K. Kavukcuoglu, M. A. Ranzato, and Y. LeCun.
 
 What is the best multi-stage architecture for object recognition?
 
@@ -511,48 +456,34 @@ In International Conference on Computer Vision, pages 2146–2153.
 
 IEEE, 2009.
 
-[12] A.
-Krizhevsky.
+[12] A. Krizhevsky.
 
 Learning multiple layers of features from tiny images.
 
 Master’s thesis, Department of Computer Science, University of Toronto, 2009.
 
-[13] A.
-Krizhevsky.
+[13] A. Krizhevsky.
 
 Convolutional deep belief networks on cifar-10.
 
 Unpublished manuscript, 2010.
 
-[14] A.
-Krizhevsky and G.E.
-
+[14] A. Krizhevsky and G.E. 
 Hinton.
 
 Using very deep autoencoders for content-based image retrieval.
 In ESANN, 2011.
 
-[15] Y.
-Le Cun, B.
-Boser, J.S.
-
-Denker, D.
-Henderson, R.E.
-
-Howard, W.
-Hubbard, L.D.
-
-Jackel, et al. 
+[15] Y. Le Cun, B. Boser, J.S. 
+Denker, D. Henderson, R.E. 
+Howard, W. Hubbard, L.D. 
+Jackel, et al.
 Handwritten digit recognition with a back-propagation network.
 
 In Advances in neural information processing systems, 1990.
 
-[16] Y.
-LeCun, F.J.
-
-Huang, and L.
-Bottou.
+[16] Y. LeCun, F.J. 
+Huang, and L. Bottou.
 
 Learning methods for generic object recognition with invariance to pose and lighting.
 
@@ -564,10 +495,7 @@ Proceedings of the 2004 IEEE Computer Society Conference on, volume 2, pages II�
 
 IEEE, 2004.
 
-[17] Y.
-LeCun, K.
-Kavukcuoglu, and C.
-Farabet.
+[17] Y. LeCun, K. Kavukcuoglu, and C. Farabet.
 
 Convolutional networks and applications in vision.
 
@@ -575,11 +503,7 @@ In Circuits and Systems (ISCAS), Proceedings of 2010 IEEE International Symposiu
 
 IEEE, 2010.
 
-[18] H.
-Lee, R.
-Grosse, R.
-Ranganath, and A.Y.
-
+[18] H. Lee, R. Grosse, R. Ranganath, and A.Y. 
 Ng.
 Convolutional deep belief networks for scalable unsupervised learning of hierarchical representations.
 
@@ -587,19 +511,12 @@ In Proceedings of the 26th Annual International Conference on Machine Learning, 
 
 ACM, 2009.
 
-[19] T.
-Mensink, J.
-Verbeek, F.
-Perronnin, and G.
-Csurka.
+[19] T. Mensink, J. Verbeek, F. Perronnin, and G. Csurka.
 
 Metric Learning for Large Scale Image Classification: Generalizing to New Classes at Near-Zero Cost.
 In ECCV - European Conference on Computer Vision, Florence, Italy, October 2012.
 
-[20] V.
-Nair and G.
-E.
-Hinton.
+[20] V. Nair and G. E. Hinton.
 
 Rectified linear units improve restricted boltzmann machines.
 
@@ -607,45 +524,32 @@ In Proc.
 
 27th International Conference on Machine Learning, 2010.
 
-[21] N.
-Pinto, D.D.
-
-Cox, and J.J.
-
+[21] N. Pinto, D.D. 
+Cox, and J.J. 
 DiCarlo.
 
 Why is real-world visual object recognition hard?
 
 PLoS computational biology, 4(1):e27, 2008.
 
-[22] N.
-Pinto, D.
-Doukhan, J.J.
-
-DiCarlo, and D.D.
-
+[22] N. Pinto, D. Doukhan, J.J. 
+DiCarlo, and D.D. 
 Cox.
 
 A high-throughput screening approach to discovering good forms of biologically inspired visual representation.
 
 PLoS computational biology, 5(11):e1000579, 2009.
 
-[23] B.C.
-
-Russell, A.
-Torralba, K.P.
-
-Murphy, and W.T.
-
+[23] B.C. 
+Russell, A. Torralba, K.P. 
+Murphy, and W.T. 
 Freeman.
 
 Labelme: a database and web-based tool for image annotation.
 
 International journal of computer vision, 77(1):157–173, 2008.
 
-[24] J.
-Sánchez and F.
-Perronnin.
+[24] J. Sánchez and F. Perronnin.
 
 High-dimensional signature compression for large-scale image classification.
 
@@ -653,28 +557,17 @@ In Computer Vision and Pattern Recognition (CVPR), 2011 IEEE Conference on, page
 
 IEEE, 2011.
 
-[25] P.Y.
-
-Simard, D.
-Steinkraus, and J.C.
-
+[25] P.Y. 
+Simard, D. Steinkraus, and J.C. 
 Platt.
 
 Best practices for convolutional neural networks applied to visual document analysis.
 
 In Proceedings of the Seventh International Conference on Document Analysis and Recognition, volume 2, pages 958–962, 2003.
 
-[26] S.C.
-
-Turaga, J.F.
-
-Murray, V.
-Jain, F.
-Roth, M.
-Helmstaedter, K.
-Briggman, W.
-Denk, and H.S.
-
+[26] S.C. 
+Turaga, J.F. 
+Murray, V. Jain, F. Roth, M. Helmstaedter, K. Briggman, W. Denk, and H.S. 
 Seung.
 
 Convolutional networks can learn to generate affinity graphs for image segmentation.

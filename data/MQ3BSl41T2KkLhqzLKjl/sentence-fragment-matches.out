@@ -1,26 +1,22 @@
-1 What is surprising observers at present, however, is the strength of U.S.
+1 What is surprising observers at present, however, is the strength of U.S. productivity since the end of the 2001 recession.
 Map(start -> 43, end -> 49, match -> however)
 Map(start -> 55, end -> 57, match -> the)
 Map(start -> 68, end -> 69, match -> of)
-
-productivity since the end of the 2001 recession.
-Map(start -> 19, end -> 21, match -> the)
-Map(start -> 27, end -> 28, match -> of)
-Map(start -> 30, end -> 32, match -> the)
+Map(start -> 95, end -> 97, match -> the)
+Map(start -> 103, end -> 104, match -> of)
+Map(start -> 106, end -> 108, match -> the)
 
 
-This development is less well understood and has important implications for our understanding of U.S.
+This development is less well understood and has important implications for our understanding of U.S. productivity trends now and in the future.
 Map(start -> 46, end -> 48, match -> has)
 Map(start -> 73, end -> 75, match -> for)
 Map(start -> 77, end -> 79, match -> our)
 Map(start -> 77, end -> 96, match -> our understanding of)
 Map(start -> 95, end -> 96, match -> of)
-
-productivity trends now and in the future.
-Map(start -> 31, end -> 33, match -> the)
+Map(start -> 134, end -> 136, match -> the)
 
 
-In this edition of Current Issues, we seek to shed light on the recent performance of U.S.
+In this edition of Current Issues, we seek to shed light on the recent performance of U.S. productivity growth.
 Map(start -> 4, end -> 7, match -> this)
 Map(start -> 17, end -> 18, match -> of)
 Map(start -> 47, end -> 56, match -> shed light)
@@ -72,23 +68,19 @@ Map(start -> 76, end -> 78, match -> the)
 Map(start -> 91, end -> 92, match -> of)
 
 
-On the negative side, the aging of the U.S.
+On the negative side, the aging of the U.S. labor force continues to act as a drag on productivity advances as the growth in labor quality slows.
 Map(start -> 4, end -> 6, match -> the)
 Map(start -> 23, end -> 25, match -> the)
 Map(start -> 33, end -> 34, match -> of)
 Map(start -> 36, end -> 38, match -> the)
-
-labor force continues to act as a drag on productivity advances as the growth in labor quality slows.
-Map(start -> 67, end -> 69, match -> the)
+Map(start -> 112, end -> 114, match -> the)
 
 
-On net, these developments are favorable for the U.S.
+On net, these developments are favorable for the U.S. economy and support the view that the technology-led productivity revival will continue.
 Map(start -> 42, end -> 44, match -> for)
 Map(start -> 46, end -> 48, match -> the)
-
-economy and support the view that the technology-led productivity revival will continue.
-Map(start -> 20, end -> 22, match -> the)
-Map(start -> 34, end -> 36, match -> the)
+Map(start -> 75, end -> 77, match -> the)
+Map(start -> 89, end -> 91, match -> the)
 
 
 Recent Productivity Trends The Bureau of Labor Statistics (BLS) is the official source of data on U.S.labor productivity (output per hour worked) for the business, nonfarm business, and manufacturing sectors of the U.S.economy.
@@ -175,12 +167,10 @@ Map(start -> 311, end -> 313, match -> for)
 Map(start -> 315, end -> 317, match -> the)
 
 
-The strength of U.S.
+The strength of U.S. productivity after 2001 puzzled many analysts of the business cycle.
 Map(start -> 14, end -> 15, match -> of)
-
-productivity after 2001 puzzled many analysts of the business cycle.
-Map(start -> 46, end -> 47, match -> of)
-Map(start -> 49, end -> 51, match -> the)
+Map(start -> 68, end -> 69, match -> of)
+Map(start -> 71, end -> 73, match -> the)
 
 
 The Business Cycle Dating Committee of the National Bureau of Economic Research, for example, pointed to the gap between output and employment growth in 2002 and early 2003 as a major problem in dating the end of the 2001 recession.
@@ -246,9 +236,12 @@ Map(start -> 51, end -> 58, match -> progress)
 Map(start -> 122, end -> 123, match -> of)
 
 
+Chart 1 U.S. 
+Productivity Growth U.S. 
+Nonfarm Business Sector, 1947:4-2004:2 Four-quarter percentage change -4 -2 0 2 4 6 8 0400959085807570656055501948 Source: U.S. 
 Department of Labor, Bureau of Labor Statistics.
-Map(start -> 12, end -> 13, match -> of)
-Map(start -> 29, end -> 30, match -> of)
+Map(start -> 181, end -> 182, match -> of)
+Map(start -> 198, end -> 199, match -> of)
 
 
 Note: The shaded areas indicate periods designated national recessions by the National Bureau of Economic Research.
@@ -382,13 +375,11 @@ Map(start -> 62, end -> 62, match -> ,)
 Map(start -> 71, end -> 71, match -> ,)
 
 
-7 We are par t icularly interested in the U.S.
+7 We are par t icularly interested in the U.S. growth resurgence that began after 1995, so we also report the difference between the average growth in 1995-2003 and 1973-95.
 Map(start -> 39, end -> 41, match -> the)
-
-growth resurgence that began after 1995, so we also report the difference between the average growth in 1995-2003 and 1973-95.
-Map(start -> 39, end -> 39, match -> ,)
-Map(start -> 59, end -> 61, match -> the)
-Map(start -> 82, end -> 84, match -> the)
+Map(start -> 87, end -> 87, match -> ,)
+Map(start -> 107, end -> 109, match -> the)
+Map(start -> 130, end -> 132, match -> the)
 
 
 For the 1959-2003 period, output grew 3.58 percent per year.
@@ -439,7 +430,7 @@ Map(start -> 249, end -> 250, match -> of)
 Map(start -> 286, end -> 288, match -> for)
 
 
-The table’s final column highlights the key role that the two IT channels played in the U.S.
+The table’s final column highlights the key role that the two IT channels played in the U.S. growth resurgence.
 Map(start -> 37, end -> 39, match -> the)
 Map(start -> 55, end -> 57, match -> the)
 Map(start -> 85, end -> 87, match -> the)
@@ -461,17 +452,15 @@ Map(start -> 98, end -> 100, match -> the)
 Map(start -> 118, end -> 119, match -> of)
 
 
-This sizable contribution reflects the Table 1 Sources of U.S.
+This sizable contribution reflects the Table 1 Sources of U.S. 
+Output and Productivity Growth 1959-2003 1995-2003 1995- less 1959-2003 1959-73 1973-95 2003 1973-95 Private output 3.58 4.21 3.06 3.90 0.84 Hours worked 1.37 1.36 1.57 0.85 -0.73 Average labor productivity 2.21 2.85 1.49 3.06 1.57 Contribution of capital deepening 1.21 1.41 0.89 1.75 0.86 Information technology 0.44 0.21 0.40 0.92 0.52 Non-information technology 0.78 1.19 0.49 0.83 0.34 Contribution of labor quality 0.26 0.33 0.26 0.17 -0.09 Total factor productivity 0.74 1.12 0.34 1.14 0.80 Information technology 0.25 0.09 0.24 0.53 0.28 Non-information technology 0.49 1.03 0.10 0.61 0.51 Notes: Data are for the U.S.private economy.All figures are average annual growth rates.
 Map(start -> 14, end -> 25, match -> contribution)
 Map(start -> 36, end -> 38, match -> the)
 Map(start -> 56, end -> 57, match -> of)
-
-
-Output and Productivity Growth 1959-2003 1995-2003 1995- less 1959-2003 1959-73 1973-95 2003 1973-95 Private output 3.58 4.21 3.06 3.90 0.84 Hours worked 1.37 1.36 1.57 0.85 -0.73 Average labor productivity 2.21 2.85 1.49 3.06 1.57 Contribution of capital deepening 1.21 1.41 0.89 1.75 0.86 Information technology 0.44 0.21 0.40 0.92 0.52 Non-information technology 0.78 1.19 0.49 0.83 0.34 Contribution of labor quality 0.26 0.33 0.26 0.17 -0.09 Total factor productivity 0.74 1.12 0.34 1.14 0.80 Information technology 0.25 0.09 0.24 0.53 0.28 Non-information technology 0.49 1.03 0.10 0.61 0.51 Notes: Data are for the U.S.private economy.All figures are average annual growth rates.
-Map(start -> 246, end -> 247, match -> of)
-Map(start -> 405, end -> 406, match -> of)
-Map(start -> 615, end -> 617, match -> for)
-Map(start -> 619, end -> 621, match -> the)
+Map(start -> 310, end -> 311, match -> of)
+Map(start -> 469, end -> 470, match -> of)
+Map(start -> 679, end -> 681, match -> for)
+Map(start -> 683, end -> 685, match -> the)
 
 
 The contribution of an input reflects the share-weighted growth rate.Capital is broadly defined to include business capital and consumer durables.
@@ -579,16 +568,14 @@ Map(start -> 17, end -> 19, match -> the)
 Map(start -> 79, end -> 81, match -> the)
 
 
-The sluggish performance of the U.S.
+The sluggish performance of the U.S. labor markets is apparent in the growth of hours, which now shows a large slowdown during the post-1995 period rather than an increase.
 Map(start -> 26, end -> 27, match -> of)
 Map(start -> 29, end -> 31, match -> the)
-
-labor markets is apparent in the growth of hours, which now shows a large slowdown during the post-1995 period rather than an increase.
-Map(start -> 29, end -> 31, match -> the)
-Map(start -> 40, end -> 41, match -> of)
-Map(start -> 90, end -> 92, match -> the)
-Map(start -> 111, end -> 121, match -> rather than)
-Map(start -> 118, end -> 121, match -> than)
+Map(start -> 67, end -> 69, match -> the)
+Map(start -> 78, end -> 79, match -> of)
+Map(start -> 128, end -> 130, match -> the)
+Map(start -> 149, end -> 159, match -> rather than)
+Map(start -> 156, end -> 159, match -> than)
 
 
 Significantly, however, labor productivity now shows a larger increase—1.57 percentage points, compared with 0.92 percentage point in our 2002 estimates—reflecting relatively strong growth in 2001, 2002, and 2003, as well as revisions to the underlying data.
@@ -640,7 +627,7 @@ Map(start -> 11, end -> 12, match -> of)
 Map(start -> 14, end -> 16, match -> the)
 
 
-Projecting Productivity Growth The productivity outlook is a critical issue for the U.S.
+Projecting Productivity Growth The productivity outlook is a critical issue for the U.S. economy, but forecasting productivity growth accurately is difficult.
 Map(start -> 77, end -> 79, match -> for)
 Map(start -> 81, end -> 83, match -> the)
 
@@ -673,26 +660,22 @@ Map(start -> 67, end -> 69, match -> our)
 Map(start -> 80, end -> 81, match -> of)
 Map(start -> 83, end -> 85, match -> the)
 
-In addition, we make two key assumptions that are consistent with the experience of Table 2 Changes in the Sources of U.S.
+In addition, we make two key assumptions that are consistent with the experience of Table 2 Changes in the Sources of U.S. 
+Productivity Growth J-H-S (2002) Current Estimates Estimates 1995-2000 1995-2003 less less 1973-95 1973-95 Change Private output 1.61 0.84 -0.77 Hours worked 0.68 -0.73 -1.41 Average labor productivity 0.92 1.57 0.65 Contribution of capital deepening 0.52 0.86 0.34 Information technology 0.44 0.52 0.08 Non-information technology 0.08 0.34 0.26 Contribution of labor quality -0.06 -0.09 -0.03 Total factor productivity 0.47 0.80 0.33 Information technology 0.27 0.28 0.01 Non-information technology 0.20 0.51 0.31 Notes:All figures are average annual growth rates.
 Map(start -> 66, end -> 68, match -> the)
 Map(start -> 81, end -> 82, match -> of)
 Map(start -> 103, end -> 105, match -> the)
 Map(start -> 115, end -> 116, match -> of)
+Map(start -> 354, end -> 355, match -> of)
+Map(start -> 483, end -> 484, match -> of)
 
 
-Productivity Growth J-H-S (2002) Current Estimates Estimates 1995-2000 1995-2003 less less 1973-95 1973-95 Change Private output 1.61 0.84 -0.77 Hours worked 0.68 -0.73 -1.41 Average labor productivity 0.92 1.57 0.65 Contribution of capital deepening 0.52 0.86 0.34 Information technology 0.44 0.52 0.08 Non-information technology 0.08 0.34 0.26 Contribution of labor quality -0.06 -0.09 -0.03 Total factor productivity 0.47 0.80 0.33 Information technology 0.27 0.28 0.01 Non-information technology 0.20 0.51 0.31 Notes:All figures are average annual growth rates.
-Map(start -> 231, end -> 232, match -> of)
-Map(start -> 360, end -> 361, match -> of)
-
-
-J-H-S (2002) estimates are taken from Jorgenson,Ho,and Stiroh (2002, Table 2),and current estimates are taken from Table 1.
+J-H-S (2002) estimates are taken from Jorgenson,Ho,and Stiroh (2002, Table 2),and current estimates are taken from Table 1. www.newyorkfed.org/research/current_issues 5 the United States and other developed countries over time periods longer than the typical business cycle.
 Map(start -> 68, end -> 68, match -> ,)
-
-www.newyorkfed.org/research/current_issues 5 the United States and other developed countries over time periods longer than the typical business cycle.
-Map(start -> 19, end -> 26, match -> research)
-Map(start -> 45, end -> 47, match -> the)
-Map(start -> 118, end -> 121, match -> than)
-Map(start -> 123, end -> 125, match -> the)
+Map(start -> 144, end -> 151, match -> research)
+Map(start -> 170, end -> 172, match -> the)
+Map(start -> 243, end -> 246, match -> than)
+Map(start -> 248, end -> 250, match -> the)
 
 
 First, to smooth fluctuations such as the investment boom of the late 1990s and the investment bust around the 2001 recession, we assume that output and the reproducible capital stock grow at the same rate.
@@ -874,7 +857,7 @@ Map(start -> 79, end -> 81, match -> the)
 Map(start -> 105, end -> 107, match -> has)
 
 
-We simply present a range of assumptions that are all consistent with the U.S.
+We simply present a range of assumptions that are all consistent with the U.S. historical experience.
 Map(start -> 27, end -> 28, match -> of)
 Map(start -> 71, end -> 73, match -> the)
 
@@ -1007,13 +990,11 @@ Map(start -> 177, end -> 179, match -> the)
 Map(start -> 195, end -> 197, match -> the)
 
 
-Overall, we conclude that the U.S.
+Overall, we conclude that the U.S. productivity resurgence is likely to continue and is unlikely to revert to the sluggish pace of the 1970s and 1980s.
 Map(start -> 27, end -> 29, match -> the)
-
-productivity resurgence is likely to continue and is unlikely to revert to the sluggish pace of the 1970s and 1980s.
-Map(start -> 75, end -> 77, match -> the)
-Map(start -> 93, end -> 94, match -> of)
-Map(start -> 96, end -> 98, match -> the)
+Map(start -> 111, end -> 113, match -> the)
+Map(start -> 129, end -> 130, match -> of)
+Map(start -> 132, end -> 134, match -> the)
 
 
 This optimism reflects the observation that the fundamental drivers of the productivity gains—such as technological progress in information technology, a growing share of IT production, and a more competitive and deregulated economy—remain firmly in place.
@@ -1052,26 +1033,22 @@ Map(start -> 14, end -> 16, match -> the)
 Map(start -> 101, end -> 103, match -> the)
 
 
-Conclusion The strength and resiliency of U.S.
+Conclusion The strength and resiliency of U.S. productivity growth continue to surprise economic analysts.Despite a series of negative shocks that began with the bursting of the NASDAQ bubble in 2000 and continued through the current spike in energy prices, productivity growth has remained vigorous and, in recent years, has even accelerated.
 Map(start -> 40, end -> 41, match -> of)
-
-productivity growth continue to surprise economic analysts.Despite a series of negative shocks that began with the bursting of the NASDAQ bubble in 2000 and continued through the current spike in energy prices, productivity growth has remained vigorous and, in recent years, has even accelerated.
-Map(start -> 76, end -> 77, match -> of)
-Map(start -> 111, end -> 113, match -> the)
 Map(start -> 124, end -> 125, match -> of)
-Map(start -> 127, end -> 129, match -> the)
+Map(start -> 159, end -> 161, match -> the)
+Map(start -> 172, end -> 173, match -> of)
 Map(start -> 175, end -> 177, match -> the)
-Map(start -> 231, end -> 233, match -> has)
-Map(start -> 275, end -> 277, match -> has)
+Map(start -> 223, end -> 225, match -> the)
+Map(start -> 279, end -> 281, match -> has)
+Map(start -> 323, end -> 325, match -> has)
 
 
-Indeed, the U.S.
+Indeed, the U.S. economy has not enjoyed such sustained productivity growth since the 1960s.
 Map(start -> 9, end -> 11, match -> the)
-
-economy has not enjoyed such sustained productivity growth since the 1960s.
-Map(start -> 8, end -> 10, match -> has)
-Map(start -> 12, end -> 14, match -> not)
-Map(start -> 65, end -> 67, match -> the)
+Map(start -> 26, end -> 28, match -> has)
+Map(start -> 30, end -> 32, match -> not)
+Map(start -> 83, end -> 85, match -> the)
 
 
 The estimates presented here show the critical importance of IT in this productivity resurgence.
@@ -1125,21 +1102,15 @@ Map(start -> 179, end -> 180, match -> of)
 Map(start -> 194, end -> 196, match -> the)
 
 
-About the Authors Dale W.
+About the Authors Dale W. Jorgenson is the Samuel W. Morris University Professor at Harvard University; Mun S. Ho is a visiting scholar at Resources for the Future, an independent research institute in Washington, D.C.; Kevin J. Stiroh is an assistant vice president in the Banking Studies Function of the Research and Statistics Group.
 Map(start -> 7, end -> 9, match -> the)
-
-Jorgenson is the Samuel W.
-Map(start -> 13, end -> 15, match -> the)
-
-Ho is a visiting scholar at Resources for the Future, an independent research institute in Washington, D.C.; Kevin J.
-Map(start -> 38, end -> 40, match -> for)
-Map(start -> 42, end -> 44, match -> the)
-Map(start -> 69, end -> 76, match -> research)
-
-Stiroh is an assistant vice president in the Banking Studies Function of the Research and Statistics Group.
-Map(start -> 41, end -> 43, match -> the)
-Map(start -> 70, end -> 71, match -> of)
-Map(start -> 73, end -> 75, match -> the)
+Map(start -> 40, end -> 42, match -> the)
+Map(start -> 150, end -> 152, match -> for)
+Map(start -> 154, end -> 156, match -> the)
+Map(start -> 181, end -> 188, match -> research)
+Map(start -> 271, end -> 273, match -> the)
+Map(start -> 300, end -> 301, match -> of)
+Map(start -> 303, end -> 305, match -> the)
 
 
 Current Issues in Economics and Finance is published by the Research and Statistics Group of the Federal Reserve Bank of New York.
@@ -1152,9 +1123,10 @@ Map(start -> 119, end -> 120, match -> of)
 Dorothy Meadow Sobol is the editor.
 Map(start -> 25, end -> 27, match -> the)
 
-productivity growth is likely to remain relatively strong over the medium term but will slow somewhat as the economy moves toward a more stable growth path and demographic trends continue.
-Map(start -> 63, end -> 65, match -> the)
-Map(start -> 105, end -> 107, match -> the)
+
+Our projections suggest that U.S. productivity growth is likely to remain relatively strong over the medium term but will slow somewhat as the economy moves toward a more stable growth path and demographic trends continue.
+Map(start -> 98, end -> 100, match -> the)
+Map(start -> 140, end -> 142, match -> the)
 
 
 We emphasize, however, that there is considerable uncertainty in these projections.
@@ -1167,25 +1139,24 @@ Map(start -> 89, end -> 91, match -> the)
 Map(start -> 103, end -> 104, match -> of)
 
 
-Nonetheless, there is little evidence to suggest that the technology-led productivity resurgence is over or that the U.S.
+Nonetheless, there is little evidence to suggest that the technology-led productivity resurgence is over or that the U.S. economy will revert to the slower pace of productivity growth observed in the 1970s and 1980s.
 Map(start -> 14, end -> 28, match -> there is little)
 Map(start -> 23, end -> 28, match -> little)
 Map(start -> 55, end -> 57, match -> the)
 Map(start -> 114, end -> 116, match -> the)
+Map(start -> 146, end -> 148, match -> the)
+Map(start -> 162, end -> 163, match -> of)
+Map(start -> 197, end -> 199, match -> the)
 
-economy will revert to the slower pace of productivity growth observed in the 1970s and 1980s.
-Map(start -> 23, end -> 25, match -> the)
-Map(start -> 39, end -> 40, match -> of)
-Map(start -> 74, end -> 76, match -> the)
 
-See Baily (2002), Jorgenson and Stiroh (2000), Jorgenson (2001), Stiroh (2002), Jorgenson, Ho, and Stiroh (2002), and Oliner and Sichel (2000, 2002) for estimates and references.
-Map(start -> 16, end -> 16, match -> ,)
-Map(start -> 45, end -> 45, match -> ,)
-Map(start -> 63, end -> 63, match -> ,)
-Map(start -> 78, end -> 78, match -> ,)
-Map(start -> 112, end -> 112, match -> ,)
-Map(start -> 141, end -> 141, match -> ,)
-Map(start -> 149, end -> 151, match -> for)
+Notes 1. See Baily (2002), Jorgenson and Stiroh (2000), Jorgenson (2001), Stiroh (2002), Jorgenson, Ho, and Stiroh (2002), and Oliner and Sichel (2000, 2002) for estimates and references.
+Map(start -> 26, end -> 26, match -> ,)
+Map(start -> 55, end -> 55, match -> ,)
+Map(start -> 73, end -> 73, match -> ,)
+Map(start -> 88, end -> 88, match -> ,)
+Map(start -> 122, end -> 122, match -> ,)
+Map(start -> 151, end -> 151, match -> ,)
+Map(start -> 159, end -> 161, match -> for)
 
 
 Unless explicitly defined otherwise, productivity growth refers to the average annual growth rate of labor productivity (output per hour worked).
@@ -1241,7 +1212,7 @@ Map(start -> 101, end -> 103, match -> the)
 The report is available at <http://public.itrs.net>.
 Map(start -> 0, end -> 2, match -> the)
 
-See Baily (2002) for a detailed discussion of the structural changes in the U.S.
+See Baily (2002) for a detailed discussion of the structural changes in the U.S. economy that contributed to stronger productivity growth.
 Map(start -> 17, end -> 19, match -> for)
 Map(start -> 43, end -> 44, match -> of)
 Map(start -> 46, end -> 48, match -> the)
@@ -1261,39 +1232,33 @@ The Budget and Economic Outlook: Fiscal Years 2002-2011, January.
 Map(start -> 56, end -> 56, match -> ,)
 
 
-“Information Technology and the U.S.
-Map(start -> 29, end -> 31, match -> the)
-
-
+“Information Technology and the U.S. 
 Economy.” American Economic Review 91, no.
-Map(start -> 38, end -> 38, match -> ,)
+Map(start -> 29, end -> 31, match -> the)
+Map(start -> 76, end -> 76, match -> ,)
 
 
-Jorgenson, Dale W., and Kevin J.
+Jorgenson, Dale W., and Kevin J. Stiroh.
 Map(start -> 19, end -> 19, match -> ,)
 
 
-“Raising the Speed Limit: U.S.
-Map(start -> 10, end -> 12, match -> the)
-
-
+“Raising the Speed Limit: U.S. 
 Economic Growth in the Information Age.” Brookings Papers on Economic Activity, no.
-Map(start -> 20, end -> 22, match -> the)
+Map(start -> 10, end -> 12, match -> the)
+Map(start -> 52, end -> 54, match -> the)
 
 
-Jorgenson, Dale W., Mun Ho, and Kevin J.
+Jorgenson, Dale W., Mun Ho, and Kevin J. Stiroh.
 Map(start -> 19, end -> 19, match -> ,)
 
 
-“Projecting Productivity Growth: Lessons from the U.S.
-Map(start -> 47, end -> 49, match -> the)
-
-
+“Projecting Productivity Growth: Lessons from the U.S. 
 Growth Resurgence.” Federal Reserve Bank of Atlanta Economic Review 87, no.
-Map(start -> 42, end -> 43, match -> of)
-Map(start -> 71, end -> 71, match -> ,)
+Map(start -> 47, end -> 49, match -> the)
+Map(start -> 98, end -> 99, match -> of)
+Map(start -> 127, end -> 127, match -> ,)
 
-Oliner, Stephen D., and Daniel E.
+Oliner, Stephen D., and Daniel E. Sichel.
 Map(start -> 18, end -> 18, match -> ,)
 
 
@@ -1315,17 +1280,16 @@ Map(start -> 57, end -> 58, match -> of)
 Map(start -> 93, end -> 93, match -> ,)
 
 
-“Information Technology and the U.S.
-Map(start -> 29, end -> 31, match -> the)
-
-
+“Information Technology and the U.S. 
 Productivity Revival: What Do the Industry Data Say?” American Economic Review 92, no.
-Map(start -> 31, end -> 33, match -> the)
-Map(start -> 82, end -> 82, match -> ,)
+Map(start -> 29, end -> 31, match -> the)
+Map(start -> 69, end -> 71, match -> the)
+Map(start -> 120, end -> 120, match -> ,)
 
 
+U.S. 
 Department of Labor.
-Map(start -> 12, end -> 13, match -> of)
+Map(start -> 18, end -> 19, match -> of)
 
 
 Bureau of Labor Statistics.

@@ -129,23 +129,17 @@ Map(start -> 48, end -> 49, match -> of)
 Map(start -> 74, end -> 76, match -> the)
 
 
-Our network contains a number of new and unusual features which improve its performance and reduce its training time, which are detailed in Section 3.
+Our network contains a number of new and unusual features which improve its performance and reduce its training time, which are detailed in Section 3. The size of our network made overfitting a significant problem, even with 1.2 million labeled training examples, so we used several effective techniques for preventing overfitting, which are described in Section 4. Our final network contains five convolutional and three fully-connected layers, and this depth seems to be important: we found that removing any convolutional layer (each of which contains no more than 1% of the model’s parameters) resulted in inferior performance.
 Map(start -> 31, end -> 32, match -> of)
-
-The size of our network made overfitting a significant problem, even with 1.2 million labeled training examples, so we used several effective techniques for preventing overfitting, which are described in Section 4.
-Map(start -> 0, end -> 2, match -> the)
-Map(start -> 9, end -> 10, match -> of)
-Map(start -> 12, end -> 14, match -> our)
-Map(start -> 55, end -> 61, match -> problem)
-Map(start -> 153, end -> 155, match -> for)
-
-Our final network contains five convolutional and three fully-connected layers, and this depth seems to be important: we found that removing any convolutional layer (each of which contains no more than 1% of the model’s parameters) resulted in inferior performance.
-Map(start -> 0, end -> 2, match -> our)
-Map(start -> 84, end -> 87, match -> this)
-Map(start -> 171, end -> 172, match -> of)
-Map(start -> 197, end -> 200, match -> than)
-Map(start -> 205, end -> 206, match -> of)
-Map(start -> 208, end -> 210, match -> the)
+Map(start -> 161, end -> 162, match -> of)
+Map(start -> 164, end -> 166, match -> our)
+Map(start -> 207, end -> 213, match -> problem)
+Map(start -> 305, end -> 307, match -> for)
+Map(start -> 451, end -> 454, match -> this)
+Map(start -> 538, end -> 539, match -> of)
+Map(start -> 564, end -> 567, match -> than)
+Map(start -> 572, end -> 573, match -> of)
+Map(start -> 575, end -> 577, match -> the)
 
 
 In the end, the network’s size is limited mainly by the amount of memory available on current GPUs and by the amount of training time that we are willing to tolerate.
@@ -261,7 +255,7 @@ Map(start -> 60, end -> 61, match -> of)
 Map(start -> 63, end -> 65, match -> the)
 
 
-3 The Architecture The architecture of our network is summarized in Figure 2.
+3 The Architecture The architecture of our network is summarized in Figure 2. It contains eight learned layers — five convolutional and three fully-connected.
 Map(start -> 37, end -> 38, match -> of)
 Map(start -> 40, end -> 42, match -> our)
 
@@ -376,15 +370,12 @@ Map(start -> 133, end -> 135, match -> the)
 Map(start -> 154, end -> 157, match -> only)
 
 
-This means that, for example, the kernels of layer 3 take input from all kernel maps in layer 2.
+This means that, for example, the kernels of layer 3 take input from all kernel maps in layer 2. However, kernels in layer 4 take input only from those kernel maps in layer 3 which reside on the same GPU.
 Map(start -> 18, end -> 20, match -> for)
 Map(start -> 31, end -> 33, match -> the)
 Map(start -> 43, end -> 44, match -> of)
-
-However, kernels in layer 4 take input only from those kernel maps in layer 3 which reside on the same GPU.
-Map(start -> 0, end -> 6, match -> however)
-Map(start -> 39, end -> 42, match -> only)
-Map(start -> 94, end -> 96, match -> the)
+Map(start -> 137, end -> 140, match -> only)
+Map(start -> 192, end -> 194, match -> the)
 
 
 Choosing the pattern of connectivity is a problem for cross-validation, but this allows us to precisely tune the amount of communication until it is an acceptable fraction of the amount of computation.
@@ -554,17 +545,14 @@ Map(start -> 190, end -> 191, match -> of)
 Map(start -> 193, end -> 195, match -> the)
 
 
-This is what we use throughout our network, with s = 2 and z = 3.
+This is what we use throughout our network, with s = 2 and z = 3. This scheme reduces the top-1 and top-5 error rates by 0.4% and 0.3%, respectively, as compared with the non-overlapping scheme s = 2, z = 2, which produces output of equivalent dimensions.
 Map(start -> 32, end -> 34, match -> our)
-
-This scheme reduces the top-1 and top-5 error rates by 0.4% and 0.3%, respectively, as compared with the non-overlapping scheme s = 2, z = 2, which produces output of equivalent dimensions.
-Map(start -> 0, end -> 3, match -> this)
-Map(start -> 20, end -> 22, match -> the)
-Map(start -> 68, end -> 68, match -> ,)
-Map(start -> 101, end -> 103, match -> the)
-Map(start -> 133, end -> 133, match -> ,)
-Map(start -> 140, end -> 140, match -> ,)
-Map(start -> 164, end -> 165, match -> of)
+Map(start -> 87, end -> 89, match -> the)
+Map(start -> 135, end -> 135, match -> ,)
+Map(start -> 168, end -> 170, match -> the)
+Map(start -> 200, end -> 200, match -> ,)
+Map(start -> 207, end -> 207, match -> ,)
+Map(start -> 231, end -> 232, match -> of)
 
 
 3.5 Overall Architecture Now we are ready to describe the overall architecture of our CNN.
@@ -808,22 +796,20 @@ Map(start -> 45, end -> 47, match -> the)
 Map(start -> 87, end -> 89, match -> the)
 Map(start -> 102, end -> 104, match -> the)
 
-with magnitudes proportional to the corresponding eigenvalues times a random variable drawn from a Gaussian with mean zero and standard deviation 0.1.
-Map(start -> 32, end -> 34, match -> the)
-
-
+with magnitudes proportional to the corresponding eigenvalues times a random variable drawn from a Gaussian with mean zero and standard deviation 0.1. 
 Therefore to each RGB image pixel I xy = [I R xy , I G xy , I B xy ] T we add the following quantity: [p 1 , p 2 , p 3 ][α 1 λ 1 , α 2 λ 2 , α 3 λ 3 ] T where p i and λ i are ith eigenvector and eigenvalue of the 3 × 3 covariance matrix of RGB pixel values, respectively, and α i is the aforementioned random variable.
-Map(start -> 50, end -> 50, match -> ,)
-Map(start -> 59, end -> 59, match -> ,)
-Map(start -> 79, end -> 81, match -> the)
-Map(start -> 108, end -> 108, match -> ,)
-Map(start -> 114, end -> 114, match -> ,)
-Map(start -> 130, end -> 130, match -> ,)
-Map(start -> 140, end -> 140, match -> ,)
-Map(start -> 207, end -> 208, match -> of)
-Map(start -> 210, end -> 212, match -> the)
-Map(start -> 238, end -> 239, match -> of)
-Map(start -> 284, end -> 286, match -> the)
+Map(start -> 32, end -> 34, match -> the)
+Map(start -> 201, end -> 201, match -> ,)
+Map(start -> 210, end -> 210, match -> ,)
+Map(start -> 230, end -> 232, match -> the)
+Map(start -> 259, end -> 259, match -> ,)
+Map(start -> 265, end -> 265, match -> ,)
+Map(start -> 281, end -> 281, match -> ,)
+Map(start -> 291, end -> 291, match -> ,)
+Map(start -> 358, end -> 359, match -> of)
+Map(start -> 361, end -> 363, match -> the)
+Map(start -> 389, end -> 390, match -> of)
+Map(start -> 435, end -> 437, match -> the)
 
 
 Each α i is drawn only once for all the pixels of a particular training image until that image is used for training again, at which point it is re-drawn.
@@ -859,18 +845,16 @@ Map(start -> 71, end -> 74, match -> only)
 Map(start -> 97, end -> 98, match -> of)
 
 
-The recently-introduced technique, called “dropout” [10], consists of setting to zero the output of each hidden neuron with probability 0.5.
+The recently-introduced technique, called “dropout” [10], consists of setting to zero the output of each hidden neuron with probability 0.5. 
+The neurons which are “dropped out” in this way do not contribute to the forward pass and do not participate in backpropagation.
 Map(start -> 57, end -> 57, match -> ,)
 Map(start -> 68, end -> 69, match -> of)
 Map(start -> 87, end -> 89, match -> the)
 Map(start -> 98, end -> 99, match -> of)
-
-
-The neurons which are “dropped out” in this way do not contribute to the forward pass and do not participate in backpropagation.
-Map(start -> 40, end -> 43, match -> this)
-Map(start -> 52, end -> 54, match -> not)
-Map(start -> 70, end -> 72, match -> the)
-Map(start -> 94, end -> 96, match -> not)
+Map(start -> 182, end -> 185, match -> this)
+Map(start -> 194, end -> 196, match -> not)
+Map(start -> 212, end -> 214, match -> the)
+Map(start -> 236, end -> 238, match -> not)
 
 
 So every time an input is presented, the neural network samples a different architecture, but all these architectures share weights.
@@ -897,12 +881,10 @@ Map(start -> 141, end -> 143, match -> the)
 Map(start -> 182, end -> 184, match -> the)
 
 
-We use dropout in the first two fully-connected layers of Figure 2.
+We use dropout in the first two fully-connected layers of Figure 2. Without dropout, our network exhibits substantial overfitting.
 Map(start -> 19, end -> 21, match -> the)
 Map(start -> 56, end -> 57, match -> of)
-
-Without dropout, our network exhibits substantial overfitting.
-Map(start -> 17, end -> 19, match -> our)
+Map(start -> 86, end -> 88, match -> our)
 
 
 Dropout roughly doubles the number of iterations required to converge.
@@ -916,11 +898,9 @@ Map(start -> 63, end -> 65, match -> the)
 Map(start -> 96, end -> 98, match -> the)
 
 
-The top 48 kernels were learned on GPU 1 while the bottom 48 kernels were learned on GPU 2.
+The top 48 kernels were learned on GPU 1 while the bottom 48 kernels were learned on GPU 2. See Section 6.1 for details.
 Map(start -> 48, end -> 50, match -> the)
-
-See Section 6.1 for details.
-Map(start -> 16, end -> 18, match -> for)
+Map(start -> 109, end -> 111, match -> for)
 
 
 5 Details of learning We trained our models using stochastic gradient descent with a batch size of 128 examples, momentum of 0.9, and weight decay of 0.0005.
@@ -963,28 +943,23 @@ We initialized the weights in each layer from a zero-mean Gaussian distribution 
 Map(start -> 16, end -> 18, match -> the)
 
 
-We initialized the neuron biases in the second, fourth, and fifth convolutional layers, as well as in the fully-connected hidden layers, with the constant 1.
+We initialized the neuron biases in the second, fourth, and fifth convolutional layers, as well as in the fully-connected hidden layers, with the constant 1. This initialization accelerates the early stages of learning by providing the ReLUs with positive inputs.
 Map(start -> 16, end -> 18, match -> the)
 Map(start -> 27, end -> 32, match -> biases)
 Map(start -> 37, end -> 39, match -> the)
 Map(start -> 103, end -> 105, match -> the)
 Map(start -> 143, end -> 145, match -> the)
-
-This initialization accelerates the early stages of learning by providing the ReLUs with positive inputs.
-Map(start -> 0, end -> 3, match -> this)
-Map(start -> 32, end -> 34, match -> the)
-Map(start -> 49, end -> 50, match -> of)
-Map(start -> 74, end -> 76, match -> the)
+Map(start -> 191, end -> 193, match -> the)
+Map(start -> 208, end -> 209, match -> of)
+Map(start -> 233, end -> 235, match -> the)
 
 
-We initialized the neuron biases in the remaining layers with the constant 0.
+We initialized the neuron biases in the remaining layers with the constant 0. We used an equal learning rate for all layers, which we adjusted manually throughout training.
 Map(start -> 16, end -> 18, match -> the)
 Map(start -> 27, end -> 32, match -> biases)
 Map(start -> 37, end -> 39, match -> the)
 Map(start -> 63, end -> 65, match -> the)
-
-We used an equal learning rate for all layers, which we adjusted manually throughout training.
-Map(start -> 31, end -> 33, match -> for)
+Map(start -> 110, end -> 112, match -> for)
 
 
 The heuristic which we followed was to divide the learning rate by 10 when the validation error rate stopped improving with the current learning rate.
@@ -1004,9 +979,9 @@ Map(start -> 24, end -> 26, match -> for)
 Map(start -> 54, end -> 56, match -> the)
 Map(start -> 71, end -> 72, match -> of)
 
-Our network achieves top-1 and top-5 test set error rates of 37.5% and 17.0% 5 .
-Map(start -> 0, end -> 2, match -> our)
-Map(start -> 58, end -> 59, match -> of)
+
+6 Results Our results on ILSVRC-2010 are summarized in Table 1. Our network achieves top-1 and top-5 test set error rates of 37.5% and 17.0% 5 .
+Map(start -> 123, end -> 124, match -> of)
 
 
 The best performance achieved during the ILSVRC2010 competition was 47.1% and 28.2% with an approach that averages the predictions produced from six sparse-coding models trained on different features [2], and since then the best published results are 45.7% and 25.7% with an approach that averages the predictions of two classifiers trained on Fisher Vectors (FVs) computed from two types of densely-sampled features [24].
@@ -1024,16 +999,14 @@ Model Top-1 Top-5 Sparse coding [2] 47.1% 28.2% SIFT + FVs [24] 45.7% 25.7% CNN 
 Map(start -> 113, end -> 114, match -> of)
 
 
-We also entered our model in the ILSVRC-2012 competition and report our results in Table 2.
+We also entered our model in the ILSVRC-2012 competition and report our results in Table 2. Since the ILSVRC-2012 test set labels are not publicly available, we cannot report test error rates for all the models that we tried.
 Map(start -> 17, end -> 19, match -> our)
 Map(start -> 30, end -> 32, match -> the)
 Map(start -> 69, end -> 71, match -> our)
-
-Since the ILSVRC-2012 test set labels are not publicly available, we cannot report test error rates for all the models that we tried.
-Map(start -> 6, end -> 8, match -> the)
-Map(start -> 42, end -> 44, match -> not)
-Map(start -> 100, end -> 102, match -> for)
-Map(start -> 108, end -> 110, match -> the)
+Map(start -> 99, end -> 101, match -> the)
+Map(start -> 135, end -> 137, match -> not)
+Map(start -> 193, end -> 195, match -> for)
+Map(start -> 201, end -> 203, match -> the)
 
 
 In the remainder of this paragraph, we use validation and test error rates interchangeably because in our experience they do not differ by more than 0.1% (see Table 2).
@@ -1137,15 +1110,13 @@ Map(start -> 13, end -> 15, match -> has)
 Map(start -> 35, end -> 36, match -> of)
 
 
-Notice the specialization exhibited by the two GPUs, a result of the restricted connectivity described in Section 3.5.
+Notice the specialization exhibited by the two GPUs, a result of the restricted connectivity described in Section 3.5. 
+The kernels on GPU 1 are largely color-agnostic, while the kernels on on GPU 2 are largely color-specific.
 Map(start -> 8, end -> 10, match -> the)
 Map(start -> 40, end -> 42, match -> the)
 Map(start -> 63, end -> 64, match -> of)
 Map(start -> 66, end -> 68, match -> the)
-
-
-The kernels on GPU 1 are largely color-agnostic, while the kernels on on GPU 2 are largely color-specific.
-Map(start -> 56, end -> 58, match -> the)
+Map(start -> 176, end -> 178, match -> the)
 
 
 This kind of specialization occurs during every run and is independent of any particular random weight initialization (modulo a renumbering of the GPUs).

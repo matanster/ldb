@@ -16,14 +16,10 @@ in section intro
 matches pattern 'contributions'
 which indicates 'contribution'
 
-sentence 'The size of our network made overfitting a significant problem, even with 1.2 million labeled training examples, so we used several effective techniques for preventing overfitting, which are described in Section 4.'
+sentence '
+Our network contains a number of new and unusual features which improve its performance and reduce its training time, which are detailed in Section 3. The size of our network made overfitting a significant problem, even with 1.2 million labeled training examples, so we used several effective techniques for preventing overfitting, which are described in Section 4. Our final network contains five convolutional and three fully-connected layers, and this depth seems to be important: we found that removing any convolutional layer (each of which contains no more than 1% of the model’s parameters) resulted in inferior performance.'
 in section intro
 matches pattern 'problem'
-which indicates 'problem statement'
-
-sentence 'However, kernels in layer 4 take input only from those kernel maps in layer 3 which reside on the same GPU.'
-in section intro
-matches pattern 'however'
 which indicates 'problem statement'
 
 sentence '
@@ -45,13 +41,13 @@ matches pattern 'however'
 which indicates 'problem statement'
 
 sentence '
-We initialized the neuron biases in the second, fourth, and fifth convolutional layers, as well as in the fully-connected hidden layers, with the constant 1.'
+We initialized the neuron biases in the second, fourth, and fifth convolutional layers, as well as in the fully-connected hidden layers, with the constant 1. This initialization accelerates the early stages of learning by providing the ReLUs with positive inputs.'
 in section intro
 matches pattern 'biases'
 which indicates 'limitation '
 
 sentence '
-We initialized the neuron biases in the remaining layers with the constant 0.'
+We initialized the neuron biases in the remaining layers with the constant 0. We used an equal learning rate for all layers, which we adjusted manually throughout training.'
 in section intro
 matches pattern 'biases'
 which indicates 'limitation '

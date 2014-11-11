@@ -110,12 +110,17 @@ object ldb {
 
     Timelog.timer("patterns representation building")
 
+    //inputRules map (r => println(r.properties.get.filter(property => property.isInstanceOf[LocationProperty])))
+    
     val rules: Seq[SimpleRule] = inputRules map (inputRule => new SimpleRule(inputRule.pattern, 
                                                                    breakDown(deSentenceCase(inputRule.pattern)), 
                                                                    inputRule.indication, 
                                                                    // inputRule.properties.collect { case locationProp : LocationProperty => locationProp }))
                                                                    if (inputRule.properties.isDefined) 
-                                                                     Some(inputRule.properties.get.filter(property => property.isInstanceOf[LocationProperty]))
+                                                                     inputRule.properties.get.filter(property => property.isInstanceOf[LocationProperty]) match {
+                                                                        case s: Seq[Property] => if (s.length>0) Some(inputRule.properties.get.filter(property => property.isInstanceOf[LocationProperty])) else None
+                                                                        case _ => None
+                                                                      }
                                                                    else 
                                                                      None))
     logger.write(rules.mkString("\n"), "db-rules2")                                                      
@@ -195,6 +200,8 @@ object ldb {
     AhoCorasick.init(db.allFragmentsDistinct)
   }
                                                                        
+  val SPACE = " "
+                                                                       
   def go (document: JATS) {
 
     val logger = new Logger(document.name)
@@ -210,9 +217,8 @@ object ldb {
     //
     // separate into util file
     //
-    val SPACE = " "
 
-    val specialCaseWords = Seq("vs.", "al.", "cf.", "st." ,"Fig.", "FIG.")
+    val specialCaseWords = Seq(" vs.", " al.", " cf.", " st." ," Fig.", " FIG.")
 
     implicit class MyStringOps(val s: String) {
       def endsWithAny(any: Seq[String]) : Boolean = {
@@ -221,8 +227,8 @@ object ldb {
         return false
       }
     }
-
-    def sentenceSplit (text: String) : Seq[String] = {
+    
+    def sentenceSplitRecursive (text: String) : Seq[String] = {
 
       if (text.isEmpty) 
         return Seq.empty[String]
@@ -233,18 +239,68 @@ object ldb {
 
         if (tentative.endsWith(". "))      
           if (tentative.dropRight(1).endsWithAny(specialCaseWords) && text.isDefinedAt(i) && (text.charAt(i).isUpper))
-            return Seq(tentative) ++ sentenceSplit(text.drop(i))
+            return Seq(tentative) ++ sentenceSplitRecursive(text.drop(i))
 
         if (tentative.endsWith(". "))      
-            return Seq(tentative.dropRight(1)) ++ sentenceSplit(text.drop(i))
+            return Seq(tentative.dropRight(1)) ++ sentenceSplitRecursive(text.drop(i))
 
         if (tentative.endsWith("? ") || tentative.endsWith("! "))      
-            return Seq(tentative.dropRight(1)) ++ sentenceSplit(text.drop(i))
+            return Seq(tentative.dropRight(1)) ++ sentenceSplitRecursive(text.drop(i))
       }
 
       return Seq(text) // getting to the end of the text without sentence delimitation having been detected, 
                        // this code flushes the entire text as one sentence.
                        // future intricacies may call to trigger a notice here.
+    }
+  
+   // move to util       
+   def isWordSeparator(c: Character) : Boolean = Set(' ', '(').exists(_ == c)
+   
+   def sentenceSplit (text: String) : Seq[String] = {
+      import scala.math.{min, max}
+      var sentences = Seq.newBuilder[String] 
+      
+      var i = 0
+      var j = 0
+      while (i<text.length) {
+        val remaining = text drop i
+        val f0 = Seq(remaining.indexOfSlice(". ", j), remaining.indexOfSlice("! ", j),  remaining.indexOfSlice("? ", j)).filter(_ != -1)
+        if (f0.isEmpty) { sentences += remaining; i = text.length}
+        else {
+          val f = f0.reduceLeft(min) 
+          val tLen = f
+          val tentative = remaining.take(tLen+1) // take up until and including the period/exclamation/question mark
+          if (tentative.endsWithAny(specialCaseWords) || tentative.charAt(max(tentative.length-3,0)) == '.') {
+            val afterSpace = tLen+1+2 
+            if (afterSpace < text.length && (text.charAt(afterSpace).isUpper)) { sentences += tentative; i += tLen + 2; j = 0} else j = f + 1
+          } 
+          else if (isWordSeparator(tentative.charAt(max(tentative.length - 3, 0)))) j = f + 1 // the case of single letter name initial (e.g. "C. ")
+          else { sentences += tentative; i += tLen + 2; j = 0}
+        }
+      }
+      return sentences.result
+    }
+
+    //
+    // move to util 
+    //
+    def pairIterator(s: Seq[String], f: (String, String) => Unit) {
+      for (i <- 0 to s.length-2) {
+        f(s(i), s(i+1))
+      }
+    }
+
+    def sentenceSplitFoo (text: String) : Seq[String] = {          
+      var sentences = Seq.newBuilder[String] 
+
+      def unite(first: String, second: String) = {
+         if (!second.startsWith(" ")) sentences += first
+         else sentences += first + "." + second
+      }
+
+      val splits = text.split(".")
+      pairIterator(splits, unite)
+      return sentences.result
     }
 
     case class AnnotatedSentence(text : AnnotatedText, section: String)
@@ -254,6 +310,7 @@ object ldb {
     def sentenceSplitter (toSplit: LocatedText) : Seq[LocatedText] = {
 
       logger.write(toSplit.text, "JATS-paragraphs")
+      //println(toSplit.text)
       val sentences = sentenceSplit(toSplit.text)
       logger.write(sentences.mkString("\n"), "JATS-sentences")
       return sentences map (sentence => LocatedText(sentence, toSplit.section))
