@@ -218,7 +218,7 @@ object ldb {
     // separate into util file
     //
 
-    val specialCaseWords = Seq(" vs.", " al.", " cf.", " st." ," Fig.", " FIG.")
+    val specialCaseWords = Seq(" vs.", " al.", " cf.", " st." ," Fig.", " FIG.", "pp.")
 
     implicit class MyStringOps(val s: String) {
       def endsWithAny(any: Seq[String]) : Boolean = {
@@ -253,10 +253,10 @@ object ldb {
                        // future intricacies may call to trigger a notice here.
     }
   
-   // move to util       
-   def isWordSeparator(c: Character) : Boolean = Set(' ', '(').exists(_ == c)
+   
    
    def sentenceSplit (text: String) : Seq[String] = {
+      def isWordSeparator(c: Character) : Boolean = Set(' ', '\n', '(').exists(_ == c) // move to util       
       import scala.math.{min, max}
       var sentences = Seq.newBuilder[String] 
       
@@ -267,15 +267,14 @@ object ldb {
         val f0 = Seq(remaining.indexOfSlice(". ", j), remaining.indexOfSlice("! ", j),  remaining.indexOfSlice("? ", j)).filter(_ != -1)
         if (f0.isEmpty) { sentences += remaining; i = text.length}
         else {
-          val f = f0.reduceLeft(min) 
-          val tLen = f
-          val tentative = remaining.take(tLen+1) // take up until and including the period/exclamation/question mark
+          val t = f0.reduceLeft(min) 
+          val tentative = remaining.take(t+1) // take up until and including the period/exclamation/question mark
           if (tentative.endsWithAny(specialCaseWords) || tentative.charAt(max(tentative.length-3,0)) == '.') {
-            val afterSpace = tLen+1+2 
-            if (afterSpace < text.length && (text.charAt(afterSpace).isUpper)) { sentences += tentative; i += tLen + 2; j = 0} else j = f + 1
+            val afterSpace = t+1+2 
+            if (afterSpace < text.length && (text.charAt(afterSpace).isUpper)) { sentences += tentative; i += t + 2; j = 0} else j = t + 1
           } 
-          else if (isWordSeparator(tentative.charAt(max(tentative.length - 3, 0)))) j = f + 1 // the case of single letter name initial (e.g. "C. ")
-          else { sentences += tentative; i += tLen + 2; j = 0}
+          else if (isWordSeparator(tentative.charAt(max(tentative.length - 3, 0)))) j = t + 1 // the case of single letter name initial (e.g. "C. ")
+          else { sentences += tentative; i += t + 2; j = 0}
         }
       }
       return sentences.result

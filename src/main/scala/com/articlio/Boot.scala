@@ -13,15 +13,16 @@ object Boot extends App {
 
     ldb.ldb.init
     
-    
-    val sourceDirName = "/home/matan/ingi/repos/fileIterator/data/toJATS"
+    //val sourceDirName = "/home/matan/ingi/repos/fileIterator/data/toJATS"
+    val sourceDirName = "/home/matan/ingi/repos/fileIterator/data/prep"
     val files = new File(sourceDirName).listFiles.filter(file => (file.isFile)) // && file.getName.endsWith(".xml")))
     files.foreach(file => {
       val fileName = file.getName  
+      println("about to handle file " + fileName)
       ldb.ldb.go(new JATS(s"$sourceDirName/$fileName", "pdf-converted"))
     }) 
     
-    
+    //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife02576.xml//", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/test", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/Rayner (1998)", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet", "pdf-converted"))

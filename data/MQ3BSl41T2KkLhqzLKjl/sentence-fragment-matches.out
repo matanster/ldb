@@ -1163,14 +1163,16 @@ Unless explicitly defined otherwise, productivity growth refers to the average a
 Map(start -> 68, end -> 70, match -> the)
 Map(start -> 99, end -> 100, match -> of)
 
-These estimates refer to the nonfarm business sector and are average annual growth rates calculated as log differences.
-Map(start -> 25, end -> 27, match -> the)
 
-See the memo from the NBER Business Cycle Dating Committee from October 2, 2003, at <http://www.nber.org/cycles/recessions.html>.
-Map(start -> 4, end -> 6, match -> the)
-Map(start -> 18, end -> 20, match -> the)
-Map(start -> 73, end -> 73, match -> ,)
-Map(start -> 79, end -> 79, match -> ,)
+2. These estimates refer to the nonfarm business sector and are average annual growth rates calculated as log differences.
+Map(start -> 29, end -> 31, match -> the)
+
+
+3. See the memo from the NBER Business Cycle Dating Committee from October 2, 2003, at <http://www.nber.org/cycles/recessions.html>.
+Map(start -> 8, end -> 10, match -> the)
+Map(start -> 22, end -> 24, match -> the)
+Map(start -> 77, end -> 77, match -> ,)
+Map(start -> 83, end -> 83, match -> ,)
 
 
 Stiroh (2001) provides a broad overview of the strengths and weaknesses of growth accounting.
@@ -1178,31 +1180,35 @@ Map(start -> 41, end -> 42, match -> of)
 Map(start -> 44, end -> 46, match -> the)
 Map(start -> 73, end -> 74, match -> of)
 
-As a practical matter, we estimate IT-related TFP growth from relative price changes—that is, a fall in IT prices less input prices reflects technological progress and TFP growth in IT production.
-Map(start -> 155, end -> 162, match -> progress)
 
-We include the nonprofit sector and imputed capital service flows from residential housing and consumer durables.
-Map(start -> 11, end -> 13, match -> the)
+5. As a practical matter, we estimate IT-related TFP growth from relative price changes—that is, a fall in IT prices less input prices reflects technological progress and TFP growth in IT production.
+Map(start -> 159, end -> 166, match -> progress)
 
-Computer and software investment data begin in 1959; 2003 is the last year for which complete data are available.
-Map(start -> 61, end -> 63, match -> the)
-Map(start -> 75, end -> 77, match -> for)
 
-Our earlier work included only business capital in IT capital deepening, while we now also include the service flow to households from IT consumer durables assets.
-Map(start -> 0, end -> 2, match -> our)
-Map(start -> 26, end -> 29, match -> only)
-Map(start -> 99, end -> 101, match -> the)
+6. We include the nonprofit sector and imputed capital service flows from residential housing and consumer durables.
+Map(start -> 15, end -> 17, match -> the)
+
+
+7. Computer and software investment data begin in 1959; 2003 is the last year for which complete data are available.
+Map(start -> 65, end -> 67, match -> the)
+Map(start -> 79, end -> 81, match -> for)
+
+
+8. Our earlier work included only business capital in IT capital deepening, while we now also include the service flow to households from IT consumer durables assets.
+Map(start -> 30, end -> 33, match -> only)
+Map(start -> 103, end -> 105, match -> the)
 
 
 With no change in methodology, almost all the increase in capital deepening would reflect the non-IT component.
 Map(start -> 43, end -> 45, match -> the)
 Map(start -> 91, end -> 93, match -> the)
 
-These assumptions are consistent with the concept of potential growth of output in the long run.
-Map(start -> 38, end -> 40, match -> the)
-Map(start -> 50, end -> 51, match -> of)
-Map(start -> 70, end -> 71, match -> of)
-Map(start -> 83, end -> 85, match -> the)
+
+9. These assumptions are consistent with the concept of potential growth of output in the long run.
+Map(start -> 42, end -> 44, match -> the)
+Map(start -> 54, end -> 55, match -> of)
+Map(start -> 74, end -> 75, match -> of)
+Map(start -> 87, end -> 89, match -> the)
 
 The product cycle refers to the pace at which new models are introduced and supplant earlier ones on the technological frontier.
 Map(start -> 0, end -> 2, match -> the)

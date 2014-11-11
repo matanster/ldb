@@ -30,7 +30,7 @@ object JATSloader{
     println("loading JATS input...")
     val JATSinput = scala.xml.XML.loadFile(filePath)
 
-    val sections = for (node <- JATSinput \ "body" \ "sec")
+    val sections = for (node <- JATSinput \ "body" \ "sec" if (node.attributes("sec-type") != null)) // check for null as this is what the xml api uses when attribute is not found
       yield JATSsectionRaw(node.attributes("sec-type").toString,
       (node \ "title").head.child.head.toString,
       node \ "p" ++ node \ "sec")
