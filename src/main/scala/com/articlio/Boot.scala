@@ -13,8 +13,6 @@ object Boot extends App {
 
     ldb.ldb.init
     def processAll(sourceDirName: String, treatAs: Option[String] = None) {
-      //val sourceDirName = "/home/matan/ingi/repos/fileIterator/data/converted-to-JATS"
-      val sourceDirName = "/home/matan/ingi/repos/fileIterator/data/prep"
       val files = new File(sourceDirName).listFiles.filter(file => (file.isFile)) // && file.getName.endsWith(".xml")))
       files.foreach(file => {
         val fileName = file.getName  
@@ -26,8 +24,8 @@ object Boot extends App {
       }) 
     }
     
-    processAll("/home/matan/ingi/repos/fileIterator/data/input/raw/converted-to-JATS", Some("pdf-converted"))
-    processAll("/home/matan/ingi/repos/fileIterator/data/input/raw/eLife-JATS")
+    processAll("../data/ready-for-semantic/converted-to-JATS", Some("pdf-converted"))
+    processAll("../data/ready-for-semantic/eLife-JATS")
     
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife02576.xml//", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/test", "pdf-converted"))
