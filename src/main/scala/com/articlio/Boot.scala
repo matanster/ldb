@@ -12,15 +12,22 @@ object Boot extends App {
   try {
 
     ldb.ldb.init
+    def processAll(sourceDirName: String, treatAs: Option[String] = None) {
+      //val sourceDirName = "/home/matan/ingi/repos/fileIterator/data/converted-to-JATS"
+      val sourceDirName = "/home/matan/ingi/repos/fileIterator/data/prep"
+      val files = new File(sourceDirName).listFiles.filter(file => (file.isFile)) // && file.getName.endsWith(".xml")))
+      files.foreach(file => {
+        val fileName = file.getName  
+        println("about to process file " + fileName)
+        treatAs match {
+          case Some(s) => ldb.ldb.go(new JATS(s"$sourceDirName/$fileName", s))
+          case None => ldb.ldb.go(new JATS(s"$sourceDirName/$fileName"))
+        }
+      }) 
+    }
     
-    //val sourceDirName = "/home/matan/ingi/repos/fileIterator/data/toJATS"
-    val sourceDirName = "/home/matan/ingi/repos/fileIterator/data/prep"
-    val files = new File(sourceDirName).listFiles.filter(file => (file.isFile)) // && file.getName.endsWith(".xml")))
-    files.foreach(file => {
-      val fileName = file.getName  
-      println("about to handle file " + fileName)
-      ldb.ldb.go(new JATS(s"$sourceDirName/$fileName", "pdf-converted"))
-    }) 
+    processAll("/home/matan/ingi/repos/fileIterator/data/input/raw/converted-to-JATS", Some("pdf-converted"))
+    processAll("/home/matan/ingi/repos/fileIterator/data/input/raw/eLife-JATS")
     
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife02576.xml//", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/test", "pdf-converted"))

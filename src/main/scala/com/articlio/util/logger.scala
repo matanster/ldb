@@ -13,7 +13,7 @@ class Logger (name: String) {
     import java.nio.file.{Path, Paths, Files}
     import org.apache.commons.io.FileUtils.{deleteDirectory}
     
-    def based(dir: String) = "data" + "/" + dir
+    def based(dir: String) = "../data/semantic-output" + "/" + dir
     
     val targetDirObj = Paths.get(based(targetDirName))
     if (Files.exists(targetDirObj)) deleteDirectory(new File(based(targetDirName)))
