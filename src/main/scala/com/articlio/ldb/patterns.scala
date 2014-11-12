@@ -254,20 +254,25 @@ object ldb {
     }
   
    
-   
+   //   
+   // splits a text into sentences - non recursive version for scalability
+   // Note: removes the typical space trailing a sentence ending.
+   // 
    def sentenceSplit (text: String) : Seq[String] = {
-      def isWordSeparator(c: Character) : Boolean = Set(' ', '\n', '(').exists(_ == c) // move to util       
+      def isWordSeparator(c: Character) : Boolean = Set(' ', '\n', '(').contains(c) // move to util       
       import scala.math.{min, max}
       var sentences = Seq.newBuilder[String] 
       
       var i = 0
-      var j = 0
-      while (i<text.length) {
-        val remaining = text drop i
-        val f0 = Seq(remaining.indexOfSlice(". ", j), remaining.indexOfSlice("! ", j),  remaining.indexOfSlice("? ", j)).filter(_ != -1)
-        if (f0.isEmpty) { sentences += remaining; i = text.length}
+      var j = 0 // used to skip over disqualified stop sequence
+      
+      // scan the text, gulping a sentence whenever one is identified
+      while (i<text.length) { 
+        val remaining = text drop i  // the text remaining after previous sentence gulps
+        val find = Seq(remaining.indexOfSlice(". ", j), remaining.indexOfSlice("! ", j),  remaining.indexOfSlice("? ", j)).filter(_ != -1)
+        if (find.isEmpty) { sentences += remaining; i = text.length}
         else {
-          val t = f0.reduceLeft(min) 
+          val t = find.reduceLeft(min) // (start of) first tentative stop sequence encountered 
           val tentative = remaining.take(t+1) // take up until and including the period/exclamation/question mark
           if (tentative.endsWithAny(specialCaseWords) || tentative.charAt(max(tentative.length-3,0)) == '.') {
             val afterSpace = t+1+2 
@@ -280,29 +285,7 @@ object ldb {
       return sentences.result
     }
 
-    //
-    // move to util 
-    //
-    def pairIterator(s: Seq[String], f: (String, String) => Unit) {
-      for (i <- 0 to s.length-2) {
-        f(s(i), s(i+1))
-      }
-    }
-
-    def sentenceSplitFoo (text: String) : Seq[String] = {          
-      var sentences = Seq.newBuilder[String] 
-
-      def unite(first: String, second: String) = {
-         if (!second.startsWith(" ")) sentences += first
-         else sentences += first + "." + second
-      }
-
-      val splits = text.split(".")
-      pairIterator(splits, unite)
-      return sentences.result
-    }
-
-    case class AnnotatedSentence(text : AnnotatedText, section: String)
+     case class AnnotatedSentence(text : AnnotatedText, section: String)
 
     case class LocatedText(text: String, section: String)
 
