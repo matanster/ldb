@@ -33,11 +33,7 @@ object Boot extends App {
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife03399.xml"))
 
-    val data = Seq(("something new", "matches something new", "indicates something"),
-                   ("something new", "matches something new", "indicates something"))
-
     storage.OutDB.dropCreate
-    storage.OutDB ++= (data)
     
     } finally {
         // closing stuff - to be moved to own function

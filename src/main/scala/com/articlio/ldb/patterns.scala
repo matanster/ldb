@@ -5,6 +5,7 @@ import com.articlio.util._
 import com.articlio.util.text._
 import com.articlio.LanguageModel._
 import com.articlio.selfMonitor.{Monitor}
+import com.articlio.storage
 //import java.net.URLEncoder
 //import spray.json._
 //import DefaultJsonProtocol._
@@ -394,7 +395,12 @@ object ldb {
                            s"matches pattern '${m._1}'",
                            s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
 
-        //matches.foreach(m => logger.write(m._2.text, "output"))
+              
+              
+              
+          val rdbmsData : Seq[(String, String, String)] = matches.map(m => (m._2.text, m._1, m._3)).toSeq
+          println(rdbmsData)
+          storage.OutDB ++= rdbmsData
 
         //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
 
