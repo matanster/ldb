@@ -398,7 +398,7 @@ object ldb {
               
               
               
-          val rdbmsData : Seq[(String, String, String)] = matches.map(m => (m._2.text, m._1, m._3)).toSeq
+          val rdbmsData : Seq[(String, String, String, String, String)] = matches.map(m => (document.name, m._2.text, m._1, "", m._3)).toSeq
           println(rdbmsData)
           storage.OutDB ++= rdbmsData
 
