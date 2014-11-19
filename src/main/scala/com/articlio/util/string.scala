@@ -19,7 +19,7 @@ package object text {
   // with some refactor, toLowerCase can be used instead if need to override machine locale
   //
   def deSentenceCase (text: String) : String = {
-    if (0 == text.indexOfSlice("I" + SPACE)) return text
+    if (0 == text.indexOfSlice('I' + SPACE)) return text
     return text.head.toLower + text.tail
   }
 

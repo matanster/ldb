@@ -29,6 +29,7 @@ object Boot extends App {
     processAll("../data/ready-for-semantic/converted-to-JATS", Some("pdf-converted"))
     processAll("../data/ready-for-semantic/eLife-JATS")
     
+    //ldb.ldb.go(new JATS("/home/matan/ingi/repos/articlio/data/ready-for-semantic/converted-to-JATS/management 14", "pdf-converted"))
     //ldb.ldb.go(new JATS("../data/ready-for-semantic/eLife-JATS/elife03399.xml", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/test", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/Rayner (1998)", "pdf-converted"))

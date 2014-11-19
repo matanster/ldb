@@ -171,6 +171,7 @@ object ldb {
       Timelog.timer("aho-corasick initialization (lazy operations not necessarily included)")
       trie.onlyWholeWords()
       fragments foreach trie.addKeyword
+      fragments.foreach(f => if (f == "The first limitation deals with the nature of a") println("EQUALSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"))
       Timelog.timer("aho-corasick initialization (lazy operations not necessarily included)")
     }
 
@@ -179,6 +180,8 @@ object ldb {
     //
     def go(sentence : String, logger: Logger) : List[Map[String, String]] = 
     {
+      println(deSentenceCase("Further reproduction prohibited without permission."))
+      println(deSentenceCase(sentence))
       val emitsJ = trie.parseText(deSentenceCase(sentence))
 
       if (emitsJ.size > 0) {
@@ -371,18 +374,18 @@ object ldb {
         //
 
         val matches = possibleMatches.filter(p => {
-            println(p._4)
+            //println(p._4)
             if (!p._4.locationProperty.isDefined) {
-              println("no location criteria in rule")
+              //println("no location criteria in rule")
               true
             }
             else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
                 sectionTypeScheme .translation.contains(parameter) && sectionTypeScheme .translation(parameter) == p._2.section)) {
-                println("location criteria matched!")
+                //println("location criteria matched!")
                 true
             }
             else {
-              println("location criteria not matched")
+              //println("location criteria not matched")
               false
             }
         })
@@ -399,7 +402,7 @@ object ldb {
               
               
           val rdbmsData : Seq[(String, String, String, String, String)] = matches.map(m => (document.name, m._2.text, m._1, "", m._3)).toSeq
-          println(rdbmsData)
+          //println(rdbmsData)
           storage.OutDB ++= rdbmsData
 
         //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
