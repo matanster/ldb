@@ -180,8 +180,7 @@ object ldb {
     //
     def go(sentence : String, logger: Logger) : List[Map[String, String]] = 
     {
-      println(deSentenceCase("Further reproduction prohibited without permission."))
-      println(deSentenceCase(sentence))
+      //println(deSentenceCase(sentence))
       val emitsJ = trie.parseText(deSentenceCase(sentence))
 
       if (emitsJ.size > 0) {
@@ -380,12 +379,20 @@ object ldb {
               true
             }
             else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-                sectionTypeScheme .translation.contains(parameter) && sectionTypeScheme .translation(parameter) == p._2.section)) {
+                sectionTypeScheme.translation.contains(parameter) && sectionTypeScheme .translation(parameter) == p._2.section)) {
                 //println("location criteria matched!")
                 true
             }
             else {
-              //println("location criteria not matched")
+              //println(sectionTypeScheme.translation)
+              println
+              println("location criteria not matched for:")
+              println(p._2.text)
+              println("should be in either:")
+              p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+                if (sectionTypeScheme.translation.contains(parameter)) println(sectionTypeScheme .translation(parameter)))
+              println("but found in:")
+              println(p._2.section)
               false
             }
         })

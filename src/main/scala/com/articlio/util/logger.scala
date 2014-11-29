@@ -1,4 +1,5 @@
 package com.articlio.util
+import com.articlio.config
 import java.nio.file.{Paths, Files, StandardOpenOption}
 import java.nio.charset.StandardCharsets
 
@@ -7,7 +8,7 @@ import java.nio.charset.StandardCharsets
 //
 class Logger (name: String) {
   
-  val base = "../data/semantic-output"
+  val base = config.output
   
   if (!Files.exists(Paths.get(base))) Files.createDirectory(Paths.get(base)) // create host folder if it doesn't yet exist
   

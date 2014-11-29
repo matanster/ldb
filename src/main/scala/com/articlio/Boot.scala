@@ -1,9 +1,15 @@
 import com.articlio.input.JATS
+import com.articlio.config
 import com.articlio.ldb
 import com.articlio.selfMonitor.{Monitor}
 import com.articlio.util.{Console}
 import com.articlio.storage
 import java.io.File
+
+object Analytic {
+  val inDb = storage.InDB.Query("ubuntu-2014-11-21T12:06:51.286Z")
+  storage.InDB.close
+}
 
 object Boot extends App {
 
@@ -26,10 +32,10 @@ object Boot extends App {
       }) 
     }
     
-    processAll("../data/ready-for-semantic/converted-to-JATS", Some("pdf-converted"))
-    processAll("../data/ready-for-semantic/eLife-JATS")
+    processAll(config.pdf, Some("pdf-converted"))
+    processAll(config.eLife)
     
-    //ldb.ldb.go(new JATS("/home/matan/ingi/repos/articlio/data/ready-for-semantic/converted-to-JATS/management 14", "pdf-converted"))
+    //ldb.ldb.go(new JATS("../data/ready-for-semantic/from-pdf/management 14", "pdf-converted"))
     //ldb.ldb.go(new JATS("../data/ready-for-semantic/eLife-JATS/elife03399.xml", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/test", "pdf-converted"))
     //ldb.ldb.go(new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/Rayner (1998)", "pdf-converted"))

@@ -6,7 +6,7 @@ package com.articlio.util
 object Timelog {
 
   val logger = new Logger("global-timers")
-  val timers = scala.collection.mutable.Map.empty[String, Long]
+  val timers = scala.collection.mutable.Map.empty[String, Long] // use new instead of empty then with scala.collection.concurrent.Map[String, Long] doesn't work
 
   //
   // Usage: call once to start the timer, and once to stop it, using the same timer name parameter

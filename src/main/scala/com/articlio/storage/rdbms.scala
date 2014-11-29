@@ -19,7 +19,7 @@ object OutDB {
   val user     = "articlio"
   
   // acquire single database connection used as implicit throughout this object
-  println("starting DB connection...")
+  println("starting output DB connection...")
   val db = Database.forURL(s"jdbc:mysql://$host:$port/$database", user, driver = "com.mysql.jdbc.Driver")
   implicit val session: Session = db.createSession
 

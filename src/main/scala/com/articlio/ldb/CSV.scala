@@ -1,4 +1,5 @@
 package com.articlio.ldb
+import com.articlio.config
 import com.articlio.util._
 import com.articlio.util.text._
 //import com.articlio.util.{wordFollowing}
@@ -50,7 +51,8 @@ object CSV {
     Timelog.timer("reading CSV")
 
     //val reader = CSVReader.open("ldb/July 24 2014 database - Markers - filtered.csv")
-    val reader = CSVReader.open("ldb/Normalized from July 24 2014 database - Markers - filtered - take 1.csv")
+    //val reader = CSVReader.open("ldb/Normalized from July 24 2014 database - Markers - filtered - take 1.csv")
+    val reader = CSVReader.open(config.ldb)
     val iterator = reader.iterator
     iterator.next // skip first row assumed to be headers
 
