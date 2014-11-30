@@ -1,0 +1,825 @@
+Id,Empirical research specificity,Word / Pattern,Category name,Subitem category (functional role of sentence ( flow logic),Sensitivity to Additional Parameter,Sensitivity to Additional Parameter,Subitem category (functional role of sentence              ( flow logic),Sensitivity to Additional Parameter,Weight - TBD by Machine,Category number,Status,MarkerTypeId,comment,Description
+6513,,our prediction,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+6894,,certain amount of caution,limitation,limitation,,if appears after Results section or in conclusions section,,,,13,1,13,,NULL
+4918,,a number of limitations,limitation,limitation,,if appears after Results section or in conclusions section,,,,13,1,13,,NULL
+,,a paucity of data,problem statement,,,if appears in Introduction section,,,,30,,,,
+Sep13,empirical,additional analyses should examine,recommendation ,,if in conclusion section,,,,,31,,,,
+,,added value,contribution,,,if in conclusion section,,,,8,,,,
+,,additonal benefit,contribution,,,if in conclusion section,,,,8,,,,
+,,additional research is required,problem statement,,,if appears in Introduction,,,,30,,,,
+42,,additional research is required,limitation,,,if appears after Results section or in conclusions section,,,,6,1,6,,NULL
+,,additional studies are required,problem statement,,,if appears in Introduction,,,,30,,,,
+40,,additional studies are required,limitation,,,if appears after Results section or in conclusions section,,,,6,1,6,,NULL
+,,address the needs of,problem statement,,,intro section,,,,30,,,,
+,,address the problem,problem statement,,,intro section,,,,30,,,,
+,,addressed the need for,contribution,,,if in conclusion section,,,,8,,,,
+,,addresses only the question of,limitation,,,if appears after Results section or in conclusions section,,,,5,,,,
+Sep13,,addresses questions of,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,,,,
+,,alarming rate,problem statement,,,if in intro section,,,,30,,,,
+79,,allow us to,contribution,contribution,,,,,,8,1,8,NULL,* allow% us to
+3219,,allow you  to understand,contribution,contribution,,,,,,8,1,8,NULL,* allow% you to *
+3206,,allow you to,contribution,contribution,,,,,,8,1,8,NULL,* allow% * to
+3220,,allow you to see,contribution,contribution,,,,,,8,1,8,NULL,* allow% * to see
+,,allows the treatment of,contribution,,if in intro section,,,,,8,,,,
+7633,,allows us to,contribution,contribution,,,,,,8,1,6,,allows * to
+81,,allows you to,contribution,contribution,,,,,,8,1,8,NULL,NULL
+,,almost no,problem statement,,,if in intro section,,,,30,,,,
+,,an effective ... for,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,,,,
+Sep13,,an understanding of,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,,,,
+118,,anecdotal evidence,limitation,,,"if appears after Results section or in conclusions section
+",,,,6,1,6,,NULL
+119,,anecdotal results,limitation,,,"if appears after Results section or in conclusions section
+",,,,6,1,6,,NULL
+169,,are still not completely understood,problem statement,problem statement,,if appears in Introduction section,,,,30,1,6,,NULL
+172,,areas for further research,recommendation ,future research,,if appears in Conclusion section,,,,6,1,6,,NULL
+7993,,as hypothesized,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+4106,,as predicted,hypothesis/research question  ,research question,self ref,deictic work ref,,,,26,0,25,NULL,as * predicted
+196,,as yet no,problem statement,,if in intro section,,,,,30,1,6,,NULL
+,,attempt to fill this gap between,problem statement,,,if in the introduction ,,,,30,,,,
+Sep13,,attempts should be made,recommendation ,recommendation,,,,,,31,,,,
+Sep13,,avenue for improvement,recommendation ,,,,,,,31,,,,
+Sep13,,avenues for improvement,recommendation ,,,,,,,31,,,,
+Sep13,,avenues of future,recommendation ,,,,,,,31,,,,
+Sep13,,avenues of future research,recommendation ,,,,,,,31,,,,
+3221,,benefit is,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,benefit% *
+6631,,benefits are,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,* benefits **
+3222,,benefits include,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+3223,,benefits were,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,* benefits **
+6867,,better understanding of,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,* understanding of
+292,empirical ,bias associated with,limitation ,,if in discussion or in conclusion section,,,,,6,1,6,,NULL
+Sep13,,biases,limitation ,,if in discussion or in conclusion section,,,,,6,,,,
+6346,,call into question,problem statement,,if in intro,,,,,30,1,16,NULL,NULL
+Sep13,,can be used,recommendation ,,,,,,,31,,,,
+3217,,can contribute to,contribution,,,,,,,8,1,8,NULL,* contribute% to
+6615,,can help you to,contribution,,,,,,,8,1,8,NULL,can help * to
+349,,cannot be generalized,limitation,,"if appears in discussion or in 
+conclusion sections",,,,,5,1,21,NULL,NULL
+Sep13,,caution is warranted,limitation,,"if appears in discussion or in 
+conclusion sections",,,,,6,,,,
+Sep13,,caution must be used,limitation,,"if appears in discussion or in 
+conclusion sections",,,,,6,,,,
+,,central issue,problem statement,,,if in introduction section,,,,30,,,,
+373,,central to our understanding of,contribution,,,,,,,8,1,8,NULL,central to ** understanding of
+,,challenge remains,limitation ,,if in discussion or in conclusion section,,,,,6,,,,
+381,,challenge remains,problem statement,,if appears in intro,,,,,30,1,6,,NULL
+400,empirical ,clarification of the relationship between,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+3703,,doubts as to,problem statement,,,if in intro ,,,,30,1,13,,NULL
+529,,contributes to an understanding of...,contribution,,,,,,,8,1,8,NULL,contribute% to an understanding of
+3224,,contributes to your understanding of,contribution,,,,,,,8,1,8,NULL,contribute% to * understanding of
+530,,contribution,contribution,,,,,,,8,1,6,,NULL
+Sep13,,contribution of,contribution,,,,,,,8,,,,
+Sep13,,contribution of this,contribution,,,,,,,8,,,,
+532,,contribution to,contribution,,,,,,,8,1,6,,NULL
+6013,,contributions,contribution,,,,,,,8,1,6,,contribution%
+Sep13,,contributions of this,contribution,,,,,,,8,,,,
+7263,,creates a conceptual framework,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,create% a conceptual framework
+579,,crucial link between,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+Sep13,,data sparseness,limitation,,"if in discussion or in conclusion 
+section",,,,,5,,,,
+612,,deepen your understanding of,contribution,,,,,,,8,1,8,NULL,deepen% * understanding of
+611,,deeper understanding of,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+694,,difficult to distinguish,problem statement,,if in intro ,,,,,30,1,6,,NULL
+707,,directions for additional research,recommendation ,,,,,,,31,1,6,,NULL
+4158,,directions for further research,recommendation ,,,,,,,31,1,6,,NULL
+708,,directions for future research,recommendation ,,,,,,,31,1,6,,NULL
+784,,enable us to,contribution,,,,,,,8,1,8,NULL,enable% us to
+785,,enable you to,contribution,,,,,,,8,1,8,NULL,enable% * to
+3207,,enabled us to,contribution,,,,,,,8,1,8,NULL,enable% us to
+3226,,enables you to,contribution,,,,,,,8,1,8,NULL,enable% * to see
+3227,,enables you to understand,contribution,,,,,,,8,1,8,NULL,enable% * to understand
+7627,,expand awareness,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,expand ** awareness
+6926,,few studies have specifically addressed,problem statement,,if in introduction section,,,,,30,1,7,NULL,few studies have * addressed
+7927,,final hypothesis,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7923,,first hypothesis,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7887,,following hypotheses,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+1006,,following hypothesis,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+1007,,following question,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,following question%
+6852,,for future research,recommendation ,,,,,,,31,1,6,,NULL
+6120,,for understanding,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+7380,,form a framework for,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,form% a * framework for
+7926,,{number} hypothesis,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+,,further research is needed,limitation,,if in discussion or in conclusion section ,,,,,5,,,,
+1044,,further research is needed,problem statement,,if in introduction,,,,,30,1,6,,further research is *
+6729,,further studies should,recommendation ,,,,,,,31,1,13,,further * should
+5010,,further studies should control for,recommendation ,,,,,,,31,1,21,NULL,NULL
+1046,,further studies that investigate,recommendation ,,,,,,,31,1,6,,NULL
+Sep13,,future investigations should,recommendation ,,,,,,,31,,,,
+6012,,future research,recommendation ,,,,,,,31,1,6,,NULL
+Sep13,,future studies are needed,recommendation ,,,,,,,31,,,,
+1050,,future studies should,recommendation ,,,,,,,31,1,6,,NULL
+1051,,future studies should control for,recommendation ,,,,,,,31,1,6,,NULL
+3208,,gives you,contribution,,,,,,,8,1,8,NULL,give% you
+1079,,greatly reduced,problem statement,,if in introduction,,,,,30,1,9,NULL,NULL
+7659,,guide us,contribution,,,,,,,8,1,8,NULL,NULL
+Sep13,,has been criticized,problem statement,,if in introduction,,,,,30,,,,
+2860,,has its problems,problem statement,,if in introduction,,,,,30,1,6,,has *** problems
+7261,,has lacked,problem statement,,if in introduction,,,,,30,1,13,,NULL
+5025,,has not been determined,problem statement,,if in introduction,,,,,30,1,21,NULL,NULL
+7600,,have ... no data,problem statement,problem statement,if in introduction,,,,,30,1,21,NULL,have found ** data
+5030,,have not been determined,problem statement,,if in introduction,,,,,30,1,6,,NULL
+5031,,have to be interpreted with,limitation,,if in discussion or in conclusion sections,,,,,5,1,21,NULL,* be interpreted with
+5032,,have to be interpreted with a certain amount of caution,limitation,,if in discussion or in conclusion sections,,,,,5,1,21,NULL,NULL
+Sep13,,have yet to,problem statement,,if in introduction,,,,,30,,,,
+1108,,heighten your awareness of,contribution,,,,,,,8,1,6,,heighten% * awareness of
+6305,,help to explain,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,help% to explain
+3202,,help us,contribution,,,,,,,8,1,8,NULL,help% us
+3209,,help you,contribution,,,,,,,8,1,8,NULL,help% you
+3100,,help you to,contribution,,,,,,,8,1,8,NULL,help% you to
+3212,,help you to understand,contribution,,,,,,,8,1,8,NULL,NULL
+3233,,helps to highlight,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,help% to highlight
+3234,,helps to reveal,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,help% to reveal
+3215,,helps you,contribution,,,,,,,8,1,8,NULL,help% you
+3210,,helps you to,contribution,,,,,,,8,1,8,NULL,NULL
+3211,,helps you to appreciate,contribution,,,,,,,8,1,8,NULL,help% you to appreciate
+3746,,"however, little evidence",problem statement,,if in introduction,,,,,30,1,6,,NULL
+6888,,hypotheses,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+Sep13,,hypotheses investigated in this paper,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,,,,
+1156,,hypotheses were,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+,,hypotheses were examined,hypothesis/research question  ,question,if no self ref and deictic work references,,,,,25,,,,
+,,hypotheses were investigated,hypothesis/research question  ,question,if no self ref and deictic work references,,,,,25,,,,
+,,hypotheses:,hypothesis/research question  ,question,if no self ref and deictic work references,,,,,25,,,,
+6111,,hypothesis,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+,,hypothesis examined,hypothesis/research question  ,question,if no self ref and deictic work references,,,,,25,,,,
+1159,,hypothesis in this,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+Sep13,,hypothesis investigated in this paper,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,,,,
+1161,,hypothesis of this study,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+8014,,hypothesis:,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,,,,
+Sep13,,hypothesized as,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,,,,
+6155,,hypothesized that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+1432,,important to understand,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+1433,,important to understand that,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+,,not enough is known about,problem statement,,if in introduction,,,,,30,,,,
+,,need to be improved,problem statement,problem statement,if in introduction section,,,,,30,,,,
+1254,,in order to solve,problem statement,,if in introduction section,not marker of purpose-own if no self ref or deictic ref,,,,30,1,22,NULL,NULL
+1255,,in order to solve this problem,problem statement,,if in introduction section,not marker of purpose-own if no self ref or deictic ref,,,,30,1,22,NULL,NULL
+3318,,in the aftermath,problem statement,,if in introduction section,,,,,30,1,9,NULL,NULL
+,,additional clarification is needed,problem statement,,if in introduction section,,,,,30,,,,
+,,are needed ,problem statement,,if in introduction section,,,,,30,,,,
+,,are required,problem statement,,if in introduction section,,,,,30,,,,
+,,lack of,problem statement,,if in introduction ,,,,,30,,,,
+,,not enough,problem statement,,if in introduction ,,,,,30,,,,
+Sep13,,Incompatibility between,problem statement,,if in introduction ,,,,,30,,,,
+1289,,incomplete,problem statement,,if in introduction ,,,,,30,1,13,,NULL
+1290,,inconclusive,problem statement,,if in introduction,,,,,30,1,13,,NULL
+1291,,inconsistent,problem statement,,if in introduction,,,,,30,1,6,,NULL
+1294,,inconsistent with,problem statement,,if in introduction,,,,,30,1,6,,NULL
+6902,,increased awareness of,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,* awareness of
+1303,,increased need for,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+,,questions remain unanswered ,problem statement,,if in introduction ,,,,,30,,,,
+1309,,increasingly aware of,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+1310,,increasingly important to,problem statement,,if in introduction,,,,,30,1,13,,NULL
+Sep13,,increasingly in need of,problem statement,,if in introduction ,,,,,30,,,,
+7386,,increasingly widespread,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+,,loss of ,problem statement,,if in introduction ,,,,,30,,,,
+,,not enough is known about,problem statement,,if in introduction,,,,,30,,,,
+1321,,ineffective,problem statement,,if in introduction,,,,,30,1,13,,NULL
+3236,,insight into,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+3237,,insights,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,insight%
+,,insufficient data,limitation,,if in discussion or in conclusion section,,,,,5,,,,
+1339,,insufficient data,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+,,insufficient evidence,limitation,limitation,if in discussion or in conclusion section,,,,,5,,,,
+6731,,insufficient evidence,problem statement,,if in introduction ,,,,,30,1,21,NULL,NULL
+,,insufficient research,limitation,limitation,if in discussion or in conclusion section,,,,,5,,,,
+1341,,insufficient research,problem statement,problem statement,if in introduction ,,,,,30,1,6,,NULL
+1342,,insufficient sample size,limitation,,if in discussion or in conclusion sections,,,,,5,1,6,,NULL
+Sep13,,intended as a stepping-stone,contribution,contribution,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,,,,
+,,however… remains,problem statement,,if in introduction,,,,,30,,,,
+1395,,issue of reliability,limitation,,if in discussion or in conclusion sections,,,,,5,1,6,,NULL
+,,issue of ... remain unanswered,limitation,,if in discussion or in conclusion section,,,,,5,,,,
+1396,,issue of ... remain unanswered,problem statement,,if in introduction ,,,,,30,1,6,,issue% of *** remain% unanswered
+,,issues which must be addressed,limitation,,if in discussion or in conclusion section,,,,,5,,,,
+1401,,issues which must be addressed,problem statement,,if in introduction ,,,,,30,1,6,,issue% ** be addressed
+7893,,it was hypothesized that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7634,,it would be expected that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+,,labor-intensive,problem statement,,if in introduction,,,,,30,,,,
+,,takes time and money,problem statement,,if in introduction,,,,,30,,,,
+,,takes time,problem statement,,if in introduction,,,,,30,,,,
+Sep13,,labour intensive,problem statement,,if in introduction,,,,,30,,,,
+,,lack of sufficiently … has,problem statement,,if in introduction,,,,,30,,,,
+7264,,lack of … has prevented,problem statement,,if in introduction,,,,,30,1,10,expression and all words that come after the expression are red expression two fonts bigger program underlines the expression program bolds the expression  expression can start with a small or capital letter,lack of ** prevent%
+7266,,lack of ... has restricted,problem statement,,if in introduction,,,,,30,1,10,expression and all words that come after the expression are red expression two fonts bigger program underlines the expression program bolds the expression  expression can start with a small or capital letter,lack of *** restricted
+1494,,larger sample population,limitation,,if in discussion or in conclusion sections,,,,,5,1,6,,NULL
+Sep13,,lends support to,contribution,contribution,,if in conclusion,,,,6,,,,
+,,lent further impetus,contribution,,,if in conclusion,,,,8,,,,
+Sep13,,lent further impetus,contribution,,,,,,,6,,,,
+6043,,less is known,problem statement,,if in introduction,,,,,30,1,6,,NULL
+Sep13,,less is known about,problem statement,,if in introduction,,,,,30,,,,
+1511,,less than adequate,problem statement,,if in introduction,,,,,30,1,6,,NULL
+3822,,limitation,limitation,,if in discussion or in conclusion sections,,,,,5,1,13,,limitation%
+1527,,limitation needs to be,limitation,,if in discussion or in conclusion sections,,,,,5,1,13,,NULL
+1528,,limitation needs to be  pointed out,limitation,,if in discussion or in conclusion sections,,,,,5,1,13,,NULL
+1530,,limitation of,limitation,,if in discussion or in conclusion sections,,,,,5,1,13,,NULL
+3821,,limitations,limitation,,if in discussion or in conclusion sections,,,,,5,1,13,,NULL
+3941,,limitations need to be,limitation,,if in discussion or in conclusion sections,,,,,5,1,13,,limitation% need% to be
+1529,,limitations of our study,limitation,,if in discussion or in conclusion sections,,,,,5,1,13,,NULL
+Sep13,,limitations of this study,limitation,,"if appears in Discussion or 
+conclusion sections",,,,,5,,,,
+,,limited data,problem statement,,if in introduction,,,,,30,,,,
+1532,,limited data,limitation,,if in discussion or in conclusion sections,,,,,5,1,6,,NULL
+,,limited data available,problem statement,,if in introduction,,,,,30,,,,
+245,,limited data available,limitation,,if in discussion or in conclusion sections,,,,,5,1,6,,NULL
+,,limited understanding,problem statement,problem statement,if in introduction,,,,,30,,,,
+Sep13,,limited-coverage,limitation,,if in discussion or in conclusion sections,,,,,5,,,,
+1540,,little accumulated research,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+3998,,little agreement as to,problem statement,,if in introduction ,,,,,30,1,6,,* agreement as to
+Sep13,,little attention has been,problem statement,problem statement,if in introduction ,,,,,30,,,,
+Sep13,,little attention has been paid to,problem statement,problem statement,if in introduction ,,,,,30,,,,
+1549,,little is known about,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+4412,,little progress has been made,problem statement,,if in introduction ,,,,,30,1,13,,NULL
+1552,,little research,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+3829,,major limitation,limitation,,if in discussion or in conclusion sections,,,,,5,1,13,,NULL
+1577,,major limitations of,limitation,,if in discussion or in conclusion sections,,,,,5,1,13,,NULL
+1587,,map the territory,contribution,,if in conclusion,,,,,6,1,6,,NULL
+Sep13,,may have contributed,contribution,,,,,,,8,,,,
+3203,,may help you to,contribution,,,,,,,8,1,8,NULL,may help * to
+Sep13,,may provide a better,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,,,,
+Sep13,,may shed further light,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,,,,
+6370,empirical ,measurement bias,limitation,,if in discussion or in conclusion sections,,,,,5,1,6,,NULL
+Sep13,,merit attention,limitation,,if in discussion or in conclusion sections,,,,,5,,,,
+,,merit further investigation,limitation,,if in discussion or in conclusion sections,,,,,5,,,,
+1642,,merit further investigation,problem statement,,if in introduction ,,,,,30,1,6,,merit% further *
+7529,,merits special attention,problem statement,,if in introduction ,,,,,30,1,6,,merit% special attention
+3204,,might help you to,contribution,,,,,,,8,1,8,NULL,might help * to
+,,minimal amount of research,problem statement,problem statement,if in introduction ,,,,,30,,,,
+,,research is needed,problem statement,,if in introduction ,,,,,30,,,,
+1691,,research is needed,limitation,,if in discussion or in conclusion section,,,,,5,1,13,,* research is needed
+,,studies are needed,rcommendation,,if in discussion or in conclusion section,,,,,6,,,,
+1693,,research is needed,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+,,little is known about,problem statement,,if in introduction,,,,,30,,,,
+,,much less is known,limitation,,if in discussion or in conclusion section,,,,,5,,,,
+1733,,much less is known,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+,,must be addressed,limitation,,if in discussion or in conclusion section,,,,,5,,,,
+1744,,must be addressed,problem statement,,if in introduction ,,,,,30,1,13,,NULL
+1745,,must be complemented by,recommendation ,,,,,,,31,1,13,,NULL
+6119,,necessary for understanding,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+1774,,need to be conducted,problem statement,,if in introduction,,,,,30,1,13,,NULL
+5066,,need to be confirmed,problem statement,,if in introduction,,,,,30,1,21,NULL,NULL
+1775,,need to be examined in more detail,problem statement,,if in introduction,,,,,30,1,6,,NULL
+Sep13,,needs a more,problem statement,,if in introduction,,,,,30,,,,
+Sep13,,needs further,problem statement,,if in introduction,,,,,30,,,,
+Sep13,,needs more,problem statement,,if in introduction,,,,,30,,,,
+6240,,needs of,problem statement,,if in introduction,,,,,30,1,6,,needs of **
+5341,,negative consequence for,problem statement,,if in introduction,,,,,30,1,9,NULL,negative consequence% for
+7293,,negative effect,problem statement,,if in introduction,,,,,30,1,9,NULL,NULL
+1780,,negative effect of,problem statement,,if in introduction,,,,,30,1,6,,NULL
+1784,,neglect to consider,problem statement,,if in introduction,,,,,30,1,6,,NULL
+1785,,neglect to take into account,problem statement,,if in introduction,,,,,30,1,6,,neglect to take *** into account
+3853,,never been fully realized,problem statement,,if in introduction ,,,,,30,1,13,,NULL
+3238,,new light,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+1797,,no evidence that,problem statement,,if in introduction,,,,,30,1,21,NULL,NULL
+1798,,no guarantee that,problem statement,problem statement,if in introduction,,,,,30,1,6,,NULL
+1804,,no previous research,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+1805,,no previous studies,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+1806,,no research,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+1812,,no substantial evidence,problem statement,,if in introduction,,,,,30,1,21,NULL,no * evidence
+Sep13,,not a ... solution,problem statement,,if in introduction,,,,,30,,,,
+,,not adequately operationalized,limitation,,if in conclusion,,,,,5,,,,
+,,not all these factors are understood,limitation,,if in discussion or in conclusion section,,,,,5,,,,
+1821,,not always reliable,limitation,,if in discussion or in conclusion section,,,,,5,1,6,,NULL
+1829,,not completely understood,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+316,,not enough data,problem statement,,if in introduction,,,,,30,1,6,,NULL
+6732,,not enough evidence,problem statement,,if in introduction,,,,,30,1,13,,NULL
+Sep13,,not enough is known about,problem statement,,if in introduction,,,,,30,,,,
+3904,,not feasible,problem statement,problem statement,if in introduction,,,,,30,1,13,,NULL
+3866,,not fully successful,problem statement,,if in introduction,,,,,30,1,13,,NULL
+1835,,not guarantee,problem statement,,if in introduction,,,,,30,1,6,,NULL
+1442,,not known whether,problem statement,,if in introduction,,,,,30,0,25,NULL,NULL
+,,not … known,problem statement,,if in introduction,,,,,30,,,,
+6022,,not well understood,problem statement,,if in introduction,,,,,30,1,6,,NULL
+5050,,not yet been determined,problem statement,,if in introduction,,,,,30,1,21,NULL,not yet been * determined
+1875,,number of challenges remain,problem statement,,if in introduction,,,,,30,1,6,,NULL
+,,represents a challenge,problem statement,,if in introduction,,,,,30,,,,
+1898,,of ... concern,problem statement,,if in introduction,,,,,30,1,6,,NULL
+1910,,offer powerful insights,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,NULL
+4640,,offered some suggestions for,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,18,NULL,offer% some suggestions *
+1917,,often suffer from,problem statement,,if in introduction,,,,,30,1,6,,NULL
+,,only partially understood,problem statement,,if in introduction,,,,,30,,,,
+6768,,our awareness,contribution,,,,,,,8,1,8,NULL,NULL
+7896,,our hypotheses,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+1989,,our hypothesis was,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7474,,our research complements,contribution,,,,,,,8,1,8,NULL,our * complements
+1990,,our research question was,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7897,,our research questions were,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+6917,,our research questions were as follows,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+3201,,our understanding of,contribution,,,,,,,8,1,8,NULL,* understanding of
+,,negative impact on,problem statement,,if in introduction,,,,,30,,,,
+2023,,part of the problem,problem statement,,if in introduction,,,,,30,1,6,,NULL
+2028,,partially explained by,problem statement,,if in introduction,,,,,30,1,20,NULL,NULL
+3662,,paucity of data,problem statement,,if in introduction,,,,,30,1,6,,NULL
+2045,,paucity of research,problem statement,,if in introduction,,,,,30,1,6,,NULL
+2058,,perform poorly,problem statement,problem statement,if in introduction,,,,,30,1,6,,NULL
+2066,,picture we have is far from complete,problem statement,,if in introduction,,,,,30,1,6,,NULL
+2086,,positive contribution,contribution,contribution,if in discussion or in conclusion section,,,,,8,1,21,NULL,NULL
+2143,,previous research has not,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+,,previous studies have not ,problem statement,,if in introduction ,,,,,30,,,,
+2145,,previous studies have not addressed,problem statement,problem statement,if in introduction ,,,,,30,1,6,,NULL
+2169,,problem,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+2172,,problem area,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+Sep13,,problem can be seen as,problem statement,problem statement,if in introduction ,,,,,30,,,,
+Sep13,,problem is that,problem statement,problem statement,if in introduction ,,,,,30,,,,
+2173,,problem is to,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+Sep13,,problem of,problem statement,problem statement,if in introduction ,,,,,30,,,,
+Sep13,,problem of how to,problem statement,problem statement,if in introduction ,,,,,30,,,,
+2175,,problem remains as to how,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+7908,,problem remains as to why,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+Sep13,,problem we study is,problem statement,problem statement,if in introduction ,,,,,30,,,,
+7048,,problem with,problem statement,problem statement,if in introduction ,,,,,30,1,6,,NULL
+7013,,problem with this is that,problem statement,,if in introduction ,,,,,30,1,21,NULL,problem with ** is that
+2176,,problematic,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+2177,,problems,problem statement,,if in introduction ,,,,,30,1,6,,problem% ***
+Sep13,,problems can be seen as,problem statement,,if in introduction ,,,,,30,,,,
+2178,,problems remain,problem statement,,if in introduction ,,,,,30,1,6,,NULL
+8015,,provide a basis for,contribution,,if in conclusion section,,,,,6,1,6,,provide% a * basis for
+,,provide a means of,contribution,,if in discussion or in conclusion section,,,,,8,,,,
+Sep13,,provide a unique glimpse into,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,,,,
+2208,,provide a useful correction to,contribution,,if in discussion or in conclusion section,,,,,6,1,13,,NULL
+2210,,provide an accurate picture,contribution,,if in discussion or in conclusion section,,,,,6,1,6,,NULL
+,,provide evidence that,contribution,,if in discussion or in conclusion section,,,,,8,,,,
+3902,,provide little information,problem statement,,if in introduction ,,,,,30,1,13,,provided little information
+,,provide much more than,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,,,,
+3242,,provide new,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,provide% new
+3241,,provide new insights,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,provide * insights
+,,provide strong evidence that,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,,,,
+Sep13,,provide us with,contribution,,,,,,,8,,,,
+Sep13,,provide us with a better understanding of the,contribution,,,,,,,8,,,,
+Sep13,,provided a portrait of,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,,,,
+Sep13,,provided us with,contribution,,,,,,,8,,,,
+Sep13,,provides a basis,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,,,,
+,,provides further support for,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,,,,
+3243,,provides new,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,provide% new
+,,provides strong evidence that,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,,,,
+3244,,provides you with,contribution,,,,,,,8,1,8,NULL,provide% you with
+,,provides support for,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,,,,
+7478,,question addressed in this study,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,critical question% * addressed in this *
+7902,,question in this article,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7900,,question in this paper,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7906,,question in this report,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7904,,question in this research,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+2231,,question in this study,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+2235,,question was investigated,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7886,,question we addressed in this,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7884,,questions addressed in this study,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7903,,questions in this article,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7901,,questions in this paper,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7907,,questions in this report,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7905,,questions in this research,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7397,,questions in this study,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,question% in this *
+7885,,questions we addressed in this,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+2237,,questions were investigated,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+,,been disappointing,problem statement,,if in introduction ,,,,,30,,,,
+7256,,reasons for studying this topic,contribution,,,,,,,8,1,8,NULL,reasons for studying * topic%
+Sep13,,relative contribution,contribution,,,,,,,8,,,,
+Sep13,,replicating the findings,contribution,contribution,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,,,,
+7370,,represent a positive contribution towards,contribution,,,,,,,8,1,8,NULL,represent% * positive contribution% towards
+,,have not yet been,problem statement,,if in introduction,,,,,30,,,,
+Sep13,,requires further,problem statement,,if in introduction,,,,,30,,,,
+2389,,research question,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7892,,research question examined in this,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7914,,research question in this article,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7912,,research question in this paper,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7915,,research question in this report,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7913,,research question in this study,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7909,,research questions,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7916,,research questions in this article,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+2390,,research questions in this paper,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7910,,research questions in this report,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7899,,research questions in this study,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7891,,research questions were examined,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+,,sample was not,limitation ,,if in discussion or in conclusion section,,,,,5,,,,
+,,sample was too small,limitation ,,if in discussion or in conclusion section,,,,,5,,,,
+7924,,second hypothesis,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7673,,set of hypotheses,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7674,,set of research questions,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7477,,sets of hypotheses,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7476,,sets of research questions,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+2510,,sharp decline,problem statement,,if in introduction,,,,,30,1,6,,NULL
+2511,,sharp decrease,problem statement,,if in introduction,,,,,30,1,6,,NULL
+Sep13,,sharp drop,problem statement,problem statement,if in introduction,,,,,30,,,,
+2512,,sharp increase,problem statement,problem statement,if in introduction,,,,,30,1,6,,NULL
+2513,,sharp rise,problem statement,,if in introduction,,,,,30,1,6,,NULL
+3249,,sharpens our theoretical understanding of,contribution,,,,,,,8,1,8,NULL,sharpen% * theoretical understanding of
+3248,,sharpens our understanding of,contribution,,,,,,,8,1,8,NULL,sharpen% * understanding of
+2515,,shed light,contribution,contribution,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,1,8,NULL,shed% ** light
+2518,,shed new light,contribution,contribution,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,1,8,NULL,shed% * light
+1518,,sheds additional light,contribution,contribution,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,1,8,NULL,shed% * light
+3250,,sheds light,contribution,contribution,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,1,8,NULL,shed% * * light
+2516,,sheds light on,contribution,contribution,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,1,8,NULL,shed% light on
+3205,,should help you to,contribution,,,,,,,8,1,8,NULL,should help * to
+Sep13,,should not be ignored,problem statement,problem statement,if in introduction,,,,,30,,,,
+,,little … progress,problem statement,problem statement,if in introduction,,,,,30,,,,
+2570,,significant barrier,problem statement,problem statement,if in introduction,,,,,30,1,6,,NULL
+Sep13,,significant challenges for,problem statement,problem statement,if in introduction,,,,,30,,,,
+2571,,significant contribution,contribution,contribution,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,8,1,8,NULL,NULL
+2573,,significant declines,problem statement,problem statement,if in introduction,,,,,30,1,9,NULL,significant decline%
+,,size of sample population,limitation ,,if in discussion or in conclusion section,,,,,5,,,,
+2635,,small size of the sample,limitation,limitation,if in discussion or in conclusion section,,,,,5,1,6,,NULL
+3985,,some doubts as to whether,problem statement,problem statement,if in introduction,,,,,30,1,13,,NULL
+Sep13,,some limitations are present in the current study,limitation,,"if appears in Discussion or 
+conclusion sections",,,,,5,,,,
+,,still far from clear,problem statement,problem statement,if in introduction ,,,,,30,,,,
+2685,,still far from clear,limitation,limitation,if in discussion or in conclusion section,,,,,5,1,6,,NULL
+,,still have to find a way to,problem statement,problem statement,if in introduction ,,,,,30,,,,
+2686,,still have to find a way to,limitation,limitation,if in discussion or in conclusion section,,,,,5,1,6,,NULL
+,,still lack,problem statement,problem statement,if in introduction ,,,,,30,,,,
+2687,,still lack,limitation,limitation,if in discussion or in conclusion section,,,,,5,1,6,,NULL
+,,still not completely understood,problem statement,problem statement,if in introduction ,,,,,30,,,,
+2691,,still not completely understood,limitation,limitation,if in discussion or in conclusion section,,,,,5,1,6,,NULL
+,,still requires additional,problem statement,problem statement,if in introduction ,,,,,30,,,,
+7404,,still requires additional,limitation,limitation,if in discussion or in conclusion section,,,,,5,1,6,,still require% additional
+,,still some debate,problem statement,problem statement,if in introduction ,,,,,30,,,,
+6643,,still some debate,limitation,limitation,if in discussion or in conclusion section,,,,,5,1,6,,still * debate
+,,suffer from a number of,problem statement,,if in introduction,,,if in last section,,30,,,,
+3975,,suffer from a number of limitations,limitation,,if in discussion or in conclusion section,,,,,5,1,13,,suffer% from a number of limitation%
+2752,,suggest a need for further research,problem statement,,if in introduction,,,,,30,1,6,,NULL
+,,suggest a need for further research,recommendation ,,if in discussion or in conclusion section,,,,,31,,,,
+2770,,susceptible to,problem statement,,if in introduction,,,,,30,1,6,,NULL
+Sep13,,systematic bias,limitation,,if in discussion or in conclusion section,,,,,5,,,,
+Sep13,,systematic biases,limitation,,if in discussion or in conclusion section,,,,,5,,,,
+2788,,test the hypothesis,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+6154,,test whether,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,0,25,NULL,NULL
+7917,,tested the following hypothesis,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7959,,the hypothesis tested,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,the * hypothesis tested
+7964,,the leading questions were:,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,the * questions were:
+2817,,there are as yet few,problem statement,,if in introduction,,,,,30,1,6,,there are as yet * few
+,,there are some questions,problem statement,,if in introduction ,,,,,30,,,,
+3660,,there are some questions,limitation,,if in discussion or in conclusion section,,,,,5,1,13,,there are * some * questions
+,,there is a need for,problem statement,,if in introduction ,,,,,30,,,,
+2825,,there is a need for,limitation,limitation,if in discussion or in conclusion section,,,,,5,1,6,,NULL
+3996,,there is a very real danger that,problem statement,,if in introduction,,,,,30,1,13,,NULL
+,,few if any,problem statement,,if in introduction,,,,,30,,,,
+2831,,there is no guarantee that,problem statement,,if in introduction,,,,,30,1,6,,NULL
+2832,,there is no way of knowing,problem statement,,if in introduction,,,,,30,1,6,,NULL
+Sep13,,these problems are,problem statement,,if in introduction,,,,,30,,,,
+Sep13,,These results challenge,problem statement,,if in introduction,,,,,30,,,,
+6984,,these results validate,contribution,,,,,,,8,1,8,NULL,these * validate
+7925,,third hypothesis,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+Sep13,,this problem has been,problem statement,,,deictic work ref,,,,30,,,,
+Sep13,,this problem is analyzed,problem statement,,,deictic work ref,,,,30,,,,
+Sep13,,this research expanded on,contribution,,,,,,,8,,,,
+7362,,this study extends,contribution,,,,,,,8,1,8,NULL,NULL
+2858,,this study extends the findings of,contribution,,,,,,,8,1,8,NULL,this * extend% the findings of
+5762,,this study identified,contribution,,,,,,,8,1,8,NULL,this * identified
+5760,,this study identifies,contribution,,,,,,,8,1,8,NULL,this * identifies
+2859,,this study therefore validates,contribution,,,,,,,8,1,8,NULL,NULL
+2726,,this study validates,contribution,,,,,,,8,1,8,NULL,this study validate%
+4005,,time-consuming,problem statement,,if in introduction,,,,,30,1,13,,NULL
+2880,,to determine whether,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+3254,,to provide valuable insights,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,to provide ** insights
+6374,,under-represented,problem statement,problem statement,if in introduction,,,,,30,1,6,,NULL
+6812,,unique contribution,contribution,,,,,,,8,1,8,NULL,NULL
+5421,,valuable addition to,contribution,,,,,,,8,1,8,NULL,* addition to
+6985,,valuable contribution to,contribution,,,,,,,8,1,8,NULL,NULL
+274,,very few attempts to,problem statement,,if in introduction,,,,,30,1,6,,NULL
+3007,,very few emipirical studies,problem statement,,if in introduction,,,,,30,1,6,,NULL
+3011,,very little empirical data,problem statement,,if in introduction,,,,,30,1,6,,NULL
+3015,,very little research,problem statement,,if in introduction,,,,,30,1,6,,NULL
+3021,,very real danger that,problem statement,,if in introduction,,,,,30,1,13,,NULL
+2659,,very valuable information,contribution,,if in discussion or in conclusion section,"if contains self ref, deictic work ref, or ""you""",,,,6,1,8,NULL,very * information
+7882,,we address the question of,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7962,,we also expected that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7002,,we ask why,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7008,,we believe that this will help,contribution,,,,,,,8,1,8,NULL,we believe that this ** help
+5865,,we consider how to,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,consider% how to
+829,,we evaluate whether,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7895,,we expected that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+5990,,we explored whether,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+Sep13,,we extend,contribution,,,,,,,8,,,,
+Sep13,,we extend the model,contribution,,,,,,,8,,,,
+Sep13,,we have no way of knowing,limitation,,if in discussion or in conclusion section,,,,,5,,,,
+Sep13,,we have suggested some ways in which,contribution,contribution ,if in discussion or in conclusion section,,,,,8,,,,
+Sep13,,we have taken a few steps towards,contribution,contribution ,if in discussion or in conclusion section,,,,,8,,,,
+1163,,we hypothesised that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7921,,we hypothesize that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7919,,we hypothesized that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7961,,we hypothesized that we would find,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+6969,,we investigated whether,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7374,,we know very little about,problem statement,,if in introduction,,,,,30,1,6,,* know very little about
+7602,,we limit our discussion to,limitation,,"if appears in Discussion or 
+conclusion sections",,,,,5,1,15,NULL,we limit * discussion to
+3045,,we need to know,problem statement,,if in introduction,,,,,30,1,6,,NULL
+7928,,we posit that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+7894,,we predicted,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+6496,,we predicted that,hypothesis/research question  ,research question,self ref,deictic work ref,,,,25,1,25,NULL,NULL
+6621,,we will be able to,contribution,,,,,,,8,1,8,NULL,NULL
+3256,,will enable us to,contribution,,,,,,,8,1,8,NULL,NULL
+3096,,will enable you to,contribution,,,,,,,8,1,8,NULL,* enable you to
+3097,,will help us to,contribution,,,,,,,8,1,8,NULL,* help us to
+3099,,will help you to,contribution,,,,,,,8,1,8,NULL,* help you to
+3131,,yet there is a paucity of,problem statement,,if in introduction,,,,,30,1,6,,NULL
+3213,,you should be able to,contribution,,,,,,,8,1,8,NULL,NULL
+3214,,you will be able to,contribution,,,,,,,8,1,8,NULL,you * be able to
+5813,,paucity of data,problem statement,,if in introduction,,,,,30,1,6,,#NAME?
+,,enables  us  to  detect,contribution,,,,,,,8,,,,
+,,clarify the relationship between,contribution,,,,,,,8,,,,
+,,This solution also deals with,contribution,,,,,,,8,,,,
+,,circumvent the need ,contribution,,if in conclusion section,,,,,8,,,,
+,,there is growing concern ,problem statement,,if in introduction ,,,,,30,,,,
+,,It is proposed to maintain  ,recommendation ,,if in conclusion section,,,,,31,,,,
+,,that may help in ,contribution,,if in conclusion section,,,,,8,,,,
+,,may help to,contribution,,if in conclusion section,,,,,8,,,,
+,,This paper presents new ideas ,contribution,,if in conclusion section,,,,,8,,,,
+,,to better represent ,contribution,,if in conclusion section,,,,,8,,,,
+,,An interesting line of future research could be ,recommendation ,,if in conclusion section,,,,,31,,,,
+,,although it leads to  ... problems ,problem statement,,if in introduction section ,,,,,30,,,,
+,,This is a complicated problem that ,problem statement,,if in introduction section ,,,,,30,,,,
+,,we recommend that ,recommendation ,,if in conclusion section,,,,,31,,,,
+,,our results should be interpreted ,limitation,,if in conclusion section,,,,,5,,,,
+,,our results should be interpreted in the context of the following limitations,limitation,,if in conclusion section,,,,,5,,,,
+,,future research should investigate,recommendation ,,if in conclusion section,,,,,31,,,,
+,,further validation is however needed in order to confirm,limitation,,,,,,,5,,,,
+,,"however, further validation is needed in order to ",limitation,,,,,,,5,,,,
+,,further validation is needed ,limitation,,,,,,,5,,,,
+,,overlooked,problem statement,if introduction,,,,,,30,,,,
+,,undervalued,problem statement,,if introduction,,,,,30,,,,
+,,mismatch between ,problem statement,,if introduction,,,,,30,,,,
+,,wasted,problem statement,,if introduction,,,,,30,,,,
+,,the paper highlighted,contribution,,if in conclusion section,,,,,8,,,,
+,,will help guide the research,contribution,,if in conclusion section,,,,,8,,,,
+,,we hope our … will ,contribution,,if in conclusion section,,,,,8,,,,
+,,potential negative effect,problem statement,,if introduction,,,,,30,,,,
+,,to further improve ,recommendation ,,if in conclusion section,,,,,31,,,,
+,,should be carried out in order to better understand ,recommendation ,,if in conclusion section,,,,,31,,,,
+,,should be conducted in order to  ,recommendation ,,if in conclusion section,,,,,31,,,,
+,,one limitation in this ,limitation,,if in conclusion section,deictic ref,,,,5,,,,
+,, a selection bias may have influenced the results ,limitation,,if in conclusion section,,,,,5,,,,
+,,the sample was small and ,limitation,,if in conclusion section,,,,,5,,,,
+,,future research is warranted ,recommendation ,,if in conclusion section,,,,,31,,,,
+,,the sample was small and homogenous ,limitation,,if in conclusion section,,,,,5,,,,
+,,does not give adequate information on ,limitation,,if in conclusion section,,,,,5,,,,
+,,did not provide for,limitation,,if in conclusion section,,,,,5,,,,
+,,did not allow for,limitation,,if in conclusion section,,,,,5,,,,
+,,primary limitation of this study,limitation,,if in conclusion section,,,,,5,,,,
+,,second limitation,limitation,,if in conclusion section,,,,,5,,,,
+,,our findings provide evidence for ,contribution,,if in conclusion section,,,,,8,,,,
+,,our findings could lead to ,contribution,,if in conclusion section,,,,,8,,,,
+,,Further research needs to be conducted,recommendation ,,if in conclusion section,,,,,31,,,,
+,,This study has established the importance of,contribution,,if in conclusion section,,,,,8,,,,
+,,There needs to be further work before,recommendation ,,if in conclusion section,,,,,31,,,,
+,,further work needs to be done before,recommendation ,,if in conclusion section,,,,,31,,,,
+,,could be used effectively as a,contribution,,if in conclusion section,,,,,8,,,,
+,,"Despite the importance of the findings, there were a number of limitations to the ",limitation,,if in conclusion section,,,,,5,,,,
+,,contributes to the research on … by examining,contribution,,if in conclusion section,,,,,8,,,,
+,,model was verified,contribution,,if in conclusion section,,,,,8,,,,
+,,we recommend,recommendation ,,if in conclusion section,,,,,31,,,,
+,,researchers in the future could use,recommendation ,,if in conclusion section,,,,,31,,,,
+,,This study also makes contributions to our understanding of,contribution,,if in conclusion section,,,,,8,,,,
+,,This study also makes contributions to ,contribution,,if in conclusion section,,,,,8,,,,
+,,few existing empirical studies have,problem statement,,if in introduction,,,,,30,,,,
+,,few existing empirical studies have addressed,problem statement,,if in introduction,,,,,30,,,,
+,,further research is needed to address,problem statement,if early sentences of abstract,,,,,,30,,,,
+,,should address,recommendation,if in conclusion section,,,,,,31,,,,
+,,More research should be done to examine,problem statement,if early sentences of abstract,,,,,,30,,,,
+,,should examine,recommendation,if in conclusion section,,,,,,31,,,,
+,,need to understand ,problem statement,if early sentences of abstract,,,,,,30,,,,
+,,need to understand ,recommendation,if in conclusion section,,,,,,31,,,,
+,,require further ,problem statement,if early sentences of abstract,,,,,,30,,,,
+,,require further ,recommendation,if in conclusion section,,,,,,31,,,,
+,,require further investigation,problem statement,if early sentences of abstract,,,,,,30,,,,
+,,require further investigation,recommendation,if in conclusion section,,,,,,31,,,,
+,,complex and multi-faceted issue,problem statement,if early sentences of abstract,,,,,,30,,,,
+,,One drawback in this study was,limitation,if in conclusion section,,,,,,5,,,,
+,,indicates a gap between,problem statement,if early sentences of abstract,,,,,,30,,,,
+,,has been criticised for,problem statement,if early sentences of abstract,,,,,,30,,,,
+,,should be re-examined in light of,problem statement,if early sentences of abstract,,,,,,30,,,,
+,,should be re-examined in light of,recommendation,if in conclusion section,,,,,,31,,,,
+,,these findings should not be extrapolated to ,limitation,if in conclusion section,,,,,,5,,,,
+,,these findings should not be … without further empirical examination.,limitation,if in conclusion section,,,,,,5,,,,
+,,may reflect … rather than,limitation,if in conclusion section,,,,,,5,,,,
+,,limited the ability of the study to,limitation,if in conclusion section,,,,,,5,,,,
+,,More research should be done to,problem statement,if in introduction section ,,,,,,30,,,,
+,,More research should be done to,recommendation,if in conclusion section,,,,,,31,,,,
+,,should be explored further ,problem statement,if in introduction section ,,,,,,30,,,,
+,,should be explored further ,recommendation,if in conclusion section,,,,,,31,,,,
+,,Future studies might include,recommendation ,if in conclusion section,,,,,,31,,,,
+,,There are ... caveats ,limitation,if in conclusion section,,,,,,5,,,,
+,,Future research should include ,problem statement,if in introduction section ,,,,,,30,,,,
+,,Future research should include ,recommendation,if in conclusion section,,,,,,31,,,,
+,,Future research ,recommendation ,if in conclusion section,,,,,,31,,,,
+,,would provide a means of validating,recommendation ,if in conclusion section,,,,,,31,,,,
+,,would provide a more rigorous test of ,recommendation ,if in conclusion section,,,,,,31,,,,
+,,These findings provide support for,contribution,if in conclusion section,,,,,,8,,,,
+,,Limitations of the present study provide avenues for further research ,limitation,if in conclusion section,,,,,,5,,,,
+,,A major limitation of the current study was the composition of the ,limitation,if in conclusion section,,,,,,5,,,,
+,,A major limitation of the current study was ,limitation,if in conclusion section,,,,,,5,,,,
+,,This study provides further evidence that,contribution,if in conclusion section,,,,,,8,,,,
+,,It is feasible that … are also contributing,limitation,if in conclusion section,,,,,,5,,,,
+,,threat to the validity of the findings ,limitation,if in conclusion section,,,,,,5,,,,
+,,Longitudinal ... is clearly warranted,recommendation ,if in conclusion section,,,,,,31,,,,
+,,needs to be examined to identify,problem statement,if in introduction section ,,,,,,30,,,,
+,,needs to be examined to identify,limitation,if in conclusion section,,,,,,5,,,,
+,,needs to be examined to ,problem statement,if in introduction section ,,,,,,30,,,,
+,,needs to be examined to ,limitation,if in conclusion section,,,,,,5,,,,
+,,there is currently little,problem statement,if in introduction section ,,,,,,30,,,,
+,,there is currently little empirical evidence,problem statement,if in introduction section ,,,,,,30,,,,
+,,We conceptualise the findings in a theoretical model,contribution,if in conclusion section,,,,,,8,,,,
+,,has developed a better understanding of,contribution,if in conclusion section,,,,,,8,,,,
+,,Issues related to ... have become a crucial component of,problem statement,if in introduction,,,,,,30,,,,
+,,which remains underrecognised,problem statement,if in introduction,,,,,,30,,,,
+,,Further research is needed to elucidate whether,problem statement,if in introduction,,,,,,30,,,,
+,,Further research is needed to elucidate whether,recommendation,if in conclusion section,,,,,,31,,,,
+,,Further research is needed to clarify whether,problem statement,if in introduction,,,,,,30,,,,
+,,Further research is needed to clarify whether,recommendation,if in conclusion section,,,,,,31,,,,
+,,there is little research available ,problem statement,if in introduction,,,,,,30,,,,
+,,there is little ... literature available ,problem statement,if in introduction,,,,,,30,,,,
+,,highlights a potential way forward,contribution,if in conclusion section,,,,,,8,,,,
+,,research is needed ,problem statement,if in introduction,,,,,,30,,,,
+,,research is needed ,recommendation,if in conclusion section,,,,,,31,,,,
+,,in order to address this gap,problem statement,if in introduction,,,,,,30,,,,
+,,in order to address this gap,recommendation,if in conclusion section,,,,,,31,,,,
+,,need further investigation,problem statement,if in introduction,,,,,,30,,,,
+,,need further investigation,recommendation,if in conclusion section,,,,,,31,,,,
+,,research needs to establish,problem statement,if in introduction,,,,,,30,,,,
+,,research needs to establish,recommendation,if in conclusion section,,,,,,31,,,,
+,,further research is required to understand,problem statement,if in introduction,,,,,,30,,,,
+,,further research is required to understand,recommendation,if in conclusion section,,,,,,31,,,,
+,,is a useful tool to,contribution,if in conclusion section,,,,,,8,,,,
+,,have not reached consensus,problem statement,if in introduction,,,,,,30,,,,
+,,have not reached … consensus,problem statement,if in introduction,,,,,,30,,,,
+,,provides several insights,contribution,if in conclusion section,,,,,,8,,,,
+,,study also contributes to a better understanding of,contribution,if in conclusion section,,,,,,8,,,,
+,,Further studies are suggested,problem statement,if in introduction section ,,,,,,30,,,,
+,,Further studies are suggested,recommendation,if in conclusion section,,,,,,31,,,,
+,,are a precious resource and it important that,problem statement,if in introduction,,,,,,30,,,,
+,,Much previous research has focused on ... while ,problem statement,if in introduction,,,,,,30,,,,
+,,has focused on ... while overlooking ,problem statement,if in introduction,,,,,,30,,,,
+,,mask differences across,problem statement,if in introduction,,,,,,30,,,,
+,,mask differences across,limitation,if in conclusion section,,,,,,5,,,,
+,,further longitudinal research is,problem statement,if in introduction,,,,,,30,,,,
+,,further longitudinal research is,recommendation,if in conclusion section,,,,,,31,,,,
+,,Such research would provide further,problem statement,if in introduction,,,,,,30,,,,
+,,Such research would provide further,recommendation,if in conclusion section,,,,,,31,,,,
+,,Further studies could examine the relationship among,recommendation,if in conclusion section,,,,,,31,,,,
+,,need further exploration ,problem statement,if in introduction section ,,,,,,30,,,,
+,,need further exploration ,recommendation,if in conclusion section,,,,,,31,,,,
+,,it needs to be acknowledged that there are limitations to,limitation,if in conclusion section,,,,,,5,,,,
+,,There is no consensus regarding,problem statement,if in introduction,,,,,,30,,,,
+,,little or no consensus,problem statement,if in introduction,,,,,,30,,,,
+,,appear to be inconsistent with,problem statement,if in introduction,,,,,,30,,,,
+,,Future research should attempt to establish statistically significant evidence,recommendation,if in conclusion section,,,,,,31,,,,
+,,are much higher … than,problem statement,if in introduction,,,,,,30,,,,
+,,indicating significant … hazard,problem statement,if in introduction,,,,,,30,,,,
+,,constitute a potential … hazard to,problem statement,if in introduction,,,,,,30,,,,
+,,results of the current study highlight,contribution,if in conclusion section,,,,,,8,,,,
+,,presents a serious problem,problem statement,if in introduction,,,,,,30,,,,
+,,"However, most research has … only",problem statement,if in introduction,,,,,,30,,,,
+,,"However, most research has … solely",problem statement,if in introduction,,,,,,30,,,,
+,,Our knowledge of ... is still fragmentary.,problem statement,if in introduction,,,,,,30,,,,
+,,is fragmented,problem statement,if in introduction,,,,,,30,,,,
+,,threaten,problem statement,if in introduction,,,,,,30,,,,
+,,however,problem statement,if in introduction,,,,,,30,,,,
+,,yet,problem statement,if in introduction,,,,,,30,,,,
+,,although,problem statement,if in introduction,,,,,,30,,,,
+,,nonetheless,problem statement,if in introduction,,,,,,30,,,,
+,,nevertheless,problem statement,if in introduction,,,,,,30,,,,
+,,is essential to,problem statement,if in introduction,,,,,,30,,,,
+,,It is therefore suggested that,recommendation,if in conclusion section,,,,,,31,,,,
+,,it is important to understand,problem statement,if in introduction,,,,,,30,,,,
+,,it is important to understand,recommendation,if in conclusion section,,,,,,31,,,,
+,,danger of,problem statement,if in introduction,,,,,,30,,,,
+,,future research,problem statement,if in introduction,,,,,,30,,,,
+,,further research ,recommendation,if in conclusion section,,,,,,31,,,,
+,,hazardous,problem statement,if in introduction,,,,,,30,,,,
+,,needs to be explored further,problem statement,if in introduction section ,,,,,,30,,,,
+,,needs to be explored further,recommendation,if in conclusion section,,,,,,31,,,,
+,,despite the fact that,problem statement,if in introduction section ,,,,,,30,,,,
+,,was conducted in only one,problem statement,if in introduction section ,,,,,,30,,,,
+,,was conducted in only one,limitation,if in conclusion section,,,,,,5,,,,
+,,the question of … remains open,problem statement,if introduction,,,,,,30,,,,
+,,the question of … remains open,limitation,if conclusion,,,,,,5,,,,
+,,"future research, therefore, should be conducted",problem statement,if in introduction section ,,,,,,30,,,,
+,,"future research, therefore, should be conducted",recommendation,if conclusion,,,,,,31,,,,
+,,future research should be conducted ,problem statement,if in introduction section ,,,,,,30,,,,
+,,future research should be conducted ,recommendation,if conclusion,,,,,,31,,,,
+,,it remains unclear whether,limitation,if conclusion,,,,,,5,,,,
+,,it remains unclear whether,problem statement,if in introduction section ,,,,,,30,,,,
+,,A limitation specific to,limitation,,,,,,,5,,,,
+,,these studies are subject to,limitation,,,,,,,5,,,,
+,,some limitations that should be noted,limitation,,,,,,,5,,,,
+,,One limitation is the potential for,limitation,,,,,,,5,,,,
+,,the possibility of … cannot be completely ruled out,limitation,,,,,,,5,,,,
+,,which can inflate correlations,limitation,,,,,,,5,,,,
+,,and raise questions about causal direction,limitation,,,,,,,5,,,,
+,,the possibility of … cannot be completely …,limitation,,,,,,,5,,,,
+,,Future research might ,recommendation,,,,,,,31,,,,
+,,future research might use a ... to explore,recommendation,,,,,,,31,,,,
+,,Another potential limitation is,limitation,,,,,,,5,,,,
+,,Future research should,problem statement,if in introduction,,,,,,30,,,,
+,,Future research should,recommendation,if in conclusion section,,,,,,31,,,,
+,,Future research could,problem statement,if in introduction,,,,,,30,,,,
+,,Future research could,recommendation,if in conclusion section,,,,,,31,,,,
+,,It may also be fruitful to explore,recommendation,,,,,,,31,,,,
+,,a potential limitation of this research,limitation,,,,,,,5,,,,
+,,While a great deal of research has …,problem statement,if in introduction,,,,,,30,,,,
+,,far less is known about,problem statement,if in introduction,,,,,,30,,,,
+,,far less is known about,recommendation,if in conclusion section,,,,,,31,,,,
+,,future researchers should examine,recommendation,,,,,,,31,,,,
+,,Another possible limitation relates to,limitation,,,,,,,5,,,,
+,,may have influenced our,limitation,,,,,,,5,,,,
+,,helpful for future research to,recommendation,,,,,,,31,,,,
+,,we encourage future research,recommendation,,,,,,,31,,,,
+,,future research should attempt to,problem statement,if in introduction,,,,,,30,,,,
+,,future research should attempt to,recommendation,if in conclusion section,,,,,,31,,,,
+,,it would be helpful for future research to,recommendation,,,,,,,31,,,,
+,,we call for …,recommendation,,,,,,,31,,,,
+,,we call for … to cross-validate our findings,recommendation,,,,,,,31,,,,
+,,We acknowledge several limitations to this study,limitation,,,,,,,5,,,,
+,,"However, extraneous factors",limitation,,,,,,,5,,,,
+,,could be influencing our results,limitation,,,,,,,5,,,,
+,,were not randomly assigned to,limitation,,,,,,,5,,,,
+,,This limits our ability to ,limitation,,,,,,,5,,,,
+,,This limits our ability to rule out the possibility that,limitation,,,,,,,5,,,,
+,,how our results generalize to other …,limitation,,,,,,,5,,,,
+,,Future research might examine,recommendation,,,,,,,31,,,,
+,,we were unable to address the long-term effects of,limitation,,,,,,,5,,,,
+,,exists the possibility that the differences between the experimental and control groups,limitation,,,,,,,5,,,,
+,,exists the possibility that the differences between ... groups,limitation,,,,,,,5,,,,
+,,Our hope is that this study will spark... ,contribution,,,,,,,8,,,,
+,,this study will spark continued interest,contribution,,,,,,,8,,,,
+,,"The results of this study should be considered in light of
+its limitations",limitation,,,,,,,5,,,,
+,,light of its limitations,limitation,,,,,,,5,,,,
+,,research should explore,recommendation,,,,,,,31,,,,
+,,Future work,recommendation,,,,,,,31,,,,
+,,should endeavor to,recommendation,,,,,,,31,,,,
+,,A finer-grained … is necessary to … understand ,problem statement,if in introduction,,,,,,30,,,,
+,,A finer-grained … is necessary to … understand ,recommendation,if in conclusion section,,,,,,31,,,,
+,,necessary to ... understand,recommendation,if in conclusion section,,,,,,31,,,,
+,,necessary to ... understand,problem statement,if in introduction,,,,,,30,,,,
+,,sample size for this study was relatively small,limitation,,,,,,,5,,,,
+,,Future work is also necessary to,recommendation,,,,,,,31,,,,
+,,Although this limitation is partially offset by,limitation,,,,,,,5,,,,
+,,spills over to affect,problem statement,,,,,,,30,,,,
+,,These contributions must be qualified in light of,limitation,,,,,,,5,,,,
+,,several limitations of our research,limitation,,,,,,,5,,,,
+,,A first limitation is our methodological,limitation,,,,,,,5,,,,
+,,A first limitation is ,limitation,,,,,,,5,,,,
+,,second limitation is,limitation,,,,,,,5,,,,
+,,Future work should also explore,recommendation,if in conclusion section,,,,,,31,,,,
+,,Future work could also explore,problem statement,if in introduction,,,,,,30,,,,
+,,Another important area of future inquiry concerns,recommendation,,,,,,,31,,,,
+,,our research highlights the importance of,contribution,,,,,,,8,,,,
+,,our ... laid the foundations for,contribution,,,,,,,8,,,,
+,,our … laid the groundwork for,contribution,,,,,,,8,,,,
+,,suggests a need to identify factors that impact,problem statement,if in introduction section ,,,,,,30,,,,
+,,a need to identify factors that impact,limitation,if in conclusion section,,,,,,5,,,,
+,,a number of limitations ,limitation,,,,,,,5,,,,
+,,a number of limitations do exist,limitation,,,,,,,5,,,,
+,,caution must be exercised when ,limitation,,,,,,,5,,,,
+,,must be exercised when generalizing the results,limitation,,,,,,,5,,,,
+,,even though the sample size in this … was,limitation,,,,,,,5,,,,
+,,some selection bias,limitation,,,,,,,5,,,,
+,,Future research should focus on,recommendation,,,,,,,31,,,,
+,,additional research is also needed to investigate,problem statement,if in introduction,,,,,,30,,,,
+,,additional research is also needed to investigate,recommendation,if in conclusion section,,,,,,31,,,,
+,,future research could expand,recommendation,,,,,,,31,,,,
+,,This study extends previous research,contribution ,,,,,,,8,,,,
+,,"Although potential benefits … could be …, … face … challenge",problem statement,,,,,,,30,,,,
+,,There are several limitations to our ... that should be considered,limitation,,,,,,,5,,,,
+,,There are several limitations to our ... ,limitation,,,,,,,5,,,,
+,,very few studies have examined,problem statement,if in introduction,recommendation,if in conclusion section,,,,30,,,,
+,,There are a number of limitations to this study.,limitation,,,,,,,5,,,,
+,,convenience sampling framework,limitation,,,,,,,5,,,,
+,,these results should be interpreted with caution,limitation,,,,,,,5,,,,
+,,Future researchers may wish to,recommendation,,,,,,,31,,,,
+,,overlooked,problem statement,if in introduction,,,,,,30,,,,
+,,validity of the results of this study might be limited to,limitation,,,,,,,5,,,,
+,,is a subject for further research,recommendation,,,,,,,31,,,,
+,,future studies should,recommendation,,,,,,,31,,,,
+,,largely depends on,problem statement,if in introduction,,,,,,30,,,,
+,,This study adds to the theoretical framework,contribution,,,,,,,8,,,,
+,,The second contribution of this study … is the finding of,contribution,,,,,,,8,,,,
+,,It is important to understand ...limitations of the study,limitation,,,,,,,5,,,,
+,,There are at least ... limitations,limitation,,,,,,,5,,,,
+,,The first limitation deals with the nature of a,limitation,,,,,,,5,,,,
+,,there is a need for a well-designed longitudinal,limitation,if in conclusion section,,,,,,5,,,,
+,,there is a need for ... longitudinal,limitation,if in conclusion section,,,,,,5,,,,
+,,there is a need for a ,recommendation,if in conclusion section,,,,,,31,,,,
+,,there is a need for a,problem statement,if in introduction,,,,,,30,,,,
+,,The second limitation is the fact that the questionnaire design can also  ,limitation,,,,,,,5,,,,
+,,The ... limitation is the fact that ,limitation,,,,,,,5,,,,
+,,The third limitation of the study results from the data collection method,limitation,,,,,,,5,,,,
+,,results of the study may be limited in their generalizability,limitation,,,,,,,5,,,,
+,, the sample tends to skew towards,limitation,,,,,,,5,,,,
+,,The study deepens the existing conceptualizations,contribution,,,,,,,8,,,,
+,,The study draws attention to,contribution,,,,,,,8,,,,
+,,This study highlights,contribution,,,,,,,8,,,,
+,,study sheds light on the key role,contribution,,,,,,,8,,,,
+,,study sheds light on ,contribution,,,,,,,8,,,,
+,,this study highlights,contribution,,,,,,,8,,,,
+,,the empirical literature has produced mixed results regarding,problem statement,,,,,,,30,,,,
+,,has produced mixed results ,problem statement,,,,,,,30,,,,
+,,research … has been limited by its overwhelming reliance on ,problem statement,,,,,,,30,,,,
+,,a possibility we leave open for exploration in future research,recommendation,,,,,,,31,,,,
+,,the results of this study are open to the criticism that,limitation,,,,,,,5,,,,
+,, theory has seldom been applied,problem statement,,,,,,,30,,,,
+,,a clear need for research in this area since ,problem statement,,,,,,,30,,,,
+,,likely to be a major factor in ,problem statement,if in introduction,,,,,,30,,,,
+,,"However, there are still limitations to this questionnaire",limitation,,,,,,,5,,,,
+,,this ... should prove useful for,contribution,,,,,,,8,,,,
+,,"explained above, this ... was not able to",limitation,,,,,,,5,,,,
+,,will be revealed by future research,recommendation,,,,,,,31,,,,
+,,extended research is necessary ,problem statement,if in introduction,,,,,,30,,,,
+,,extended research is necessary,recommendation,if in conclusion section,,,,,,31,,,,
+,,needs to be used with a wide variety of,limitation,,,,,,,5,,,,
+,,difficult to draw firm conclusions given the small sample size and the difficulties,limitation,,,,,,,5,,,,
+,,difficult to draw firm conclusions ,limitation,,,,,,,5,,,,

@@ -38,8 +38,8 @@ object Boot extends App {
 	      }) 
 	    }
 	    
-	    processAll(config.pdf, Some("pdf-converted"))
-	    processAll(config.eLife)
+	    //processAll(config.pdf, Some("pdf-converted"))
+	    //processAll(config.eLife)
 	    
 	    //ldb.ldb.go(new JATS("../data/ready-for-semantic/from-pdf/management 14", "pdf-converted"))
 	    //ldb.ldb.go(new JATS("../data/ready-for-semantic/eLife-JATS/elife03399.xml", "pdf-converted"))

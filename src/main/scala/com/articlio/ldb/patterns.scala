@@ -205,10 +205,10 @@ object ldb {
                                                                        
   val SPACE = " "
                                                                        
-  def go (document: JATS) {
+  def go (document: JATS) : String = {
 
     val logger = new Logger(document.name)
-          
+    
     //
     // get data
     //
@@ -216,7 +216,8 @@ object ldb {
     //val document = new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet", "pdf-converted") // elife04395, elife-articles(XML)/elife00425styled.xml
     //val document = new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife03399.xml")
     val sections : Seq[JATSsection] = document.sections // elife04395, elife-articles(XML)/elife00425styled.xml
-
+    if (sections.isEmpty) return s"${document.name} appears to have no sections and was not processed"  
+    
     //
     // separate into util file
     //
@@ -288,7 +289,7 @@ object ldb {
       return sentences.result
     }
 
-     case class AnnotatedSentence(text : AnnotatedText, section: String)
+    case class AnnotatedSentence(text : AnnotatedText, section: String)
 
     case class LocatedText(text: String, section: String)
 
@@ -305,6 +306,8 @@ object ldb {
     val sentences: Seq[LocatedText] = sections.flatMap(section =>  section.paragraphs.flatMap(p =>
        sentenceSplitter(LocatedText(p.sentences.map(s => s.text).mkString(""),  section.sectionType)))) 
 
+    println(s"number of sentences: ${sentences.length}")
+       
     val sectionTypeScheme = document.sectioningType match {
      case "pdf-converted" => pdfConvertedSectionTypeScheme
      case _ => eLifeSectionTypeScheme 
@@ -325,6 +328,8 @@ object ldb {
     //
     def processSentences (sentences : Seq[LocatedText]) = {
 
+      println(s"number of sentences: ${sentences.length}")
+      
       val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
 
       for (sentence <- sentences) {
@@ -417,7 +422,7 @@ object ldb {
       }
       new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
     }
-    
+    return s"Done processing ${document.name}"
   }                                                                             
                                                                              
 }

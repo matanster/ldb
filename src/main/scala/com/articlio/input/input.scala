@@ -81,4 +81,5 @@ class JATS (filePath: String, val sectioningType: String = "eLife") {
   }
   
   val sections = JATSsectionsRaw map builder
+  
 }
