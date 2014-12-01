@@ -405,41 +405,40 @@ object ldb {
         })
         *
         */
-        
 
-	      def locationTest(p: (String, LocatedText, String, SimpleRule)) : Boolean = {
-	    	var isFinalMatch = false
-	    	//println(p._4)
-	        if (!p._4.locationProperty.isDefined) {
-	          //println("no location criteria in rule")
-	          isFinalMatch = true
-	        }
-	        else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-	            sectionTypeScheme.translation.contains(parameter.toLowerCase) && sectionTypeScheme.translation(parameter.toLowerCase) == p._2.section.toLowerCase())) {
-	            //println("location criteria matched!")
-	            isFinalMatch = true
-	        }
-	        else {
-	          //println(sectionTypeScheme.translation)
-	          println
-	          println("location criteria not matched for:")
-	          println(p._2.text)
-	          println("should be in either:")
-	          p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-	            if (sectionTypeScheme.translation.contains(parameter.toLowerCase)) println(sectionTypeScheme.translation(parameter.toLowerCase)))
-	          println("but found in:")
-	          println(p._2.section)
-	          isFinalMatch = false
-	        }
-	    	return isFinalMatch
-	      }
-        
+        def locationTest(p: (String, LocatedText, String, SimpleRule)) : Boolean = {
+          var isFinalMatch = false
+        	//println(p._4)
+        	if (!p._4.locationProperty.isDefined) {
+          //println("no location criteria in rule")
+        	  isFinalMatch = true
+        	}
+        	else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+            sectionTypeScheme.translation.contains(parameter.toLowerCase) && sectionTypeScheme.translation(parameter.toLowerCase) == p._2.section.toLowerCase())) {
+            //println("location criteria matched!")
+            isFinalMatch = true
+          }
+          else {
+            //println(sectionTypeScheme.translation)
+            println
+            println("location criteria not matched for:")
+            println(p._2.text)
+            println("should be in either:")
+            p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+              if (sectionTypeScheme.translation.contains(parameter.toLowerCase)) println(sectionTypeScheme.translation(parameter.toLowerCase)))
+            println("but found in:")
+            println(p._2.section)
+            isFinalMatch = false
+          }
+      	return isFinalMatch
+        }
+      
 	      val matches : Seq[(String, LocatedText, String, SimpleRule, Boolean)] = 
 	        possibleMatches.map(p => (p._1, 
-	    						  	  p._2,
-	    						  	  p._3,
-	    						  	  p._4,
-	    						  	  locationTest(p))).toSeq
+            	    						  	  p._2,
+            	    						  	  p._3,
+            	    						  	  p._4,
+            	    						  	  locationTest(p))).toSeq
      	
         val finalMatches = matches.filter(m => m._5)
 	    						  	  
@@ -453,17 +452,17 @@ object ldb {
 	                         s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
         }
           
-	    val rdbmsData : Seq[(String, String, String, String, String, Boolean, String)] = 
+      	val rdbmsData : Seq[(String, String, String, String, String, Boolean, String)] = 
           matches.map(m => (document.name, 
-            				  m._2.text, 
-            				  m._1,
-            				  m._4.locationProperty.isEmpty match {
-            				  	case true  => "any"
-            				  	case false => m._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.mkString(" | ")
-            				  },
-            				  m._2.section,
-            				  m._5,
-            				  m._3)).toSeq
+                            m._2.text, 
+                  				  m._1,
+                  				  m._4.locationProperty.isEmpty match {
+                  				  	case true  => "any"
+                  				  	case false => m._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.mkString(" | ")
+                  				  },
+                  				  m._2.section,
+                  				  m._5,
+                  				  m._3)).toSeq
         //println(rdbmsData)
         storage.OutDB ++= rdbmsData
 	      
