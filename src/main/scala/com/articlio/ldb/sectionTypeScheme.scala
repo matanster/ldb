@@ -1,8 +1,8 @@
 package com.articlio.ldb
 
 //
-// This is a bit ugly, a function that checks a map and separately handles the cases not covered in the map,
-// might make better sense.
+// This is rather very ugly, a function that checks a map and separately handles the cases not covered in the map,
+// may make better sense. This is entirely convoluted as is.
 //
 
 abstract class sectionTypeScheme {

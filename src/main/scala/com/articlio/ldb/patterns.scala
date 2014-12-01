@@ -441,8 +441,19 @@ object ldb {
 	    						  	  p._4,
 	    						  	  locationTest(p))).toSeq
      	
-              
-        val rdbmsData : Seq[(String, String, String, String, String, Boolean, String)] = 
+        val finalMatches = matches.filter(m => m._5)
+	    						  	  
+        if (!finalMatches.isEmpty) {
+          logger.write(sentence.text, "output")
+        
+	      finalMatches.foreach(m =>
+	        logger.write(Seq(s"sentence '${m._2.text}'",
+	                         s"in section ${m._2.section}",
+	                         s"matches pattern '${m._1}'",
+	                         s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
+        }
+          
+	    val rdbmsData : Seq[(String, String, String, String, String, Boolean, String)] = 
           matches.map(m => (document.name, 
             				  m._2.text, 
             				  m._1,
@@ -455,18 +466,8 @@ object ldb {
             				  m._3)).toSeq
         //println(rdbmsData)
         storage.OutDB ++= rdbmsData
-
-        val finalMatches = matches.filter(m => m._5)
-	    						  	  
-        if (!finalMatches.isEmpty)logger.write(sentence.text, "output")
-
-        finalMatches.foreach(m =>
-          logger.write(Seq(s"sentence '${m._2.text}'",
-                           s"in section ${m._2.section}",
-                           s"matches pattern '${m._1}'",
-                           s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
-
-          
+	      
+	      
         //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
 
       }
