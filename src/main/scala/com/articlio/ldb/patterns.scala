@@ -372,8 +372,9 @@ object ldb {
                            s"matches pattern '${p._1}'",
                            s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches (location agnostic)"))
 
-        if (!possibleMatches.isEmpty)logger.write(sentence.text, "output (location agnostic)")
+        //if (!possibleMatches.isEmpty)logger.write(sentence.text, "output (location agnostic)")
 
+        /*
         //
         // filter out matches occuring outside their designated location requirement
         //
@@ -402,29 +403,70 @@ object ldb {
               false
             }
         })
+        *
+        */
+        
 
-        if (!matches.isEmpty)logger.write(sentence.text, "output")
+	      def locationTest(p: (String, LocatedText, String, SimpleRule)) : Boolean = {
+	    	var isFinalMatch = false
+	    	//println(p._4)
+	        if (!p._4.locationProperty.isDefined) {
+	          //println("no location criteria in rule")
+	          isFinalMatch = true
+	        }
+	        else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+	            sectionTypeScheme.translation.contains(parameter) && sectionTypeScheme .translation(parameter) == p._2.section)) {
+	            //println("location criteria matched!")
+	            isFinalMatch = true
+	        }
+	        else {
+	          //println(sectionTypeScheme.translation)
+	          println
+	          println("location criteria not matched for:")
+	          println(p._2.text)
+	          println("should be in either:")
+	          p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+	            if (sectionTypeScheme.translation.contains(parameter)) println(sectionTypeScheme .translation(parameter)))
+	          println("but found in:")
+	          println(p._2.section)
+	          isFinalMatch = false
+	        }
+	    	return isFinalMatch
+	      }
+        
+	      val matches : Seq[(String, LocatedText, String, SimpleRule, Boolean)] = 
+	        possibleMatches.map(p => (p._1, 
+	    						  	  p._2,
+	    						  	  p._3,
+	    						  	  p._4,
+	    						  	  locationTest(p))).toSeq
+     	
+              
+        val rdbmsData : Seq[(String, String, String, String, String, Boolean, String)] = 
+          matches.map(m => (document.name, 
+            				  m._2.text, 
+            				  m._1,
+            				  m._4.locationProperty.isEmpty match {
+            				  	case true  => "any"
+            				  	case false => m._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.mkString(" | ")
+            				  },
+            				  m._2.section,
+            				  m._5,
+            				  m._3)).toSeq
+        //println(rdbmsData)
+        storage.OutDB ++= rdbmsData
 
-         matches.foreach(m =>
+        val finalMatches = matches.filter(m => m._5)
+	    						  	  
+        if (!finalMatches.isEmpty)logger.write(sentence.text, "output")
+
+        finalMatches.foreach(m =>
           logger.write(Seq(s"sentence '${m._2.text}'",
                            s"in section ${m._2.section}",
                            s"matches pattern '${m._1}'",
                            s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
 
-              
-              
-              
-          val rdbmsData : Seq[(String, String, String, String, String, Boolean, String)] = 
-            matches.map(m => (document.name, 
-            				  m._2.text, 
-            				  m._1,
-            				  m._2.section,
-            				  m._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.mkString("|"),
-            				  true,
-            				  m._3)).toSeq
-          //println(rdbmsData)
-          storage.OutDB ++= rdbmsData
-
+          
         //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
 
       }
