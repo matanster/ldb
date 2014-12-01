@@ -45,6 +45,9 @@ trait MyService extends HttpService {
         parameter('inputFile) { inputFile =>
       	  complete(ldb.ldb.go(new JATS(s"${config.pdf}/$inputFile", "pdf-converted")))
         } ~
+        parameter('eLifeInputFile) { eLifeInputFile =>
+      	  complete(ldb.ldb.go(new JATS(s"${config.eLife}/$eLifeInputFile")))
+        } ~       
         parameter('all) { all =>
           Bulk.all
           complete("Done processing all files... but you probably timed out by now")

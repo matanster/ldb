@@ -23,16 +23,18 @@ object OutDB {
   val db = Database.forURL(s"jdbc:mysql://$host:$port/$database", user, driver = "com.mysql.jdbc.Driver")
   implicit val session: Session = db.createSession
 
-  type Match = (String, String, String, String, String)
+  type Match = (String, String, String, String, String, Boolean, String)
 
   // slick class binding definition
   class Matches(tag: Tag) extends Table[Match](tag, "Matches") {
     def docName = column[String]("docName")
     def sentence  = column[String]("sentence", O.Length(20000,varying=true))
     def matchPattern  = column[String]("matchPattern")
-    def location  = column[String]("location")
+    def locationTest  = column[String]("location")
+    def locationActual  = column[String]("location")
+    def isFinalMatch     = column[Boolean]("fullMatch")
     def matchIndication = column[String]("matchIndication")
-    def * = (docName, sentence, matchPattern, location, matchIndication)
+    def * = (docName, sentence, matchPattern, locationTest, locationActual, isFinalMatch, matchIndication)
   }
 
   // the table handle

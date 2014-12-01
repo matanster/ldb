@@ -327,9 +327,7 @@ object ldb {
     // matches rules per sentence    
     //
     def processSentences (sentences : Seq[LocatedText]) = {
-
-      println(s"number of sentences: ${sentences.length}")
-      
+  
       val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
 
       for (sentence <- sentences) {
@@ -363,7 +361,10 @@ object ldb {
 
         val possibleMatches = for (pattern <- possiblePatternMatches.result 
                                 if (isInOrder (db.patterns2fragments.get(pattern).get, -1))) 
-                                  yield (pattern, sentence, db.patterns2indications.get(pattern).get, db.patterns2rules(pattern))
+                                  yield (pattern, 
+                                         sentence, 
+                                         db.patterns2indications.get(pattern).get, 
+                                         db.patterns2rules(pattern))
 
         possibleMatches.foreach(p =>
           logger.write(Seq(s"sentence '${p._2.text}'",
@@ -413,7 +414,14 @@ object ldb {
               
               
               
-          val rdbmsData : Seq[(String, String, String, String, String)] = matches.map(m => (document.name, m._2.text, m._1, "", m._3)).toSeq
+          val rdbmsData : Seq[(String, String, String, String, String, Boolean, String)] = 
+            matches.map(m => (document.name, 
+            				  m._2.text, 
+            				  m._1,
+            				  m._2.section,
+            				  m._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.mkString("|"),
+            				  true,
+            				  m._3)).toSeq
           //println(rdbmsData)
           storage.OutDB ++= rdbmsData
 
