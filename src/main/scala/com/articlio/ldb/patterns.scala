@@ -415,7 +415,7 @@ object ldb {
 	          isFinalMatch = true
 	        }
 	        else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-	            sectionTypeScheme.translation.contains(parameter) && sectionTypeScheme .translation(parameter) == p._2.section)) {
+	            sectionTypeScheme.translation.contains(parameter.toLowerCase) && sectionTypeScheme.translation(parameter.toLowerCase) == p._2.section.toLowerCase())) {
 	            //println("location criteria matched!")
 	            isFinalMatch = true
 	        }
@@ -426,7 +426,7 @@ object ldb {
 	          println(p._2.text)
 	          println("should be in either:")
 	          p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-	            if (sectionTypeScheme.translation.contains(parameter)) println(sectionTypeScheme .translation(parameter)))
+	            if (sectionTypeScheme.translation.contains(parameter.toLowerCase)) println(sectionTypeScheme.translation(parameter.toLowerCase)))
 	          println("but found in:")
 	          println(p._2.section)
 	          isFinalMatch = false
