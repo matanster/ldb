@@ -1,5 +1,7 @@
 import com.typesafe.sbt.SbtStartScript
 
+import spray.revolver.RevolverPlugin._
+
 organization  := "com.articlio"
 
 version       := "0.1"
@@ -33,13 +35,12 @@ seq(SbtStartScript.startScriptForClassesSettings: _*)
 
 Revolver.settings 
 
-mainClass in Revolver.reStart := Some("org.vertx.java.platform.impl.cli.Starter")
-
-Revolver.reStartArgs := Seq("run", "scala:com.articlio.ldb.deployer")
-
 //
 // Vertx
 //
+
+// mainClass in Revolver.reStart := Some("org.vertx.java.platform.impl.cli.Starter")
+// Revolver.reStartArgs := Seq("run", "scala:com.articlio.ldb.deployer")
 
 // vertx-scala doesn't ship on 2.9
 // scalaVersion := "2.10.2"

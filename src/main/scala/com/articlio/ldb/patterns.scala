@@ -205,7 +205,7 @@ object ldb {
                                                                        
   val SPACE = " "
                                                                        
-  def go (document: JATS) : String = {
+  def go (runID: String, document: JATS) : String = {
 
     val logger = new Logger(document.name)
     
@@ -452,8 +452,9 @@ object ldb {
 	                         s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
         }
           
-      	val rdbmsData : Seq[(String, String, String, String, String, Boolean, String)] = 
-          matches.map(m => (document.name, 
+      	val rdbmsData : Seq[(String, String, String, String, String, String, Boolean, String)] = 
+          matches.map(m => (runID,
+                            document.name, 
                             m._2.text, 
                   				  m._1,
                   				  m._4.locationProperty.isEmpty match {

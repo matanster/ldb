@@ -1,5 +1,6 @@
 package com.articlio
 import com.articlio.input.JATS
+import com.articlio.util.runID
 
 //
 // Spray imports
@@ -43,21 +44,24 @@ trait MyService extends HttpService {
       } ~
       path("semantic") {
         parameter('inputFile) { inputFile =>
-      	  complete(ldb.ldb.go(new JATS(s"${config.pdf}/$inputFile", "pdf-converted")))
+      	  complete(ldb.ldb.go("singleFileRun" + "-" + (new runID).id, new JATS(s"${config.pdf}/$inputFile", "pdf-converted")))
         } ~
         parameter('eLifeInputFile) { eLifeInputFile =>
-      	  complete(ldb.ldb.go(new JATS(s"${config.eLife}/$eLifeInputFile")))
+      	  complete(ldb.ldb.go("singleFileRun" + "-" + (new runID).id, new JATS(s"${config.eLife}/$eLifeInputFile")))
         } ~       
         parameter('all) { all =>
-          Bulk.all
+          val bulk = new Bulk((new runID).id)
+          bulk.all
           complete("Done processing all files... but you probably timed out by now")
         } ~
         parameter('allp) { all =>
-          Bulk.allPDF
+          val bulk = new Bulk((new runID).id)
+          bulk.allPDF
           complete("Done processing all pdf files... but you probably timed out by now")
         } ~
         parameter('alle) { all =>
-          Bulk.alleLife
+          val bulk = new Bulk((new runID).id)
+          bulk.alleLife
           complete("Done processing all eLife files... but you probably timed out by now")
         }
       }
