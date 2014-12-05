@@ -2,8 +2,9 @@ package com.articlio.storage
 
 //import language.experimental.macros
 import scala.slick.driver.MySQLDriver.simple._
+import scala.slick.jdbc.meta._
 //import scala.slick.lifted._ // more clumsy to debug/use than "direct/simple"
-import scala.slick.direct._   // http://slick.typesafe.com/doc/2.1.0/direct-embedding.html
+//import scala.slick.direct._ // http://slick.typesafe.com/doc/2.1.0/direct-embedding.html
 
 // direct SQL access imports
 //import scala.slick.driver.JdbcDriver.backend.Database
@@ -47,6 +48,11 @@ object OutDB {
 
   def += (data: Match) = matches += data
 
+  def createIfNeeded {
+    if (MTable.getTables("Matches").list.isEmpty) 
+      matches.ddl.create
+  }
+  
   def dropCreate {
     try {
       matches.ddl.drop 

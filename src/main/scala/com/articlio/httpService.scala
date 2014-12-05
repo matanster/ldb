@@ -1,6 +1,7 @@
 package com.articlio
 import com.articlio.input.JATS
 import com.articlio.util.runID
+import com.articlio.storage.OutDB
 
 //
 // Spray imports
@@ -44,10 +45,10 @@ trait MyService extends HttpService {
       } ~
       path("semantic") {
         parameter('inputFile) { inputFile =>
-      	  complete(ldb.ldb.go("singleFileRun" + "-" + (new runID).id, new JATS(s"${config.pdf}/$inputFile", "pdf-converted")))
+      	  complete(ldb.ldb.go("SingleFileRun" + "-" + (new runID).id, new JATS(s"${config.pdf}/$inputFile", "pdf-converted")))
         } ~
         parameter('eLifeInputFile) { eLifeInputFile =>
-      	  complete(ldb.ldb.go("singleFileRun" + "-" + (new runID).id, new JATS(s"${config.eLife}/$eLifeInputFile")))
+      	  complete(ldb.ldb.go("SingleFileRun" + "-" + (new runID).id, new JATS(s"${config.eLife}/$eLifeInputFile")))
         } ~       
         parameter('all) { all =>
           val bulk = new Bulk((new runID).id)
@@ -63,6 +64,10 @@ trait MyService extends HttpService {
           val bulk = new Bulk((new runID).id)
           bulk.alleLife
           complete("Done processing all eLife files... but you probably timed out by now")
+        } ~    
+          parameter('purgeAll) { purgeAll => 
+          OutDB.dropCreate  
+          complete("purging all semantic data...")
         }
       }
     }

@@ -18,5 +18,7 @@ object hostname {
 }
 
 class runID {
-  val id = hostname.name + "-" + new java.sql.Timestamp(Calendar.getInstance().getTime().getTime()) 
+  val time = new java.sql.Timestamp(Calendar.getInstance.getTime.getTime) // this follows from http://alvinalexander.com/java/java-timestamp-example-current-time-now
+                                                                          // TODO: need to switch to UTC time for production
+  val id = hostname.name + "-" + time 
 }

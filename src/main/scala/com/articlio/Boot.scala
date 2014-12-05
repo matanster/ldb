@@ -9,7 +9,7 @@ object Boot extends App {
 
   Monitor
 
-  storage.OutDB.dropCreate
+  storage.OutDB.createIfNeeded
   
   ldb.ldb.init
   
