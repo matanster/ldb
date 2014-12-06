@@ -73,3 +73,5 @@ libraryDependencies += "mysql" % "mysql-connector-java" % "latest.release"
 resolvers += "Sonatype releases" at "http://oss.sonatype.org/content/repositories/releases/"
 
 libraryDependencies += "com.github.verbalexpressions" %% "scalaverbalexpression" % "1.0.1"
+
+scalacOptions ++= Seq( "-unchecked", "-feature" )

@@ -11,7 +11,7 @@ object Boot extends App {
 
   storage.OutDB.createIfNeeded
   
-  ldb.ldb.init
+  //ldb.ldb.init
   
   val httpService = HttpService
 

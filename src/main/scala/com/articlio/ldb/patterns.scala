@@ -6,11 +6,6 @@ import com.articlio.util.text._
 import com.articlio.LanguageModel._
 import com.articlio.selfMonitor.{Monitor}
 import com.articlio.storage
-//import java.net.URLEncoder
-//import spray.json._
-//import DefaultJsonProtocol._
-import org.ahocorasick.trie._
-//import scala.collection.JavaConversions._ // work with Java collections as if they were Scala
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
 
 abstract class PlugType
@@ -161,47 +156,41 @@ object ldb {
   }
 
   //
-  // initalizes an aho-corasick tree for searching all pattern fragments implied in the linguistic database
-  //
-  object AhoCorasick {
-
-    val trie = new Trie
-
-    def init (fragments: Set[String]) {
-      Timelog.timer("aho-corasick initialization (lazy operations not necessarily included)")
-      trie.onlyWholeWords()
-      fragments foreach trie.addKeyword
-      fragments.foreach(f => if (f == "The first limitation deals with the nature of a") println("EQUALSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"))
-      Timelog.timer("aho-corasick initialization (lazy operations not necessarily included)")
-    }
-
-    //
-    // invoke aho-corasick to find all fragments in given sentence
-    //
-    def go(sentence : String, logger: Logger) : List[Map[String, String]] = 
-    {
-      //println(deSentenceCase(sentence))
-      val emitsJ = trie.parseText(deSentenceCase(sentence))
-
-      if (emitsJ.size > 0) {
-        val emits = (emitsJ.asScala map (i => Map("start" -> i.getStart.toString, "end" -> i.getEnd.toString, "match" -> i.getKeyword.toString))).toList
-        logger.write(sentence, "sentence-fragment-matches")
-        logger.write(emits.mkString("\n") + "\n", "sentence-fragment-matches")
-        return(emits)
-      }
-      else return (List.empty[Map[String, String]])
-    }
-  }
-
-  //
   // match rules per sentence    
   //
   val inputRules = CSV.deriveFromCSV
   val db = new LDB(inputRules)
+    
+  import akka.actor.Actor
+  import akka.actor.Props
+  import akka.event.Logging
+  import akka.actor._
+  import akka.actor
+  import akka.routing.BalancingPool
   
-  def init {                                                                             
-    AhoCorasick.init(db.allFragmentsDistinct)
+  case class Go(sentence : String, logger: Logger)
+  
+  class AhoCorasickActor extends Actor {
+    val log = Logging(context.system, this)
+    
+    val ahoCorasick = new AhoCorasick
+    ahoCorasick.init(db.allFragmentsDistinct)
+    
+    def receive = { 
+      case Go(s, l) =>
+        log.info(s"received test for: $s")
+        ahoCorasick.go(s, l)
+      case _ => throw new Exception("unexpected actor message type received")
+    }
   }
+
+  val concurrency = 4
+  
+  val akkaSystem = ActorSystem("ObjectPooling")
+  val ahoCorasick = akkaSystem.actorOf(Props[AhoCorasickActor].withRouter(BalancingPool(nrOfInstances = concurrency)), 
+                                             name = "RoutedActor")
+     
+  //val ahoCorasick = new Array[AhoCorasickActor](concurrency)
                                                                        
   val SPACE = " "
                                                                        
@@ -330,8 +319,16 @@ object ldb {
   
       val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
 
+      import scala.concurrent.Future
+      import scala.concurrent.Await
+      import akka.pattern.ask
+      import akka.util.Timeout
+      import scala.concurrent.duration._
+      implicit val timeout = Timeout(60.seconds)
+      
       for (sentence <- sentences) {
-        val matchedFragments = AhoCorasick.go(sentence.text, logger)
+        val matchedFragmentsFuture = ask(ahoCorasick, Go(sentence.text, logger)).mapTo[List[Map[String, String]]]
+        val matchedFragments = Await.result(matchedFragmentsFuture, timeout.duration)
         sentenceMatchCount += matchedFragments.length
 
         // checks if all fragments making up a pattern, are contained in target string *in order*
@@ -373,38 +370,6 @@ object ldb {
                            s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches (location agnostic)"))
 
         //if (!possibleMatches.isEmpty)logger.write(sentence.text, "output (location agnostic)")
-
-        /*
-        //
-        // filter out matches occuring outside their designated location requirement
-        //
-
-        val matches = possibleMatches.filter(p => {
-            //println(p._4)
-            if (!p._4.locationProperty.isDefined) {
-              //println("no location criteria in rule")
-              true
-            }
-            else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-                sectionTypeScheme.translation.contains(parameter) && sectionTypeScheme .translation(parameter) == p._2.section)) {
-                //println("location criteria matched!")
-                true
-            }
-            else {
-              //println(sectionTypeScheme.translation)
-              println
-              println("location criteria not matched for:")
-              println(p._2.text)
-              println("should be in either:")
-              p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-                if (sectionTypeScheme.translation.contains(parameter)) println(sectionTypeScheme .translation(parameter)))
-              println("but found in:")
-              println(p._2.section)
-              false
-            }
-        })
-        *
-        */
 
         def locationTest(p: (String, LocatedText, String, SimpleRule)) : Boolean = {
           var isFinalMatch = false
@@ -465,9 +430,8 @@ object ldb {
                   				  m._5,
                   				  m._3)).toSeq
         //println(rdbmsData)
-        storage.OutDB ++= rdbmsData
-	      
-	      
+        //storage.OutDB ++= rdbmsData
+	           
         //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
 
       }

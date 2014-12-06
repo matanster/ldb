@@ -8,7 +8,7 @@ class Bulk(runID: String) {
   //ldb.ldb.init
   def processAll(runID: String, sourceDirName: String, treatAs: Option[String] = None) {
     val files = new File(sourceDirName).listFiles.filter(file => (file.isFile)) // && file.getName.endsWith(".xml")))
-    files.foreach(file => {
+    files.par.foreach(file => {
       val fileName = file.getName  
       println("about to process file " + fileName)
       treatAs match {
