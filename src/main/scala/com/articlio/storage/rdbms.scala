@@ -48,9 +48,13 @@ class OutDB extends Actor with Match {
   val matches = TableQuery[Matches]
 
   // Table write functions
-  private def write (data: Seq[Match]) = matches ++= data
+  private def write (data: Seq[Match]) = {
+    println(s"writing records amount: ${data.toString}")
+    matches ++= data
+  }
   
   private def += (data: Match) = matches += data
+  
   private def ++= (data: Seq[String]) = println("stringgggggggggggggg")
   
   private def createIfNeeded {
