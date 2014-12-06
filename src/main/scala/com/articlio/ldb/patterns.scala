@@ -7,6 +7,7 @@ import com.articlio.LanguageModel._
 import com.articlio.selfMonitor.{Monitor}
 import com.articlio.storage
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
+import com.articlio.AppActorSystem
 
 abstract class PlugType
 case object    RefAppendable  extends PlugType // self reference is potentially *appendable* to target phrase
@@ -52,7 +53,7 @@ object ldb {
     //
     def expand(rules: Seq[SimpleRule]) : Seq[ExpandedRule] = {
 
-      Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
+      AppActorSystem.timelog ! "exapanding patterns containing article-self-references into all their combinations"  
 
       val ASRRules : Seq[ExpandedRule] = rules.filter(rule => rule.pattern.containsSlice("{asr")) map ExpandedRule
       println(ASRRules)
@@ -82,7 +83,7 @@ object ldb {
       println(ASRRules.length)
       //println(expansion.length)
 
-      Timelog.timer("exapanding patterns containing article-self-references into all their combinations")  
+      AppActorSystem.timelog ! "exapanding patterns containing article-self-references into all their combinations"  
       return ASRRules
     }
 
@@ -104,7 +105,7 @@ object ldb {
       }
     }
 
-    Timelog.timer("patterns representation building")
+    AppActorSystem.timelog ! "patterns representation building"
 
     //inputRules map (r => println(r.properties.get.filter(property => property.isInstanceOf[LocationProperty])))
     
@@ -146,7 +147,7 @@ object ldb {
     // uses a Set to avoid duplicate strings
     val allFragmentsDistinct : Set[String] = rules.map(rule => rule.fragments).flatten.toSet
 
-    Timelog.timer("patterns representation building")
+    AppActorSystem.timelog ! "patterns representation building"
     Monitor.logUsage("after patterns representation building is")
     logger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
     logger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
@@ -178,17 +179,16 @@ object ldb {
     
     def receive = { 
       case Go(s, l) =>
-        log.info(s"received test for: $s")
-        ahoCorasick.go(s, l)
+        log.info(s"received message with sentence: $s")
+        sender ! ahoCorasick.go(s, l)
       case _ => throw new Exception("unexpected actor message type received")
     }
   }
 
   val concurrency = 4
   
-  val akkaSystem = ActorSystem("ObjectPooling")
-  val ahoCorasick = akkaSystem.actorOf(Props[AhoCorasickActor].withRouter(BalancingPool(nrOfInstances = concurrency)), 
-                                             name = "RoutedActor")
+  val ahoCorasick = AppActorSystem.system.actorOf(Props[AhoCorasickActor].withRouter(BalancingPool(nrOfInstances = concurrency)), 
+                                             name = "aho-corasick-pool-service") 
      
   //val ahoCorasick = new Array[AhoCorasickActor](concurrency)
                                                                        
@@ -306,9 +306,9 @@ object ldb {
     // process sentence by sentence
     //
 
-    Timelog.timer("matching")
+    AppActorSystem.timelog ! "matching"
     processSentences(sentences)
-    Timelog.timer("matching")
+    AppActorSystem.timelog ! "matching"
 
 
 

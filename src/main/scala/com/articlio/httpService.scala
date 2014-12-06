@@ -76,10 +76,10 @@ trait MyService extends HttpService {
 object HttpService {
 
   // ActorSystem for spray
-  implicit val system = ActorSystem("on-spray-can")
+  implicit val sprayActorSystem = ActorSystem("spray-actor-system")
 
   // create and start our service actor
-  val service = system.actorOf(Props[MyServiceActor], "demo-service")
+  val service = sprayActorSystem.actorOf(Props[MyServiceActor], "http-service")
 
   implicit val timeout = Timeout(6000.seconds)
   

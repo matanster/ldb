@@ -4,6 +4,8 @@ import com.articlio.ldb
 import com.articlio.selfMonitor.{Monitor}
 import com.articlio.util.{Console}
 import com.articlio.storage
+import akka.actor.ActorSystem
+import com.articlio.AppActorSystem
 
 object Boot extends App {
 
@@ -14,9 +16,9 @@ object Boot extends App {
   //ldb.ldb.init
   
   val httpService = HttpService
-
+                                              
   // Ultimately something like http://stackoverflow.com/questions/24731242/spray-can-webservice-graceful-shutdown
-  // should be used for the following lines of code:
+  // should be used for the following lines of code, as much as skipping them has no ecosystemic side effects:
   // Monitor.shutdown
   // storage.OutDB.close
 }

@@ -1,9 +1,12 @@
 package com.articlio.util
+import akka.actor.Actor
+import com.articlio.AppActorSystem
+
 
 //
 // Simple facility for timing code - timings get data logged, and written to the console
 //
-object Timelog {
+class Timelog extends Actor {
 
   val logger = new Logger("global-timers")
   val timers = scala.collection.mutable.Map.empty[String, Long] // use new instead of empty then with scala.collection.concurrent.Map[String, Long] doesn't work
@@ -24,12 +27,17 @@ object Timelog {
   //
   // Usage: wraps around a function (or code block)
   //
-  def time[T](func: => T): T = {
+  private def time[T](func: => T): T = {
     val start = System.nanoTime()
     val result = func // invoke the wrapped function
     val output = s"function took ${(System.nanoTime() - start) / 1000 / 1000} milliseconds"
     logger.write(output, "timers")
     Console.log(output, "timers")
     return(result)
+  }
+  
+  def receive = { 
+    case timerName: String => timer(timerName)
+    case _ => throw new Exception("unexpected actor message type received")
   }
 }

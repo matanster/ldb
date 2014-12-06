@@ -2,6 +2,7 @@ package com.articlio.ldb
 import com.articlio.config
 import com.articlio.util._
 import com.articlio.util.text._
+import com.articlio.AppActorSystem
 //import com.articlio.util.{wordFollowing}
 
 import scala.io.Source
@@ -48,7 +49,7 @@ object CSV {
   //
   def getCSV: Seq[RawCSVInput] = {
 
-    Timelog.timer("reading CSV")
+    AppActorSystem.timelog ! "reading CSV"
 
     //val reader = CSVReader.open("ldb/July 24 2014 database - Markers - filtered.csv")
     //val reader = CSVReader.open("ldb/Normalized from July 24 2014 database - Markers - filtered - take 1.csv")
@@ -75,7 +76,7 @@ object CSV {
 
     if (totalOff > 0) println(s"$totalOff rules disabled in input CSV, see input CSV for details")
 
-    Timelog.timer("reading CSV")
+    AppActorSystem.timelog ! "reading CSV"
     reader.close
 
     rawInput
@@ -121,7 +122,7 @@ object CSV {
       }
     }
   
-    Timelog.timer("manipulating CSV input")
+    AppActorSystem.timelog ! "manipulating CSV input"
 
     val rules = scala.collection.mutable.Seq.newBuilder[RuleInput]
     val rawInput = getCSV
@@ -156,7 +157,7 @@ object CSV {
 
     }
 
-    Timelog.timer("manipulating CSV input")
+    AppActorSystem.timelog ! "manipulating CSV input"
     val logger = new Logger("global-ldb-csv")
     logger.write(rules.result.mkString("\n"), "db-rules")
     return rules.result
