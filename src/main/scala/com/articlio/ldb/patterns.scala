@@ -9,6 +9,17 @@ import com.articlio.storage
 import com.articlio.storage.Match
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
 import com.articlio.AppActorSystem
+import scala.concurrent.Future
+import scala.concurrent.Await
+import akka.actor.Actor
+import akka.actor.Props
+import akka.event.Logging
+import akka.actor._
+import akka.actor
+import akka.routing.BalancingPool
+import akka.pattern.ask
+import akka.util.Timeout
+import scala.concurrent.duration._
 
 abstract class PlugType
 case object    RefAppendable  extends PlugType // self reference is potentially *appendable* to target phrase
@@ -163,13 +174,6 @@ object ldb extends Match {
   val inputRules = CSV.deriveFromCSV
   val db = new LDB(inputRules)
     
-  import akka.actor.Actor
-  import akka.actor.Props
-  import akka.event.Logging
-  import akka.actor._
-  import akka.actor
-  import akka.routing.BalancingPool
-  
   case class Go(sentence : String, logger: Logger)
   
   class AhoCorasickActor extends Actor {
@@ -321,11 +325,6 @@ object ldb extends Match {
       val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
       var rdbmsData = Seq.newBuilder[Match]
       
-      import scala.concurrent.Future
-      import scala.concurrent.Await
-      import akka.pattern.ask
-      import akka.util.Timeout
-      import scala.concurrent.duration._
       implicit val timeout = Timeout(60.seconds)
       
       for (sentence <- sentences) {
