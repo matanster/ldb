@@ -319,7 +319,8 @@ object ldb extends Match {
     def processSentences (sentences : Seq[LocatedText]) = {
   
       val sentenceMatchCount = scala.collection.mutable.ArrayBuffer.empty[Integer] 
-
+      var rdbmsData = Seq.newBuilder[Match]
+      
       import scala.concurrent.Future
       import scala.concurrent.Await
       import akka.pattern.ask
@@ -418,7 +419,7 @@ object ldb extends Match {
 	                         s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
         }
           
-      	val rdbmsData : Seq[Match] = 
+      	rdbmsData ++= 
           matches.map(m => (runID,
                             document.name, 
                             m._2.text, 
@@ -431,11 +432,13 @@ object ldb extends Match {
                   				  m._5,
                   				  m._3)).toSeq
         //println(rdbmsData)
-        AppActorSystem.outDB ! rdbmsData
 	           
         //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
 
       }
+      
+      AppActorSystem.outDB ! rdbmsData.result
+      
       new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
     }
     return s"Done processing ${document.name}"

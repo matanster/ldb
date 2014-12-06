@@ -49,7 +49,9 @@ class OutDB extends Actor with Match {
 
   // Table write functions
   private def write (data: Seq[Match]) = {
-    println(s"writing records amount: ${data.toString}")
+    println
+    println(s"writing ${data.length} records to rdbms")
+    println
     matches ++= data
   }
   
