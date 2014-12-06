@@ -6,6 +6,7 @@ import com.articlio.util.text._
 import com.articlio.LanguageModel._
 import com.articlio.selfMonitor.{Monitor}
 import com.articlio.storage
+import com.articlio.storage.Match
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
 import com.articlio.AppActorSystem
 
@@ -37,7 +38,7 @@ case class ExpandedRule (rule: SimpleRule) extends Rule {
 }
 
 
-object ldb {
+object ldb extends Match {
 
   //
   // Builds and exposes the data structures necessary for working the rules database
@@ -179,7 +180,7 @@ object ldb {
     
     def receive = { 
       case Go(s, l) =>
-        log.info(s"received message with sentence: $s")
+        //log.info(s"received message with sentence: $s")
         sender ! ahoCorasick.go(s, l)
       case _ => throw new Exception("unexpected actor message type received")
     }
@@ -417,7 +418,7 @@ object ldb {
 	                         s"which indicates '${m._3}'").mkString("\n") + "\n","sentence-pattern-matches"))
         }
           
-      	val rdbmsData : Seq[(String, String, String, String, String, String, Boolean, String)] = 
+      	val rdbmsData : Seq[Match] = 
           matches.map(m => (runID,
                             document.name, 
                             m._2.text, 
@@ -430,7 +431,7 @@ object ldb {
                   				  m._5,
                   				  m._3)).toSeq
         //println(rdbmsData)
-        //storage.OutDB ++= rdbmsData
+        AppActorSystem.outDB ! rdbmsData
 	           
         //val LocationFiltered = possiblePatternMatches.result.filter(patternMatched => patternMatched.locationProperty.isDefined)
 

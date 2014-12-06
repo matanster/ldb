@@ -11,7 +11,7 @@ object Boot extends App {
 
   Monitor
 
-  storage.OutDB.createIfNeeded
+  AppActorSystem.outDB ! "createIfNeeded"
   
   //ldb.ldb.init
   

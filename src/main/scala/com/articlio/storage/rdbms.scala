@@ -1,4 +1,5 @@
 package com.articlio.storage
+import akka.actor.Actor
 
 //import language.experimental.macros
 import scala.slick.driver.MySQLDriver.simple._
@@ -11,7 +12,11 @@ import scala.slick.jdbc.meta._
 //import Database.dynamicSession
 //import scala.slick.jdbc.{GetResult, StaticQuery}
 
-object OutDB {
+trait Match {
+  type Match = (String, String, String, String, String, String, Boolean, String)
+}
+
+class OutDB extends Actor with Match {
 
   // connection parameters
   val host     = "localhost"
@@ -24,7 +29,7 @@ object OutDB {
   val db = Database.forURL(s"jdbc:mysql://$host:$port/$database", user, driver = "com.mysql.jdbc.Driver")
   implicit val session: Session = db.createSession
 
-  type Match = (String, String, String, String, String, String, Boolean, String)
+  //type Match = (String, String, String, String, String, String, Boolean, String)
 
   // slick class binding definition
   class Matches(tag: Tag) extends Table[Match](tag, "Matches") {
@@ -43,17 +48,17 @@ object OutDB {
   val matches = TableQuery[Matches]
 
   // Table write functions
-  def ++= (data: Seq[Match]) = matches ++= data
-  def ++= (data: Seq[String]) = println("stringgggggggggggggg")
-
-  def += (data: Match) = matches += data
-
-  def createIfNeeded {
+  private def write (data: Seq[Match]) = matches ++= data
+  
+  private def += (data: Match) = matches += data
+  private def ++= (data: Seq[String]) = println("stringgggggggggggggg")
+  
+  private def createIfNeeded {
     if (MTable.getTables("Matches").list.isEmpty) 
       matches.ddl.create
   }
   
-  def dropCreate {
+  private def dropCreate {
     try {
       matches.ddl.drop 
       println("existing table dropped")
@@ -62,10 +67,16 @@ object OutDB {
     matches.ddl.create
   }
 
-  def close = session.close
+  private def close = session.close
   
   //matches += ("something", "matches something", "indicates something")   
   //matches ++= Seq(("something new", "matches something new", "indicates something"),
   //                ("something new", "matches something new", "indicates something"))
-
+  
+  def receive = { 
+    case "dropCreate" => dropCreate
+    case "createIfNeeded" => createIfNeeded
+    case s: Seq[Match @unchecked] => write(s) // annotating to avoid compilation warning about type erasure here
+    case _ => throw new Exception("unexpected actor message type received")
+  }
 }

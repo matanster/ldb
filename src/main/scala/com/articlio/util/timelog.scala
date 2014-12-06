@@ -14,7 +14,7 @@ class Timelog extends Actor {
   //
   // Usage: call once to start the timer, and once to stop it, using the same timer name parameter
   //
-  def timer(timerName:String) = {
+  private def timer(timerName:String) = {
     if (timers contains timerName) {
       val output = s"$timerName took ${(System.nanoTime() - timers(timerName)) / 1000 / 1000} milliseconds"
       timers -= timerName

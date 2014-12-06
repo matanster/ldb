@@ -1,7 +1,6 @@
 package com.articlio
 import com.articlio.input.JATS
 import com.articlio.util.runID
-import com.articlio.storage.OutDB
 
 //
 // Spray imports
@@ -66,7 +65,7 @@ trait MyService extends HttpService {
           complete("Done processing all eLife files... but you probably timed out by now")
         } ~    
           parameter('purgeAll) { purgeAll => 
-          OutDB.dropCreate  
+          AppActorSystem.outDB ! "dropCreate"
           complete("purging all semantic data...")
         }
       }
