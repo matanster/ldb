@@ -51,14 +51,16 @@ case class ExpandedRule (rule: SimpleRule) extends Rule {
 
 object ldb extends Match {
 
+  val globalLogger = new Logger("global-ldb")
+  val overallLogger = new Logger("overall")
+  
   //
   // Builds and exposes the data structures necessary for working the rules database
   // Refactor opportunity: use newBuilder and .result rather than hold mutable and immutable collections - for correct coding style without loss of performance!
   //
   class LDB(inputRules: Seq[RuleInput]) {
-
-    val logger = new Logger("global-ldb")    
-    logger.write(inputRules.mkString("\n"), "db-rules1.1")    
+  
+    globalLogger.write(inputRules.mkString("\n"), "db-rules1.1")    
     
     //
     // expand base rules into more rules - quite not triggered from the database data right now
@@ -132,7 +134,7 @@ object ldb extends Match {
                                                                       }
                                                                    else 
                                                                      None))
-    logger.write(rules.mkString("\n"), "db-rules2")                                                      
+    globalLogger.write(rules.mkString("\n"), "db-rules2")                                                      
     
     // patterns to indications map - 
     // each pattern correlates to only one indictaion 
@@ -161,8 +163,8 @@ object ldb extends Match {
 
     AppActorSystem.timelog ! "patterns representation building"
     Monitor.logUsage("after patterns representation building is")
-    logger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
-    logger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
+    globalLogger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
+    globalLogger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
 
     expand(rules) // should do nothing for now
 
@@ -327,7 +329,8 @@ object ldb extends Match {
       
       implicit val timeout = Timeout(60.seconds)
       
-      for (sentence <- sentences) {
+      for (sentenceIdx <- 0 to sentences.length-1) {
+        val sentence = sentences(sentenceIdx)
         val matchedFragmentsFuture = ask(ahoCorasick, Go(sentence.text, logger)).mapTo[List[Map[String, String]]]
         val matchedFragments = Await.result(matchedFragmentsFuture, timeout.duration)
         sentenceMatchCount += matchedFragments.length
@@ -357,10 +360,24 @@ object ldb extends Match {
           possiblePatternMatches ++= fragmentPatterns
         })
 
+        // 
+        // decides what to extract. for now extracts the entire sentence,
+        // or the entire sentence plus the next one up (in case of special type of cataphora).
+        //
+        def extraction(sentence: LocatedText) : LocatedText = {
+          if (sentence.text.endsWithAny(Seq(":", "the following.", "as follows."))) {
+            val resultSpan = sentence.text + " " + sentences(sentenceIdx+1).text // TODO: assure not out of bounds
+            overallLogger.write(resultSpan + "\n", "overall-salient-matches")
+            return LocatedText(resultSpan, sentence.section)
+          }
+          else 
+            return sentence
+        }
+        
         val possibleMatches = for (pattern <- possiblePatternMatches.result 
                                 if (isInOrder (db.patterns2fragments.get(pattern).get, -1))) 
                                   yield (pattern, 
-                                         sentence, 
+                                         extraction(sentence), 
                                          db.patterns2indications.get(pattern).get, 
                                          db.patterns2rules(pattern))
 
@@ -385,16 +402,18 @@ object ldb extends Match {
             isFinalMatch = true
           }
           else {
-            //println(sectionTypeScheme.translation)
-            println
-            println("location criteria not matched for:")
-            println(p._2.text)
-            println("should be in either:")
-            p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-              if (sectionTypeScheme.translation.contains(parameter.toLowerCase)) println(sectionTypeScheme.translation(parameter.toLowerCase)))
-            println("but found in:")
-            println(p._2.section)
-            isFinalMatch = false
+            isFinalMatch = false            
+            if (false)
+            {
+              println
+              println("location criteria not matched for:")
+              println(p._2.text)
+              println("should be in either:")
+              p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+                if (sectionTypeScheme.translation.contains(parameter.toLowerCase)) println(sectionTypeScheme.translation(parameter.toLowerCase)))
+              println("but found in:")
+              println(p._2.section)
+            }
           }
       	return isFinalMatch
         }
@@ -409,8 +428,9 @@ object ldb extends Match {
         val finalMatches = matches.filter(m => m._5)
 	    						  	  
         if (!finalMatches.isEmpty) {
-          logger.write(sentence.text, "output")
-        
+          //logger.write(sentence.text, "output")
+          logger.write(finalMatches.map(_._2.text).distinct.mkString("\n"), ("output"))  
+          
 	      finalMatches.foreach(m =>
 	        logger.write(Seq(s"sentence '${m._2.text}'",
 	                         s"in section ${m._2.section}",
