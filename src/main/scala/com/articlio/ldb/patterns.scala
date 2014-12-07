@@ -367,7 +367,7 @@ object ldb extends Match {
         def extraction(sentence: LocatedText) : LocatedText = {
           if (sentence.text.endsWithAny(Seq(":", "the following.", "as follows."))) {
             val resultSpan = sentence.text + " " + sentences(sentenceIdx+1).text // TODO: assure not out of bounds
-            overallLogger.write(resultSpan + "\n", "overall-salient-matches")
+            overallLogger.write(document.name + ": "  + resultSpan + "\n", "overall-salient-matches")
             return LocatedText(resultSpan, sentence.section)
           }
           else 
