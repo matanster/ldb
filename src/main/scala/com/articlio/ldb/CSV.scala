@@ -142,9 +142,9 @@ object CSV {
 
         val sections = expandSectionRequirementsLimitations(rawInputRule, baseSections)
         
-        if (selfRef) ruleProperties += ReferenceProperty('self, modality)
-        if (deicticRef) ruleProperties += ReferenceProperty('deictic, modality)
-        if (youRef) ruleProperties += ReferenceProperty('you, modality)
+        if (selfRef) ruleProperties += ReferenceProperty('AuthorSelf, modality)
+        if (deicticRef) ruleProperties += ReferenceProperty('DocumentSelf, modality)
+        if (youRef) ruleProperties += ReferenceProperty('You, modality)
         if (sections.isDefined) ruleProperties += LocationProperty('inside, sections.get, modality)
 
       })
@@ -154,7 +154,6 @@ object CSV {
         println(ruleProperties)
       }
       rules += new RuleInput(rawInputRule.pattern, rawInputRule.indication, if (ruleProperties.result.nonEmpty) Some(ruleProperties.result) else None)
-
     }
 
     AppActorSystem.timelog ! "manipulating CSV input"

@@ -14,22 +14,6 @@ import scala.slick.jdbc.meta._
 
 trait Match {
   type Match = (String, String, String, String, String, String, Boolean, String)
-}
-
-class OutDB extends Actor with Match {
-
-  // connection parameters
-  val host     = "localhost"
-  val port     = "3306"
-  val database = "articlio"
-  val user     = "articlio"
-  
-  // acquire single database connection used as implicit throughout this object
-  println("starting output DB connection...")
-  val db = Database.forURL(s"jdbc:mysql://$host:$port/$database", user, driver = "com.mysql.jdbc.Driver")
-  implicit val session: Session = db.createSession
-
-  //type Match = (String, String, String, String, String, String, Boolean, String)
 
   // slick class binding definition
   class Matches(tag: Tag) extends Table[Match](tag, "Matches") {
@@ -43,6 +27,22 @@ class OutDB extends Actor with Match {
     def matchIndication = column[String]("matchIndication")
     def * = (runID, docName, sentence, matchPattern, locationTest, locationActual, isFinalMatch, matchIndication)
   }
+}
+
+trait Connection {
+  // connection parameters
+  val host     = "localhost"
+  val port     = "3306"
+  val database = "articlio"
+  val user     = "articlio"
+
+  // acquire single database connection used as implicit throughout this object
+  println("starting output DB connection...")
+  val db = Database.forURL(s"jdbc:mysql://$host:$port/$database", user, driver = "com.mysql.jdbc.Driver")
+  implicit val session: Session = db.createSession
+}
+
+class OutDB extends Actor with Match with Connection {
 
   // the table handle
   val matches = TableQuery[Matches]

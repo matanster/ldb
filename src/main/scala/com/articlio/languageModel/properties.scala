@@ -4,12 +4,12 @@
 // See properties2.scala for better but not yet in use modelling
 //
 
-package com.articlio.ldb
-import com.articlio.LanguageModel._
+package com.articlio.LanguageModel
+//import com.articlio.LanguageModel._
 //import com.articlio.LanguageModel.LinguisticProperty._
 import com.articlio.util.text._
 
-object ArticleSelfReference {
+object SelfishReferences {
 
   //
   // article-self-reference triggers (noun phrases all)
@@ -84,16 +84,6 @@ object ArticleSelfReference {
   }
 
   //val refs : Set[String] = ArticleDirectSelfReference.references ++ (ArticleAuthorSelfReference.references map (reference => reference.text))
-  val refs : Set[AnnotatedL2] = ArticleDirectSelfReference.references ++ ArticleAuthorSelfReference.references2
-  val refsText : Set[String] = refs map (ref => ref.annotatedL1.text)
-
-  //val refs2 : Set[AnnotatedL1] = refs map (ref => ref match {
-  //                                case ref: 
-                                   
-
-  
-  println(ArticleDirectSelfReference.references.size)
-  println(refs.size)
-  //println(refs)
-
+  val all: Set[AnnotatedL2] = ArticleDirectSelfReference.references ++ ArticleAuthorSelfReference.references2
+  val allTexts : Set[String] = all map (ref => ref.annotatedL1.text)
 }

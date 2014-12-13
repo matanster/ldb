@@ -36,7 +36,12 @@ case object    InByOfFragment   extends PotentiallyPluggable(RefAppendable)
 //
 
 abstract class Rule
-case class SimpleRule (pattern: String, fragments: List[String], indication: String, locationProperty: Option[Seq[Property]]) 
+case class SimpleRule (pattern: String, 
+                       fragments: List[String], 
+                       indication: String, 
+                       locationProperty: Option[Seq[Property]], 
+                       ReferenceProperty: Option[Seq[Property]]) 
+
 case class ExpandedRule (rule: SimpleRule) extends Rule {
   def getFragmentType : PotentiallyPluggable = {
                           if (rule.pattern.containsSlice("{asr-V}")) return VerbFragment 
@@ -63,7 +68,8 @@ object ldb extends Match {
     globalLogger.write(inputRules.mkString("\n"), "db-rules1.1")    
     
     //
-    // expand base rules into more rules - quite not triggered from the database data right now
+    // expand base rules into more rules - quite not triggered from the database data right now -
+    // wrong approach probably
     //
     def expand(rules: Seq[SimpleRule]) : Seq[ExpandedRule] = {
 
@@ -74,13 +80,13 @@ object ldb extends Match {
 
       for (rule <- ASRRules) { 
         rule.fragmentType match {
-            case VerbFragment => for (ref <- ArticleSelfReference.refs if (ref.annotatedL1.isnt(Personal))) 
+            case VerbFragment => for (ref <- SelfishReferences.all if (ref.annotatedL1.isnt(Personal))) 
                                    println()
                                    //println(ref.annotatedL1.sequence + rule.rule.pattern)
-            case NounFragment => for (ref <- ArticleSelfReference.refs if (ref.annotatedL1.is(PossesivePronoun)))  // must have props PossesivePronoun or possibly nounphrase + 's
+            case NounFragment => for (ref <- SelfishReferences.all if (ref.annotatedL1.is(PossesivePronoun)))  // must have props PossesivePronoun or possibly nounphrase + 's
                                    println()
                                    //println(ref.annotatedL1.sequence + rule.rule.pattern)
-            case InByOfFragment => for (ref <- ArticleSelfReference.refs if (ref.annotatedL1.isAnyOf(Set(Personal, Possesive))))
+            case InByOfFragment => for (ref <- SelfishReferences.all if (ref.annotatedL1.isAnyOf(Set(Personal, Possesive))))
                                    println(ref.annotatedL1.sequence + rule.rule.pattern)
                                  
           }
@@ -123,17 +129,22 @@ object ldb extends Match {
 
     //inputRules map (r => println(r.properties.get.filter(property => property.isInstanceOf[LocationProperty])))
     
-    val rules: Seq[SimpleRule] = inputRules map (inputRule => new SimpleRule(inputRule.pattern, 
-                                                                   breakDown(deSentenceCase(inputRule.pattern)), 
-                                                                   inputRule.indication, 
-                                                                   // inputRule.properties.collect { case locationProp : LocationProperty => locationProp }))
-                                                                   if (inputRule.properties.isDefined) 
-                                                                     inputRule.properties.get.filter(property => property.isInstanceOf[LocationProperty]) match {
-                                                                        case s: Seq[Property] => if (s.length>0) Some(inputRule.properties.get.filter(property => property.isInstanceOf[LocationProperty])) else None
-                                                                        case _ => None
-                                                                      }
-                                                                   else 
-                                                                     None))
+    val rules: Seq[SimpleRule] = inputRules map (inputRule => 
+      new SimpleRule(inputRule.pattern, 
+                     breakDown(deSentenceCase(inputRule.pattern)), 
+                     inputRule.indication, 
+                     // inputRule.properties.collect { case locationProp : LocationProperty => locationProp }))
+                     if (inputRule.properties.isDefined) 
+                       inputRule.properties.get.filter(property => property.isInstanceOf[LocationProperty]) match {
+                         case s: Seq[Property] => if (s.length>0) Some(inputRule.properties.get.filter(property => property.isInstanceOf[LocationProperty])) else None
+                         case _ => None
+                       } else None,
+                     if (inputRule.properties.isDefined) 
+                       inputRule.properties.get.filter(property => property.isInstanceOf[ReferenceProperty]) match {
+                         case s: Seq[Property] => if (s.length>0) Some(inputRule.properties.get.filter(property => property.isInstanceOf[ReferenceProperty])) else None
+                         case _ => None
+                       } else None))  
+                       
     globalLogger.write(rules.mkString("\n"), "db-rules2")                                                      
     
     // patterns to indications map - 
@@ -388,45 +399,70 @@ object ldb extends Match {
                            s"which indicates '${p._3}'").mkString("\n") + "\n","sentence-pattern-matches (location agnostic)"))
 
         //if (!possibleMatches.isEmpty)logger.write(sentence.text, "output (location agnostic)")
-
+                          
+        //
+        // checks whether a potential match satisfies its location criteria if any
+        // 
         def locationTest(p: (String, LocatedText, String, SimpleRule)) : Boolean = {
-          var isFinalMatch = false
-        	//println(p._4)
-        	if (!p._4.locationProperty.isDefined) {
-          //println("no location criteria in rule")
-        	  isFinalMatch = true
-        	}
-        	else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-            sectionTypeScheme.translation.contains(parameter.toLowerCase) && sectionTypeScheme.translation(parameter.toLowerCase) == p._2.section.toLowerCase())) {
-            //println("location criteria matched!")
-            isFinalMatch = true
-          }
-          else {
-            isFinalMatch = false            
-            if (false)
-            {
-              println
-              println("location criteria not matched for:")
-              println(p._2.text)
-              println("should be in either:")
-              p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
-                if (sectionTypeScheme.translation.contains(parameter.toLowerCase)) println(sectionTypeScheme.translation(parameter.toLowerCase)))
-              println("but found in:")
-              println(p._2.section)
-            }
-          }
-      	return isFinalMatch
+            var isFinalMatch = false
+                if (!p._4.locationProperty.isDefined) {
+                  isFinalMatch = true
+                }
+                else if (p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.exists(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+                sectionTypeScheme.translation.contains(parameter.toLowerCase) && sectionTypeScheme.translation(parameter.toLowerCase) == p._2.section.toLowerCase())) {
+                  //println("location criteria matched!")
+                  isFinalMatch = true
+                }
+                else {
+                  isFinalMatch = false            
+                      if (false)
+                      {
+                        println
+                        println("location criteria not matched for:")
+                        println(p._2.text)
+                        println("should be in either:")
+                        p._4.locationProperty.get.head.asInstanceOf[LocationProperty].parameters.foreach(parameter =>   // 'using .head' assumes at most one LocationProperty per rule
+                        if (sectionTypeScheme.translation.contains(parameter.toLowerCase)) println(sectionTypeScheme.translation(parameter.toLowerCase)))
+                        println("but found in:")
+                        println(p._2.section)
+                      }
+                }
+            return isFinalMatch
         }
-      
-	      val matches : Seq[(String, LocatedText, String, SimpleRule, Boolean)] = 
+
+        //
+        // checks whether a potential match satisfies a selfish reference requirement if any.
+        // Note: currently does not distinguish between types of selfish reference at all.
+        // 
+        def containsSelfRef(text: String) : Boolean = {
+          val normalized = deSentenceCase(text)
+          SelfishReferences.allTexts.exists(s => normalized.indexOf(s) >= 0) 
+        }
+        
+        def selfishRefTest(p: (String, LocatedText, String, SimpleRule)) : Boolean = {
+          var isFinalMatch = false
+        	
+          if (!p._4.ReferenceProperty.isDefined) isFinalMatch = true         
+        	else isFinalMatch = containsSelfRef(p._4.pattern) match {
+        	  case true => true // if rule's pattern already contains a selfish reference itself, this is a match
+        	  case false => containsSelfRef(p._2.text) 
+        	}
+          
+        	return isFinalMatch
+        }
+        
+	      val tentativeMatches : Seq[(String, LocatedText, String, SimpleRule, Boolean, Boolean)] = 
 	        possibleMatches.map(p => (p._1, 
             	    						  	  p._2,
             	    						  	  p._3,
             	    						  	  p._4,
-            	    						  	  locationTest(p))).toSeq
+            	    						  	  locationTest(p),
+            	    						  	  selfishRefTest(p))).toSeq
      	
-        val finalMatches = matches.filter(m => m._5)
-	    						  	  
+        tentativeMatches.foreach(m => if (!m._6) println(s"sentence {${m._2.text}} matching pattern {${m._4.pattern}} does not contain selfish reference and therefore not matched."))
+
+        val finalMatches = tentativeMatches.filter(m => m._5 && m._6)
+        
         if (!finalMatches.isEmpty) {
           //logger.write(sentence.text, "output")
           logger.write(finalMatches.map(_._2.text).distinct.mkString("\n"), ("output"))  
@@ -439,7 +475,7 @@ object ldb extends Match {
         }
           
       	rdbmsData ++= 
-          matches.map(m => (runID,
+          tentativeMatches.filter(_._6).map(m => (runID,
                             document.name, 
                             m._2.text, 
                   				  m._1,

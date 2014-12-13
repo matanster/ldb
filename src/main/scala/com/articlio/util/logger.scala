@@ -45,7 +45,8 @@ class Logger (name: String) {
   }
 
   //
-  // writes message 
+  // writes message - see http://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html
+  // TODO: consider optimizing via the buffered writer class therein or per https://docs.oracle.com/javase/tutorial/essential/io/file.html
   //
   def write(message:String, msgType:String) = {
     if (!openFiles.contains(msgType)) openFiles(msgType) = initializeType(msgType)
