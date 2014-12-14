@@ -1,4 +1,5 @@
 import com.articlio.config
+
 import com.articlio.HttpService
 import com.articlio.ldb
 import com.articlio.selfMonitor.{Monitor}
@@ -6,11 +7,14 @@ import com.articlio.util.{Console}
 import com.articlio.storage
 import akka.actor.ActorSystem
 import com.articlio.AppActorSystem
+import com.articlio.analyze._
 
 object Boot extends App {
 
   Monitor
 
+  val i = Indels
+  
   AppActorSystem.outDB ! "createIfNeeded"
   
   //ldb.ldb.init

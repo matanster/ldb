@@ -19,7 +19,7 @@ trait Match {
   class Matches(tag: Tag) extends Table[Match](tag, "Matches") {
     def docName = column[String]("docName")
     def runID = column[String]("runID")
-    def sentence = column[String]("sentence", O.Length(20000,varying=true))
+    def sentence = column[String]("sentence", O.Length(20000,varying=true), O.DBType("binary"))
     def matchPattern = column[String]("matchPattern")
     def locationActual = column[String]("locationActual")
     def locationTest = column[String]("locationTest")    
@@ -27,6 +27,9 @@ trait Match {
     def matchIndication = column[String]("matchIndication")
     def * = (runID, docName, sentence, matchPattern, locationTest, locationActual, isFinalMatch, matchIndication)
   }
+  
+  // the table handle
+  val matches = TableQuery[Matches]
 }
 
 trait Connection {
@@ -42,10 +45,7 @@ trait Connection {
   implicit val session: Session = db.createSession
 }
 
-class OutDB extends Actor with Match with Connection {
-
-  // the table handle
-  val matches = TableQuery[Matches]
+class OutDB extends Actor with Connection with Match {
 
   // Table write functions
   private def write (data: Seq[Match]) = {
