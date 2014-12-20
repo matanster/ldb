@@ -63,6 +63,8 @@ libraryDependencies += "org.scala-lang" % "scala-compiler" % "2.10"
 
 libraryDependencies += "com.github.tototoshi" %% "scala-csv" % "1.0.0"
 
+libraryDependencies += "com.google.code.findbugs" % "jsr305" % "2.0.2"
+
 libraryDependencies ++= Seq(
   "com.typesafe.slick" %% "slick" % "2.1.0",
   "org.slf4j" % "slf4j-nop" % "1.6.4"

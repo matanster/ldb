@@ -8,10 +8,13 @@ import com.articlio.storage
 import akka.actor.ActorSystem
 import com.articlio.AppActorSystem
 import com.articlio.analyze._
+import com.articlio.googleApi._
 
 object Boot extends App {
 
   Monitor
+  
+  val g = OAuth2Sample
 
   val i = Indels
   

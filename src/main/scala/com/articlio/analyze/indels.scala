@@ -1,3 +1,10 @@
+//
+// for ways to scale this more, see:
+//
+// 1) https://groups.google.com/forum/#!msg/scalaquery/WZJ9Bm92Yfw/ANP10OY5pQoJ
+// 2) http://blog.wikimedia.org/2011/11/21/do-it-yourself-analytics-with-wikipedia/ (wikihadoop et al.)
+//
+
 package com.articlio.analyze
 import com.articlio.storage.{Connection,Match}
 import scala.slick.driver.MySQLDriver.simple._
@@ -9,8 +16,8 @@ object Indels extends Connection with Match {
 
   val changeAnalyticsLogger= new com.articlio.util.Logger("global-change-analytics")
   
-  val newResults = matches.filter(_.runID === "ubuntu-2014-12-13 18:37:53.728").sortBy(_.sentence).iterator
-  val oldResults = matches.filter(_.runID === "ubuntu-2014-12-10 20:57:57.235").sortBy(_.sentence).iterator
+  val newResults = matches.filter(_.runID === "ubuntu-2014-12-15 21:09:52.072").sortBy(_.sentence).iterator
+  val oldResults = matches.filter(_.runID === "ubuntu-2014-12-13 18:37:53.728").sortBy(_.sentence).iterator
   
   val dropped = Seq.newBuilder[Match]
   val added = Seq.newBuilder[Match]
@@ -37,12 +44,7 @@ object Indels extends Connection with Match {
       case x if x == 0 => 
         go(myNext(newResults), myNext(oldResults))
       case x if x > 0 => 
-        if (newResult.get._3 == "Here we show that activity sensors can be used to probe such interactions with exquisite sensitivity.")
-        {
-          println("FOUNDDDDDDDDDDDDDDDD")
-          println(oldResult.get._3)
-        }
-        dropped += newResult.get
+        dropped += oldResult.get
         go(newResult, myNext(oldResults))
       case x if x < 0 => 
         added += newResult.get
