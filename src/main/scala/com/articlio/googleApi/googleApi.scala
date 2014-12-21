@@ -9,7 +9,7 @@
 //  http://stackoverflow.com/questions/19361814/create-spreadsheet-using-google-spreadsheet-api-in-google-drive-java?rq=1
 //  http://blog.knoldus.com/2013/07/30/integrating-google-drive-infrastructure-in-play-scala-application/
 //  http://blog.knoldus.com/2014/03/29/create-upload-delete-google-docs-using-play-scala-application/
-//  http://stackoverflow.com/questions/14106962/google-places-api-request-denied-when-using-server-side-proxy-on-ec2
+//  EC2 integration: http://stackoverflow.com/questions/14106962/google-places-api-request-denied-when-using-server-side-proxy-on-ec2
 //
 
 package com.articlio.googleApi

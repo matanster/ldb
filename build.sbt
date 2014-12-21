@@ -10,20 +10,22 @@ version       := "0.1"
 // akka & spray
 //
 
-scalaVersion  := "2.10.3"
+scalaVersion  := "2.11.2"
 
 scalacOptions := Seq("-unchecked", "-deprecation", "-encoding", "utf8")
 
+resolvers += "spray repo" at "http://repo.spray.io"
+
 libraryDependencies ++= {
-  val akkaV = "2.3.0"
-  val sprayV = "1.3.1"
+  val akkaV = "2.3.6"
+  val sprayV = "1.3.2"
   Seq(
-    "io.spray"            %   "spray-can"     % sprayV,
-    "io.spray"            %   "spray-routing" % sprayV,
-    "io.spray"            %   "spray-testkit" % sprayV  % "test",
+    "io.spray"            %   "spray-can_2.11"     % sprayV,
+    "io.spray"            %   "spray-routing_2.11" % sprayV,
+    "io.spray"            %   "spray-testkit_2.11" % sprayV  % "test",
     "com.typesafe.akka"   %%  "akka-actor"    % akkaV,
     "com.typesafe.akka"   %%  "akka-testkit"  % akkaV   % "test",
-    "org.specs2"          %%  "specs2-core"   % "2.3.7" % "test"
+    "org.specs2"          %%  "specs2-core"   % "2.3.11" % "test"
   )
 }
 
@@ -55,11 +57,11 @@ libraryDependencies ++= Seq(
 )
 
 // spray-json
-libraryDependencies += "io.spray" %%  "spray-json" % "1.2.6"
+libraryDependencies += "io.spray" %%  "spray-json" % "1.3.1"
 
 libraryDependencies += "org.ahocorasick" % "ahocorasick" % "0.2.3"
 
-libraryDependencies += "org.scala-lang" % "scala-compiler" % "2.10"
+libraryDependencies += "org.scala-lang" % "scala-compiler" % "2.11.2"
 
 libraryDependencies += "com.github.tototoshi" %% "scala-csv" % "1.0.0"
 
