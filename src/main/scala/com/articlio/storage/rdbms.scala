@@ -86,3 +86,19 @@ class OutDB extends Actor with Connection with Match {
     case _ => throw new Exception("unexpected actor message type received")
   }
 }
+
+object createCSV extends Connection with Match {
+  import com.github.tototoshi.csv._ // only good for "small" csv files; https://github.com/tototoshi/scala-csv/issues/11
+  def go(runID: String) = {
+    val outFile = new java.io.File("out.csv")
+    val writer = CSVWriter.open(outFile)
+    val linkUrlBase = "http://ubuntu.local:9000"
+    val filteredData = matches.filter(m => m.runID === runID).list.map(m => 
+      List(m._1, 
+           s"""=HYPERLINK("$linkUrlBase/showOriginal/${m._2.dropRight(4)}","original")""",          
+           s"""=HYPERLINK("$linkUrlBase/showExtractFoundation/${m._2.dropRight(4)}?runID=${m._1}","result")""",
+           m._2, m._3, m._4, m._5, m._6, m._7, m._8))
+    val data = List("Run ID", "link", "link", "Article", "Sentence", "Pattern", "Location Test", "Location Actual", "Final Match?", "Match Indication") :: filteredData 
+    writer.writeAll(data)
+  }
+}

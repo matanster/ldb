@@ -1,3 +1,7 @@
+//
+// Experiment with analyzing header detection data created by the node.js app 
+//
+
 package com.articlio.storage
 
 //import language.experimental.macros

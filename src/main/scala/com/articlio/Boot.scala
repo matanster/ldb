@@ -18,6 +18,8 @@ object Boot extends App {
   AppActorSystem.outDB ! "createIfNeeded"
   
   //ldb.ldb.init
+
+  com.articlio.storage.createCSV.go("ubuntu-2014-12-21 09:04:30.084")
   
   val httpService = HttpService
                                               
@@ -26,7 +28,6 @@ object Boot extends App {
   // Monitor.shutdown
   // storage.OutDB.close
 }
-
 
 object Analytic {
   val inDb = storage.InDB.Query("ubuntu-2014-11-21T12:06:51.286Z")
