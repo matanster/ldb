@@ -1,5 +1,6 @@
 # the linguistic database - don't trust github with it for now
 data/
+*.csv
 
 # vertx
 vert.x-2.1.1/
