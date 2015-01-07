@@ -63,6 +63,11 @@ trait MyService extends HttpService {
           val bulk = new Bulk((new runID).id)
           bulk.alleLife
           complete("Done processing all eLife files... but you probably timed out by now")
+        } ~       
+        parameter('export) { all =>
+          com.articlio.storage.createAnalyticSummary.go()
+          com.articlio.storage.createCSV.go()
+          complete("Done producing result CSVs")
         } ~    
           parameter('purgeAll) { purgeAll => 
           AppActorSystem.outDB ! "dropCreate"

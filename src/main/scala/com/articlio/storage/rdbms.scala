@@ -87,18 +87,54 @@ class OutDB extends Actor with Connection with Match {
   }
 }
 
-object createCSV extends Connection with Match {
-  import com.github.tototoshi.csv._ // only good for "small" csv files; https://github.com/tototoshi/scala-csv/issues/11
-  def go(runID: String) = {
-    val outFile = new java.io.File("out.csv")
-    val writer = CSVWriter.open(outFile)
+trait googleSpreadsheetCreator {
+  def withHyperlink(route: String, viewableText: String) : String = {
     val linkUrlBase = "http://ubuntu.local:9000"
-    val filteredData = matches.filter(m => m.runID === runID).list.map(m => 
-      List(m._1, 
-           s"""=HYPERLINK("$linkUrlBase/showOriginal/${m._2.dropRight(4)}","original")""",          
-           s"""=HYPERLINK("$linkUrlBase/showExtractFoundation/${m._2.dropRight(4)}?runID=${m._1}","result")""",
-           m._2, m._3, m._4, m._5, m._6, m._7, m._8))
-    val data = List("Run ID", "link", "link", "Article", "Sentence", "Pattern", "Location Test", "Location Actual", "Final Match?", "Match Indication") :: filteredData 
-    writer.writeAll(data)
+    s"""=HYPERLINK("$linkUrlBase/$route","$viewableText")"""
   }
 }
+
+object createCSV extends Connection with Match with googleSpreadsheetCreator {
+  import com.github.tototoshi.csv._ // only good for "small" csv files; https://github.com/tototoshi/scala-csv/issues/11
+  def go(runID: String = matches.map(m => m.runID).list.distinct.sorted(Ordering[String].reverse).head) = {
+    val outFile = new java.io.File("out.csv")
+    val writer = CSVWriter.open(outFile)
+
+    val filteredData = matches.filter(m => m.runID === runID).list.map(m => 
+    List(m._1, 
+        withHyperlink("showOriginal/" + m._2.dropRight(4),"view original"),          
+        withHyperlink("showExtractFoundation/" + m._2.dropRight(4) + s"?runID=${m._1}","view result"),
+        m._2, m._3, m._4, m._5, m._6, m._7, m._8))
+        val data = List("Run ID", "", "", "Article", "Sentence", "Pattern", "Location Test", "Location Actual", "Final Match?", "Match Indication") :: filteredData 
+        writer.writeAll(data)
+  }
+}
+
+import com.articlio.slickGenerated.Tables
+object createAnalyticSummary extends Connection with Match with Tables with googleSpreadsheetCreator {
+  import com.github.tototoshi.csv._ // only good for "small" csv files; https://github.com/tototoshi/scala-csv/issues/11
+  def go(runID: String = matches.map(m => m.runID).list.distinct.sorted(Ordering[String].reverse).head) = {
+    val outFile = new java.io.File("outAnalytic.csv")
+    val writer = CSVWriter.open(outFile)
+    
+    val matchIndications : Seq[String] = matches.filter(m => m.runID === runID).map(m => m.matchIndication).list.distinct 
+    val grouped = matches.filter(m => m.runID === runID && m.isFinalMatch).run
+                          .groupBy(f => f._2)
+    
+    def hasLimitationSection(docName: String) =
+      Headers.filter(_.docname === docName).filter(h => h.header === "limitation").exists.run match {
+      case true => "yes"
+      case _ =>    "no"
+    }                          
+                          
+    val result : List[List[Any]] = grouped.map { case(docName, matches) =>  
+                                     List(withHyperlink("showOriginal/" + docName.dropRight(4), docName), hasLimitationSection("ubuntu-2014-11-21T12:06:51.286Z")) ++
+                                          matchIndications.map(i => matches.filter(m => m._8 == i).length)}.toList
+
+    val headerRow = List(List("Article", "has limitation section?") ++ matchIndications.toList)
+    val output = headerRow ++ result
+    writer.writeAll(output)
+
+  }
+}
+

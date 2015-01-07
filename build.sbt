@@ -78,4 +78,16 @@ resolvers += "Sonatype releases" at "http://oss.sonatype.org/content/repositorie
 
 libraryDependencies += "com.github.verbalexpressions" %% "scalaverbalexpression" % "1.0.1"
 
+//
+// anorm
+//
+
+resolvers += "Typesafe Releases" at "http://repo.typesafe.com/typesafe/releases/"
+
+libraryDependencies += "com.typesafe.play" %% "anorm" % "2.3.6"
+
 scalacOptions ++= Seq( "-unchecked", "-feature" )
+
+resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
+
+libraryDependencies += "com.adrianhurt" %% "play-bootstrap3" % "0.4-SNAPSHOT"

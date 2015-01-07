@@ -19,7 +19,8 @@ object Boot extends App {
   
   //ldb.ldb.init
 
-  com.articlio.storage.createCSV.go("ubuntu-2014-12-21 09:04:30.084")
+  //com.articlio.storage.createCSV.go()
+  com.articlio.storage.createAnalyticSummary.go()
   
   val httpService = HttpService
                                               
