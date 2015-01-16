@@ -91,3 +91,5 @@ scalacOptions ++= Seq( "-unchecked", "-feature" )
 resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
 
 libraryDependencies += "com.adrianhurt" %% "play-bootstrap3" % "0.4-SNAPSHOT"
+
+lazy val root = (project in file(".")).enablePlugins(SbtTwirl)

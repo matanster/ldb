@@ -16,7 +16,6 @@ class AhoCorasick {
     AppActorSystem.timelog ! "aho-corasick initialization (lazy operations not necessarily included)"
     trie.onlyWholeWords()
     fragments foreach trie.addKeyword
-    fragments.foreach(f => if (f == "The first limitation deals with the nature of a") println("EQUALSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS"))
     AppActorSystem.timelog ! "aho-corasick initialization (lazy operations not necessarily included)"
   }
 

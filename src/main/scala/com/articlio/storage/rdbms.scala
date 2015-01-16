@@ -129,7 +129,7 @@ object createAnalyticSummary extends Connection with Match with Tables with goog
                           
     val result : List[List[Any]] = grouped.map { case(docName, matches) =>  
                                      List(withHyperlink("showOriginal/" + docName.dropRight(4), docName), hasLimitationSection("ubuntu-2014-11-21T12:06:51.286Z")) ++
-                                          matchIndications.map(i => matches.filter(m => m._8 == i).length)}.toList
+                                         matchIndications.map(i => matches.filter(m => m._8 == i).length)}.toList
 
     val headerRow = List(List("Article", "has limitation section?") ++ matchIndications.toList)
     val output = headerRow ++ result

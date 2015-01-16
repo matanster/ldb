@@ -436,6 +436,7 @@ object ldb extends Match {
         // 
         def containsSelfRef(text: String) : Boolean = {
           val normalized = deSentenceCase(text)
+          println(SelfishReferences.allTexts.filter(s => normalized.indexOf(s) >=0)) 
           SelfishReferences.allTexts.exists(s => normalized.indexOf(s) >= 0) 
         }
         
