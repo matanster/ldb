@@ -9,3 +9,7 @@ addSbtPlugin("io.spray" % "sbt-revolver" % "0.7.2")
 addSbtPlugin("org.netbeans.nbsbt" % "nbsbt-plugin" % "1.1.2")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-twirl" % "1.0.4")
+
+addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.3.2")
+
+addSbtPlugin("com.scalapenos" % "sbt-prompt" % "0.2.1")

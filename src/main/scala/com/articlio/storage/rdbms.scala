@@ -19,7 +19,7 @@ trait Match {
   class Matches(tag: Tag) extends Table[Match](tag, "Matches") {
     def docName = column[String]("docName")
     def runID = column[String]("runID")
-    def sentence = column[String]("sentence", O.Length(20000,varying=true), O.DBType("binary"))
+    def sentence = column[String]("sentence", O.Length(20000,varying=true) /*, O.DBType("binary") */)
     def matchPattern = column[String]("matchPattern")
     def locationActual = column[String]("locationActual")
     def locationTest = column[String]("locationTest")    

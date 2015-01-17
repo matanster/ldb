@@ -2,6 +2,10 @@ import com.typesafe.sbt.SbtStartScript
 
 import spray.revolver.RevolverPlugin._
 
+import com.scalapenos.sbt.prompt.SbtPrompt.autoImport._
+
+name          := "ldb"
+
 organization  := "com.articlio"
 
 version       := "0.1"
@@ -92,4 +96,26 @@ resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repos
 
 libraryDependencies += "com.adrianhurt" %% "play-bootstrap3" % "0.4-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(SbtTwirl)
+//lazy val ldb = (project in file(".")).enablePlugins(SbtTwirl)
+
+//
+// build info stuff - adds build version info as scala code available to the application :)
+//
+
+buildInfoSettings
+
+sourceGenerators in Compile <+= buildInfo
+
+buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion, buildInfoBuildNumber)
+
+buildInfoPackage := "buildVersioning"
+
+buildInfoObject  := "Info"
+
+EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Managed
+
+//
+// sbt prompt coolness
+//
+
+promptTheme := Scalapenos

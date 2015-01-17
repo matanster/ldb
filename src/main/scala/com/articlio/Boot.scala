@@ -11,16 +11,21 @@ import com.articlio.analyze._
 
 object Boot extends App {
 
+  println(s"starting build number: ${buildVersioning.Info.toMap("buildinfoBuildnumber")}")
+
   Monitor
 
-  val i = Indels
+  //
+  // move to http-invoked if not already there
+  //
+  // val i = Indels
   
   AppActorSystem.outDB ! "createIfNeeded"
   
   //ldb.ldb.init
 
   //com.articlio.storage.createCSV.go()
-  com.articlio.storage.createAnalyticSummary.go()
+  //com.articlio.storage.createAnalyticSummary.go()
   
   val httpService = HttpService
                                               
@@ -33,4 +38,4 @@ object Boot extends App {
 object Analytic {
   val inDb = storage.InDB.Query("ubuntu-2014-11-21T12:06:51.286Z")
   storage.InDB.close
-}
+} 
