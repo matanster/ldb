@@ -63,8 +63,8 @@ object CSV {
     while (iterator.hasNext) {
       val asArray: Array[String] = iterator.next.toArray // convert to Array for easy column access
       val pattern = asArray(4)
-      val indication = asArray(5)
-      val parameters: Seq[String] = Seq(asArray(6), asArray(7), asArray(8)) // additional parameters expressed in the database CSV
+      val indication = asArray(6)
+      val parameters: Seq[String] = Seq(asArray(7), asArray(8), asArray(9)) // additional parameters expressed in the database CSV
 
       val off = (asArray(2) == "off")
 
