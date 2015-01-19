@@ -212,7 +212,7 @@ object ldb extends Match {
                                                                        
   val SPACE = " "
                                                                        
-  def go (runID: String, document: JATS) : String = {
+  def go (runID: String, document: JATS) : Seq[Match] = {
 
     val logger = new Logger(document.name)
     
@@ -223,7 +223,8 @@ object ldb extends Match {
     //val document = new JATS("/home/matan/ingi/repos/fileIterator/data/toJATS/imagenet", "pdf-converted") // elife04395, elife-articles(XML)/elife00425styled.xml
     //val document = new JATS("/home/matan/ingi/repos/fileIterator/data/prep/elife03399.xml")
     val sections : Seq[JATSsection] = document.sections // elife04395, elife-articles(XML)/elife00425styled.xml
-    if (sections.isEmpty) return s"${document.name} appears to have no sections and was not processed"  
+    //if (sections.isEmpty) return s"${document.name} appears to have no sections and was not processed"  
+    if (sections.isEmpty) return Seq.empty[Match]  
     
     //
     // separate into util file
@@ -321,16 +322,6 @@ object ldb extends Match {
     }
 
     //
-    // process sentence by sentence
-    //
-
-    AppActorSystem.timelog ! "matching"
-    processSentences(sentences)
-    AppActorSystem.timelog ! "matching"
-
-
-
-    //
     // matches rules per sentence    
     //
     def processSentences (sentences : Seq[LocatedText]) = {
@@ -340,7 +331,7 @@ object ldb extends Match {
       
       implicit val timeout = Timeout(60.seconds)
       
-      for (sentenceIdx <- 0 to sentences.length-1) {
+      val results = for (sentenceIdx <- 0 to sentences.length-1) yield {
         val sentence = sentences(sentenceIdx)
         val matchedFragmentsFuture = ask(ahoCorasick, Go(sentence.text, logger)).mapTo[List[Map[String, String]]]
         val matchedFragments = Await.result(matchedFragmentsFuture, timeout.duration)
@@ -493,11 +484,20 @@ object ldb extends Match {
 
       }
       
-      AppActorSystem.outDB ! rdbmsData.result
-      
       new Descriptive(sentenceMatchCount, "Fragments match count per sentence").all
-    }
-    return s"Done processing ${document.name}"
+
+      // AppActorSystem.outDB ! rdbmsData.result
+      rdbmsData.result    
+    }    
+    //return s"Done processing ${document.name}"
+    
+    //
+    // process sentence by sentence
+    //
+
+    //AppActorSystem.timelog ! "matching"
+    //AppActorSystem.timelog ! "matching"
+    return processSentences(sentences)
   }                                                                             
                                                                              
 }

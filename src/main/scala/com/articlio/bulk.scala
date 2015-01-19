@@ -8,14 +8,17 @@ class Bulk(runID: String) {
   //ldb.ldb.init
   def processAll(runID: String, sourceDirName: String, treatAs: Option[String] = None) {
     val files = new File(sourceDirName).listFiles.filter(file => (file.isFile)) // && file.getName.endsWith(".xml")))
-    files.par.foreach(file => {
+    
+    //AppActorSystem.outDB ! "startToBuffer"
+    files.par.map(file => {
       val fileName = file.getName  
       println("about to process file " + fileName)
       treatAs match {
-        case Some(s) => ldb.ldb.go(runID, new JATS(s"$sourceDirName/$fileName", s))
-        case None => ldb.ldb.go(runID, new JATS(s"$sourceDirName/$fileName"))
+        case Some(s) => AppActorSystem.outDB ! ldb.ldb.go(runID, new JATS(s"$sourceDirName/$fileName", s))
+        case None => AppActorSystem.outDB ! ldb.ldb.go(runID, new JATS(s"$sourceDirName/$fileName"))
       }
-    }) 
+    })
+    AppActorSystem.outDB ! "flushToDB"
   }
 
   def allPDF = processAll(runID, config.pdf, Some("pdf-converted"))

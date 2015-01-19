@@ -44,10 +44,12 @@ trait MyService extends HttpService {
       } ~
       path("semantic") {
         parameter('inputFile) { inputFile =>
-      	  complete(ldb.ldb.go("SingleFileRun" + "-" + (new runID).id, new JATS(s"${config.pdf}/$inputFile", "pdf-converted")))
+      	  ldb.ldb.go("SingleFileRun" + "-" + (new runID).id, new JATS(s"${config.pdf}/$inputFile", "pdf-converted"))
+      	  complete("Done processing file")
         } ~
         parameter('eLifeInputFile) { eLifeInputFile =>
-      	  complete(ldb.ldb.go("SingleFileRun" + "-" + (new runID).id, new JATS(s"${config.eLife}/$eLifeInputFile")))
+      	  ldb.ldb.go("SingleFileRun" + "-" + (new runID).id, new JATS(s"${config.eLife}/$eLifeInputFile"))
+          complete("Done processing file")
         } ~       
         parameter('all) { all =>
           val bulk = new Bulk((new runID).id)
@@ -65,7 +67,7 @@ trait MyService extends HttpService {
           complete("Done processing all eLife files... but you probably timed out by now")
         } ~       
         parameter('export) { all =>
-          com.articlio.storage.createAnalyticSummary.go()
+          //com.articlio.storage.createAnalyticSummary.go()
           com.articlio.storage.createCSV.go()
           complete("Done producing result CSVs")
         } ~    

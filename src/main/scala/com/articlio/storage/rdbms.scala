@@ -50,10 +50,21 @@ class OutDB extends Actor with Connection with Match {
   // Table write functions
   private def write (data: Seq[Match]) = {
     println
-    println(s"writing ${data.length} records to rdbms")
+    println(s"writing ${data.length} records to database")
     println
     matches ++= data
+    println(s"done writing ${data.length} records to database")    
   }
+  
+  var buffer = Seq.empty[Match]
+  
+  def flushToDB = {
+    println("Flushing bulk run's results to database")
+      write(buffer)
+      buffer = Seq.empty[Match]
+  }
+  
+  def addToBuffer (data: Seq[Match]) = buffer ++= data
   
   private def += (data: Match) = matches += data
   
@@ -82,7 +93,9 @@ class OutDB extends Actor with Connection with Match {
   def receive = { 
     case "dropCreate" => dropCreate
     case "createIfNeeded" => createIfNeeded
-    case s: Seq[Match @unchecked] => write(s) // annotating to avoid compilation warning about type erasure here
+    //case s: Seq[Match @unchecked] => write(s) // annotating to avoid compilation warning about type erasure here
+    case s: Seq[Match @unchecked] => addToBuffer(s) // annotating to avoid compilation warning about type erasure here
+    case "flushToDB" => flushToDB
     case _ => throw new Exception("unexpected actor message type received")
   }
 }
