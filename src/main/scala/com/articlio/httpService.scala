@@ -34,13 +34,8 @@ trait MyService extends HttpService {
   val myRoute =
     get {
 	  path("") { 
-		complete {
-          <html>
-            <body>
-              <h1>service is up</h1>
-            </body>
-          </html>
-        }
+		  complete {
+        "${buildVersioning.Info.name} service is up"        }
       } ~
       path("semantic") {
         parameter('inputFile) { inputFile =>

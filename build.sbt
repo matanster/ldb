@@ -1,6 +1,6 @@
 import com.typesafe.sbt.SbtStartScript
 
-import spray.revolver.RevolverPlugin._
+//import spray.revolver.RevolverPlugin._
 
 import com.scalapenos.sbt.prompt.SbtPrompt.autoImport._
 
@@ -39,7 +39,7 @@ seq(SbtStartScript.startScriptForClassesSettings: _*)
 // spray revolver, only for development
 //
 
-Revolver.settings 
+//Revolver.settings 
 
 //
 // Vertx
@@ -102,17 +102,59 @@ libraryDependencies += "com.adrianhurt" %% "play-bootstrap3" % "0.4-SNAPSHOT"
 // build info stuff - adds build version info as scala code available to the application :)
 //
 
-buildInfoSettings
 
-sourceGenerators in Compile <+= buildInfo
+//val gitter = Process("git rev-parse HEAD").lines.head
 
-buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion, buildInfoBuildNumber)
+//gitterier in Compile := gitter
 
-buildInfoPackage := "buildVersioning"
+val gitVersion = taskKey[Unit]("Run JavaScript tests.")
 
-buildInfoObject  := "Info"
+gitVersion := Process("git rev-parse HEAD").lines.head
 
-EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Managed
+
+val testJsTask = taskKey[Unit]("Run JavaScript tests.")
+
+testJsTask := {
+  println(gitVersion) 
+  println(gitVersion.value) 
+  println(Process("git rev-parse HEAD").lines.head)
+  Process("git rev-parse HEAD").lines.head
+  }
+
+test in Test := {
+  testJsTask.value
+}
+
+
+// buildInfoSettings
+
+//sourceGenerators in Compile <+= buildInfo
+
+//buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion, gitVersion)
+
+//buildInfoPackage := "buildVersioning"
+
+//buildInfoObject  := "Info"
+
+//EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Managed
+
+//compile in Compile <<= (compile in Compile) dependsOn gitVersion
+
+resourceGenerators in Compile <+=
+  (resourceManaged in Compile, name, version) map { (dir, n, v) =>
+    val file = dir / "version"
+    val contents = Process("git rev-parse HEAD").lines.head
+    IO.write(file, contents)
+    println("I have just been run")
+    Seq(file)
+  }
+
+
+
+
+
+
+
 
 //
 // sbt prompt coolness

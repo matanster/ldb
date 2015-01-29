@@ -44,7 +44,7 @@ object JATSloader{
     val bodySections = for (node <- JATSinput \ "body" \ "sec" if (node.attributes("sec-type") != null)) // check for null as this is what the xml api uses when attribute is not found
       yield JATSsectionRaw(
         node.attributes("sec-type").toString,
-        (node \ "title").head.child.head.toString,
+        if ((node \ "title").head.child.isEmpty) "section without title" else (node \ "title").head.child.head.toString,
         node \ "p" ++ node \ "sec")
     
     return abstractSections ++ bodySections

@@ -11,8 +11,13 @@ import com.articlio.analyze._
 
 object Boot extends App {
 
-  println(s"starting build number: ${buildVersioning.Info.toMap("buildinfoBuildnumber")}")
-
+  //println(s"starting project ${buildVersioning.Info.name}")
+  
+  val version = getClass.getResource("version")
+  println(scala.io.Source.fromURL(version).mkString)
+  
+  //println(s"git: ${buildVersioning.Info.gitVersion}")
+ 
   Monitor
 
   //
