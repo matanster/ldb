@@ -1,13 +1,13 @@
-package com.articlio.selfMonitor
+package com.articlio
 
-import org.vertx.scala.core._
-import org.vertx.scala.platform.Verticle
+//import org.vertx.scala.core._
+//import org.vertx.scala.platform.Verticle
 import com.articlio.util.{Console}
 
 //
 // Monitor own-JVM memory usage
 //
-object Monitor extends Verticle {
+object SelfMonitor /* extends Verticle */ {
 
   // get the hook to memory consumption
   import runtime.{ totalMemory, freeMemory, maxMemory, gc } // http://stackoverflow.com/questions/3571203/what-is-the-exact-meaning-of-runtime-getruntime-totalmemory-and-freememory
@@ -61,7 +61,7 @@ object Monitor extends Verticle {
     timer.cancel
   }
 
-  override def start { /* keep function name for vert.x compatibility */
+  /* override */ def start { /* keep function name for vert.x compatibility */
     println("starting self-monitoring...")
 
     val maxHeapLimit = maxMemory // This is determined by the JVM runtime according to the XMX value, but does not precisely equal it (http://stackoverflow.com/questions/13729652/runtime-maxmemory-and-xmx)

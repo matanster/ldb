@@ -2,7 +2,7 @@
 // Might be useful later
 //
 
-package com.articlio
+package com.articlio.semantic
 
 import akka.event.Logging.InitializeLogger
 import akka.event.Logging.LoggerInitialized

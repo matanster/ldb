@@ -10,7 +10,7 @@ import com.articlio.storage.{Connection,Match}
 import scala.slick.driver.MySQLDriver.simple._
 import scala.slick.jdbc.meta._
 import scala.slick.util.CloseableIterator
-import com.articlio.AppActorSystem
+import com.articlio.semantic.AppActorSystem
 
 object Indels extends Connection with Match {
 

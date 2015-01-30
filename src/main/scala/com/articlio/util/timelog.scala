@@ -1,6 +1,6 @@
 package com.articlio.util
 import akka.actor.Actor
-import com.articlio.AppActorSystem
+import com.articlio.semantic.AppActorSystem
 
 
 //

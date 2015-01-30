@@ -1,4 +1,0 @@
-{
-  "main": "com.articlio.deployer",
-  "includes":"io.vertx~lang-scala~1.0.0"
-}

@@ -54,11 +54,11 @@ seq(SbtStartScript.startScriptForClassesSettings: _*)
 // Fork required to avoid conflicts when compiling the .scala source on the fly
 // fork := true
 
-libraryDependencies ++= Seq(
+//libraryDependencies ++= Seq(
   // If changing lang-scala version, make sure src/main/resources/langs.properties is updated too
-  "io.vertx" % "lang-scala" % "1.0.0",
-  "io.vertx" % "vertx-platform" % "2.1M1"
-)
+  //"io.vertx" % "lang-scala" % "1.0.0",
+  //"io.vertx" % "vertx-platform" % "2.1M1"
+//)
 
 // spray-json
 libraryDependencies += "io.spray" %%  "spray-json" % "1.3.1"
@@ -97,64 +97,6 @@ resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repos
 libraryDependencies += "com.adrianhurt" %% "play-bootstrap3" % "0.4-SNAPSHOT"
 
 //lazy val ldb = (project in file(".")).enablePlugins(SbtTwirl)
-
-//
-// build info stuff - adds build version info as scala code available to the application :)
-//
-
-
-//val gitter = Process("git rev-parse HEAD").lines.head
-
-//gitterier in Compile := gitter
-
-val gitVersion = taskKey[Unit]("Run JavaScript tests.")
-
-gitVersion := Process("git rev-parse HEAD").lines.head
-
-
-val testJsTask = taskKey[Unit]("Run JavaScript tests.")
-
-testJsTask := {
-  println(gitVersion) 
-  println(gitVersion.value) 
-  println(Process("git rev-parse HEAD").lines.head)
-  Process("git rev-parse HEAD").lines.head
-  }
-
-test in Test := {
-  testJsTask.value
-}
-
-
-// buildInfoSettings
-
-//sourceGenerators in Compile <+= buildInfo
-
-//buildInfoKeys := Seq[BuildInfoKey](name, version, scalaVersion, sbtVersion, gitVersion)
-
-//buildInfoPackage := "buildVersioning"
-
-//buildInfoObject  := "Info"
-
-//EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Managed
-
-//compile in Compile <<= (compile in Compile) dependsOn gitVersion
-
-resourceGenerators in Compile <+=
-  (resourceManaged in Compile, name, version) map { (dir, n, v) =>
-    val file = dir / "version"
-    val contents = Process("git rev-parse HEAD").lines.head
-    IO.write(file, contents)
-    println("I have just been run")
-    Seq(file)
-  }
-
-
-
-
-
-
-
 
 //
 // sbt prompt coolness

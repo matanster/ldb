@@ -1,24 +1,16 @@
-import com.articlio.config
+package com.articlio.semantic
 
-import com.articlio.HttpService
-import com.articlio.ldb
-import com.articlio.selfMonitor.{Monitor}
+import akka.actor.ActorSystem
+import com.articlio.config
+import com.articlio.SelfMonitor
 import com.articlio.util.{Console}
 import com.articlio.storage
-import akka.actor.ActorSystem
-import com.articlio.AppActorSystem
 import com.articlio.analyze._
+import com.articlio.ldb
 
 object Boot extends App {
 
-  //println(s"starting project ${buildVersioning.Info.name}")
-  
-  val version = getClass.getResource("version")
-  println(scala.io.Source.fromURL(version).mkString)
-  
-  //println(s"git: ${buildVersioning.Info.gitVersion}")
- 
-  Monitor
+  SelfMonitor
 
   //
   // move to http-invoked if not already there

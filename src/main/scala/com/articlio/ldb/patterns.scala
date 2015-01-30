@@ -4,11 +4,11 @@ import com.articlio.input._
 import com.articlio.util._
 import com.articlio.util.text._
 import com.articlio.LanguageModel._
-import com.articlio.selfMonitor.{Monitor}
+import com.articlio.SelfMonitor
+import com.articlio.semantic.AppActorSystem
 import com.articlio.storage
 import com.articlio.storage.Match
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
-import com.articlio.AppActorSystem
 import scala.concurrent.Future
 import scala.concurrent.Await
 import akka.actor.Actor
@@ -173,7 +173,7 @@ object ldb extends Match {
     val allFragmentsDistinct : Set[String] = rules.map(rule => rule.fragments).flatten.toSet
 
     AppActorSystem.timelog ! "patterns representation building"
-    Monitor.logUsage("after patterns representation building is")
+    SelfMonitor.logUsage("after patterns representation building is")
     globalLogger.write(allFragmentsDistinct.mkString("\n"), "db-distinct-fragments")
     globalLogger.write(patterns2fragments.mkString("\n"), "db-rule-fragments")
 

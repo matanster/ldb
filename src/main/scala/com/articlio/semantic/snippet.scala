@@ -1,3 +1,4 @@
+package com.articlio.semantic;
 //
 // place for code experiments 
 //

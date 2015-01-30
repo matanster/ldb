@@ -3,7 +3,7 @@ import org.ahocorasick.trie._
 import com.articlio.util._
 import com.articlio.util.text._
 import scala.collection.JavaConverters._    // convert Java colllections to Scala ones
-import com.articlio.AppActorSystem
+import com.articlio.semantic.AppActorSystem
 
 //
 // initalizes an aho-corasick tree for searching all pattern fragments implied in the linguistic database

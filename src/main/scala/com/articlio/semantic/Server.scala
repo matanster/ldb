@@ -1,3 +1,6 @@
+/*
+
+package com.articlio.semantic;
 import org.vertx.scala.core._
 import org.vertx.scala.core.http.HttpServerRequest
 import org.vertx.scala.core.http.HttpClientResponse
@@ -66,3 +69,4 @@ class ldb extends Verticle {
     }
   }
 }
+*/

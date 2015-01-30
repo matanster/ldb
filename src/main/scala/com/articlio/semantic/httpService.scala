@@ -1,6 +1,8 @@
-package com.articlio
+package com.articlio.semantic
 import com.articlio.input.JATS
 import com.articlio.util.runID
+import com.articlio.config
+import com.articlio.ldb
 
 //
 // Spray imports

@@ -1,7 +1,9 @@
-package com.articlio
+package com.articlio.semantic
 import java.io.File
 import com.articlio.util.runID
 import com.articlio.input.JATS
+import com.articlio.ldb
+import com.articlio.config
 
 class Bulk(runID: String) { 
   
